@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BH Web Solutions — Professional Websites for $250 | Ready in 48 Hours</title>
+    <meta name="description" content="BH Web Solutions builds professional websites for $250, ready in 48 hours. Includes contact forms, payment integration, and free hosting. WordPress migration available.">
+    <meta name="theme-color" content="#0a0f1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-deep: #060b14;
+            --bg-primary: #0a0f1a;
+            --bg-secondary: #111827;
+            --bg-card: rgba(255, 255, 255, 0.025);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
+            --accent: #10b981;
+            --accent-glow: rgba(16, 185, 129, 0.35);
+            --accent-hover: #059669;
+            --accent-light: #34d399;
+            --blue-accent: #3b82f6;
+            --blue-glow: rgba(59, 130, 246, 0.3);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-medium: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(16, 185, 129, 0.4);
+            --radius-sm: 8px;
+            --radius: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 28px;
+            --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.4), 0 8px 30px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(16, 185, 129, 0.15), 0 0 80px rgba(16, 185, 129, 0.06);
+            --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            --max-width: 1200px;
+            --nav-height: 72px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: var(--nav-height);
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Ambient background orbs */
+        .bg-orb {
+            position: fixed;
+            border-radius: 50%;
+            filter: blur(140px);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.4;
+            will-change: transform;
+        }
+        .bg-orb--emerald {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, transparent 70%);
+            top: -200px;
+            right: -150px;
+            animation: orbFloat1 18s ease-in-out infinite;
+        }
+        .bg-orb--blue {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.14) 0%, transparent 70%);
+            bottom: -180px;
+            left: -120px;
+            animation: orbFloat2 22s ease-in-out infinite;
+        }
+        .bg-orb--indigo {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: orbFloat3 20s ease-in-out infinite;
+        }
+
+        @keyframes orbFloat1 {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(-60px, 40px) scale(1.08);
+            }
+            50% {
+                transform: translate(30px, -30px) scale(0.94);
+            }
+            75% {
+                transform: translate(-20px, -50px) scale(1.05);
+            }
+        }
+        @keyframes orbFloat2 {
+            0%,
+            100% {
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                transform: translate(50px, -35px) scale(1.06);
+            }
+            50% {
+                transform: translate(-25px, 40px) scale(0.92);
+            }
+            75% {
+                transform: translate(30px, 20px) scale(1.04);
+            }
+        }
+        @keyframes orbFloat3 {
+            0%,
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            33% {
+                transform: translate(-40%, -55%) scale(1.07);
+            }
+            66% {
+                transform: translate(-55%, -42%) scale(0.93);
+            }
+        }
+
+        /* Subtle grid pattern overlay */
+        .bg-grid {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.025;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 30%, black 30%, transparent 70%);
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: var(--nav-height);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+        }
+        .nav--scrolled {
+            background: rgba(10, 15, 26, 0.82);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-subtle);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+        }
+        .nav__inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .nav__logo {
+            font-weight: 800;
+            font-size: 1.35rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            text-decoration: none;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1001;
+            transition: var(--transition-fast);
+        }
+        .nav__logo:hover {
+            color: var(--accent-light);
+        }
+        .nav__logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--accent), #059669);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: #fff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+        }
+        .nav__links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+        .nav__links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            white-space: nowrap;
+        }
+        .nav__links a:hover,
+        .nav__links a:focus-visible {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav__cta {
+            background: var(--accent) !important;
+            color: #fff !important;
+            font-weight: 600 !important;
+            padding: 10px 20px !important;
+            border-radius: 24px !important;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+            transition: var(--transition-bounce) !important;
+            letter-spacing: -0.01em;
+        }
+        .nav__cta:hover {
+            background: var(--accent-hover) !important;
+            box-shadow: 0 6px 28px rgba(16, 185, 129, 0.5) !important;
+            transform: translateY(-2px);
+            color: #fff !important;
+        }
+        .nav__hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-fast);
+        }
+        .nav__hamburger:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .nav__hamburger span {
+            width: 26px;
+            height: 2.5px;
+            background: var(--text-primary);
+            border-radius: 3px;
+            transition: var(--transition-fast);
+            transform-origin: center;
+        }
+        .nav__hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .nav__hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav__hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 999;
+            background: rgba(6, 11, 20, 0.96);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+        .mobile-menu.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .mobile-menu a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            padding: 12px 28px;
+            border-radius: 30px;
+            transition: var(--transition-fast);
+        }
+        .mobile-menu a:hover {
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .mobile-menu .mobile-cta {
+            background: var(--accent);
+            color: #fff;
+            margin-top: 8px;
+            box-shadow: 0 4px 24px rgba(16, 185, 129, 0.4);
+        }
+        .mobile-menu .mobile-cta:hover {
+            background: var(--accent-hover);
+        }
+
+        /* Main content wrapper */
+        .main-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Section spacing */
+        .section {
+            padding: 100px 24px;
+            position: relative;
+            z-index: 1;
+        }
+        .section__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+        .section__label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .section__heading {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            line-height: 1.15;
+        }
+        .section__subheading {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: var(--nav-height);
+            position: relative;
+            z-index: 1;
+        }
+        .hero__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .hero__text {
+            max-width: 580px;
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-light);
+            margin-bottom: 24px;
+            animation: fadeInUp 0.7s ease-out;
+        }
+        .hero__badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--accent);
+            animation: pulseDot 2s ease-in-out infinite;
+        }
+        @keyframes pulseDot {
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
+            }
+        }
+        .hero__title {
+            font-size: clamp(2.6rem, 5.5vw, 4rem);
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            line-height: 1.08;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
+        .hero__title .highlight {
+            background: linear-gradient(135deg, var(--accent-light), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+        }
+        .hero__desc {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.7;
+            animation: fadeInUp 0.7s ease-out 0.2s both;
+            max-width: 480px;
+        }
+        .hero__buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 14px 28px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            font-family: var(--font-stack);
+            letter-spacing: -0.01em;
+            transition: var(--transition-bounce);
+            white-space: nowrap;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn--primary {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 6px 30px rgba(16, 185, 129, 0.4);
+        }
+        .btn--primary:hover {
+            background: var(--accent-hover);
+            box-shadow: 0 10px 40px rgba(16, 185, 129, 0.55);
+            transform: translateY(-3px);
+        }
+        .btn--outline {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-medium);
+        }
+        .btn--outline:hover {
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+        .btn--lg {
+            padding: 16px 34px;
+            font-size: 1.1rem;
+            border-radius: 34px;
+        }
+        .btn i {
+            font-size: 0.9em;
+        }
+
+        /* Hero visual */
+        .hero__visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 0.8s ease-out 0.25s both;
+        }
+        .hero__mockup {
+            position: relative;
+            width: 100%;
+            max-width: 460px;
+            aspect-ratio: 4/3;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-medium);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        .mockup__toolbar {
+            display: flex;
+            gap: 7px;
+            padding: 14px 18px;
+            border-bottom: 1px solid var(--border-subtle);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        .mockup__dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        .mockup__dot--red {
+            background: #ef4444;
+        }
+        .mockup__dot--yellow {
+            background: #f59e0b;
+        }
+        .mockup__dot--green {
+            background: #10b981;
+        }
+        .mockup__address {
+            flex: 1;
+            margin-left: 12px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 6px;
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            font-family: monospace;
+            letter-spacing: 0.02em;
+        }
+        .mockup__body {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: linear-gradient(160deg, rgba(16, 185, 129, 0.05) 0%, rgba(59, 130, 246, 0.04) 50%, rgba(99, 102, 241, 0.03) 100%);
+        }
+        .mockup__line {
+            height: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.06);
+            width: 100%;
+        }
+        .mockup__line--short {
+            width: 60%;
+        }
+        .mockup__line--medium {
+            width: 80%;
+        }
+        .mockup__card {
+            margin-top: 6px;
+            padding: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .mockup__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent);
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+        .mockup__text-stack {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .mockup__text-stack .mockup__line {
+            height: 7px;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(28px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Portfolio */
+        .portfolio {
+            background: rgba(255, 255, 255, 0.008);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .portfolio__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .portfolio-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-medium);
+            box-shadow: var(--shadow-card), 0 0 0 1px rgba(16, 185, 129, 0.15);
+            background: var(--bg-card-hover);
+        }
+        .portfolio-card__preview {
+            aspect-ratio: 16/11;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .portfolio-card__preview-inner {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .portfolio-card__mock-toolbar {
+            display: flex;
+            gap: 5px;
+            padding: 10px 14px;
+            background: rgba(0, 0, 0, 0.3);
+            align-items: center;
+        }
+        .portfolio-card__mock-toolbar .mock-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .portfolio-card__mock-url {
+            flex: 1;
+            margin-left: 10px;
+            font-size: 0.6rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-family: monospace;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 3px 10px;
+            border-radius: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .portfolio-card__mock-body {
+            flex: 1;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .portfolio-card__mock-body .pl {
+            height: 7px;
+            border-radius: 3px;
+            background: rgba(255, 255, 255, 0.08);
+        }
+        .pl--w70 {
+            width: 70%;
+        }
+        .pl--w50 {
+            width: 50%;
+        }
+        .pl--w90 {
+            width: 90%;
+        }
+        .pl--w40 {
+            width: 40%;
+        }
+        .portfolio-card__body {
+            padding: 16px 18px 18px;
+        }
+        .portfolio-card__domain {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+        .portfolio-card__desc {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+        .portfolio-card__badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            background: rgba(16, 185, 129, 0.9);
+            color: #000;
+            padding: 4px 8px;
+            border-radius: 10px;
+            z-index: 2;
+            text-transform: uppercase;
+        }
+        /* Different accent tints for portfolio cards */
+        .portfolio-card--tint1 .portfolio-card__mock-body {
+            background: linear-gradient(140deg, rgba(245, 158, 11, 0.08) 0%, rgba(249, 115, 22, 0.04) 100%);
+        }
+        .portfolio-card--tint2 .portfolio-card__mock-body {
+            background: linear-gradient(140deg, rgba(239, 68, 68, 0.08) 0%, rgba(220, 38, 38, 0.04) 100%);
+        }
+        .portfolio-card--tint3 .portfolio-card__mock-body {
+            background: linear-gradient(140deg, rgba(59, 130, 246, 0.08) 0%, rgba(37, 99, 235, 0.04) 100%);
+        }
+        .portfolio-card--tint4 .portfolio-card__mock-body {
+            background: linear-gradient(140deg, rgba(139, 92, 246, 0.07) 0%, rgba(124, 58, 237, 0.04) 100%);
+        }
+
+        /* Pricing */
+        .pricing__layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .pricing__card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 2px solid var(--border-glow);
+            border-radius: var(--radius-xl);
+            padding: 40px 36px;
+            position: relative;
+            box-shadow: var(--shadow-glow), var(--shadow-card);
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .pricing__card:hover {
+            box-shadow: 0 0 60px rgba(16, 185, 129, 0.2), 0 0 100px rgba(16, 185, 129, 0.08), var(--shadow-card);
+            border-color: rgba(16, 185, 129, 0.55);
+        }
+        .pricing__card-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 16px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .pricing__price {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: -0.04em;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+        .pricing__price-sub {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        .pricing__features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .pricing__features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+        .pricing__features li i {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        .pricing__note {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border-subtle);
+            line-height: 1.5;
+        }
+        .pricing__note strong {
+            color: var(--accent-light);
+        }
+        .pricing__info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .pricing__info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 22px 24px;
+            transition: var(--transition-fast);
+        }
+        .pricing__info-card:hover {
+            border-color: var(--border-medium);
+            background: var(--bg-card-hover);
+        }
+        .pricing__info-card h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+        .pricing__info-card p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        .pricing__info-icon {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--accent);
+        }
+
+        /* Migration */
+        .migration {
+            background: rgba(255, 255, 255, 0.008);
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        .migration__layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        .migration__visual {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-subtle);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .migration__flow {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .migration__flow-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 14px 18px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            min-width: 80px;
+        }
+        .migration__flow-arrow {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        .migration__flow-item--highlight {
+            border-color: var(--accent);
+            background: rgba(16, 185, 129, 0.08);
+            color: var(--accent-light);
+        }
+
+        /* Contact */
+        .contact__layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+        .contact__form {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: 36px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            transition: var(--transition-smooth);
+        }
+        .contact__form:focus-within {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.06);
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 6px;
+            color: var(--text-secondary);
+            letter-spacing: -0.01em;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-medium);
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-primary);
+            font-family: var(--font-stack);
+            font-size: 0.95rem;
+            transition: var(--transition-fast);
+            resize: vertical;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .form-group textarea {
+            min-height: 120px;
+        }
+        .form-group select {
+            appearance: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 40px;
+        }
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 30px;
+            color: var(--accent-light);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .form-success.show {
+            display: block;
+        }
+        .form-success i {
+            font-size: 3rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .contact__info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact__info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 18px;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-subtle);
+            transition: var(--transition-fast);
+        }
+        .contact__info-item:hover {
+            border-color: var(--border-medium);
+        }
+        .contact__info-item i {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-top: 2px;
+        }
+        .contact__info-item h4 {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+        .contact__info-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border-subtle);
+            padding: 50px 24px 30px;
+            position: relative;
+            z-index: 1;
+            background: rgba(6, 11, 20, 0.7);
+        }
+        .footer__inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 40px;
+            align-items: start;
+        }
+        .footer__brand {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer__brand-name {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+        .footer__brand-tagline {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            max-width: 280px;
+            line-height: 1.5;
+        }
+        .footer__links h4 {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .footer__links a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            transition: var(--transition-fast);
+        }
+        .footer__links a:hover {
+            color: var(--accent-light);
+        }
+        .footer__bottom {
+            max-width: var(--max-width);
+            margin: 30px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .footer__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            color: var(--accent-light);
+            letter-spacing: 0.02em;
+            background: rgba(16, 185, 129, 0.06);
+            padding: 6px 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .footer__badge i {
+            font-size: 0.7rem;
+        }
+
+        /* Reveal animation for scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Back to top */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 998;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: var(--transition-bounce);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background: var(--accent-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 28px rgba(16, 185, 129, 0.55);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .portfolio__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+            .hero__inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+            .hero__text {
+                max-width: 100%;
+            }
+            .hero__desc {
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero__buttons {
+                justify-content: center;
+            }
+            .hero__visual {
+                max-width: 380px;
+                margin: 0 auto;
+            }
+            .pricing__layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .migration__layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .contact__layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .footer__inner {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav__links {
+                display: none;
+            }
+            .nav__hamburger {
+                display: flex;
+            }
+            .portfolio__grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .section {
+                padding: 70px 16px;
+            }
+            .hero {
+                min-height: auto;
+                padding-top: calc(var(--nav-height) + 30px);
+                padding-bottom: 60px;
+            }
+            .hero__title {
+                font-size: 2.2rem;
+            }
+            .hero__mockup {
+                max-width: 320px;
+            }
+            .pricing__price {
+                font-size: 3rem;
+            }
+            .pricing__card {
+                padding: 28px 22px;
+            }
+            .footer__inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .footer__bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+            .btn--lg {
+                padding: 14px 24px;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio__grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .hero__title {
+                font-size: 1.8rem;
+            }
+            .hero__desc {
+                font-size: 1rem;
+            }
+            .hero__buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn {
+                justify-content: center;
+                text-align: center;
+            }
+            .pricing__price {
+                font-size: 2.5rem;
+            }
+            .migration__flow {
+                flex-direction: column;
+            }
+            .migration__flow-arrow {
+                transform: rotate(90deg);
+            }
+            .section__heading {
+                font-size: 1.5rem;
+            }
+            .contact__form {
+                padding: 22px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ambient background -->
+    <div class="bg-orb bg-orb--emerald" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--blue" aria-hidden="true"></div>
+    <div class="bg-orb bg-orb--indigo" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="navbar" aria-label="Main navigation">
+        <div class="nav__inner">
+            <a href="#" class="nav__logo" aria-label="BH Web Solutions Home">
+                <span class="nav__logo-icon">BH</span>
+                BH Web Solutions
+            </a>
+            <ul class="nav__links" id="navLinks">
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#migration">Migration</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact" class="nav__cta">Order for $250</a></li>
+            </ul>
+            <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#migration">Migration</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="mobile-cta">Order for $250</a>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero -->
+        <section class="hero section" id="hero" aria-labelledby="hero-heading">
+            <div class="section__inner hero__inner">
+                <div class="hero__text">
+                    <div class="hero__badge">
+                        <span class="hero__badge-dot" aria-hidden="true"></span>
+                        Trusted by businesses worldwide
+                    </div>
+                    <h1 id="hero-heading" class="hero__title">
+                        Professional Websites for <span class="highlight">$250</span> — Ready in <span class="highlight">48 Hours</span>
+                    </h1>
+                    <p class="hero__desc">
+                        Get a stunning, fully managed website with built-in contact forms, payment integration, and free hosting. No hidden fees — just results.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#contact" class="btn btn--primary btn--lg">
+                            <i class="fas fa-rocket" aria-hidden="true"></i> Order Your Site for $250
+                        </a>
+                        <a href="#portfolio" class="btn btn--outline btn--lg">
+                            <i class="fas fa-eye" aria-hidden="true"></i> See Examples
+                        </a>
+                    </div>
+                </div>
+                <div class="hero__visual">
+                    <div class="hero__mockup" aria-hidden="true">
+                        <div class="mockup__toolbar">
+                            <span class="mockup__dot mockup__dot--red"></span>
+                            <span class="mockup__dot mockup__dot--yellow"></span>
+                            <span class="mockup__dot mockup__dot--green"></span>
+                            <span class="mockup__address">bhwebsolutions.com</span>
+                        </div>
+                        <div class="mockup__body">
+                            <div class="mockup__line"></div>
+                            <div class="mockup__line mockup__line--short"></div>
+                            <div class="mockup__line mockup__line--medium"></div>
+                            <div class="mockup__card">
+                                <div class="mockup__icon"></div>
+                                <div class="mockup__text-stack">
+                                    <div class="mockup__line" style="width:75%"></div>
+                                    <div class="mockup__line" style="width:45%"></div>
+                                </div>
+                            </div>
+                            <div class="mockup__line mockup__line--medium"></div>
+                            <div class="mockup__line mockup__line--short"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio -->
+        <section class="portfolio section" id="portfolio" aria-labelledby="portfolio-heading">
+            <div class="section__inner">
+                <span class="section__label reveal">Our Work</span>
+                <h2 id="portfolio-heading" class="section__heading reveal reveal-delay-1">Portfolio &amp; Example Websites</h2>
+                <p class="section__subheading reveal reveal-delay-1">Fully managed websites created and maintained by BH Web Solutions. Each includes custom design, contact forms, and payment integration.</p>
+                <div class="portfolio__grid">
+                    <!-- Card 1 -->
+                    <a href="https://heritagecitizenships.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint1 reveal reveal-delay-1" aria-label="View heritagecitizenships.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">heritagecitizenships.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">heritagecitizenships.com</div>
+                            <p class="portfolio-card__desc">Fully managed website with contact form and payment integration for citizenship services.</p>
+                        </div>
+                    </a>
+                    <!-- Card 2 -->
+                    <a href="https://rottenbergscatering.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint2 reveal reveal-delay-2" aria-label="View rottenbergscatering.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">rottenbergscatering.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">rottenbergscatering.com</div>
+                            <p class="portfolio-card__desc">Elegant catering website with menu display, inquiry form, and online payment integration.</p>
+                        </div>
+                    </a>
+                    <!-- Card 3 -->
+                    <a href="https://bhshltmanagment.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint3 reveal reveal-delay-3" aria-label="View bhshltmanagment.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">bhshltmanagment.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">bhshltmanagment.com</div>
+                            <p class="portfolio-card__desc">Property management platform with tenant portal, maintenance request form, and payment processing.</p>
+                        </div>
+                    </a>
+                    <!-- Card 4 -->
+                    <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint4 reveal reveal-delay-4" aria-label="View ohrchodoshorg.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">ohrchodoshorg.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">ohrchodoshorg.com</div>
+                            <p class="portfolio-card__desc">Nonprofit organization website with donation form, event calendar, and secure payment gateway.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing -->
+        <section class="section" id="pricing" aria-labelledby="pricing-heading">
+            <div class="section__inner pricing__layout">
+                <div class="reveal">
+                    <span class="section__label">Pricing</span>
+                    <h2 id="pricing-heading" class="section__heading">Complete Website — <span style="color:var(--accent-light)">$250</span></h2>
+                    <p class="section__subheading">Everything you need, delivered fast. No hosting fees — ever.</p>
+                    <div class="pricing__info">
+                        <div class="pricing__info-card">
+                            <div class="pricing__info-icon"><i class="fas fa-bolt" aria-hidden="true"></i></div>
+                            <h4>Lightning-Fast Turnaround</h4>
+                            <p>Your website is ready within <strong>48 hours</strong> from the order date. We move fast without cutting corners.</p>
+                        </div>
+                        <div class="pricing__info-card">
+                            <div class="pricing__info-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+                            <h4>No Hosting Fees</h4>
+                            <p>BH Web Solutions covers all hosting costs. You only pay for your domain — approximately <strong>$10/year</strong>.</p>
+                        </div>
+                        <div class="pricing__info-card">
+                            <div class="pricing__info-icon"><i class="fas fa-credit-card" aria-hidden="true"></i></div>
+                            <h4>Stripe / PayPal Integration</h4>
+                            <p>Payment terminal integration available on request. Accept payments directly through your website.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pricing__card reveal reveal-delay-2">
+                    <span class="pricing__card-badge">Best Value</span>
+                    <div class="pricing__price">$250</div>
+                    <div class="pricing__price-sub">One-time payment — no recurring fees</div>
+                    <ul class="pricing__features">
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Built-in contact form</strong> — ready to capture leads from day one</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Payment terminal integration</strong> — Stripe / PayPal available</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>3 pages of content</strong> — Home, About, and Contact (or custom structure)</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Up to 5 redos</strong> included — additional redos at extra cost</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Free hosting forever</strong> — you only pay ~$10/year for your domain</span></li>
+                        <li><i class="fas fa-check-circle" aria-hidden="true"></i> <span><strong>Ready in 48 hours</strong> — guaranteed turnaround</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn--primary btn--lg" style="width:100%;justify-content:center;">
+                        <i class="fas fa-shopping-cart" aria-hidden="true"></i> Order Your Site Now
+                    </a>
+                    <p class="pricing__note">
+                        <strong>Stripe / PayPal integration available on request.</strong> Additional redos beyond the included 5 are billed separately. All websites are fully responsive and optimized for search engines.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Migration -->
+        <section class="migration section" id="migration" aria-labelledby="migration-heading">
+            <div class="section__inner migration__layout">
+                <div class="reveal">
+                    <span class="section__label">Migration Service</span>
+                    <h2 id="migration-heading" class="section__heading">Moving from WordPress? We'll Help You Migrate — <span style="color:var(--accent-light)">For Free</span></h2>
+                    <p class="section__subheading">
+                        If you already have a WordPress website, we can help you migrate it to a <strong>free static hosting provider</strong>. Your site runs for free with no monthly hosting bills, improved speed, and better security.
+                    </p>
+                    <ul class="pricing__features" style="margin-bottom:24px">
+                        <li><i class="fas fa-shield-alt" aria-hidden="true"></i> <span><strong>Better security</strong> — static sites have a much smaller attack surface than WordPress</span></li>
+                        <li><i class="fas fa-tachometer-alt" aria-hidden="true"></i> <span><strong>Faster load times</strong> — no database queries, no bloated plugins</span></li>
+                        <li><i class="fas fa-piggy-bank" aria-hidden="true"></i> <span><strong>Zero hosting costs</strong> — free static hosting means no more monthly bills</span></li>
+                        <li><i class="fas fa-sync-alt" aria-hidden="true"></i> <span><strong>We handle the entire migration</strong> — minimal downtime, complete handover</span></li>
+                    </ul>
+                    <a href="#contact" class="btn btn--outline btn--lg">
+                        <i class="fas fa-paper-plane" aria-hidden="true"></i> Request Migration Help
+                    </a>
+                </div>
+                <div class="migration__visual reveal reveal-delay-2" aria-hidden="true">
+                    <div class="migration__flow">
+                        <div class="migration__flow-item">WordPress<br><small style="color:#94a3b8;font-size:0.7rem;">Your current site</small></div>
+                        <span class="migration__flow-arrow">→</span>
+                        <div class="migration__flow-item migration__flow-item--highlight">BH Web<br><small style="color:#34d399;font-size:0.7rem;">Migration</small></div>
+                        <span class="migration__flow-arrow">→</span>
+                        <div class="migration__flow-item">Free Static<br><small style="color:#94a3b8;font-size:0.7rem;">Hosting</small></div>
+                    </div>
+                    <p style="text-align:center;color:var(--text-muted);font-size:0.85rem;margin-top:16px;">
+                        <i class="fas fa-infinity" style="color:var(--accent);margin-right:6px;" aria-hidden="true"></i>
+                        Your site runs free — forever. No hosting fees, no surprises.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="section__inner contact__layout">
+                <div class="reveal">
+                    <span class="section__label">Get Started</span>
+                    <h2 id="contact-heading" class="section__heading">Ready to Launch? Let's Talk.</h2>
+                    <p class="section__subheading">
+                        Fill out the form and we'll get back to you within hours. Whether you need a new website or want to migrate your existing one — we're here to help.
+                    </p>
+                    <div class="contact__info">
+                        <div class="contact__info-item">
+                            <i class="fas fa-clock" aria-hidden="true"></i>
+                            <div>
+                                <h4>48-Hour Turnaround</h4>
+                                <p>Your website will be ready within 2 business days from order confirmation.</p>
+                            </div>
+                        </div>
+                        <div class="contact__info-item">
+                            <i class="fas fa-headset" aria-hidden="true"></i>
+                            <div>
+                                <h4>Dedicated Support</h4>
+                                <p>We work directly with you to ensure every detail is perfect.</p>
+                            </div>
+                        </div>
+                        <div class="contact__info-item">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            <div>
+                                <h4>Secure &amp; Reliable</h4>
+                                <p>All websites are built with security best practices and hosted on reliable infrastructure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2">
+                    <form class="contact__form" id="contactForm" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com" autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interested In *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select a service...</option>
+                                <option value="new-website">New Website ($250)</option>
+                                <option value="migration">WordPress Migration</option>
+                                <option value="both">Both — New Site + Migration</option>
+                                <option value="other">Other / General Inquiry</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Project</label>
+                            <textarea id="message" name="message" placeholder="Describe what you need — number of pages, style preferences, existing site details, etc."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--lg" style="width:100%;justify-content:center;">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i> Send Inquiry
+                        </button>
+                        <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:4px;">
+                            We'll respond within a few hours. No spam, ever.
+                        </p>
+                    </form>
+                    <div class="form-success" id="formSuccess">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        <p>Thank you! Your inquiry has been received.</p>
+                        <p style="font-size:0.9rem;color:var(--text-secondary);">We'll get back to you within a few hours. Looking forward to working with you!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__inner">
+            <div class="footer__brand">
+                <span class="footer__brand-name">BH Web Solutions</span>
+                <p class="footer__brand-tagline">Professional websites built fast, hosted free, and designed to convert. Serving businesses worldwide.</p>
+            </div>
+            <div class="footer__links">
+                <h4>Services</h4>
+                <a href="#pricing">Website Package — $250</a>
+                <a href="#migration">WordPress Migration</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact Us</a>
+            </div>
+            <div class="footer__links">
+                <h4>Legal</h4>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+        <div class="footer__bottom" style="max-width:var(--max-width);margin:30px auto 0;">
+            <span>&copy; 2026 BH Web Solutions. All rights reserved.</span>
+            <span class="footer__badge">
+                <i class="fas fa-code" aria-hidden="true"></i> Created by BH Web Solutions
+            </span>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+
+    <script>
+        (function() {
+            // DOM elements
+            const navbar = document.getElementById('navbar');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const backToTop = document.getElementById('backToTop');
+            const contactForm = document.getElementById('contactForm');
+            const formSuccess = document.getElementById('formSuccess');
+            const navLinks = document.querySelectorAll('.nav__links a, .mobile-menu a');
+            const revealElements = document.querySelectorAll('.reveal');
+
+            // Scroll state
+            let lastScrollY = 0;
+
+            // Handle scroll events
+            function onScroll() {
+                const scrollY = window.scrollY;
+
+                // Navbar background
+                if (scrollY > 50) {
+                    navbar.classList.add('nav--scrolled');
+                } else {
+                    navbar.classList.remove('nav--scrolled');
+                }
+
+                // Back to top visibility
+                if (scrollY > 600) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+
+                lastScrollY = scrollY;
+            }
+
+            // Hamburger menu toggle
+            function toggleMenu() {
+                const isActive = mobileMenu.classList.contains('active');
+                if (isActive) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            }
+
+            function openMenu() {
+                mobileMenu.classList.add('active');
+                hamburger.classList.add('active');
+                hamburger.setAttribute('aria-expanded', 'true');
+                mobileMenu.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                mobileMenu.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+            }
+
+            // Back to top
+            function scrollToTop() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Form submission
+            function handleFormSubmit(e) {
+                e.preventDefault();
+                const form = e.target;
+                const name = form.querySelector('#name').value.trim();
+                const email = form.querySelector('#email').value.trim();
+                const service = form.querySelector('#service').value;
+
+                if (!name || !email || !service) {
+                    // Simple validation feedback
+                    if (!name) form.querySelector('#name').style.borderColor = '#ef4444';
+                    if (!email) form.querySelector('#email').style.borderColor = '#ef4444';
+                    if (!service) form.querySelector('#service').style.borderColor = '#ef4444';
+                    setTimeout(() => {
+                        form.querySelectorAll('input, select').forEach(el => el.style.borderColor =
+                            '');
+                    }, 2000);
+                    return;
+                }
+
+                // Simulate submission (in production, replace with actual form endpoint)
+                contactForm.style.display = 'none';
+                formSuccess.classList.add('show');
+
+                // Reset form after showing success
+                setTimeout(() => {
+                    form.reset();
+                    contactForm.style.display = '';
+                    formSuccess.classList.remove('show');
+                }, 5000);
+            }
+
+            // Scroll reveal using Intersection Observer
+            function setupRevealObserver() {
+                if (!('IntersectionObserver' in window)) {
+                    // Fallback: reveal all elements immediately
+                    revealElements.forEach(el => el.classList.add('revealed'));
+                    return;
+                }
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.12,
+                    rootMargin: '0px 0px -30px 0px'
+                });
+
+                revealElements.forEach(el => observer.observe(el));
+            }
+
+            // Clear input error styling on focus
+            function setupInputListeners() {
+                const inputs = contactForm.querySelectorAll('input, select, textarea');
+                inputs.forEach(input => {
+                    input.addEventListener('focus', () => {
+                        input.style.borderColor = '';
+                    });
+                });
+            }
+
+            // Event listeners
+            hamburger.addEventListener('click', toggleMenu);
+            backToTop.addEventListener('click', scrollToTop);
+            contactForm.addEventListener('submit', handleFormSubmit);
+
+            // Close mobile menu when any nav link is clicked
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('active')) {
+                        closeMenu();
+                    }
+                });
+            });
+
+            // Close mobile menu on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                    hamburger.focus();
+                }
+            });
+
+            // Throttled scroll listener
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    requestAnimationFrame(() => {
+                        onScroll();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            // Initialize
+            setupRevealObserver();
+            setupInputListeners();
+            onScroll(); // Set initial state
+
+            // Handle resize - close mobile menu on desktop breakpoint
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
+                    closeMenu();
+                }
+            });
+
+            console.log('%c BH Web Solutions %c bhwebsolutions.com ',
+                'background:#10b981;color:#000;font-weight:700;padding:6px 10px;border-radius:6px 0 0 6px;font-size:14px;',
+                'background:#0a0f1a;color:#f1f5f9;padding:6px 10px;border-radius:0 6px 6px 0;font-size:14px;');
+            console.log('%cProfessional Websites for $250 — Ready in 48 Hours',
+                'color:#94a3b8;font-style:italic;');
+        })();
+    </script>
+</body>
+</html>
