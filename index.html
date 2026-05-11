@@ -1392,7 +1392,7 @@
             <div class="section__inner">
                 <span class="section__label reveal">Our Work</span>
                 <h2 id="portfolio-heading" class="section__heading reveal reveal-delay-1">Portfolio &amp; Example Websites</h2>
-                <p class="section__subheading reveal reveal-delay-1">Fully managed websites created and maintained by BH Web Solutions. Each includes custom design, contact forms, and payment integration.</p>
+                <p class="section__subheading reveal reveal-delay-1">Fully managed websites created and maintained by BH Web Solutions. Each includes custom design and a built-in contact form — payment integration available upon request.</p>
                 <div class="portfolio__grid">
                     <!-- Card 1 -->
                     <a href="https://heritagecitizenships.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint1 reveal reveal-delay-1" aria-label="View heritagecitizenships.com website">
@@ -1414,7 +1414,7 @@
                         </div>
                         <div class="portfolio-card__body">
                             <div class="portfolio-card__domain">heritagecitizenships.com</div>
-                            <p class="portfolio-card__desc">Fully managed website with contact form and payment integration for citizenship services.</p>
+                            <p class="portfolio-card__desc">Professional website for citizenship services, featuring a user-friendly contact form and clean, modern design.</p>
                         </div>
                     </a>
                     <!-- Card 2 -->
@@ -1437,17 +1437,17 @@
                         </div>
                         <div class="portfolio-card__body">
                             <div class="portfolio-card__domain">rottenbergscatering.com</div>
-                            <p class="portfolio-card__desc">Elegant catering website with menu display, inquiry form, and online payment integration.</p>
+                            <p class="portfolio-card__desc">Elegant catering website with a mouthwatering menu display, seamless inquiry form, and stylish visual layout.</p>
                         </div>
                     </a>
                     <!-- Card 3 -->
-                    <a href="https://bhshltmanagment.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint3 reveal reveal-delay-3" aria-label="View bhshltmanagment.com website">
+                    <a href="https://bhshltmanagement.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint3 reveal reveal-delay-3" aria-label="View bhshltmanagement.com website">
                         <span class="portfolio-card__badge">Live</span>
                         <div class="portfolio-card__preview">
                             <div class="portfolio-card__preview-inner">
                                 <div class="portfolio-card__mock-toolbar">
                                     <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-                                    <span class="portfolio-card__mock-url">bhshltmanagment.com</span>
+                                    <span class="portfolio-card__mock-url">bhshltmanagement.com</span>
                                 </div>
                                 <div class="portfolio-card__mock-body">
                                     <div class="pl pl--w50"></div>
@@ -1459,8 +1459,8 @@
                             </div>
                         </div>
                         <div class="portfolio-card__body">
-                            <div class="portfolio-card__domain">bhshltmanagment.com</div>
-                            <p class="portfolio-card__desc">Property management platform with tenant portal, maintenance request form, and payment processing.</p>
+                            <div class="portfolio-card__domain">bhshltmanagement.com</div>
+                            <p class="portfolio-card__desc">Property management platform with a convenient tenant portal, maintenance request forms, and a robust, responsive interface.</p>
                         </div>
                     </a>
                     <!-- Card 4 -->
@@ -1483,7 +1483,7 @@
                         </div>
                         <div class="portfolio-card__body">
                             <div class="portfolio-card__domain">ohrchodoshorg.com</div>
-                            <p class="portfolio-card__desc">Nonprofit organization website with donation form, event calendar, and secure payment gateway.</p>
+                            <p class="portfolio-card__desc">WordPress migration success story — we transitioned this nonprofit to a free static host, preserving its donation form, event calendar, and improving performance.</p>
                         </div>
                     </a>
                 </div>
@@ -1747,42 +1747,58 @@
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Form submission
-            function handleFormSubmit(e) {
+            // Form submission via Formspree
+            async function handleFormSubmit(e) {
                 e.preventDefault();
                 const form = e.target;
                 const name = form.querySelector('#name').value.trim();
                 const email = form.querySelector('#email').value.trim();
                 const service = form.querySelector('#service').value;
 
+                // Simple client-side validation
                 if (!name || !email || !service) {
-                    // Simple validation feedback
                     if (!name) form.querySelector('#name').style.borderColor = '#ef4444';
                     if (!email) form.querySelector('#email').style.borderColor = '#ef4444';
                     if (!service) form.querySelector('#service').style.borderColor = '#ef4444';
                     setTimeout(() => {
-                        form.querySelectorAll('input, select').forEach(el => el.style.borderColor =
-                            '');
+                        form.querySelectorAll('input, select').forEach(el => el.style.borderColor = '');
                     }, 2000);
                     return;
                 }
 
-                // Simulate submission (in production, replace with actual form endpoint)
-                contactForm.style.display = 'none';
-                formSuccess.classList.add('show');
+                const formData = new FormData(form);
+                try {
+                    const response = await fetch('https://formspree.io/f/mpqbkzbl', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
 
-                // Reset form after showing success
-                setTimeout(() => {
-                    form.reset();
-                    contactForm.style.display = '';
-                    formSuccess.classList.remove('show');
-                }, 5000);
+                    if (response.ok) {
+                        // Success
+                        contactForm.style.display = 'none';
+                        formSuccess.classList.add('show');
+                        form.reset();
+                        // Optionally hide success after some time
+                        setTimeout(() => {
+                            contactForm.style.display = '';
+                            formSuccess.classList.remove('show');
+                        }, 6000);
+                    } else {
+                        // Server returned an error
+                        alert('Oops! There was a problem submitting your form. Please try again later.');
+                    }
+                } catch (error) {
+                    // Network error
+                    alert('Network error. Please check your connection and try again.');
+                }
             }
 
             // Scroll reveal using Intersection Observer
             function setupRevealObserver() {
                 if (!('IntersectionObserver' in window)) {
-                    // Fallback: reveal all elements immediately
                     revealElements.forEach(el => el.classList.add('revealed'));
                     return;
                 }
@@ -1849,7 +1865,7 @@
             // Initialize
             setupRevealObserver();
             setupInputListeners();
-            onScroll(); // Set initial state
+            onScroll();
 
             // Handle resize - close mobile menu on desktop breakpoint
             window.addEventListener('resize', () => {
