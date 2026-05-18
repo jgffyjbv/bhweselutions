@@ -107,46 +107,21 @@
         }
 
         @keyframes orbFloat1 {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(-60px, 40px) scale(1.08);
-            }
-            50% {
-                transform: translate(30px, -30px) scale(0.94);
-            }
-            75% {
-                transform: translate(-20px, -50px) scale(1.05);
-            }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-60px, 40px) scale(1.08); }
+            50% { transform: translate(30px, -30px) scale(0.94); }
+            75% { transform: translate(-20px, -50px) scale(1.05); }
         }
         @keyframes orbFloat2 {
-            0%,
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-            25% {
-                transform: translate(50px, -35px) scale(1.06);
-            }
-            50% {
-                transform: translate(-25px, 40px) scale(0.92);
-            }
-            75% {
-                transform: translate(30px, 20px) scale(1.04);
-            }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(50px, -35px) scale(1.06); }
+            50% { transform: translate(-25px, 40px) scale(0.92); }
+            75% { transform: translate(30px, 20px) scale(1.04); }
         }
         @keyframes orbFloat3 {
-            0%,
-            100% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            33% {
-                transform: translate(-40%, -55%) scale(1.07);
-            }
-            66% {
-                transform: translate(-55%, -42%) scale(0.93);
-            }
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            33% { transform: translate(-40%, -55%) scale(1.07); }
+            66% { transform: translate(-55%, -42%) scale(0.93); }
         }
 
         /* Subtle grid pattern overlay */
@@ -206,9 +181,7 @@
             z-index: 1001;
             transition: var(--transition-fast);
         }
-        .nav__logo:hover {
-            color: var(--accent-light);
-        }
+        .nav__logo:hover { color: var(--accent-light); }
         .nav__logo-icon {
             width: 38px;
             height: 38px;
@@ -272,9 +245,7 @@
             border-radius: var(--radius-sm);
             transition: var(--transition-fast);
         }
-        .nav__hamburger:hover {
-            background: rgba(255, 255, 255, 0.05);
-        }
+        .nav__hamburger:hover { background: rgba(255, 255, 255, 0.05); }
         .nav__hamburger span {
             width: 26px;
             height: 2.5px;
@@ -283,16 +254,9 @@
             transition: var(--transition-fast);
             transform-origin: center;
         }
-        .nav__hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .nav__hamburger.active span:nth-child(2) {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-        .nav__hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
-        }
+        .nav__hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav__hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .nav__hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
         /* Mobile menu */
         .mobile-menu {
@@ -311,10 +275,7 @@
             pointer-events: none;
             transition: var(--transition-smooth);
         }
-        .mobile-menu.active {
-            opacity: 1;
-            pointer-events: all;
-        }
+        .mobile-menu.active { opacity: 1; pointer-events: all; }
         .mobile-menu a {
             color: var(--text-primary);
             text-decoration: none;
@@ -325,24 +286,17 @@
             border-radius: 30px;
             transition: var(--transition-fast);
         }
-        .mobile-menu a:hover {
-            background: rgba(255, 255, 255, 0.06);
-        }
+        .mobile-menu a:hover { background: rgba(255, 255, 255, 0.06); }
         .mobile-menu .mobile-cta {
             background: var(--accent);
             color: #fff;
             margin-top: 8px;
             box-shadow: 0 4px 24px rgba(16, 185, 129, 0.4);
         }
-        .mobile-menu .mobile-cta:hover {
-            background: var(--accent-hover);
-        }
+        .mobile-menu .mobile-cta:hover { background: var(--accent-hover); }
 
         /* Main content wrapper */
-        .main-content {
-            position: relative;
-            z-index: 1;
-        }
+        .main-content { position: relative; z-index: 1; }
 
         /* Section spacing */
         .section {
@@ -398,9 +352,7 @@
             gap: 50px;
             align-items: center;
         }
-        .hero__text {
-            max-width: 580px;
-        }
+        .hero__text { max-width: 580px; }
         .hero__badge {
             display: inline-flex;
             align-items: center;
@@ -423,13 +375,8 @@
             animation: pulseDot 2s ease-in-out infinite;
         }
         @keyframes pulseDot {
-            0%,
-            100% {
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-            }
-            50% {
-                box-shadow: 0 0 0 12px rgba(16, 185, 129, 0);
-            }
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            50% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
         }
         .hero__title {
             font-size: clamp(2.6rem, 5.5vw, 4rem);
@@ -504,9 +451,7 @@
             font-size: 1.1rem;
             border-radius: 34px;
         }
-        .btn i {
-            font-size: 0.9em;
-        }
+        .btn i { font-size: 0.9em; }
 
         /* Hero visual */
         .hero__visual {
@@ -540,15 +485,9 @@
             height: 11px;
             border-radius: 50%;
         }
-        .mockup__dot--red {
-            background: #ef4444;
-        }
-        .mockup__dot--yellow {
-            background: #f59e0b;
-        }
-        .mockup__dot--green {
-            background: #10b981;
-        }
+        .mockup__dot--red { background: #ef4444; }
+        .mockup__dot--yellow { background: #f59e0b; }
+        .mockup__dot--green { background: #10b981; }
         .mockup__address {
             flex: 1;
             margin-left: 12px;
@@ -576,12 +515,8 @@
             background: rgba(255, 255, 255, 0.06);
             width: 100%;
         }
-        .mockup__line--short {
-            width: 60%;
-        }
-        .mockup__line--medium {
-            width: 80%;
-        }
+        .mockup__line--short { width: 60%; }
+        .mockup__line--medium { width: 80%; }
         .mockup__card {
             margin-top: 6px;
             padding: 14px;
@@ -606,19 +541,11 @@
             flex-direction: column;
             gap: 5px;
         }
-        .mockup__text-stack .mockup__line {
-            height: 7px;
-        }
+        .mockup__text-stack .mockup__line { height: 7px; }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(28px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Portfolio */
@@ -627,9 +554,10 @@
             border-top: 1px solid var(--border-subtle);
             border-bottom: 1px solid var(--border-subtle);
         }
+        /* Updated grid to auto-fill for flexible columns */
         .portfolio__grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
             gap: 20px;
         }
         .portfolio-card {
@@ -701,18 +629,10 @@
             border-radius: 3px;
             background: rgba(255, 255, 255, 0.08);
         }
-        .pl--w70 {
-            width: 70%;
-        }
-        .pl--w50 {
-            width: 50%;
-        }
-        .pl--w90 {
-            width: 90%;
-        }
-        .pl--w40 {
-            width: 40%;
-        }
+        .pl--w70 { width: 70%; }
+        .pl--w50 { width: 50%; }
+        .pl--w90 { width: 90%; }
+        .pl--w40 { width: 40%; }
         .portfolio-card__body {
             padding: 16px 18px 18px;
         }
@@ -754,6 +674,10 @@
         }
         .portfolio-card--tint4 .portfolio-card__mock-body {
             background: linear-gradient(140deg, rgba(139, 92, 246, 0.07) 0%, rgba(124, 58, 237, 0.04) 100%);
+        }
+        /* New tint for e-commerce gluten-free site */
+        .portfolio-card--tint5 .portfolio-card__mock-body {
+            background: linear-gradient(140deg, rgba(16, 185, 129, 0.12) 0%, rgba(5, 150, 105, 0.08) 100%);
         }
 
         /* Pricing */
@@ -833,9 +757,7 @@
             border-top: 1px solid var(--border-subtle);
             line-height: 1.5;
         }
-        .pricing__note strong {
-            color: var(--accent-light);
-        }
+        .pricing__note strong { color: var(--accent-light); }
         .pricing__info {
             display: flex;
             flex-direction: column;
@@ -971,9 +893,7 @@
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
             background: rgba(255, 255, 255, 0.05);
         }
-        .form-group textarea {
-            min-height: 120px;
-        }
+        .form-group textarea { min-height: 120px; }
         .form-group select {
             appearance: none;
             -webkit-appearance: none;
@@ -991,9 +911,7 @@
             font-weight: 600;
             font-size: 1.1rem;
         }
-        .form-success.show {
-            display: block;
-        }
+        .form-success.show { display: block; }
         .form-success i {
             font-size: 3rem;
             margin-bottom: 16px;
@@ -1014,9 +932,7 @@
             border: 1px solid var(--border-subtle);
             transition: var(--transition-fast);
         }
-        .contact__info-item:hover {
-            border-color: var(--border-medium);
-        }
+        .contact__info-item:hover { border-color: var(--border-medium); }
         .contact__info-item i {
             font-size: 1.3rem;
             color: var(--accent);
@@ -1028,10 +944,7 @@
             color: var(--text-primary);
             margin-bottom: 2px;
         }
-        .contact__info-item p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+        .contact__info-item p { font-size: 0.85rem; color: var(--text-muted); }
 
         /* Footer */
         .footer {
@@ -1049,11 +962,7 @@
             gap: 40px;
             align-items: start;
         }
-        .footer__brand {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+        .footer__brand { display: flex; flex-direction: column; gap: 8px; }
         .footer__brand-name {
             font-weight: 800;
             font-size: 1.2rem;
@@ -1082,9 +991,7 @@
             padding: 4px 0;
             transition: var(--transition-fast);
         }
-        .footer__links a:hover {
-            color: var(--accent-light);
-        }
+        .footer__links a:hover { color: var(--accent-light); }
         .footer__bottom {
             max-width: var(--max-width);
             margin: 30px auto 0;
@@ -1111,34 +1018,20 @@
             border-radius: 16px;
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
-        .footer__badge i {
-            font-size: 0.7rem;
-        }
+        .footer__badge i { font-size: 0.7rem; }
 
-        /* Reveal animation for scroll */
+        /* Reveal animation */
         .reveal {
             opacity: 0;
             transform: translateY(32px);
             transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .reveal.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .reveal-delay-1 {
-            transition-delay: 0.1s;
-        }
-        .reveal-delay-2 {
-            transition-delay: 0.2s;
-        }
-        .reveal-delay-3 {
-            transition-delay: 0.3s;
-        }
-        .reveal-delay-4 {
-            transition-delay: 0.4s;
-        }
+        .reveal.revealed { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
 
-        /* Back to top */
         .back-to-top {
             position: fixed;
             bottom: 28px;
@@ -1183,81 +1076,36 @@
                 gap: 40px;
                 text-align: center;
             }
-            .hero__text {
-                max-width: 100%;
-            }
-            .hero__desc {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero__buttons {
-                justify-content: center;
-            }
-            .hero__visual {
-                max-width: 380px;
-                margin: 0 auto;
-            }
-            .pricing__layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .migration__layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .contact__layout {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-            .footer__inner {
-                grid-template-columns: 1fr 1fr;
-            }
+            .hero__text { max-width: 100%; }
+            .hero__desc { max-width: 100%; margin-left: auto; margin-right: auto; }
+            .hero__buttons { justify-content: center; }
+            .hero__visual { max-width: 380px; margin: 0 auto; }
+            .pricing__layout { grid-template-columns: 1fr; gap: 30px; }
+            .migration__layout { grid-template-columns: 1fr; gap: 30px; }
+            .contact__layout { grid-template-columns: 1fr; gap: 30px; }
+            .footer__inner { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .nav__links {
-                display: none;
-            }
-            .nav__hamburger {
-                display: flex;
-            }
+            .nav__links { display: none; }
+            .nav__hamburger { display: flex; }
             .portfolio__grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
             }
-            .section {
-                padding: 70px 16px;
-            }
+            .section { padding: 70px 16px; }
             .hero {
                 min-height: auto;
                 padding-top: calc(var(--nav-height) + 30px);
                 padding-bottom: 60px;
             }
-            .hero__title {
-                font-size: 2.2rem;
-            }
-            .hero__mockup {
-                max-width: 320px;
-            }
-            .pricing__price {
-                font-size: 3rem;
-            }
-            .pricing__card {
-                padding: 28px 22px;
-            }
-            .footer__inner {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-            .footer__bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-            .btn--lg {
-                padding: 14px 24px;
-                font-size: 0.95rem;
-            }
+            .hero__title { font-size: 2.2rem; }
+            .hero__mockup { max-width: 320px; }
+            .pricing__price { font-size: 3rem; }
+            .pricing__card { padding: 28px 22px; }
+            .footer__inner { grid-template-columns: 1fr; gap: 24px; }
+            .footer__bottom { flex-direction: column; text-align: center; }
+            .btn--lg { padding: 14px 24px; font-size: 0.95rem; }
         }
 
         @media (max-width: 480px) {
@@ -1265,35 +1113,15 @@
                 grid-template-columns: 1fr;
                 gap: 14px;
             }
-            .hero__title {
-                font-size: 1.8rem;
-            }
-            .hero__desc {
-                font-size: 1rem;
-            }
-            .hero__buttons {
-                flex-direction: column;
-                align-items: stretch;
-            }
-            .btn {
-                justify-content: center;
-                text-align: center;
-            }
-            .pricing__price {
-                font-size: 2.5rem;
-            }
-            .migration__flow {
-                flex-direction: column;
-            }
-            .migration__flow-arrow {
-                transform: rotate(90deg);
-            }
-            .section__heading {
-                font-size: 1.5rem;
-            }
-            .contact__form {
-                padding: 22px 18px;
-            }
+            .hero__title { font-size: 1.8rem; }
+            .hero__desc { font-size: 1rem; }
+            .hero__buttons { flex-direction: column; align-items: stretch; }
+            .btn { justify-content: center; text-align: center; }
+            .pricing__price { font-size: 2.5rem; }
+            .migration__flow { flex-direction: column; }
+            .migration__flow-arrow { transform: rotate(90deg); }
+            .section__heading { font-size: 1.5rem; }
+            .contact__form { padding: 22px 18px; }
         }
     </style>
 </head>
@@ -1387,84 +1215,43 @@
             </div>
         </section>
 
-        <!-- Portfolio -->
+        <!-- Portfolio (UPDATED) -->
         <section class="portfolio section" id="portfolio" aria-labelledby="portfolio-heading">
             <div class="section__inner">
                 <span class="section__label reveal">Our Work</span>
                 <h2 id="portfolio-heading" class="section__heading reveal reveal-delay-1">Portfolio &amp; Example Websites</h2>
                 <p class="section__subheading reveal reveal-delay-1">Fully managed websites created and maintained by BH Web Solutions. Each includes custom design and a built-in contact form — payment integration available upon request.</p>
                 <div class="portfolio__grid">
-                    <!-- Card 1 -->
-                    <a href="https://heritagecitizenships.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint1 reveal reveal-delay-1" aria-label="View heritagecitizenships.com website">
+
+                    <!-- 1. Preshburg Gluten Free (NEW - first card) -->
+                    <a href="https://preshburgglutenfree.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint5 reveal reveal-delay-1" aria-label="View preshburgglutenfree.com website">
                         <span class="portfolio-card__badge">Live</span>
                         <div class="portfolio-card__preview">
                             <div class="portfolio-card__preview-inner">
                                 <div class="portfolio-card__mock-toolbar">
                                     <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-                                    <span class="portfolio-card__mock-url">heritagecitizenships.com</span>
+                                    <span class="portfolio-card__mock-url">preshburgglutenfree.com</span>
                                 </div>
                                 <div class="portfolio-card__mock-body">
-                                    <div class="pl pl--w70"></div>
-                                    <div class="pl pl--w50"></div>
+                                    <!-- To add a real screenshot, replace this div with an img tag:
+                                    <img src="YOUR_SCREENSHOT_URL" alt="Preshburg Gluten Free preview" style="width:100%;height:100%;object-fit:cover;" />
+                                    -->
                                     <div class="pl pl--w90"></div>
-                                    <div class="pl pl--w40"></div>
-                                    <div class="pl pl--w70" style="margin-top:4px"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-card__body">
-                            <div class="portfolio-card__domain">heritagecitizenships.com</div>
-                            <p class="portfolio-card__desc">Professional website for citizenship services, featuring a user-friendly contact form and clean, modern design.</p>
-                        </div>
-                    </a>
-                    <!-- Card 2 -->
-                    <a href="https://rottenbergscatering.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint2 reveal reveal-delay-2" aria-label="View rottenbergscatering.com website">
-                        <span class="portfolio-card__badge">Live</span>
-                        <div class="portfolio-card__preview">
-                            <div class="portfolio-card__preview-inner">
-                                <div class="portfolio-card__mock-toolbar">
-                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-                                    <span class="portfolio-card__mock-url">rottenbergscatering.com</span>
-                                </div>
-                                <div class="portfolio-card__mock-body">
-                                    <div class="pl pl--w90"></div>
-                                    <div class="pl pl--w40"></div>
-                                    <div class="pl pl--w70"></div>
                                     <div class="pl pl--w50"></div>
-                                    <div class="pl pl--w90" style="margin-top:4px"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-card__body">
-                            <div class="portfolio-card__domain">rottenbergscatering.com</div>
-                            <p class="portfolio-card__desc">Elegant catering website with a mouthwatering menu display, seamless inquiry form, and stylish visual layout.</p>
-                        </div>
-                    </a>
-                    <!-- Card 3 -->
-                    <a href="https://bhshltmanagement.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint3 reveal reveal-delay-3" aria-label="View bhshltmanagement.com website">
-                        <span class="portfolio-card__badge">Live</span>
-                        <div class="portfolio-card__preview">
-                            <div class="portfolio-card__preview-inner">
-                                <div class="portfolio-card__mock-toolbar">
-                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
-                                    <span class="portfolio-card__mock-url">bhshltmanagement.com</span>
-                                </div>
-                                <div class="portfolio-card__mock-body">
-                                    <div class="pl pl--w50"></div>
-                                    <div class="pl pl--w90"></div>
-                                    <div class="pl pl--w40"></div>
                                     <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w40"></div>
                                     <div class="pl pl--w50" style="margin-top:4px"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="portfolio-card__body">
-                            <div class="portfolio-card__domain">bhshltmanagement.com</div>
-                            <p class="portfolio-card__desc">Property management platform with a convenient tenant portal, maintenance request forms, and a robust, responsive interface.</p>
+                            <div class="portfolio-card__domain">preshburgglutenfree.com</div>
+                            <p class="portfolio-card__desc">Gluten‑free bakery e‑commerce site with online ordering, built on WordPress + WooCommerce. Delicious cookies & cakes, no compromises.</p>
                         </div>
                     </a>
-                    <!-- Card 4 -->
-                    <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint4 reveal reveal-delay-4" aria-label="View ohrchodoshorg.com website">
+
+                    <!-- 2. Ohr Chodosh (migration story - second card) -->
+                    <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint4 reveal reveal-delay-2" aria-label="View ohrchodoshorg.com website">
                         <span class="portfolio-card__badge">Live</span>
                         <div class="portfolio-card__preview">
                             <div class="portfolio-card__preview-inner">
@@ -1486,11 +1273,83 @@
                             <p class="portfolio-card__desc">WordPress migration success story — we transitioned this nonprofit to a free static host, preserving its donation form, event calendar, and improving performance.</p>
                         </div>
                     </a>
+
+                    <!-- 3. Heritage Citizenships (third) -->
+                    <a href="https://heritagecitizenships.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint1 reveal reveal-delay-3" aria-label="View heritagecitizenships.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">heritagecitizenships.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">heritagecitizenships.com</div>
+                            <p class="portfolio-card__desc">Professional website for citizenship services, featuring a user-friendly contact form and clean, modern design.</p>
+                        </div>
+                    </a>
+
+                    <!-- 4. Rottenberg's Catering (fourth) -->
+                    <a href="https://rottenbergscatering.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint2 reveal reveal-delay-4" aria-label="View rottenbergscatering.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">rottenbergscatering.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">rottenbergscatering.com</div>
+                            <p class="portfolio-card__desc">Elegant catering website with a mouthwatering menu display, seamless inquiry form, and stylish visual layout.</p>
+                        </div>
+                    </a>
+
+                    <!-- 5. BHSHLT Management (fifth - rest) -->
+                    <a href="https://bhshltmanagement.com" target="_blank" rel="noopener noreferrer" class="portfolio-card portfolio-card--tint3 reveal reveal-delay-1" aria-label="View bhshltmanagement.com website">
+                        <span class="portfolio-card__badge">Live</span>
+                        <div class="portfolio-card__preview">
+                            <div class="portfolio-card__preview-inner">
+                                <div class="portfolio-card__mock-toolbar">
+                                    <span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span>
+                                    <span class="portfolio-card__mock-url">bhshltmanagement.com</span>
+                                </div>
+                                <div class="portfolio-card__mock-body">
+                                    <div class="pl pl--w50"></div>
+                                    <div class="pl pl--w90"></div>
+                                    <div class="pl pl--w40"></div>
+                                    <div class="pl pl--w70"></div>
+                                    <div class="pl pl--w50" style="margin-top:4px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-card__body">
+                            <div class="portfolio-card__domain">bhshltmanagement.com</div>
+                            <p class="portfolio-card__desc">Property management platform with a convenient tenant portal, maintenance request forms, and a robust, responsive interface.</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Pricing -->
+        <!-- Pricing (unchanged) -->
         <section class="section" id="pricing" aria-labelledby="pricing-heading">
             <div class="section__inner pricing__layout">
                 <div class="reveal">
@@ -1537,7 +1396,7 @@
             </div>
         </section>
 
-        <!-- Migration -->
+        <!-- Migration (unchanged) -->
         <section class="migration section" id="migration" aria-labelledby="migration-heading">
             <div class="section__inner migration__layout">
                 <div class="reveal">
@@ -1572,7 +1431,7 @@
             </div>
         </section>
 
-        <!-- Contact -->
+        <!-- Contact (unchanged) -->
         <section class="section" id="contact" aria-labelledby="contact-heading">
             <div class="section__inner contact__layout">
                 <div class="reveal">
@@ -1646,7 +1505,7 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (unchanged) -->
     <footer class="footer" role="contentinfo">
         <div class="footer__inner">
             <div class="footer__brand">
@@ -1692,31 +1551,23 @@
             const navLinks = document.querySelectorAll('.nav__links a, .mobile-menu a');
             const revealElements = document.querySelectorAll('.reveal');
 
-            // Scroll state
             let lastScrollY = 0;
 
-            // Handle scroll events
             function onScroll() {
                 const scrollY = window.scrollY;
-
-                // Navbar background
                 if (scrollY > 50) {
                     navbar.classList.add('nav--scrolled');
                 } else {
                     navbar.classList.remove('nav--scrolled');
                 }
-
-                // Back to top visibility
                 if (scrollY > 600) {
                     backToTop.classList.add('visible');
                 } else {
                     backToTop.classList.remove('visible');
                 }
-
                 lastScrollY = scrollY;
             }
 
-            // Hamburger menu toggle
             function toggleMenu() {
                 const isActive = mobileMenu.classList.contains('active');
                 if (isActive) {
@@ -1742,12 +1593,10 @@
                 document.body.style.overflow = '';
             }
 
-            // Back to top
             function scrollToTop() {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            // Form submission via Formspree
             async function handleFormSubmit(e) {
                 e.preventDefault();
                 const form = e.target;
@@ -1755,7 +1604,6 @@
                 const email = form.querySelector('#email').value.trim();
                 const service = form.querySelector('#service').value;
 
-                // Simple client-side validation
                 if (!name || !email || !service) {
                     if (!name) form.querySelector('#name').style.borderColor = '#ef4444';
                     if (!email) form.querySelector('#email').style.borderColor = '#ef4444';
@@ -1771,38 +1619,29 @@
                     const response = await fetch('https://formspree.io/f/mpqbkzbl', {
                         method: 'POST',
                         body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
+                        headers: { 'Accept': 'application/json' }
                     });
-
                     if (response.ok) {
-                        // Success
                         contactForm.style.display = 'none';
                         formSuccess.classList.add('show');
                         form.reset();
-                        // Optionally hide success after some time
                         setTimeout(() => {
                             contactForm.style.display = '';
                             formSuccess.classList.remove('show');
                         }, 6000);
                     } else {
-                        // Server returned an error
                         alert('Oops! There was a problem submitting your form. Please try again later.');
                     }
                 } catch (error) {
-                    // Network error
                     alert('Network error. Please check your connection and try again.');
                 }
             }
 
-            // Scroll reveal using Intersection Observer
             function setupRevealObserver() {
                 if (!('IntersectionObserver' in window)) {
                     revealElements.forEach(el => el.classList.add('revealed'));
                     return;
                 }
-
                 const observer = new IntersectionObserver((entries) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
@@ -1810,39 +1649,27 @@
                             observer.unobserve(entry.target);
                         }
                     });
-                }, {
-                    threshold: 0.12,
-                    rootMargin: '0px 0px -30px 0px'
-                });
-
+                }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
                 revealElements.forEach(el => observer.observe(el));
             }
 
-            // Clear input error styling on focus
             function setupInputListeners() {
                 const inputs = contactForm.querySelectorAll('input, select, textarea');
                 inputs.forEach(input => {
-                    input.addEventListener('focus', () => {
-                        input.style.borderColor = '';
-                    });
+                    input.addEventListener('focus', () => { input.style.borderColor = ''; });
                 });
             }
 
-            // Event listeners
             hamburger.addEventListener('click', toggleMenu);
             backToTop.addEventListener('click', scrollToTop);
             contactForm.addEventListener('submit', handleFormSubmit);
 
-            // Close mobile menu when any nav link is clicked
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    if (mobileMenu.classList.contains('active')) {
-                        closeMenu();
-                    }
+                    if (mobileMenu.classList.contains('active')) closeMenu();
                 });
             });
 
-            // Close mobile menu on Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
                     closeMenu();
@@ -1850,7 +1677,6 @@
                 }
             });
 
-            // Throttled scroll listener
             let ticking = false;
             window.addEventListener('scroll', () => {
                 if (!ticking) {
@@ -1862,16 +1688,12 @@
                 }
             }, { passive: true });
 
-            // Initialize
             setupRevealObserver();
             setupInputListeners();
             onScroll();
 
-            // Handle resize - close mobile menu on desktop breakpoint
             window.addEventListener('resize', () => {
-                if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) {
-                    closeMenu();
-                }
+                if (window.innerWidth > 768 && mobileMenu.classList.contains('active')) closeMenu();
             });
 
             console.log('%c BH Web Solutions %c bhwebsolutions.com ',
