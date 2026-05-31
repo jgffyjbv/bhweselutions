@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="BH Web Solutions">
+  <defs>
+    <clipPath id="bhclip"><rect width="64" height="64" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#bhclip)">
+    <rect width="64" height="64" fill="#10120e"/>
+    <rect x="0" y="55" width="64" height="9" fill="#ea580c"/>
+  </g>
+  <text x="32" y="28" text-anchor="middle" dominant-baseline="central"
+        font-family="'Hanken Grotesk','Segoe UI',Arial,Helvetica,sans-serif"
+        font-weight="800" font-size="30" letter-spacing="-2" fill="#ffffff">BH</text>
+</svg>
