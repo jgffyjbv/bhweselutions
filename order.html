@@ -178,22 +178,22 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
 
   <div class="layout">
     <div>
-      <form class="form" id="orderForm" action="https://formsubmit.co/info@bhwebsolutions.com" method="POST" enctype="multipart/form-data" novalidate>
+      <form class="form" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
 
         <!-- 1. Details -->
         <fieldset>
           <div class="legend"><span class="n">1</span><div><h2>Your details</h2><p>So we know who you are and how to reach you.</p></div></div>
           <div class="grp row2">
-            <div><label class="fl" for="name">Full name <span class="req">*</span></label><input type="text" id="name" name="name" placeholder="John Doe" autocomplete="name" required></div>
-            <div><label class="fl" for="email">Email <span class="req">*</span></label><input type="email" id="email" name="email" placeholder="john@example.com" autocomplete="email" required></div>
+            <div><label class="fl" for="name">Full name <span class="req">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="John Doe" autocomplete="name" required></div>
+            <div><label class="fl" for="email">Email <span class="req">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="john@example.com" autocomplete="email" required></div>
           </div>
           <div class="grp row2">
-            <div><label class="fl" for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="(845) 000-0000" autocomplete="tel" required></div>
-            <div><label class="fl" for="business">Business / project name</label><input type="text" id="business" name="business" placeholder="Your business name"></div>
+            <div><label class="fl" for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel" required></div>
+            <div><label class="fl" for="business">Business / project name</label><input type="text" id="business" name="fi-text-business" placeholder="Your business name"></div>
           </div>
           <div class="grp">
             <label class="fl" for="existing">Existing website <span class="hint">(if you have one — great for migrations)</span></label>
-            <input type="url" id="existing" name="existing_site" placeholder="https://yoursite.com">
+            <input type="url" id="existing" name="fi-text-existing_site" placeholder="https://yoursite.com">
           </div>
         </fieldset>
 
@@ -201,37 +201,37 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
         <fieldset>
           <div class="legend"><span class="n">2</span><div><h2>What should your website do?</h2><p>Select all that apply — pick as many as you need.</p></div></div>
           <div class="opts" id="goals">
-            <label class="opt"><input type="checkbox" name="site_goals" value="Showcase my business / brand"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showcase my business / brand</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Sell products online (store)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Sell products online (store)</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Take bookings / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Take bookings / appointments</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Showroom / display products (no checkout)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showroom / display products</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Wholesale / B2B ordering"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Wholesale / B2B ordering</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Generate leads / inquiries"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Generate leads / inquiries</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Membership / client portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Membership / client portal</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Blog / news / content"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Blog / news / content</span></label>
-            <label class="opt"><input type="checkbox" name="site_goals" value="Multi-vendor / marketplace"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Multi-vendor / marketplace</span></label>
-            <label class="opt js-other" data-target="goalsOther"><input type="checkbox" name="site_goals" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showcase my business / brand"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showcase my business / brand</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Sell products online (store)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Sell products online (store)</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Take bookings / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Take bookings / appointments</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showroom / display products (no checkout)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showroom / display products</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Wholesale / B2B ordering"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Wholesale / B2B ordering</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Generate leads / inquiries"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Generate leads / inquiries</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Membership / client portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Membership / client portal</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Blog / news / content"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Blog / news / content</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Multi-vendor / marketplace"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Multi-vendor / marketplace</span></label>
+            <label class="opt js-other" data-target="goalsOther"><input type="checkbox" name="fi-checkbox-site_goals" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
           </div>
-          <div class="reveal-box" id="goalsOther"><input type="text" name="site_goals_other" placeholder="Tell us what else your site needs to do"></div>
+          <div class="reveal-box" id="goalsOther"><input type="text" name="fi-text-site_goals_other" placeholder="Tell us what else your site needs to do"></div>
         </fieldset>
 
         <!-- 3. Design -->
         <fieldset>
           <div class="legend"><span class="n">3</span><div><h2>Your design</h2><p>What look are you going for? Pick any that fit, then describe it in your own words.</p></div></div>
           <div class="opts" id="style">
-            <label class="opt"><input type="checkbox" name="design_style" value="Clean & minimal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Clean & minimal</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Bold & modern"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Bold & modern</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Elegant / luxury"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Elegant / luxury</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Warm & friendly"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Warm & friendly</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Professional / corporate"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Professional / corporate</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Playful & colorful"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Playful & colorful</span></label>
-            <label class="opt"><input type="checkbox" name="design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Not sure — you decide</span></label>
-            <label class="opt js-other" data-target="styleOther"><input type="checkbox" name="design_style" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Clean & minimal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Clean & minimal</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Bold & modern"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Bold & modern</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Elegant / luxury"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Elegant / luxury</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Warm & friendly"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Warm & friendly</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Professional / corporate"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Professional / corporate</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Playful & colorful"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Playful & colorful</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Not sure — you decide</span></label>
+            <label class="opt js-other" data-target="styleOther"><input type="checkbox" name="fi-checkbox-design_style" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
           </div>
-          <div class="reveal-box" id="styleOther"><input type="text" name="design_style_other" placeholder="Describe the style you have in mind"></div>
+          <div class="reveal-box" id="styleOther"><input type="text" name="fi-text-design_style_other" placeholder="Describe the style you have in mind"></div>
           <div class="grp" style="margin-top:14px">
             <label class="fl" for="design_notes">Describe your ideal design <span class="hint">(colors, fonts, vibe, and any websites you love — paste links!)</span></label>
-            <textarea id="design_notes" name="design_notes" placeholder="e.g. I love warm earthy colors, a big bold hero image, lots of white space. Sites I like: example.com, anothersite.com. My brand colors are navy and gold, and I have a logo I can send."></textarea>
+            <textarea id="design_notes" name="fi-text-design_notes" placeholder="e.g. I love warm earthy colors, a big bold hero image, lots of white space. Sites I like: example.com, anothersite.com. My brand colors are navy and gold, and I have a logo I can send."></textarea>
           </div>
         </fieldset>
 
@@ -240,27 +240,27 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
           <div class="legend"><span class="n">4</span><div><h2>Your content</h2><p>Give us the details so we can build the whole thing without chasing you for info.</p></div></div>
           <div class="grp">
             <label class="fl" for="services">Your services / products &amp; details <span class="req">*</span></label>
-            <textarea id="services" name="services_details" placeholder="List what you offer with any details you want shown — service names, product descriptions, prices, packages, anything customers should see." required></textarea>
+            <textarea id="services" name="fi-text-services_details" placeholder="List what you offer with any details you want shown — service names, product descriptions, prices, packages, anything customers should see." required></textarea>
           </div>
           <div class="grp">
             <label class="fl" for="pages">Which pages do you want? <span class="hint">(or describe the sections)</span></label>
-            <textarea id="pages" name="pages_wanted" placeholder="e.g. Home, About, Services, Gallery / Showroom, Shop, Booking, Contact — or just tell us and we'll suggest a structure." style="min-height:80px"></textarea>
+            <textarea id="pages" name="fi-text-pages_wanted" placeholder="e.g. Home, About, Services, Gallery / Showroom, Shop, Booking, Contact — or just tell us and we'll suggest a structure." style="min-height:80px"></textarea>
           </div>
           <div class="grp">
             <label class="fl" for="show_contact">Contact info to show on the site</label>
-            <textarea id="show_contact" name="content_contact" placeholder="Phone, email, address, opening hours, social media links — whatever you want visitors to see." style="min-height:80px"></textarea>
+            <textarea id="show_contact" name="fi-text-content_contact" placeholder="Phone, email, address, opening hours, social media links — whatever you want visitors to see." style="min-height:80px"></textarea>
           </div>
           <div class="grp">
             <label class="fl" for="extra">Anything else we should know?</label>
-            <textarea id="extra" name="extra_notes" placeholder="Anything at all — special features, integrations, things you definitely want or want to avoid." style="min-height:80px"></textarea>
+            <textarea id="extra" name="fi-text-extra_notes" placeholder="Anything at all — special features, integrations, things you definitely want or want to avoid." style="min-height:80px"></textarea>
           </div>
           <div class="grp upload">
-            <label class="fl">Upload files or photos <span class="hint">(optional — logo, photos, existing content, examples · up to 10 MB total)</span></label>
+            <label class="fl">Upload files or photos <span class="hint">(optional — logo, photos, existing content, examples · up to 25 MB total)</span></label>
             <div class="dz" id="dropzone" role="button" tabindex="0" aria-label="Upload files">
               <span class="dz__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg></span>
               <span class="dz__t"><b>Click to upload</b> or drag &amp; drop</span>
-              <span class="dz__s">Images or documents · up to 10 MB total</span>
-              <input type="file" id="fileInput" name="attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
+              <span class="dz__s">Images or documents · up to 25 MB total</span>
+              <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
             </div>
             <div class="filelist" id="fileList"></div>
             <div class="fileerr" id="fileErr"></div>
@@ -268,7 +268,7 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
           </div>
           <div class="grp">
             <label class="fl" for="filelink">…or paste a link to your files <span class="hint">(Google Drive, Dropbox, WeTransfer — optional)</span></label>
-            <input type="url" id="filelink" name="file_link" placeholder="https://drive.google.com/...">
+            <input type="url" id="filelink" name="fi-text-file_link" placeholder="https://drive.google.com/...">
           </div>
         </fieldset>
 
@@ -278,7 +278,7 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
           <div class="grp row2">
             <div>
               <label class="fl" for="timeline">Timeline</label>
-              <select id="timeline" name="timeline">
+              <select id="timeline" name="fi-select-timeline">
                 <option value="">Select…</option>
                 <option>ASAP</option>
                 <option>Within a week</option>
@@ -288,7 +288,7 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
             </div>
             <div>
               <label class="fl" for="budget">Budget comfort level <span class="hint">(optional)</span></label>
-              <select id="budget" name="budget">
+              <select id="budget" name="fi-select-budget">
                 <option value="">Select…</option>
                 <option>As affordable as possible</option>
                 <option>Standard</option>
@@ -304,25 +304,18 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
           <div class="legend"><span class="n">6</span><div><h2>Referral code</h2><p>Were you referred or given a code? Add it here.</p></div></div>
           <div class="grp">
             <label class="fl" for="ref_code">Referral or promo code <span class="hint">(optional)</span></label>
-            <input type="text" id="ref_code" name="referral_code" placeholder="e.g. FRIEND25" autocomplete="off">
+            <input type="text" id="ref_code" name="fi-text-referral_code" placeholder="e.g. FRIEND25" autocomplete="off">
             <p class="hint" id="refAuto" style="margin-top:8px;display:none;"></p>
           </div>
         </fieldset>
 
-        <!-- hidden tracking -->
-        <input type="hidden" name="ref_source" id="ref_source">
-        <input type="hidden" name="utm_source" id="utm_source">
-        <input type="hidden" name="utm_medium" id="utm_medium">
-        <input type="hidden" name="utm_campaign" id="utm_campaign">
-        <input type="hidden" name="landing_page" id="landing_page">
-        <input type="hidden" name="submitted_at" id="submitted_at">
-        <!-- FormSubmit settings -->
-        <input type="hidden" name="_subject" value="New website order — BH Web Solutions">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://bhwebsolutions.com/order.html?sent=1">
-        <input type="hidden" name="_autoresponse" value="Thanks for your project details! We've received everything and we'll get started on your website. We'll only reach out if we need to clarify something. — BH Web Solutions">
-        <!-- honeypot (FormSubmit ignores anything in _honey) -->
+        <!-- hidden tracking (sent as plain text blocks so they never clash with the SDK's auto tracking) -->
+        <input type="hidden" name="fi-text-utm_source" id="utm_source">
+        <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
+        <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
+        <input type="hidden" name="fi-text-landing_page" id="landing_page">
+        <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
+        <!-- honeypot (checked + stripped client-side before sending) -->
         <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <button type="submit" class="submit" id="submitBtn">
@@ -360,6 +353,8 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
 
 <footer class="foot">&copy; 2026 BH Web Solutions · Beautiful websites, built fast. <a href="index.html">Back to home</a></footer>
 
+<!-- Forminit SDK (handles submission + file uploads to your endpoint) -->
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
 <script>
 (function(){
   // chip multi-select toggle
@@ -379,11 +374,11 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
     input.addEventListener('change',sync);sync();
   });
 
-  // file uploads — up to 10 MB total, up to 10 files
+  // file uploads — up to 25 MB total, up to 10 files
   (function(){
     var input=document.getElementById('fileInput'),dz=document.getElementById('dropzone'),list=document.getElementById('fileList'),err=document.getElementById('fileErr'),totalEl=document.getElementById('fileTotal');
     if(!input||typeof DataTransfer==='undefined')return;
-    var MAX=10*1024*1024,MAXN=10,dt=new DataTransfer();
+    var MAX=25*1024*1024,MAXN=10,dt=new DataTransfer();
     function fmt(b){if(b<1024)return b+' B';if(b<1048576)return Math.round(b/1024)+' KB';return (b/1048576).toFixed(1)+' MB';}
     function total(){var t=0;for(var i=0;i<dt.files.length;i++)t+=dt.files[i].size;return t;}
     function showErr(m){err.textContent=m;err.classList.add('show');clearTimeout(showErr._t);showErr._t=setTimeout(function(){err.classList.remove('show');},5000);}
@@ -397,7 +392,7 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
         row.querySelector('.frm').addEventListener('click',function(){var ndt=new DataTransfer();for(var j=0;j<dt.files.length;j++){if(j!==idx)ndt.items.add(dt.files[j]);}dt=ndt;input.files=dt.files;render();});
         list.appendChild(row);
       })(dt.files[i],i);}
-      if(dt.files.length){totalEl.style.display='block';var t=total();totalEl.textContent=dt.files.length+' file'+(dt.files.length>1?'s':'')+' · '+fmt(t)+' of 10 MB';totalEl.classList.toggle('over',t>MAX);}
+      if(dt.files.length){totalEl.style.display='block';var t=total();totalEl.textContent=dt.files.length+' file'+(dt.files.length>1?'s':'')+' · '+fmt(t)+' of 25 MB';totalEl.classList.toggle('over',t>MAX);}
       else{totalEl.style.display='none';}
     }
     function add(files){
@@ -406,7 +401,7 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
         if(dt.files.length>=MAXN){showErr('You can attach up to 10 files — use the link field below for more.');break;}
         var dup=false;for(var j=0;j<dt.files.length;j++){if(dt.files[j].name===f.name&&dt.files[j].size===f.size){dup=true;break;}}
         if(dup)continue;
-        if(total()+f.size>MAX){showErr('That would go over the 10 MB limit. Try smaller files, or paste a link below.');continue;}
+        if(total()+f.size>MAX){showErr('That would go over the 25 MB limit. Try smaller files, or paste a link below.');continue;}
         dt.items.add(f);
       }
       input.files=dt.files;render();
@@ -431,22 +426,47 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
   document.getElementById('utm_source').value=uS;document.getElementById('utm_medium').value=uM;document.getElementById('utm_campaign').value=uC;
   document.getElementById('landing_page').value=(get('bh_landing')||(function(){var l=document.referrer||location.href;set('bh_landing',l);return l;})());
 
-  // submit -> FormSubmit (standard POST so file uploads work)
+  // submit -> Forminit (client-side SDK; keeps file uploads working)
+  var FORM_ID='nsf8hkp98fw';
   var form=document.getElementById('orderForm'),btn=document.getElementById('submitBtn'),status=document.getElementById('status'),success=document.getElementById('success');
-  function err(m){status.textContent=m;status.className='status err';status.scrollIntoView({behavior:'smooth',block:'center'});}
-  form.addEventListener('submit',function(e){
-    var name=form.name.value.trim(),email=form.email.value.trim(),phone=form.phone.value.trim(),services=form.services_details.value.trim();
-    var goals=form.querySelectorAll('input[name="site_goals"]:checked').length;
-    if(!name||!email||!phone){e.preventDefault();err('Please add your name, email, and phone so we can reach you.');return;}
-    if(!goals){e.preventDefault();err('Please choose at least one thing your website needs to do.');return;}
-    if(!services){e.preventDefault();err('Please tell us about your services or products so we can build your site.');return;}
+  function showErr(m){status.textContent=m;status.className='status err';status.scrollIntoView({behavior:'smooth',block:'center'});}
+  function showSuccess(){form.style.display='none';success.classList.add('show');success.scrollIntoView({block:'center'});try{history.replaceState(null,'',location.pathname+'?sent=1');}catch(e){}}
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var name=document.getElementById('name').value.trim(),
+        email=document.getElementById('email').value.trim(),
+        phone=document.getElementById('phone').value.trim(),
+        services=document.getElementById('services').value.trim();
+    var goals=form.querySelectorAll('input[name="fi-checkbox-site_goals"]:checked').length;
+    if(!name||!email||!phone){showErr('Please add your name, email, and phone so we can reach you.');return;}
+    if(!goals){showErr('Please choose at least one thing your website needs to do.');return;}
+    if(!services){showErr('Please tell us about your services or products so we can build your site.');return;}
+
+    // honeypot: if filled, it's almost certainly a bot — quietly pretend success, send nothing
+    var hp=form.querySelector('input[name="_honey"]');
+    if(hp&&hp.value){showSuccess();return;}
+
     document.getElementById('submitted_at').value=new Date().toISOString();
-    document.getElementById('ref_source').value=form.referral_code.value.trim();
+    status.className='status';status.textContent='';
     btn.disabled=true;btn.textContent='Sending…';
-    // let the form submit normally to FormSubmit (it redirects to _next on success)
+
+    try{
+      if(typeof Forminit==='undefined') throw new Error('SDK not loaded');
+      var fd=new FormData(form);
+      fd.delete('_honey'); // never send the honeypot to Forminit
+      var fi=new Forminit();
+      var res=await fi.submit(FORM_ID,fd);
+      if(res&&res.error){throw new Error((res.error&&res.error.message)||'Submission failed');}
+      showSuccess();
+    }catch(ex){
+      btn.disabled=false;btn.textContent='Submit my project';
+      showErr('Sorry — something went wrong sending your brief. Please try again, or call 845-587-0531 or email info@bhwebsolutions.com.');
+    }
   });
-  // show the success panel when FormSubmit redirects back with ?sent=1
-  try{if(new URLSearchParams(location.search).get('sent')==='1'){form.style.display='none';success.classList.add('show');success.scrollIntoView({block:'center'});}}catch(e){}
+
+  // if someone lands back on ?sent=1 (e.g. bookmarked), show the thank-you panel
+  try{if(new URLSearchParams(location.search).get('sent')==='1'){form.style.display='none';success.classList.add('show');}}catch(e){}
 })();
 </script>
 </body>
