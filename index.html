@@ -3,666 +3,718 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BH Web Solutions — Websites that look like they cost thousands</title>
-<meta name="description" content="A web design studio building fast, beautiful, conversion-ready websites — from landing pages to full online stores. Premium work, genuinely affordable, fully managed.">
-<meta name="theme-color" content="#fbfbf8">
+<title>BH Web Solutions — Custom websites & online stores, done right</title>
+<meta name="description" content="BH Web Solutions designs and builds fast, modern websites — online stores, booking systems, custom platforms, and WordPress-to-static migrations with free hosting. Premium work, genuinely affordable.">
+<meta name="theme-color" content="#0c2340">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fbfbf8;--surface:#ffffff;--bg-dark:#0c0e0b;--bg-dark2:#13160f;
-  --ink:#10120e;--ink2:#454b43;--muted:#7e857b;
-  --line:rgba(16,18,14,.08);--line-strong:rgba(16,18,14,.14);
-  /* ORANGE accent (no green anywhere) */
-  --accent:#ea580c;--accent-deep:#c2410c;--accent-bright:#fb923c;--accent-tint:#fff3ea;--accent-tint2:#fde7d4;
-  --r-xs:7px;--r-sm:10px;--r:14px;--r-lg:18px;--r-xl:24px;
-  --shadow-sm:0 1px 2px rgba(80,40,12,.05);
-  --shadow:0 1px 2px rgba(80,40,12,.04),0 16px 36px rgba(80,40,12,.08);
-  --shadow-lg:0 36px 70px rgba(80,40,12,.14);
-  --body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --display:'Bricolage Grotesque','Hanken Grotesk',sans-serif;
-  --max:1180px;--nav:76px;
+  /* Web Solutions–style blue + green palette */
+  --navy:#0c2340;--navy-2:#0a1d35;
+  --blue:#15689f;--blue-2:#125a8a;
+  --blue-icon:#3d8fc7;--blue-icon-2:#5aa3d4;
+  --green:#6cb33f;--green-dark:#5a9c33;--green-darker:#4f8a2c;
+  --bg:#ffffff;--bg-soft:#f5f8fb;--bg-soft2:#eef3f8;
+  --ink:#13243a;--ink-soft:#46586a;--muted:#7e8d99;
+  --line:#e3eaf1;--line-2:#d6e0ea;
+  --r-sm:8px;--r:12px;--r-lg:18px;--r-xl:26px;--r-pill:999px;
+  --shadow-sm:0 1px 2px rgba(12,35,64,.05);
+  --shadow:0 2px 6px rgba(12,35,64,.06),0 18px 40px rgba(12,35,64,.08);
+  --shadow-lg:0 30px 64px rgba(12,35,64,.16);
+  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:'Newsreader',Georgia,'Times New Roman',serif;
+  --max:1200px;--nav:74px;
   --ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(.22,1,.36,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:var(--nav);font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden;position:relative}
-h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.05;letter-spacing:-.035em;color:var(--ink)}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.65;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
-::selection{background:var(--accent);color:#fff}
-
-.shell{position:relative;z-index:1}
+::selection{background:var(--blue);color:#fff}
 .in{max-width:var(--max);margin:0 auto;padding:0 28px}
-.section{padding:118px 0;position:relative}
+.sec{padding:104px 0;position:relative}
 
-/* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;transition:background .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);border-bottom:1px solid transparent}
-.nav.scrolled{background:rgba(251,251,248,.78);backdrop-filter:saturate(1.5) blur(16px);-webkit-backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid var(--line)}
-.nav .in{width:100%;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:800;font-size:1.18rem;letter-spacing:-.04em;color:var(--ink)}
-.brand__mark{width:38px;height:38px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;letter-spacing:-.04em;position:relative;overflow:hidden}
-.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--accent)}
-.nav__links{display:flex;align-items:center;gap:2px;list-style:none}
-.nav__links a{color:var(--ink2);padding:9px 14px;border-radius:var(--r-sm);font-weight:500;font-size:.93rem;transition:color .18s var(--ease),background .18s var(--ease)}
-.nav__links a:hover{color:var(--ink);background:rgba(16,18,14,.045)}
-.nav__cta{margin-left:6px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--body);font-weight:600;font-size:.96rem;letter-spacing:-.01em;padding:12px 22px;border-radius:var(--r-sm);cursor:pointer;border:1px solid transparent;transition:transform .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease);white-space:nowrap}
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:700;font-size:1.04rem;letter-spacing:-.01em;padding:15px 30px;border-radius:var(--r-pill);cursor:pointer;border:2px solid transparent;transition:transform .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);white-space:nowrap}
 .btn svg{transition:transform .2s var(--ease)}
-.btn--solid{background:var(--ink);color:#fff;box-shadow:var(--shadow-sm)}
-.btn--solid:hover{background:#000;transform:translateY(-2px);box-shadow:0 12px 26px rgba(16,18,14,.22)}
-.btn--solid:hover svg{transform:translateX(3px)}
-.btn--accent{background:var(--accent);color:#fff;box-shadow:0 8px 20px rgba(234,88,12,.26)}
-.btn--accent:hover{background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 14px 30px rgba(234,88,12,.34)}
-.btn--accent:hover svg{transform:translateX(3px)}
-.btn--ghost{background:transparent;color:var(--ink);border-color:var(--line-strong)}
-.btn--ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
-.btn--lg{padding:15px 28px;font-size:1.02rem;border-radius:var(--r)}
+.btn--green{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(108,179,63,.32)}
+.btn--green:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 16px 32px rgba(108,179,63,.42)}
+.btn--green:hover svg{transform:translateY(2px)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn--outline{background:transparent;color:var(--navy);border-color:var(--line-2)}
+.btn--outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+.btn--sm{padding:11px 22px;font-size:.95rem}
+.caret{font-size:.7em;transform:translateY(1px)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);background:#fff;display:flex;align-items:center;border-bottom:1px solid transparent;transition:box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.nav.scrolled{box-shadow:0 2px 14px rgba(12,35,64,.08);border-bottom-color:var(--line)}
+.nav .in{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand__mark{width:42px;height:42px;flex:0 0 auto;border-radius:11px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:800;font-size:1rem;letter-spacing:-.02em;position:relative;overflow:hidden}
+.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--green),var(--blue-icon))}
+.brand__txt{font-family:var(--sans);font-weight:600;font-size:1.24rem;letter-spacing:-.025em;color:var(--navy);line-height:1.05;white-space:nowrap}
+.brand__txt b{font-weight:800}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav__links a{color:var(--navy);padding:9px 14px;border-radius:var(--r-sm);font-weight:600;font-size:.98rem;transition:color .18s var(--ease),background .18s var(--ease)}
+.nav__links a:hover{color:var(--blue);background:var(--bg-soft)}
+.nav__cta{margin-left:8px}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:9px;border-radius:var(--r-sm)}
-.burger span{width:23px;height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--ease)}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.25s var(--ease)}
 .burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
 .burger.on span:nth-child(2){opacity:0}
 .burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile{position:fixed;inset:0;z-index:999;background:rgba(251,251,248,.98);backdrop-filter:blur(20px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .28s var(--ease)}
+.mobile{position:fixed;inset:0;z-index:999;background:rgba(255,255,255,.99);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .26s var(--ease)}
 .mobile.on{opacity:1;pointer-events:all}
-.mobile a{font-family:var(--display);font-weight:700;font-size:1.45rem;letter-spacing:-.03em;padding:9px 20px;border-radius:var(--r)}
-.mobile a:hover{background:rgba(16,18,14,.05)}
-.mobile .m-cta{background:var(--accent);color:#fff;margin-top:6px}
+.mobile a{font-weight:700;font-size:1.4rem;letter-spacing:-.02em;color:var(--navy);padding:8px 18px;border-radius:var(--r)}
+.mobile a:hover{background:var(--bg-soft)}
+.mobile .m-cta{background:var(--green);color:#fff;margin-top:8px}
 
-/* shared bits */
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--body);font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
-.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-tint)}
-.h2{font-size:clamp(2.1rem,4.4vw,3.3rem);letter-spacing:-.04em;margin:18px 0 16px}
-.lead{font-size:1.1rem;color:var(--ink2);max-width:600px;line-height:1.6}
-.center{text-align:center}.center .lead{margin-inline:auto}
+/* ---------- hero ---------- */
+.hero{position:relative;background:linear-gradient(160deg,#0e2746 0%,#0a1d35 60%,#0c2340 100%);color:#fff;padding:calc(var(--nav) + 92px) 0 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.4px);background-size:30px 30px;opacity:.6;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 35% 30%,#000,transparent 78%);mask-image:radial-gradient(ellipse 75% 70% at 35% 30%,#000,transparent 78%)}
+.hero::after{content:"";position:absolute;top:-120px;right:-160px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(61,143,199,.32),transparent 66%);filter:blur(10px);pointer-events:none}
+.hero__wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding-bottom:96px}
+.hero h1{font-family:var(--sans);font-weight:800;font-size:clamp(2.5rem,5.4vw,4.2rem);line-height:1.04;letter-spacing:-.035em;margin-bottom:24px}
+.hero h1 .hl{color:var(--green)}
+.hero p.sub{font-size:clamp(1.08rem,1.7vw,1.28rem);color:rgba(233,240,247,.82);max-width:600px;margin-bottom:34px;line-height:1.6}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__art{position:relative}
+.screens{position:relative;height:340px}
+.scr{position:absolute;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden}
+.scr .bar{height:7px;border-radius:4px;background:rgba(255,255,255,.18);margin:10px 12px 0}
+.scr .bar.s{width:50%}.scr .bar.m{width:75%}
+.scr .chip{height:22px;width:64px;border-radius:6px;background:var(--green);margin:12px}
+.scr--a{top:8px;right:0;width:280px;height:200px}
+.scr--b{top:150px;right:170px;width:210px;height:150px;background:linear-gradient(160deg,rgba(61,143,199,.28),rgba(61,143,199,.08))}
+.scr--c{top:120px;right:-20px;width:120px;height:120px}
+.hero__strip{position:relative;z-index:3;height:46px;background:#fff;border-top-left-radius:26px;border-top-right-radius:26px;margin-top:-1px}
 
-/* hero */
-.hero{position:relative;padding-top:calc(var(--nav) + 86px);padding-bottom:96px;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;z-index:-1;
-  background-image:radial-gradient(rgba(16,18,14,.14) 1px,transparent 1.4px);background-size:30px 30px;
-  -webkit-mask-image:radial-gradient(ellipse 60% 52% at 50% 16%,#000,transparent 72%);mask-image:radial-gradient(ellipse 60% 52% at 50% 16%,#000,transparent 72%);opacity:.5}
-.hero::after{content:"";position:absolute;top:-160px;right:-120px;width:620px;height:620px;z-index:-1;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,.1),transparent 68%);filter:blur(20px);pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:56px;align-items:center}
-.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.7rem,5.6vw,4.35rem);letter-spacing:-.045em;line-height:1.02;margin:22px 0 22px}
-.hero h1 .em{color:var(--accent-deep);position:relative;white-space:nowrap}
-.hero h1 .em::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.09em;background:var(--accent);border-radius:2px;opacity:.5}
-.hero p.sub{font-size:1.17rem;color:var(--ink2);max-width:516px;margin-bottom:32px;line-height:1.6}
-.hero .cta-row{display:flex;flex-wrap:wrap;gap:12px}
-.hero .stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:40px;padding-top:30px;border-top:1px solid var(--line)}
-.stat b{display:block;font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.04em;color:var(--ink)}
-.stat span{font-size:.82rem;color:var(--muted);font-weight:500}
+/* ---------- services (dark) ---------- */
+.services{background:var(--navy);color:#fff}
+.services h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.95rem,3.6vw,2.95rem);letter-spacing:-.01em;line-height:1.12;max-width:980px}
+.services h2 b{font-weight:600}
+.services .lead{font-family:var(--serif);font-size:clamp(1.15rem,1.8vw,1.4rem);color:rgba(220,230,240,.84);max-width:1000px;margin-top:18px;line-height:1.55}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 56px;margin-top:54px}
+.svc{display:flex;align-items:flex-start;gap:16px;padding:6px 0}
+.svc__ic{flex:0 0 auto;color:var(--blue-icon-2);margin-top:2px}
+.svc__t{font-size:1.18rem;font-weight:600;letter-spacing:-.01em;line-height:1.3}
+.svc__t span{display:block;font-weight:600}
 
-/* hero mockup */
-.shot{position:relative;width:100%;max-width:540px;margin-left:auto;border-radius:var(--r-lg);background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden}
-.shot__bar{display:flex;align-items:center;gap:7px;padding:13px 15px;border-bottom:1px solid var(--line);background:#fcfcfa}
-.shot__bar i{width:10px;height:10px;border-radius:50%;background:#e4e4dd}
-.shot__url{flex:1;margin-left:9px;display:flex;align-items:center;gap:6px;background:#f5f5f0;border:1px solid var(--line);border-radius:7px;padding:5px 11px;font-size:.71rem;color:var(--muted);font-family:var(--body)}
-.shot__url svg{width:11px;height:11px;color:var(--accent)}
-.shot__hero{padding:30px 26px 22px;background:linear-gradient(170deg,#fffaf6,#fdf1e9)}
-.shot__tag{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);background:var(--accent-tint);padding:5px 10px;border-radius:999px}
-.bar{height:11px;border-radius:5px;background:rgba(16,18,14,.09);margin-top:12px}
-.bar.w85{width:85%}.bar.w60{width:60%}.bar.w45{width:45%}.bar.w70{width:70%}
-.shot__btn{margin-top:18px;height:34px;width:128px;border-radius:8px;background:var(--accent)}
-.shot__row{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;padding:18px 26px 28px}
-.shot__c{border:1px solid var(--line);border-radius:11px;padding:13px;background:#fff}
-.shot__ci{width:28px;height:28px;border-radius:7px;background:var(--accent-tint);border:1px solid rgba(234,88,12,.2);margin-bottom:9px}
-.shot__c .bar{height:6px;margin-top:7px}
-@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
-.rise{animation:rise .7s var(--ease-out) both}
-.dl1{animation-delay:.06s}.dl2{animation-delay:.14s}.dl3{animation-delay:.22s}.dl4{animation-delay:.3s}.dl5{animation-delay:.16s}
+/* ---------- results band (green) ---------- */
+.results{background:linear-gradient(120deg,var(--green-dark),var(--green) 55%,#76bd49);color:#fff;text-align:center}
+.results h2{font-family:var(--sans);font-weight:500;font-size:clamp(1.7rem,3.3vw,2.6rem);letter-spacing:-.02em;line-height:1.2;max-width:880px;margin:0 auto 54px}
+.results h2 b{font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.stat{background:#fff;border-radius:var(--r);padding:28px 18px 22px;box-shadow:0 18px 36px rgba(40,80,20,.18);display:flex;flex-direction:column;align-items:center;transition:transform .24s var(--ease-out)}
+.stat:hover{transform:translateY(-6px)}
+.stat__ic{color:var(--blue-icon);margin-bottom:12px}
+.stat__n{font-family:var(--sans);font-weight:800;font-size:2.5rem;letter-spacing:-.03em;color:var(--navy);line-height:1}
+.stat__d{color:var(--ink-soft);font-size:.92rem;line-height:1.4;margin-top:10px}
+.stat__l{margin-top:auto;padding-top:16px;font-style:italic;font-family:var(--serif);color:var(--muted);font-size:.92rem}
 
-/* logo strip */
-.logos{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#faf9f5}
-.logos .in{padding-top:30px;padding-bottom:30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 42px}
-.logos__label{width:100%;text-align:center;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:4px}
-.logos__item{font-family:var(--display);font-weight:700;font-size:1.02rem;letter-spacing:-.03em;color:#aab0a6;transition:color .2s var(--ease)}
-.logos__item:hover{color:var(--ink)}
+/* ---------- work / portfolio (light) ---------- */
+.work{background:#fff}
+.work h2{font-family:var(--sans);font-weight:400;font-size:clamp(1.7rem,3.3vw,2.6rem);letter-spacing:-.02em;line-height:1.22;text-align:center;max-width:960px;margin:0 auto 8px;color:var(--navy)}
+.work h2 b{font-weight:800}
+.work .sub{text-align:center;color:var(--ink-soft);max-width:680px;margin:0 auto 50px;font-size:1.06rem}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .26s var(--ease-out),box-shadow .26s var(--ease-out),border-color .26s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+.card__shot{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,#eef3f8,#e1ebf4);overflow:hidden}
+.card__shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.card__skel{position:absolute;inset:0;display:none;flex-direction:column;gap:9px;padding:18px}
+.card__shot.noimg img{display:none}
+.card__shot.noimg .card__skel{display:flex}
+.ln{height:8px;border-radius:4px;background:rgba(12,35,64,.08)}
+.ln.w90{width:90%}.ln.w70{width:70%}.ln.w55{width:55%}.ln.w40{width:40%}
+.card__skel .green-ln{height:24px;width:80px;border-radius:6px;background:rgba(108,179,63,.22);margin-top:6px}
+.card__badge{position:absolute;top:10px;right:10px;display:inline-flex;align-items:center;gap:6px;font-size:.66rem;font-weight:700;letter-spacing:.02em;padding:5px 10px;border-radius:var(--r-pill);background:rgba(255,255,255,.94);backdrop-filter:blur(4px);border:1px solid var(--line-2);color:var(--ink-soft)}
+.card__badge .bd{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.card__body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card__name{font-weight:700;font-size:1.08rem;letter-spacing:-.02em;color:var(--navy);display:flex;align-items:center;gap:6px}
+.card__name svg{color:var(--muted);flex:0 0 auto;transition:color .2s var(--ease),transform .2s var(--ease)}
+.card:hover .card__name svg{color:var(--green);transform:translate(2px,-2px)}
+.card__desc{font-size:.88rem;color:var(--ink-soft);line-height:1.5;flex:1}
+.card__tag{font-size:.7rem;font-weight:600;color:var(--blue-2);background:var(--bg-soft2);border-radius:var(--r-pill);padding:4px 10px;align-self:flex-start}
+.work__more{display:flex;justify-content:center;margin-top:48px}
+.see-more{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:1.05rem;color:var(--navy);background:#fff;border:1px solid var(--line-2);border-radius:var(--r-pill);padding:14px 34px;transition:border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+.see-more:hover{border-color:var(--green);color:var(--green-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.see-more svg{color:var(--green)}
 
-/* work */
-.work{background:#faf9f5;border-bottom:1px solid var(--line)}
-.work__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:50px}
-.case{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .28s var(--ease-out),box-shadow .28s var(--ease-out),border-color .28s var(--ease)}
-.case:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-strong)}
-.case__top{position:relative;border-bottom:1px solid var(--line)}
-.case__badge{position:absolute;top:11px;right:11px;z-index:3;display:inline-flex;align-items:center;gap:6px;font-size:.64rem;font-weight:700;letter-spacing:.03em;padding:5px 10px;border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);border:1px solid var(--line-strong);color:var(--ink2)}
-.case__badge .bdot{width:6px;height:6px;border-radius:50%}
-.case__badge.live .bdot{background:var(--accent)}
-.case__badge.prev .bdot{background:#8b8f86}
-.case__badge.prog .bdot{background:#d99313}
-.case__shot{aspect-ratio:16/10;display:flex;flex-direction:column}
-.case__sbar{display:flex;align-items:center;gap:5px;padding:10px 13px;background:#fcfcfa;border-bottom:1px solid var(--line)}
-.case__sbar i{width:7px;height:7px;border-radius:50%;background:#e4e4dd}
-.case__surl{flex:1;margin-left:7px;display:flex;align-items:center;gap:5px;font-size:.62rem;color:var(--muted);font-family:var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.case__surl svg{width:10px;height:10px;flex:0 0 auto;color:#9aa096}
-/* live preview frame */
-.case__frame{position:relative;flex:1;overflow:hidden;background:linear-gradient(170deg,#fcfdfc,#f3f5f2)}
-.case__img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;background:#f3f5f2}
-.case__skel{position:absolute;inset:0;display:none;flex-direction:column;gap:8px;padding:16px}
-.case__frame.noimg .case__img{display:none}
-.case__frame.noimg .case__skel{display:flex}
-.ln{height:8px;border-radius:4px;background:rgba(16,18,14,.07)}
-.ln.w90{width:90%}.ln.w70{width:70%}.ln.w55{width:55%}.ln.w40{width:40%}.ln.w30{width:30%}
-.case__skel .accent-ln{height:24px;width:78px;border-radius:6px;background:var(--accent-tint);border:1px solid rgba(234,88,12,.18);margin-top:5px}
-.case__body{padding:19px 20px 22px;display:flex;flex-direction:column;gap:9px;flex:1}
-.case__name{font-family:var(--display);font-weight:700;font-size:1.08rem;letter-spacing:-.03em;display:flex;align-items:center;gap:7px}
-.case__name svg{color:var(--muted);flex:0 0 auto;transition:color .2s var(--ease),transform .2s var(--ease)}
-.case:hover .case__name svg{color:var(--accent);transform:translate(2px,-2px)}
-.case__desc{font-size:.87rem;color:var(--ink2);line-height:1.55;flex:1}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:3px}
-.tag{font-size:.68rem;font-weight:600;color:var(--ink2);background:rgba(16,18,14,.045);border:1px solid var(--line);padding:4px 9px;border-radius:999px}
+/* ---------- floating green CTA divider ---------- */
+.cta-float{position:relative;background:var(--bg-soft);height:0}
+.cta-float .btn{position:absolute;top:-29px;left:50%;transform:translateX(-50%)}
+.cta-float .btn:hover{transform:translateX(-50%) translateY(-2px)}
 
-/* build */
-.build__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:50px}
-.cap{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:transform .24s var(--ease-out),box-shadow .24s var(--ease-out),border-color .24s var(--ease)}
-.cap:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--line-strong)}
-.cap__ic{width:48px;height:48px;border-radius:11px;background:rgba(16,18,14,.05);color:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:16px;transition:background .24s var(--ease),color .24s var(--ease)}
-.cap:hover .cap__ic{background:var(--accent);color:#fff}
-.cap h3{font-size:1.1rem;letter-spacing:-.025em;margin-bottom:7px}
-.cap p{font-size:.89rem;color:var(--ink2);line-height:1.55}
+/* ---------- expect more (light) ---------- */
+.expect{background:var(--bg-soft);padding-top:128px}
+.expect h2{font-family:var(--sans);font-size:clamp(1.85rem,3.6vw,2.85rem);font-weight:400;letter-spacing:-.025em;text-align:center;color:var(--navy);line-height:1.15}
+.expect h2 b{font-weight:800}
+.expect .lead{font-family:var(--serif);font-size:clamp(1.15rem,1.9vw,1.4rem);color:var(--ink-soft);text-align:center;max-width:880px;margin:20px auto 56px;line-height:1.55}
+.feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:var(--shadow-sm);transition:transform .24s var(--ease-out),box-shadow .24s var(--ease-out)}
+.feat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.feat__ic{color:var(--blue-icon);margin-bottom:18px}
+.feat p{font-size:.96rem;color:var(--ink-soft);line-height:1.5}
+.feat p b{color:var(--navy);font-weight:700}
 
-/* why (dark) */
-.why{background:var(--bg-dark);color:#f3f4ef;position:relative;overflow:hidden;border-radius:0}
-.why::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.05) 1px,transparent 1.3px);background-size:32px 32px;-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000,transparent 75%);mask-image:radial-gradient(ellipse 70% 60% at 50% 0%,#000,transparent 75%);opacity:.7}
-.why .in{position:relative;z-index:1}
-.why .eyebrow{color:rgba(243,244,239,.7)}
-.why .eyebrow .dot{box-shadow:0 0 0 4px rgba(234,88,12,.25)}
-.why h2,.why .h2{color:#fff}
-.why .lead{color:rgba(243,244,239,.66)}
-.why__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:50px}
-.wc{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:24px;transition:transform .24s var(--ease-out),background .24s var(--ease)}
-.wc:hover{transform:translateY(-4px);background:rgba(255,255,255,.07)}
-.wc__ic{width:44px;height:44px;border-radius:11px;background:rgba(251,146,60,.16);color:var(--accent-bright);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.wc h3{color:#fff;font-size:1.05rem;letter-spacing:-.025em;margin-bottom:6px}
-.wc p{color:rgba(243,244,239,.6);font-size:.86rem;line-height:1.55}
+/* ---------- count on us (dark) ---------- */
+.count{background:var(--navy);color:#fff;overflow:hidden}
+.count__wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.count h2{font-family:var(--sans);font-size:clamp(1.9rem,3.6vw,2.85rem);font-weight:400;letter-spacing:-.025em;line-height:1.15}
+.count h2 b{font-weight:800}
+.count .lead{font-family:var(--serif);font-size:clamp(1.1rem,1.7vw,1.32rem);color:rgba(220,230,240,.82);margin:18px 0 30px;line-height:1.55}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:16px}
+.checklist li{display:flex;align-items:flex-start;gap:14px;font-size:1.1rem;color:#eef4fa}
+.checklist li svg{flex:0 0 auto;color:var(--blue-icon-2);margin-top:3px}
+/* circular visual */
+.orb{position:relative;width:min(440px,90%);aspect-ratio:1;margin-left:auto}
+.orb__ring{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,.08);background:linear-gradient(160deg,#13325a,#0a1d35)}
+.orb__ring img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;opacity:.96}
+.orb__skel{position:absolute;inset:0;display:none;flex-direction:column;gap:12px;padding:42px}
+.orb__ring.noimg img{display:none}
+.orb__ring.noimg .orb__skel{display:flex}
+.orb__skel .ln{background:rgba(255,255,255,.12)}
+.orb__badge{position:absolute;top:6%;left:2%;width:108px;height:108px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.35);z-index:2}
+.orb__badge b{font-family:var(--sans);font-weight:800;font-size:2.1rem;letter-spacing:-.03em;color:var(--navy);line-height:1}
+.orb__badge i{display:block;width:42px;height:4px;border-radius:3px;margin-top:7px;background:linear-gradient(90deg,var(--green),var(--blue-icon))}
+.orb__float{position:absolute;bottom:8%;right:-4%;background:#fff;color:var(--navy);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-lg);z-index:2}
+.orb__float b{font-family:var(--sans);font-weight:800;font-size:1.5rem;letter-spacing:-.02em;color:var(--green-dark);display:block;line-height:1}
+.orb__float span{font-size:.78rem;color:var(--ink-soft);font-weight:600}
 
-/* migration */
-.migrate__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
-.migrate__list{list-style:none;display:flex;flex-direction:column;gap:15px;margin:22px 0 30px}
-.migrate__list li{display:flex;gap:13px;align-items:flex-start;font-size:.96rem;color:var(--ink2)}
-.migrate__list li svg{color:var(--accent);flex:0 0 auto;margin-top:3px}
-.migrate__list li b{color:var(--ink);font-weight:700}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:36px;box-shadow:var(--shadow)}
-.flow{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.flow__i{flex:1;min-width:104px;background:#faf9f5;border:1px solid var(--line);border-radius:var(--r);padding:18px 14px;text-align:center;font-family:var(--display);font-weight:700;font-size:.94rem;letter-spacing:-.02em}
-.flow__i small{display:block;font-family:var(--body);font-weight:500;font-size:.7rem;color:var(--muted);margin-top:4px;letter-spacing:0}
-.flow__i.hl{border-color:var(--accent);background:var(--accent-tint);color:var(--accent-deep)}
-.flow__a{color:var(--accent);font-size:1.3rem;font-weight:800}
-.panel__note{text-align:center;color:var(--muted);font-size:.85rem;margin-top:18px}
+/* ---------- statement (light) ---------- */
+.statement{background:var(--bg-soft2);position:relative;overflow:hidden}
+.statement::before{content:"\201C";position:absolute;top:-40px;left:6%;font-family:var(--serif);font-size:18rem;line-height:1;color:rgba(21,104,159,.1);font-weight:600}
+.statement .in{position:relative;z-index:1}
+.statement p{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.5rem,3vw,2.4rem);line-height:1.32;letter-spacing:-.01em;color:var(--navy);max-width:1020px}
+.statement cite{display:block;margin-top:30px;font-style:normal;font-family:var(--serif);font-size:1.12rem;color:var(--ink-soft)}
+.statement cite b{font-weight:600;font-style:normal;color:var(--navy)}
 
-/* cta + contact */
-.contact{padding-bottom:118px}
-.cband{max-width:var(--max);margin:0 auto;background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(2.8rem,5.5vw,4.8rem) clamp(1.5rem,4vw,3.5rem);text-align:center;position:relative;overflow:hidden}
-.cband::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.045) 1px,transparent 1.3px);background-size:30px 30px;opacity:.6}
-.cband::after{content:"";position:absolute;bottom:-140px;left:50%;transform:translateX(-50%);width:560px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(234,88,12,.42),transparent 66%);filter:blur(30px)}
-.cband > *{position:relative;z-index:1}
-.cband h2{color:#fff;font-size:clamp(2rem,4.4vw,3.2rem);letter-spacing:-.04em}
-.cband p{color:rgba(255,255,255,.78);max-width:560px;margin:16px auto 30px;font-size:1.1rem}
-.cband .btn--accent{box-shadow:0 12px 30px rgba(234,88,12,.4)}
-.cband .quick{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 32px;margin-top:28px}
-.cband .quick a{display:inline-flex;align-items:center;gap:9px;color:rgba(255,255,255,.86);font-weight:600;font-size:1.02rem;padding:6px 2px;border-bottom:1.5px solid transparent;transition:border-color .2s var(--ease),color .2s var(--ease)}
-.cband .quick a:hover{color:#fff;border-color:var(--accent-bright)}
-.cinfo{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:780px;margin:40px auto 0}
-.cinfo a{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;transition:transform .22s var(--ease-out),box-shadow .22s var(--ease-out),border-color .22s var(--ease)}
-.cinfo a:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--line-strong)}
-.cinfo .ci{width:48px;height:48px;border-radius:12px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.cinfo .lbl{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:700}
-.cinfo .val{font-family:var(--display);font-weight:700;font-size:1.12rem;letter-spacing:-.02em;color:var(--ink)}
+/* ---------- contact (blue) ---------- */
+.contact{background:linear-gradient(150deg,var(--blue),var(--blue-2));color:#fff}
+.contact__wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
+.contact h2{font-family:var(--sans);font-weight:800;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.03em;line-height:1.08}
+.contact .lead{font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.35rem);color:rgba(235,243,250,.9);margin:18px 0 36px;line-height:1.5}
+.cline{display:flex;align-items:flex-start;gap:15px;padding:18px 0;border-top:1px dashed rgba(255,255,255,.28)}
+.cline:last-child{border-bottom:1px dashed rgba(255,255,255,.28)}
+.cline svg{flex:0 0 auto;color:#fff;opacity:.92;margin-top:2px}
+.cline .v{font-size:1.18rem;font-weight:700;letter-spacing:-.01em}
+.cline .v a:hover{text-decoration:underline}
+.cline .k{font-size:.84rem;color:rgba(235,243,250,.7);font-weight:500}
+/* form */
+.form{background:transparent}
+.form .req{font-size:.9rem;color:rgba(235,243,250,.78);margin-bottom:20px}
+.form .req b{color:#fff}
+.fgroup{margin-bottom:18px}
+.fgroup label{display:block;font-family:var(--serif);font-style:italic;font-size:1.05rem;margin-bottom:8px;color:#fff}
+.fgroup input,.fgroup textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--navy);background:#e7eef4;border:2px solid transparent;border-radius:var(--r-sm);padding:13px 15px;transition:border-color .18s var(--ease),background .18s var(--ease)}
+.fgroup textarea{min-height:120px;resize:vertical}
+.fgroup input:focus,.fgroup textarea:focus{outline:none;background:#fff;border-color:var(--green)}
+.form .btn{width:100%;margin-top:6px}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.form .cnote{font-size:.82rem;color:rgba(235,243,250,.72);text-align:center;margin-top:12px}
+.form .cstatus{margin-top:12px;font-size:.92rem;font-weight:600;color:#ffe1da;display:none}
+.form .cstatus.show{display:block}
+.csuccess{display:none;text-align:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);border-radius:var(--r-lg);padding:42px 28px}
+.csuccess.show{display:block}
+.csuccess .cic{width:64px;height:64px;border-radius:50%;background:#fff;color:var(--green-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.csuccess h3{font-family:var(--sans);font-weight:800;font-size:1.5rem;color:#fff;letter-spacing:-.02em;margin-bottom:8px}
+.csuccess p{color:rgba(235,243,250,.9);max-width:380px;margin:0 auto}
+.csuccess a{color:#fff;font-weight:700;text-decoration:underline}
 
-/* footer */
-.foot{background:var(--bg-dark);color:rgba(243,244,239,.62);padding:60px 0 30px}
-.foot__grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:36px}
-.foot .brand{color:#fff;margin-bottom:14px}
-.foot .brand__mark{background:#fff;color:var(--ink)}
-.foot .brand__mark::after{background:var(--accent)}
-.foot__about{font-size:.9rem;max-width:280px;line-height:1.6;color:rgba(243,244,239,.55)}
-.foot h5{color:#fff;font-family:var(--body);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:14px}
-.foot a.fl{display:block;color:rgba(243,244,239,.6);font-size:.9rem;padding:5px 0;transition:color .18s var(--ease)}
-.foot a.fl:hover{color:var(--accent-bright)}
-.foot__bottom{max-width:var(--max);margin:46px auto 0;padding:22px 28px 0;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.82rem;color:rgba(243,244,239,.45)}
-.foot__badge{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:.76rem;color:var(--accent-bright);background:rgba(251,146,60,.09);border:1px solid rgba(251,146,60,.22);padding:6px 12px;border-radius:999px}
+/* ---------- footer ---------- */
+.foot{background:var(--navy-2);color:rgba(216,226,236,.7);padding:64px 0 0}
+.foot__grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:40px}
+.foot .brand{margin-bottom:16px}
+.foot .brand__txt{color:#fff}
+.foot .brand__mark{background:#fff;color:var(--navy)}
+.foot__about{font-size:.92rem;line-height:1.6;max-width:300px;color:rgba(216,226,236,.6)}
+.foot h5{color:#fff;font-size:.74rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.foot a.fl,.foot .fl{display:flex;align-items:center;gap:9px;color:rgba(216,226,236,.68);font-size:.94rem;padding:6px 0;transition:color .18s var(--ease)}
+.foot a.fl:hover{color:var(--green)}
+.foot .fl svg{flex:0 0 auto;color:var(--blue-icon)}
+.foot__bottom{max-width:var(--max);margin:50px auto 0;padding:24px 28px 32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.84rem;color:rgba(216,226,236,.5)}
+.foot__badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.78rem;color:var(--green);background:rgba(108,179,63,.1);border:1px solid rgba(108,179,63,.24);padding:6px 13px;border-radius:var(--r-pill)}
 
-/* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+/* ---------- reveal + utils ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
 .rv.show{opacity:1;transform:none}
-.rd1{transition-delay:.07s}.rd2{transition-delay:.14s}.rd3{transition-delay:.21s}
-
-.totop{position:fixed;bottom:26px;right:26px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 26px rgba(16,18,14,.3);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--ease)}
+.rd1{transition-delay:.06s}.rd2{transition-delay:.12s}.rd3{transition-delay:.18s}.rd4{transition-delay:.24s}
+.totop{position:fixed;bottom:24px;right:24px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 26px rgba(108,179,63,.4);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--ease)}
 .totop.show{opacity:1;pointer-events:all;transform:none}
-.totop:hover{background:#000;transform:translateY(-3px)}
+.totop:hover{background:var(--green-dark);transform:translateY(-3px)}
 
+/* ---------- responsive ---------- */
 @media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;gap:46px;text-align:center}
-  .hero p.sub{margin-inline:auto}.hero .cta-row,.hero .stats{justify-content:center}
-  .shot{margin:0 auto}
-  .work__grid,.build__grid{grid-template-columns:repeat(2,1fr)}
-  .why__grid{grid-template-columns:repeat(2,1fr)}
-  .migrate__grid{grid-template-columns:1fr;gap:36px}
+  .hero__wrap{grid-template-columns:1fr;gap:8px}
+  .hero__art{display:none}
+  .svc-grid{grid-template-columns:repeat(2,1fr);gap:14px 40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .count__wrap{grid-template-columns:1fr;gap:44px}
+  .orb{margin:0 auto}
+  .contact__wrap{grid-template-columns:1fr;gap:40px}
   .foot__grid{grid-template-columns:1fr 1fr}
 }
-@media(max-width:720px){
+@media(max-width:680px){
   .nav__links{display:none}.burger{display:flex}
-  .section{padding:82px 0}
-  .work__grid,.build__grid,.why__grid{grid-template-columns:1fr}
-  .cinfo{grid-template-columns:1fr}
-  .foot__grid{grid-template-columns:1fr;gap:26px}
+  .sec{padding:72px 0}
+  .expect{padding-top:104px}
+  .svc-grid,.stats,.cards,.feat-grid{grid-template-columns:1fr}
+  .foot__grid{grid-template-columns:1fr;gap:30px}
   .foot__bottom{flex-direction:column;text-align:center}
-  .hero .stats{gap:24px}
+  .hero .cta-row .btn{width:100%}
+  .statement::before{font-size:11rem;top:-10px}
 }
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:4px}
 </style>
 </head>
 <body>
+
+<!-- ===== NAV ===== -->
 <nav class="nav" id="nav">
   <div class="in">
-    <a href="#" class="brand"><span class="brand__mark">BH</span> BH Web Solutions</a>
+    <a href="#top" class="brand" aria-label="BH Web Solutions home">
+      <span class="brand__mark">BH</span>
+      <span class="brand__txt"><b>BH</b> Web Solutions</span>
+    </a>
     <ul class="nav__links">
-      <li><a href="#work">Our Work</a></li>
-      <li><a href="#build">What We Build</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#expect">Why us</a></li>
+      <li><a href="#migration">Migration</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li class="nav__cta"><a href="order.html" class="btn btn--accent">Start a Project</a></li>
+      <li class="nav__cta"><a href="order.html" class="btn btn--green btn--sm">Get a Quote <span class="caret">▾</span></a></li>
     </ul>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mobile" id="mobile">
-  <a href="#work">Our Work</a>
-  <a href="#build">What We Build</a>
-  <a href="#why">Why Us</a>
+  <a href="#services">Services</a>
+  <a href="#work">Work</a>
+  <a href="#expect">Why us</a>
+  <a href="#migration">Migration</a>
   <a href="#contact">Contact</a>
-  <a href="order.html" class="m-cta">Start a Project</a>
+  <a href="order.html" class="m-cta btn btn--green">Get a Quote</a>
 </div>
 
-<div class="shell">
-<!-- HERO -->
-<header class="hero">
-  <div class="in hero-grid">
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="in hero__wrap">
     <div>
-      <span class="eyebrow rise"><span class="dot"></span> Web design studio</span>
-      <h1 class="rise dl1">Websites that look like they cost thousands — <span class="em">for a fraction</span> of the price.</h1>
-      <p class="sub rise dl2">We design and build fast, beautiful, conversion-ready websites — from clean landing pages to full online stores — and get most of them live in days. Premium work, genuinely affordable, fully managed.</p>
-      <div class="cta-row rise dl3">
-        <a href="order.html" class="btn btn--accent btn--lg">Get Your Website
-          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#work" class="btn btn--ghost btn--lg">See Our Work</a>
-      </div>
-      <div class="stats rise dl4">
-        <div class="stat"><b>9+</b><span>Projects shipped</span></div>
-        <div class="stat"><b>~48 hrs</b><span>Typical turnaround</span></div>
-        <div class="stat"><b>Fully</b><span>Managed for you</span></div>
-        <div class="stat"><b>SEO</b><span>Ready out of the box</span></div>
+      <h1 class="rv">Looking for a web developer who's easy to work with — <span class="hl">and won't blow your budget?</span></h1>
+      <p class="sub rv rd1">We design and build fast, modern websites — from clean landing pages to full online stores and custom platforms — and get most of them live in days. Premium work, genuinely affordable, fully managed for you.</p>
+      <div class="cta-row rv rd2">
+        <a href="order.html" class="btn btn--green">Get a Quote <span class="caret">▾</span></a>
+        <a href="#work" class="btn btn--ghost">See our work</a>
       </div>
     </div>
-    <div class="rise dl5">
-      <div class="shot" aria-hidden="true">
-        <div class="shot__bar"><i></i><i></i><i></i>
-          <span class="shot__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>yourbusiness.com</span>
-        </div>
-        <div class="shot__hero">
-          <span class="shot__tag">Your brand</span>
-          <div class="bar w85"></div><div class="bar w60"></div>
-          <div class="shot__btn"></div>
-        </div>
-        <div class="shot__row">
-          <div class="shot__c"><div class="shot__ci"></div><div class="bar w90"></div><div class="bar w45"></div></div>
-          <div class="shot__c"><div class="shot__ci"></div><div class="bar w90"></div><div class="bar w45"></div></div>
-          <div class="shot__c"><div class="shot__ci"></div><div class="bar w90"></div><div class="bar w45"></div></div>
-        </div>
+    <div class="hero__art rv rd2" aria-hidden="true">
+      <div class="screens">
+        <div class="scr scr--a"><div class="bar m"></div><div class="bar s"></div><div class="chip"></div></div>
+        <div class="scr scr--b"><div class="bar m"></div><div class="bar s"></div></div>
+        <div class="scr scr--c"><div class="bar s"></div></div>
       </div>
     </div>
   </div>
+  <div class="hero__strip"></div>
 </header>
 
-<!-- LOGOS -->
-<div class="logos">
+<!-- ===== SERVICES (dark) ===== -->
+<section class="services sec" id="services">
   <div class="in">
-    <span class="logos__label">A few of the businesses we've built for</span>
-    <span class="logos__item">Sprout Vitamins</span>
-    <span class="logos__item">Preshburg Gluten Free</span>
-    <span class="logos__item">Fresh Spin</span>
-    <span class="logos__item">CCMeals</span>
-    <span class="logos__item">Rottenberg's Catering</span>
-    <span class="logos__item">Heritage Citizenships</span>
-  </div>
-</div>
-
-<!-- WORK -->
-<section class="work section" id="work">
-  <div class="in">
-    <span class="eyebrow rv"><span class="dot"></span> Recent work</span>
-    <h2 class="h2 rv rd1">Real sites, real businesses</h2>
-    <p class="lead rv rd1">From large online stores to booking platforms and custom ordering systems — every project is custom-designed, responsive, and built to convert. The previews below are live shots of each site.</p>
-    <div class="work__grid">
-
-      <!-- Sprout -->
-      <a href="https://sproutvitamins.com" target="_blank" rel="noopener" class="case rv rd1">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>sproutvitamins.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Sprout Vitamins" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Sprout Vitamins <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A large-scale kosher vitamins & supplements store — 700+ products across 40+ categories, with fast product search, category filtering and a clean, premium storefront built to handle a big catalog.</p>
-          <div class="tags"><span class="tag">E-commerce</span><span class="tag">700+ products</span><span class="tag">Search & filter</span></div>
-        </div>
-      </a>
-
-      <!-- Preshburg -->
-      <a href="https://preshburgglutenfree.com" target="_blank" rel="noopener" class="case rv rd2">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>preshburgglutenfree.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Preshburg Gluten Free" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fpreshburgglutenfree.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w90"></span><span class="ln w55"></span><span class="ln w70"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Preshburg Gluten Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A gluten-free, kosher-dairy bakery with online ordering for cakes, cookies & pastries — plus a dedicated <b>wholesale ordering portal</b> for trade and bulk buyers. Warm, appetizing, custom design.</p>
-          <div class="tags"><span class="tag">E-commerce</span><span class="tag">Wholesale portal</span><span class="tag">Online ordering</span></div>
-        </div>
-      </a>
-
-      <!-- Fresh Spin (live on temp url) -->
-      <a href="https://abrahamn7.sg-host.com" target="_blank" rel="noopener" class="case rv rd3">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>live preview</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Fresh Spin" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrahamn7.sg-host.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Fresh Spin <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">An appliance & home-cleaning service business with <b>online booking</b> for dryer-vent, A/C, mini-split, washer and dishwasher cleaning, plus a small supplies shop. Live now on a temporary preview URL while its custom domain is finalized.</p>
-          <div class="tags"><span class="tag">Service booking</span><span class="tag">Scheduling</span><span class="tag">Shop</span></div>
-        </div>
-      </a>
-
-      <!-- CCMeals (live on temp url) -->
-      <a href="https://abrahamn6.sg-host.com" target="_blank" rel="noopener" class="case rv rd1">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>live preview</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of CCMeals" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrahamn6.sg-host.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w55"></span><span class="ln w90"></span><span class="ln w40"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">CCMeals <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A custom meal-ordering platform where members order meals using prepaid credits — with a full multi-role system (customers, vendors, secretaries, delivery), wallet balances and dedicated dashboards. Live now on a temporary preview URL while its custom domain is finalized.</p>
-          <div class="tags"><span class="tag">Custom platform</span><span class="tag">Multi-vendor</span><span class="tag">Credit / wallet</span></div>
-        </div>
-      </a>
-
-      <!-- Antikele (live) -->
-      <a href="https://antikele.com" target="_blank" rel="noopener" class="case rv rd2">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>antikele.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Antikele" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fantikele.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w70"></span><span class="ln w40"></span><span class="ln w90"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Antikele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A premium sefarim & leather-bound Judaica store with PayPal checkout, lightbox galleries and a blazing-fast static frontend. Live now at antikele.com, with new products and photography being added regularly.</p>
-          <div class="tags"><span class="tag">E-commerce</span><span class="tag">PayPal</span><span class="tag">Static · fast</span></div>
-        </div>
-      </a>
-
-      <!-- Rottenberg's -->
-      <a href="https://rottenbergscatering.com" target="_blank" rel="noopener" class="case rv rd3">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>rottenbergscatering.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Rottenberg's Catering" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Frottenbergscatering.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w90"></span><span class="ln w40"></span><span class="ln w70"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Rottenberg's Catering <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">An elegant catering website with a mouthwatering menu display, a seamless inquiry form and an appetite-first layout that turns browsers into bookings.</p>
-          <div class="tags"><span class="tag">Menu site</span><span class="tag">Inquiry form</span><span class="tag">Lead-gen</span></div>
-        </div>
-      </a>
-
-      <!-- Heritage -->
-      <a href="https://heritagecitizenships.com" target="_blank" rel="noopener" class="case rv rd1">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>heritagecitizenships.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Heritage Citizenships" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fheritagecitizenships.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w70"></span><span class="ln w55"></span><span class="ln w90"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Heritage Citizenships <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A clean, professional site for citizenship & immigration services, with a user-friendly contact form and a modern, trustworthy design that converts inquiries.</p>
-          <div class="tags"><span class="tag">Professional site</span><span class="tag">Lead form</span><span class="tag">Services</span></div>
-        </div>
-      </a>
-
-      <!-- Ohr Chodosh -->
-      <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener" class="case rv rd2">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>ohrchodoshorg.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of Ohr Chodosh" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fohrchodoshorg.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">Ohr Chodosh <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A nonprofit we <b>migrated off WordPress</b> to fast, free static hosting — keeping its donation form and event calendar while improving speed and security.</p>
-          <div class="tags"><span class="tag">Migration</span><span class="tag">Nonprofit</span><span class="tag">Donations</span></div>
-        </div>
-      </a>
-
-      <!-- BHSHLT -->
-      <a href="https://bhshltmanagement.com" target="_blank" rel="noopener" class="case rv rd3">
-        <div class="case__top">
-          <span class="case__badge live"><span class="bdot"></span>Live</span>
-          <div class="case__shot">
-            <div class="case__sbar"><i></i><i></i><i></i><span class="case__surl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="4" y="11" width="16" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>bhshltmanagement.com</span></div>
-            <div class="case__frame">
-              <img class="case__img" loading="lazy" alt="Live preview of BHSHLT Management" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fbhshltmanagement.com?w=1200&h=900" onerror="this.closest('.case__frame').classList.add('noimg')">
-              <div class="case__skel"><span class="ln w55"></span><span class="ln w90"></span><span class="ln w40"></span><span class="accent-ln"></span></div>
-            </div>
-          </div>
-        </div>
-        <div class="case__body">
-          <div class="case__name">BHSHLT Management <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
-          <p class="case__desc">A property-management platform with a tenant portal, maintenance-request forms and a robust, responsive interface that keeps tenants and managers in sync.</p>
-          <div class="tags"><span class="tag">Portal</span><span class="tag">Tenant area</span><span class="tag">Request forms</span></div>
-        </div>
-      </a>
-
+    <h2 class="rv">Web development <b>built around your business</b></h2>
+    <p class="lead rv rd1">With 9+ websites shipped — from large online stores to custom booking and ordering platforms — we build high-quality sites that are made to perform and priced to make sense. Here's how we can help:</p>
+    <div class="svc-grid">
+      <div class="svc rv rd1"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div class="svc__t">Web Design</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 9h14M5 15h12M9 21c-2-3-2-15 0-18M15 3c1.6 2.6 1.9 9 1 13"/></svg></span><div class="svc__t">WordPress Development</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.2 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg></span><div class="svc__t">E-commerce Stores</div></div>
+      <div class="svc rv rd1"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="17" cy="17" r="1.3"/></svg></span><div class="svc__t">Custom Platforms</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 3-4"/></svg></span><div class="svc__t">Online Booking</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v3H6v11h12V9h-2V6a4 4 0 0 0-4-4Z"/><circle cx="12" cy="14.5" r="1.4"/></svg></span><div class="svc__t">Member &amp; Client Portals</div></div>
+      <div class="svc rv rd1" id="migration"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 4h5v5M21 4l-9 9"/></svg></span><div class="svc__t">WordPress → Static Migration</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div class="svc__t">Payments Integration</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span><div class="svc__t">SEO-Ready Builds</div></div>
     </div>
   </div>
 </section>
 
-<!-- WHAT WE BUILD -->
-<section class="section" id="build">
-  <div class="in center">
-    <span class="eyebrow rv"><span class="dot"></span> What we build</span>
-    <h2 class="h2 rv rd1">One studio. Every kind of website.</h2>
-    <p class="lead rv rd1">Whatever your business needs, we've built it before — and we'll build it beautifully, quickly, and at a price that's hard to believe.</p>
-  </div>
+<!-- ===== RESULTS BAND (green) ===== -->
+<section class="results sec">
   <div class="in">
-    <div class="build__grid">
-      <div class="cap rv rd1"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.2 12.5a2 2 0 0 0 2 1.5h8.4a2 2 0 0 0 2-1.6L23 7H6"/></svg></div><h3>Online stores</h3><p>Full e-commerce with hundreds of products, categories, search, filtering and secure checkout — built to scale.</p></div>
-      <div class="cap rv rd2"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18M3 9l2-5h14l2 5M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M9 13h6"/></svg></div><h3>Wholesale portals</h3><p>B2B wholesale ordering with bulk quantities, trade pricing and dedicated trade accounts.</p></div>
-      <div class="cap rv rd3"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 3-4"/></svg></div><h3>Online booking</h3><p>Service businesses with online booking, scheduling and instant payment — fewer phone calls, more bookings.</p></div>
-      <div class="cap rv rd1"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.4"/><circle cx="12" cy="12" r="1.4"/><circle cx="17" cy="17" r="1.4"/></svg></div><h3>Custom platforms</h3><p>Multi-vendor marketplaces, member systems, credit/wallet checkout and role-based dashboards — built from scratch.</p></div>
-      <div class="cap rv rd2"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M2 20h20M9 8l2 2 4-4"/></svg></div><h3>Landing & lead-gen</h3><p>High-converting landing pages with built-in inquiry forms that capture leads from day one.</p></div>
-      <div class="cap rv rd3"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a5 5 0 0 0-5 5v3H5v10h14V10h-2V7a5 5 0 0 0-5-5Z"/><circle cx="12" cy="15" r="1.5"/></svg></div><h3>Member & client portals</h3><p>Tenant, member and client portals with secure account areas, forms and request management.</p></div>
-      <div class="cap rv rd1"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 4h5v5M21 4l-8 8"/></svg></div><h3>WordPress migration</h3><p>Move an existing WordPress site to faster, more secure hosting — handled end-to-end.</p></div>
-      <div class="cap rv rd2"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div><h3>Payments built in</h3><p>Stripe & PayPal integration so you can take payments and deposits directly through your site.</p></div>
-      <div class="cap rv rd3"><div class="cap__ic"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div><h3>Fast & SEO-ready</h3><p>Lightning-fast load times, flawless on mobile, and structured to be found on Google.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY (dark) -->
-<section class="why section" id="why">
-  <div class="in center">
-    <span class="eyebrow rv"><span class="dot"></span> Why BH Web Solutions</span>
-    <h2 class="h2 rv rd1">Premium work, unbeatable value</h2>
-    <p class="lead rv rd1">Fast, reliable and genuinely affordable — quality work at a price that's hard to beat, with no corners cut.</p>
-  </div>
-  <div class="in">
-    <div class="why__grid">
-      <div class="wc rv rd1"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></div><h3>Ready in days</h3><p>Most sites go live in around 48 hours. We move fast — without ever cutting corners.</p></div>
-      <div class="wc rv rd2"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><h3>Budget-friendly</h3><p>Beautiful, professional websites at a genuinely affordable price — cheap without ever feeling cheap.</p></div>
-      <div class="wc rv rd3"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h7"/></svg></div><h3>Hosting handled</h3><p>Static sites we build are hosted free, for life. For WordPress, it's just a small monthly hosting fee — and we set you up with the most affordable option.</p></div>
-      <div class="wc rv rd1"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.4 2.6L3 8"/><path d="M3 3v5h5"/></svg></div><h3>Revisions included</h3><p>We refine until it's right — multiple rounds of revisions come with every build.</p></div>
-      <div class="wc rv rd1"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 6.5 7 9 4-2.5 7-5 7-9V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Fully managed</h3><p>No tech headaches. We build it, set up hosting, and keep it running so you can focus on business.</p></div>
-      <div class="wc rv rd2"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 18h6"/></svg></div><h3>Perfect on every screen</h3><p>Fully responsive and pixel-perfect on phones, tablets and desktops — automatically.</p></div>
-      <div class="wc rv rd3"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></div><h3>Found on Google</h3><p>Built with clean, SEO-ready structure so the right customers can actually find you.</p></div>
-      <div class="wc rv rd1"><div class="wc__ic"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 6.5 7 9 4-2.5 7-5 7-9V6l-7-3Z"/></svg></div><h3>Reliable & secure</h3><p>Built on dependable, secure infrastructure with best practices baked in from the start.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- MIGRATION -->
-<section class="section" id="migration">
-  <div class="in migrate__grid">
-    <div class="rv">
-      <span class="eyebrow"><span class="dot"></span> Migration service</span>
-      <h2 class="h2">Already on WordPress? We'll move you.</h2>
-      <p class="lead">If you already have a WordPress site, we can migrate it to fast, secure <b>static hosting</b> — which we then host for free. Better speed, better security, and no more monthly hosting bills.</p>
-      <ul class="migrate__list">
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 5 6v6c0 4 3 6.5 7 9 4-2.5 7-5 7-9V6l-7-3Z"/></svg><span><b>Better security</b> — static sites have a far smaller attack surface than WordPress.</span></li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span><b>Faster load times</b> — no database queries, no bloated plugins.</span></li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg><span><b>No more hosting bills</b> — once it's static, we host it free for life.</span></li>
-        <li><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg><span><b>We handle everything</b> — minimal downtime, complete handover.</span></li>
-      </ul>
-      <a href="order.html" class="btn btn--ghost btn--lg">Request a Migration</a>
-    </div>
-    <div class="panel rv rd2">
-      <div class="flow">
-        <div class="flow__i">WordPress<small>Your current site</small></div>
-        <span class="flow__a">→</span>
-        <div class="flow__i hl">BH Web<small>Migration</small></div>
-        <span class="flow__a">→</span>
-        <div class="flow__i">Static<small>Hosted free</small></div>
+    <h2 class="rv">We go beyond just building websites to deliver <b>real results:</b></h2>
+    <div class="stats">
+      <div class="stat rv rd1">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span>
+        <div class="stat__n">9+</div>
+        <div class="stat__d">Websites designed &amp; launched</div>
+        <div class="stat__l">and counting</div>
       </div>
-      <p class="panel__note">Faster, safer, and no monthly hosting fees on the static side.</p>
+      <div class="stat rv rd2">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+        <div class="stat__n">~48h</div>
+        <div class="stat__d">Typical turnaround, start to live</div>
+        <div class="stat__l">fast</div>
+      </div>
+      <div class="stat rv rd3">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.4 9.3a2 2 0 0 1-2 1.7H6.4a2 2 0 0 1-2-1.7L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>
+        <div class="stat__n">700+</div>
+        <div class="stat__d">Products on our largest store</div>
+        <div class="stat__l">Sprout Vitamins</div>
+      </div>
+      <div class="stat rv rd4">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div class="stat__n">$0</div>
+        <div class="stat__d">Hosting on static sites — free for life</div>
+        <div class="stat__l">no monthly bills</div>
+      </div>
+      <div class="stat rv rd4">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M10 18h4"/></svg></span>
+        <div class="stat__n">100%</div>
+        <div class="stat__d">Responsive on phone, tablet &amp; desktop</div>
+        <div class="stat__l">every screen</div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CTA + CONTACT -->
-<section class="contact section" id="contact" style="padding-top:0">
-  <div class="cband rv">
-    <h2>Ready to launch? Let's build it.</h2>
-    <p>Tell us about your project and we'll get back to you within hours. A brand-new site or a migration — we're ready when you are.</p>
-    <a href="order.html" class="btn btn--accent btn--lg">Start Your Project
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-    <div class="quick">
-      <a href="tel:8455870531"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>845-587-0531</a>
-      <a href="mailto:info@bhwebsolutions.com"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@bhwebsolutions.com</a>
-    </div>
-  </div>
-
+<!-- ===== WORK (light) ===== -->
+<section class="work sec" id="work">
   <div class="in">
-    <div class="cinfo">
-      <a href="tel:8455870531" class="rv rd1">
-        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>
-        <span><span class="lbl">Call us</span><br><span class="val">845-587-0531</span></span>
+    <h2 class="rv">Web design isn't just what we're called — <b>it's what we deliver.</b></h2>
+    <p class="sub rv rd1">A few of the real businesses we've designed, built, and launched. Each preview below is a live shot of the actual site.</p>
+    <div class="cards">
+
+      <a href="https://sproutvitamins.com" target="_blank" rel="noopener" class="card rv rd1">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Sprout Vitamins" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Sprout Vitamins <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A large kosher vitamins &amp; supplements store — 700+ products with fast search, category filtering and a clean premium storefront.</p>
+          <span class="card__tag">E-commerce · 700+ products</span>
+        </div>
       </a>
-      <a href="mailto:info@bhwebsolutions.com" class="rv rd2">
-        <span class="ci"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-        <span><span class="lbl">Email us</span><br><span class="val">info@bhwebsolutions.com</span></span>
+
+      <a href="https://preshburgglutenfree.com" target="_blank" rel="noopener" class="card rv rd2">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Preshburg Gluten Free" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fpreshburgglutenfree.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w90"></span><span class="ln w55"></span><span class="ln w70"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Preshburg Gluten Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A gluten-free bakery with online ordering for cakes, cookies &amp; pastries, plus a dedicated wholesale ordering portal.</p>
+          <span class="card__tag">E-commerce · Wholesale</span>
+        </div>
       </a>
+
+      <a href="https://antikele.com" target="_blank" rel="noopener" class="card rv rd3">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Antikele" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fantikele.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w70"></span><span class="ln w40"></span><span class="ln w90"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Antikele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A premium sefarim &amp; leather-bound Judaica store with PayPal checkout and a blazing-fast static frontend.</p>
+          <span class="card__tag">E-commerce · Static · Fast</span>
+        </div>
+      </a>
+
+      <a href="https://rottenbergscatering.com" target="_blank" rel="noopener" class="card rv rd4">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Rottenberg's Catering" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Frottenbergscatering.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w90"></span><span class="ln w40"></span><span class="ln w70"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Rottenberg's Catering <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">An elegant catering site with a mouthwatering menu display and a seamless inquiry form that turns browsers into bookings.</p>
+          <span class="card__tag">Menu site · Lead-gen</span>
+        </div>
+      </a>
+
+      <a href="https://abrahamn6.sg-host.com" target="_blank" rel="noopener" class="card rv rd1">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of CCMeals" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrahamn6.sg-host.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w55"></span><span class="ln w90"></span><span class="ln w40"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">CCMeals <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A custom meal-ordering platform with prepaid credits, multi-role accounts, wallet balances and dedicated dashboards.</p>
+          <span class="card__tag">Custom platform · Wallet</span>
+        </div>
+      </a>
+
+      <a href="https://abrahamn7.sg-host.com" target="_blank" rel="noopener" class="card rv rd2">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Fresh Spin" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fabrahamn7.sg-host.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Fresh Spin <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">An appliance &amp; home-cleaning service with online booking for dryer-vent, A/C and washer cleaning, plus a small supplies shop.</p>
+          <span class="card__tag">Service booking · Shop</span>
+        </div>
+      </a>
+
+      <a href="https://heritagecitizenships.com" target="_blank" rel="noopener" class="card rv rd3">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Heritage Citizenships" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fheritagecitizenships.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w70"></span><span class="ln w55"></span><span class="ln w90"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Heritage Citizenships <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A clean, professional site for citizenship &amp; immigration services with a friendly contact form and a trustworthy design.</p>
+          <span class="card__tag">Professional · Lead form</span>
+        </div>
+      </a>
+
+      <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener" class="card rv rd4">
+        <div class="card__shot">
+          <span class="card__badge"><span class="bd"></span>Live</span>
+          <img loading="lazy" alt="Live preview of Ohr Chodosh" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fohrchodoshorg.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')">
+          <div class="card__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w40"></span><span class="green-ln"></span></div>
+        </div>
+        <div class="card__body">
+          <div class="card__name">Ohr Chodosh <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div>
+          <p class="card__desc">A nonprofit we migrated off WordPress to fast, free static hosting — keeping its donation form while boosting speed and security.</p>
+          <span class="card__tag">Migration · Nonprofit</span>
+        </div>
+      </a>
+
+    </div>
+    <div class="work__more rv">
+      <a href="order.html" class="see-more">Start your project <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
     </div>
   </div>
 </section>
-</div>
 
-<!-- FOOTER -->
+<!-- floating green CTA between sections -->
+<div class="cta-float"><a href="order.html" class="btn btn--green">Get a Quote <span class="caret">▾</span></a></div>
+
+<!-- ===== EXPECT MORE (light) ===== -->
+<section class="expect sec" id="expect">
+  <div class="in">
+    <h2 class="rv"><b>Expect more</b> from your web developer</h2>
+    <p class="lead rv rd1">BH Web Solutions builds custom websites and online stores for businesses that want premium work without the premium price. Here's what you can expect when working with us:</p>
+    <div class="feat-grid">
+      <div class="feat rv rd1">
+        <span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><circle cx="11" cy="11" r="3.4"/><path d="m17 5 4-2-2 4"/></svg></span>
+        <p><b>A personal approach</b> — you work directly with the person building your site, never a sales team or a queue.</p>
+      </div>
+      <div class="feat rv rd2">
+        <span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 9h14M5 15h12M9 21c-2-3-2-15 0-18M15 3c1.6 2.6 1.9 9 1 13"/></svg></span>
+        <p><b>Expert WordPress &amp; e-commerce</b> — custom design, full online stores, wholesale portals, and reliable builds.</p>
+      </div>
+      <div class="feat rv rd3">
+        <span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4V10zM7 10l4-7a2 2 0 0 1 2 1.4L12 9h6a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 16.7 21H7"/></svg></span>
+        <p><b>Proven best practices</b> — fast load times, SEO-ready structure, and a design that's perfect on every screen.</p>
+      </div>
+      <div class="feat rv rd4">
+        <span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><circle cx="12" cy="14" r="1.4"/></svg></span>
+        <p><b>Free static hosting</b> — we can migrate your WordPress site to static, so your hosting costs nothing.</p>
+      </div>
+      <div class="feat rv rd4">
+        <span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12l6 6"/><path d="M13.5 4 10.5 20"/></svg></span>
+        <p><b>Honest, fair pricing</b> — beautiful, professional work at a price that actually makes sense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUNT ON US (dark) ===== -->
+<section class="count sec">
+  <div class="in count__wrap">
+    <div class="rv">
+      <h2><b>Count on BH Web Solutions</b> to get your next project done right.</h2>
+      <p class="lead">A brand-new online store or an aging WordPress site that needs a new home — our work is fast, clean, and built to convert, delivered when it matters.</p>
+      <ul class="checklist">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Modern, conversion-focused design</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Custom WordPress &amp; e-commerce development</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Online booking, portals &amp; custom platforms</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> WordPress → static migration with free hosting</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Fast, SEO-ready &amp; mobile-perfect</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Multiple rounds of revisions included</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> Outstanding value at a fair price</li>
+      </ul>
+    </div>
+    <div class="rv rd2">
+      <div class="orb">
+        <div class="orb__ring">
+          <img loading="lazy" alt="Featured project preview" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=1100&h=1100" onerror="this.closest('.orb__ring').classList.add('noimg')">
+          <div class="orb__skel"><span class="ln w70"></span><span class="ln w90"></span><span class="ln w55"></span><span class="ln w40"></span></div>
+        </div>
+        <div class="orb__badge" aria-hidden="true"><b>BH</b><i></i></div>
+        <div class="orb__float"><b>9+</b><span>projects shipped</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATEMENT (light) ===== -->
+<section class="statement sec">
+  <div class="in">
+    <p class="rv">We treat every project like it's our own — we listen to what you actually need, build it properly, keep it on schedule, and deliver exactly what we promised. No agency runaround, no surprise costs, no corners cut.</p>
+    <cite class="rv rd1"><b>The BH Web Solutions promise</b> — to every business we build for</cite>
+  </div>
+</section>
+
+<!-- ===== CONTACT (blue) ===== -->
+<section class="contact sec" id="contact">
+  <div class="in contact__wrap">
+    <div class="rv">
+      <h2>Ready to start your project?</h2>
+      <p class="lead">Tell us about your website or online store and we'll get back to you within hours.</p>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
+        <div><div class="k">Call or text</div><div class="v"><a href="tel:8455870531">845-587-0531</a></div></div>
+      </div>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><div class="k">Email us</div><div class="v"><a href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a></div></div>
+      </div>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">Availability</div><div class="v">We reply within hours — online, serving clients everywhere</div></div>
+      </div>
+    </div>
+
+    <div class="form rv rd2">
+      <p class="req"><b>*</b> denotes required fields.</p>
+      <form id="inquiry" action="https://forminit.com/f/nsf8hkp98fw" method="POST" novalidate>
+        <div class="fgroup"><label for="f-name">Name *</label><input id="f-name" name="fi-sender-fullName" type="text" autocomplete="name" required></div>
+        <div class="fgroup"><label for="f-org">Business / Organization</label><input id="f-org" name="fi-text-business" type="text" autocomplete="organization"></div>
+        <div class="fgroup"><label for="f-email">Email *</label><input id="f-email" name="fi-sender-email" type="email" autocomplete="email" required></div>
+        <div class="fgroup"><label for="f-phone">Phone *</label><input id="f-phone" name="fi-text-phone" type="tel" autocomplete="tel" required></div>
+        <div class="fgroup"><label for="f-site">Current website (if any)</label><input id="f-site" name="fi-text-existing_site" type="url" placeholder="https://"></div>
+        <div class="fgroup"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="fi-text-message" placeholder="What kind of site do you need? Online store, booking, migration…"></textarea></div>
+        <input type="hidden" name="fi-text-landing_page" id="c_landing">
+        <input type="hidden" name="fi-text-submitted_at" id="c_submitted">
+        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn--green" id="cSubmit">Send inquiry
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
+        <p class="cnote">We'll reply within hours — usually much sooner.</p>
+        <div class="cstatus" id="cStatus"></div>
+      </form>
+      <div class="csuccess" id="cSuccess">
+        <div class="cic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Thanks — got it!</h3>
+        <p>Your message is in. We'll get back to you within hours. Need us sooner? Call <a href="tel:8455870531">845-587-0531</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer class="foot">
   <div class="in foot__grid">
     <div>
-      <div class="brand"><span class="brand__mark">BH</span> BH Web Solutions</div>
-      <p class="foot__about">A web design studio building beautiful, fast websites — done quickly, priced fairly, and fully managed.</p>
+      <a href="#top" class="brand">
+        <span class="brand__mark">BH</span>
+        <span class="brand__txt"><b>BH</b> Web Solutions</span>
+      </a>
+      <p class="foot__about">Custom websites, online stores, and WordPress-to-static migrations — designed beautifully, built fast, priced fairly, and fully managed.</p>
     </div>
     <div>
       <h5>Services</h5>
-      <a class="fl" href="#build">What We Build</a>
-      <a class="fl" href="#migration">WordPress Migration</a>
-      <a class="fl" href="#work">Our Work</a>
-      <a class="fl" href="order.html">Get Your Website</a>
+      <a class="fl" href="#services">Web design</a>
+      <a class="fl" href="#services">WordPress &amp; e-commerce</a>
+      <a class="fl" href="#migration">WordPress migration</a>
+      <a class="fl" href="#services">Custom platforms</a>
     </div>
     <div>
       <h5>Company</h5>
-      <a class="fl" href="#why">Why Us</a>
-      <a class="fl" href="tel:8455870531">845-587-0531</a>
-      <a class="fl" href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a>
+      <a class="fl" href="#expect">Why us</a>
+      <a class="fl" href="#work">Our work</a>
+      <a class="fl" href="#contact">Contact</a>
+      <a class="fl" href="order.html">Get a quote</a>
     </div>
     <div>
-      <h5>Get started</h5>
-      <a class="fl" href="order.html">Order a website</a>
-      <a class="fl" href="order.html">Request a migration</a>
-      <a class="fl" href="#contact">Contact us</a>
+      <h5>Get in touch</h5>
+      <a class="fl" href="tel:8455870531"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>845-587-0531</a>
+      <a class="fl" href="mailto:info@bhwebsolutions.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@bhwebsolutions.com</a>
+      <a class="fl" href="order.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Start a project</a>
     </div>
   </div>
   <div class="foot__bottom">
-    <span>&copy; 2026 BH Web Solutions. All rights reserved.</span>
-    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> Designed & built by BH Web Solutions</span>
+    <span>© 2026 BH Web Solutions. All rights reserved.</span>
+    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> Designed &amp; built by BH Web Solutions</span>
   </div>
 </footer>
 
 <button class="totop" id="totop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
+<!-- Forminit SDK (same endpoint as the project / order form) -->
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
 <script>
 (function(){
   var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
-  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>30);totop.classList.toggle('show',y>640);}
+  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>20);totop.classList.toggle('show',y>620);}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   function toggle(){var a=mobile.classList.toggle('on');burger.classList.toggle('on',a);burger.setAttribute('aria-expanded',a);document.body.style.overflow=a?'hidden':'';}
   burger.addEventListener('click',toggle);
   mobile.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(mobile.classList.contains('on'))toggle();});});
   totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
+
+  // contact form -> Forminit (same form endpoint as the project page)
+  var FORM_ID='nsf8hkp98fw';
+  var cform=document.getElementById('inquiry'),cbtn=document.getElementById('cSubmit'),cstatus=document.getElementById('cStatus'),csuccess=document.getElementById('cSuccess');
+  var sendIcon='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>';
+  if(cform){
+    try{document.getElementById('c_landing').value=document.referrer||location.href;}catch(e){}
+    var cErr=function(m){cstatus.textContent=m;cstatus.classList.add('show');};
+    cform.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+      if(!v('f-name')||!v('f-email')||!v('f-phone')){cErr('Please add your name, email and phone so we can reach you.');return;}
+      var hp=cform.querySelector('input[name="_honey"]');
+      if(hp&&hp.value){cform.style.display='none';csuccess.classList.add('show');return;}
+      document.getElementById('c_submitted').value=new Date().toISOString();
+      cstatus.classList.remove('show');cbtn.disabled=true;cbtn.textContent='Sending…';
+      try{
+        if(typeof Forminit==='undefined')throw new Error('SDK not loaded');
+        var fd=new FormData(cform);fd.delete('_honey');
+        var fi=new Forminit();
+        var res=await fi.submit(FORM_ID,fd);
+        if(res&&res.error)throw new Error('failed');
+        cform.style.display='none';csuccess.classList.add('show');csuccess.scrollIntoView({behavior:'smooth',block:'center'});
+      }catch(ex){
+        cbtn.disabled=false;cbtn.innerHTML='Send inquiry '+sendIcon;
+        cErr('Something went wrong sending your message. Please try again, or call 845-587-0531.');
+      }
+    });
+  }
+
+  // scroll reveal
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window){
-    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -50px 0px'});
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
     els.forEach(function(el){io.observe(el);});
   }else{els.forEach(function(el){el.classList.add('show');});}
 })();
 </script>
+
 <!-- Cloudflare Web Analytics (kept from existing site) -->
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ed9203e68e4d09833e411cd68485df","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
