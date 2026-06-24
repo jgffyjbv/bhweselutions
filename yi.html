@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BH Web Solutions — קאסטום וועבסייטס און אנליין געשעפטן, געטון ריכטיג</title>
+<meta name="description" content="BH Web Solutions דיזיינט און בויט שנעלע, מאדערנע וועבסייטס — אנליין געשעפטן, בוקינג סיסטעמען, קאסטום פלאטפארמעס, און אריבערפירן פון ווארדפרעס צו סטאטיק מיט פרייע האוסטינג. פרימיום ארבעט, באמת ביליג.">
+<meta name="theme-color" content="#0c2340">
+<link rel="canonical" href="https://bhwebsolutions.com/yi.html">
+<link rel="alternate" hreflang="en" href="https://bhwebsolutions.com/">
+<link rel="alternate" hreflang="yi" href="https://bhwebsolutions.com/yi.html">
+<link rel="alternate" hreflang="x-default" href="https://bhwebsolutions.com/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="BH Web Solutions — קאסטום וועבסייטס און אנליין געשעפטן">
+<meta property="og:description" content="מיר דיזיינען און בויען שנעלע, מאדערנע וועבסייטס און אנליין געשעפטן — פרימיום ארבעט, באמת ביליג, פולשטענדיג געמענעדזשד פאר אייך.">
+<meta property="og:url" content="https://bhwebsolutions.com/yi.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800;900&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --navy:#0c2340;--navy-2:#0a1d35;
+  --blue:#15689f;--blue-2:#125a8a;
+  --blue-icon:#3d8fc7;--blue-icon-2:#5aa3d4;
+  --green:#6cb33f;--green-dark:#5a9c33;--green-darker:#4f8a2c;
+  --bg:#ffffff;--bg-soft:#f5f8fb;--bg-soft2:#eef3f8;
+  --ink:#13243a;--ink-soft:#46586a;--muted:#7e8d99;
+  --line:#e3eaf1;--line-2:#d6e0ea;
+  --r-sm:8px;--r:12px;--r-lg:18px;--r-xl:26px;--r-pill:999px;
+  --shadow-sm:0 1px 2px rgba(12,35,64,.05);
+  --shadow:0 2px 6px rgba(12,35,64,.06),0 18px 40px rgba(12,35,64,.08);
+  --shadow-lg:0 30px 64px rgba(12,35,64,.16);
+  --sans:'Heebo','Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:'Frank Ruhl Libre','Newsreader',Georgia,serif;
+  --max:1200px;--nav:74px;
+  --ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav);font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.7;overflow-x:hidden;letter-spacing:normal}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--blue);color:#fff}
+.in{max-width:var(--max);margin:0 auto;padding:0 28px}
+.sec{padding:104px 0;position:relative}
+h1,h2,h3,h5,p,a,span,li,cite,label,div{letter-spacing:normal}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:700;font-size:1.06rem;padding:15px 30px;border-radius:var(--r-pill);cursor:pointer;border:2px solid transparent;transition:transform .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease),border-color .2s var(--ease),color .2s var(--ease);white-space:nowrap}
+.btn svg{transition:transform .2s var(--ease)}
+.btn--green{background:var(--green);color:#fff;box-shadow:0 10px 24px rgba(108,179,63,.32)}
+.btn--green:hover{background:var(--green-dark);transform:translateY(-2px);box-shadow:0 16px 32px rgba(108,179,63,.42)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.btn--outline{background:transparent;color:var(--navy);border-color:var(--line-2)}
+.btn--outline:hover{border-color:var(--navy);transform:translateY(-2px)}
+.btn--sm{padding:11px 22px;font-size:.97rem}
+.caret{font-size:.7em;transform:translateY(1px)}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);background:#fff;display:flex;align-items:center;border-bottom:1px solid transparent;transition:box-shadow .25s var(--ease),border-color .25s var(--ease)}
+.nav.scrolled{box-shadow:0 2px 14px rgba(12,35,64,.08);border-bottom-color:var(--line)}
+.nav .in{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:11px}
+.brand__mark{width:42px;height:42px;flex:0 0 auto;border-radius:11px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:800;font-size:1rem;position:relative;overflow:hidden}
+.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--green),var(--blue-icon))}
+.brand__txt{font-family:var(--sans);font-weight:600;font-size:1.24rem;color:var(--navy);line-height:1.05;white-space:nowrap}
+.brand__txt b{font-weight:800}
+.nav__links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav__links a{color:var(--navy);padding:9px 13px;border-radius:var(--r-sm);font-weight:600;font-size:1rem;transition:color .18s var(--ease),background .18s var(--ease)}
+.nav__links a:hover{color:var(--blue);background:var(--bg-soft)}
+.nav__cta{margin-right:8px}
+.lang-toggle{display:inline-flex;align-items:center;gap:6px;font-weight:700;font-size:.92rem;color:var(--blue);border:1px solid var(--line-2);border-radius:var(--r-pill);padding:7px 14px}
+.lang-toggle:hover{border-color:var(--blue);background:var(--bg-soft)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:9px;border-radius:var(--r-sm)}
+.burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.25s var(--ease)}
+.burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile{position:fixed;inset:0;z-index:999;background:rgba(255,255,255,.99);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;opacity:0;pointer-events:none;transition:opacity .26s var(--ease)}
+.mobile.on{opacity:1;pointer-events:all}
+.mobile a{font-weight:700;font-size:1.4rem;color:var(--navy);padding:8px 18px;border-radius:var(--r)}
+.mobile a:hover{background:var(--bg-soft)}
+.mobile .m-cta{background:var(--green);color:#fff;margin-top:8px}
+
+/* hero */
+.hero{position:relative;background:linear-gradient(200deg,#0e2746 0%,#0a1d35 60%,#0c2340 100%);color:#fff;padding:calc(var(--nav) + 92px) 0 0;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.06) 1px,transparent 1.4px);background-size:30px 30px;opacity:.6;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 65% 30%,#000,transparent 78%);mask-image:radial-gradient(ellipse 75% 70% at 65% 30%,#000,transparent 78%)}
+.hero::after{content:"";position:absolute;top:-120px;left:-160px;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(61,143,199,.32),transparent 66%);filter:blur(10px);pointer-events:none}
+.hero__wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding-bottom:96px}
+.hero h1{font-family:var(--sans);font-weight:800;font-size:clamp(2.3rem,5vw,3.9rem);line-height:1.18;margin-bottom:24px}
+.hero h1 .hl{color:var(--green)}
+.hero p.sub{font-size:clamp(1.08rem,1.7vw,1.26rem);color:rgba(233,240,247,.82);max-width:620px;margin-bottom:34px;line-height:1.75}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__art{position:relative}
+.screens{position:relative;height:340px}
+.scr{position:absolute;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:0 24px 60px rgba(0,0,0,.4);overflow:hidden}
+.scr--a{top:8px;left:0;width:280px;height:200px}
+.scr--b{top:150px;left:170px;width:210px;height:150px;background:linear-gradient(160deg,rgba(61,143,199,.28),rgba(61,143,199,.08))}
+.scr--c{top:120px;left:-20px;width:120px;height:120px}
+.hero__strip{position:relative;z-index:3;height:46px;background:#fff;border-top-left-radius:26px;border-top-right-radius:26px;margin-top:-1px}
+
+/* services (dark) */
+.services{background:var(--navy);color:#fff}
+.services h2{font-family:var(--serif);font-weight:500;font-size:clamp(1.95rem,3.6vw,2.85rem);line-height:1.3;max-width:980px}
+.services h2 b{font-weight:700}
+.services .lead{font-family:var(--serif);font-size:clamp(1.12rem,1.8vw,1.35rem);color:rgba(220,230,240,.84);max-width:1000px;margin-top:18px;line-height:1.7}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px 56px;margin-top:54px}
+.svc{display:flex;align-items:flex-start;gap:16px;padding:6px 0}
+.svc__ic{flex:0 0 auto;color:var(--blue-icon-2);margin-top:2px}
+.svc__t{font-size:1.18rem;font-weight:600;line-height:1.4}
+
+/* results band (green) */
+.results{background:linear-gradient(120deg,var(--green-dark),var(--green) 55%,#76bd49);color:#fff;text-align:center}
+.results h2{font-family:var(--sans);font-weight:500;font-size:clamp(1.7rem,3.3vw,2.5rem);line-height:1.4;max-width:900px;margin:0 auto 54px}
+.results h2 b{font-weight:800}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.stat{background:#fff;border-radius:var(--r);padding:28px 18px 22px;box-shadow:0 18px 36px rgba(40,80,20,.18);display:flex;flex-direction:column;align-items:center;transition:transform .24s var(--ease-out)}
+.stat:hover{transform:translateY(-6px)}
+.stat__ic{color:var(--blue-icon);margin-bottom:12px}
+.stat__n{font-family:var(--sans);font-weight:800;font-size:2.5rem;color:var(--navy);line-height:1;direction:ltr}
+.stat__d{color:var(--ink-soft);font-size:.95rem;line-height:1.5;margin-top:10px}
+.stat__l{margin-top:auto;padding-top:16px;font-family:var(--serif);color:var(--muted);font-size:.95rem}
+
+/* work (light) */
+.work{background:#fff}
+.work h2{font-family:var(--sans);font-weight:500;font-size:clamp(1.7rem,3.3vw,2.5rem);line-height:1.4;text-align:center;max-width:980px;margin:0 auto 8px;color:var(--navy)}
+.work h2 b{font-weight:800}
+.work .sub{text-align:center;color:var(--ink-soft);max-width:720px;margin:0 auto 50px;font-size:1.08rem}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:transform .26s var(--ease-out),box-shadow .26s var(--ease-out),border-color .26s var(--ease)}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--line-2)}
+.card__shot{position:relative;aspect-ratio:4/3;background:linear-gradient(160deg,#eef3f8,#e1ebf4);overflow:hidden}
+.card__shot img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.card__shot.noimg img{display:none}
+.card__badge{position:absolute;top:10px;left:10px;display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:700;padding:5px 11px;border-radius:var(--r-pill);background:rgba(255,255,255,.94);backdrop-filter:blur(4px);border:1px solid var(--line-2);color:var(--ink-soft)}
+.card__badge .bd{width:6px;height:6px;border-radius:50%;background:var(--green)}
+.card__body{padding:18px 18px 20px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card__name{font-weight:700;font-size:1.1rem;color:var(--navy);display:flex;align-items:center;gap:6px;direction:ltr;justify-content:flex-start}
+.card__name svg{color:var(--muted);flex:0 0 auto;transition:color .2s var(--ease),transform .2s var(--ease)}
+.card:hover .card__name svg{color:var(--green);transform:translate(-2px,-2px)}
+.card__desc{font-size:.92rem;color:var(--ink-soft);line-height:1.6;flex:1}
+.card__tag{font-size:.74rem;font-weight:600;color:var(--blue-2);background:var(--bg-soft2);border-radius:var(--r-pill);padding:4px 12px;align-self:flex-start}
+.work__more{display:flex;justify-content:center;margin-top:48px}
+.see-more{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:1.06rem;color:var(--navy);background:#fff;border:1px solid var(--line-2);border-radius:var(--r-pill);padding:14px 34px;transition:border-color .2s var(--ease),transform .2s var(--ease),box-shadow .2s var(--ease)}
+.see-more:hover{border-color:var(--green);color:var(--green-dark);transform:translateY(-2px);box-shadow:var(--shadow)}
+.see-more svg{color:var(--green);transform:scaleX(-1)}
+
+/* floating cta */
+.cta-float{position:relative;background:var(--bg-soft);height:0;z-index:6}
+.cta-float .btn{position:absolute;top:-29px;left:50%;transform:translateX(-50%)}
+.cta-float .btn:hover{transform:translateX(-50%) translateY(-2px)}
+
+/* expect (light) */
+.expect{background:var(--bg-soft);padding-top:128px}
+.expect h2{font-family:var(--sans);font-size:clamp(1.85rem,3.6vw,2.7rem);font-weight:500;text-align:center;color:var(--navy);line-height:1.3}
+.expect h2 b{font-weight:800}
+.expect .lead{font-family:var(--serif);font-size:clamp(1.15rem,1.9vw,1.4rem);color:var(--ink-soft);text-align:center;max-width:920px;margin:20px auto 56px;line-height:1.7}
+.feat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.feat{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 22px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:var(--shadow-sm);transition:transform .24s var(--ease-out),box-shadow .24s var(--ease-out)}
+.feat:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.feat__ic{color:var(--blue-icon);margin-bottom:18px}
+.feat p{font-size:.98rem;color:var(--ink-soft);line-height:1.6}
+.feat p b{color:var(--navy);font-weight:700}
+
+/* count (dark) */
+.count{background:var(--navy);color:#fff;overflow:hidden}
+.count__wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.count h2{font-family:var(--sans);font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:500;line-height:1.3}
+.count h2 b{font-weight:800}
+.count .lead{font-family:var(--serif);font-size:clamp(1.12rem,1.7vw,1.35rem);color:rgba(220,230,240,.82);margin:18px 0 30px;line-height:1.7}
+.checklist{list-style:none;display:flex;flex-direction:column;gap:16px}
+.checklist li{display:flex;align-items:flex-start;gap:14px;font-size:1.1rem;color:#eef4fa}
+.checklist li svg{flex:0 0 auto;color:var(--blue-icon-2);margin-top:4px}
+.orb{position:relative;width:min(440px,90%);aspect-ratio:1;margin-right:auto}
+.orb__ring{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:6px solid rgba(255,255,255,.08);background:linear-gradient(160deg,#13325a,#0a1d35)}
+.orb__ring img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;opacity:.96}
+.orb__ring.noimg img{display:none}
+.orb__badge{position:absolute;top:6%;right:2%;width:108px;height:108px;border-radius:50%;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.35);z-index:2}
+.orb__badge b{font-family:var(--sans);font-weight:800;font-size:2rem;color:var(--navy);line-height:1}
+.orb__badge i{display:block;width:42px;height:4px;border-radius:3px;margin-top:7px;background:linear-gradient(90deg,var(--green),var(--blue-icon))}
+.orb__float{position:absolute;bottom:8%;left:-4%;background:#fff;color:var(--navy);border-radius:14px;padding:14px 18px;box-shadow:var(--shadow-lg);z-index:2}
+.orb__float b{font-family:var(--sans);font-weight:800;font-size:1.5rem;color:var(--green-dark);display:block;line-height:1;direction:ltr}
+.orb__float span{font-size:.82rem;color:var(--ink-soft);font-weight:600}
+
+/* statement (light) */
+.statement{background:var(--bg-soft2);position:relative;overflow:hidden}
+.statement::before{content:"\201D";position:absolute;top:-40px;right:6%;font-family:var(--serif);font-size:18rem;line-height:1;color:rgba(21,104,159,.1);font-weight:600}
+.statement .in{position:relative;z-index:1}
+.statement p{font-family:var(--serif);font-weight:500;font-size:clamp(1.45rem,2.8vw,2.2rem);line-height:1.5;color:var(--navy);max-width:1020px}
+.statement cite{display:block;margin-top:30px;font-style:normal;font-family:var(--serif);font-size:1.14rem;color:var(--ink-soft)}
+.statement cite b{font-weight:600;color:var(--navy)}
+
+/* contact (blue) */
+.contact{background:linear-gradient(150deg,var(--blue),var(--blue-2));color:#fff}
+.contact__wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:60px;align-items:start}
+.contact h2{font-family:var(--sans);font-weight:800;font-size:clamp(2rem,4vw,2.9rem);line-height:1.2}
+.contact .lead{font-family:var(--serif);font-size:clamp(1.12rem,1.8vw,1.38rem);color:rgba(235,243,250,.9);margin:18px 0 36px;line-height:1.6}
+.cline{display:flex;align-items:flex-start;gap:15px;padding:18px 0;border-top:1px dashed rgba(255,255,255,.28)}
+.cline:last-child{border-bottom:1px dashed rgba(255,255,255,.28)}
+.cline svg{flex:0 0 auto;color:#fff;opacity:.92;margin-top:2px}
+.cline .v{font-size:1.18rem;font-weight:700}
+.cline .v a:hover{text-decoration:underline}
+.cline .v a{direction:ltr;display:inline-block}
+.cline .k{font-size:.86rem;color:rgba(235,243,250,.7);font-weight:500}
+.form .req{font-size:.92rem;color:rgba(235,243,250,.78);margin-bottom:20px}
+.form .req b{color:#fff}
+.fgroup{margin-bottom:18px}
+.fgroup label{display:block;font-family:var(--serif);font-size:1.08rem;margin-bottom:8px;color:#fff}
+.fgroup input,.fgroup textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--navy);background:#e7eef4;border:2px solid transparent;border-radius:var(--r-sm);padding:13px 15px;transition:border-color .18s var(--ease),background .18s var(--ease)}
+.fgroup textarea{min-height:120px;resize:vertical}
+.fgroup input:focus,.fgroup textarea:focus{outline:none;background:#fff;border-color:var(--green)}
+.form .btn{width:100%;margin-top:6px}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.form .cnote{font-size:.84rem;color:rgba(235,243,250,.72);text-align:center;margin-top:12px}
+.form .cstatus{margin-top:12px;font-size:.94rem;font-weight:600;color:#ffe1da;display:none}
+.form .cstatus.show{display:block}
+.csuccess{display:none;text-align:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.26);border-radius:var(--r-lg);padding:42px 28px}
+.csuccess.show{display:block}
+.csuccess .cic{width:64px;height:64px;border-radius:50%;background:#fff;color:var(--green-dark);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.csuccess h3{font-family:var(--sans);font-weight:800;font-size:1.5rem;color:#fff;margin-bottom:8px}
+.csuccess p{color:rgba(235,243,250,.9);max-width:400px;margin:0 auto}
+.csuccess a{color:#fff;font-weight:700;text-decoration:underline;direction:ltr;display:inline-block}
+
+/* footer */
+.foot{background:var(--navy-2);color:rgba(216,226,236,.7);padding:64px 0 0}
+.foot__grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.2fr;gap:40px}
+.foot .brand{margin-bottom:16px}
+.foot .brand__txt{color:#fff}
+.foot .brand__mark{background:#fff;color:var(--navy)}
+.foot__about{font-size:.94rem;line-height:1.7;max-width:320px;color:rgba(216,226,236,.6)}
+.foot h5{color:#fff;font-size:.82rem;letter-spacing:.04em;font-weight:700;margin-bottom:16px}
+.foot a.fl,.foot .fl{display:flex;align-items:center;gap:9px;color:rgba(216,226,236,.68);font-size:.96rem;padding:6px 0;transition:color .18s var(--ease)}
+.foot a.fl:hover{color:var(--green)}
+.foot .fl svg{flex:0 0 auto;color:var(--blue-icon)}
+.foot .fl[dir=ltr]{direction:ltr;justify-content:flex-end}
+.foot__bottom{max-width:var(--max);margin:50px auto 0;padding:24px 28px 32px;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.86rem;color:rgba(216,226,236,.5)}
+.foot__badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.8rem;color:var(--green);background:rgba(108,179,63,.1);border:1px solid rgba(108,179,63,.24);padding:6px 13px;border-radius:var(--r-pill)}
+
+/* reveal + totop */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.rv.show{opacity:1;transform:none}
+.rd1{transition-delay:.06s}.rd2{transition-delay:.12s}.rd3{transition-delay:.18s}.rd4{transition-delay:.24s}
+.totop{position:fixed;bottom:24px;left:24px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--green);color:#fff;border:none;cursor:pointer;box-shadow:0 12px 26px rgba(108,179,63,.4);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--ease)}
+.totop.show{opacity:1;pointer-events:all;transform:none}
+.totop:hover{background:var(--green-dark);transform:translateY(-3px)}
+
+/* responsive */
+@media(max-width:1024px){
+  .hero__wrap{grid-template-columns:1fr;gap:8px}
+  .hero__art{display:none}
+  .svc-grid{grid-template-columns:repeat(2,1fr);gap:14px 40px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .feat-grid{grid-template-columns:repeat(2,1fr)}
+  .count__wrap{grid-template-columns:1fr;gap:44px}
+  .orb{margin:0 auto}
+  .contact__wrap{grid-template-columns:1fr;gap:40px}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .nav__links{display:none}.burger{display:flex}
+  .sec{padding:72px 0}
+  .expect{padding-top:104px}
+  .svc-grid,.stats,.cards,.feat-grid{grid-template-columns:1fr}
+  .foot__grid{grid-template-columns:1fr;gap:30px}
+  .foot__bottom{flex-direction:column;text-align:center}
+  .hero .cta-row .btn{width:100%}
+  .statement::before{font-size:11rem;top:-10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv{opacity:1;transform:none}
+}
+:focus-visible{outline:3px solid var(--green);outline-offset:2px;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="in">
+    <a href="#top" class="brand" aria-label="BH Web Solutions">
+      <span class="brand__mark">BH</span>
+      <span class="brand__txt"><b>BH</b> Web Solutions</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#services">סערוויסעס</a></li>
+      <li><a href="#work">אונזער ארבעט</a></li>
+      <li><a href="#expect">פארוואס אונז</a></li>
+      <li><a href="#contact">קאנטאקט</a></li>
+      <li><a href="index.html" class="lang-toggle">English</a></li>
+      <li class="nav__cta"><a href="order.html" class="btn btn--green btn--sm">באקומט א קוואוט <span class="caret">▾</span></a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="מעניו" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile" id="mobile">
+  <a href="#services">סערוויסעס</a>
+  <a href="#work">אונזער ארבעט</a>
+  <a href="#expect">פארוואס אונז</a>
+  <a href="#contact">קאנטאקט</a>
+  <a href="index.html">English</a>
+  <a href="order.html" class="m-cta btn btn--green">באקומט א קוואוט</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="in hero__wrap">
+    <div>
+      <h1 class="rv">זוכט איר א וועב דעוועלאופער מיט וועמען ס'איז גרינג צו ארבעטן — <span class="hl">און וואס וועט אייך נישט קאסטן קיין הון רב?</span></h1>
+      <p class="sub rv rd1">מיר דיזיינען און בויען שנעלע, מאדערנע וועבסייטס — פון ריינע לענדינג פעידזשעס ביז פולשטענדיגע אנליין געשעפטן און קאסטום פלאטפארמעס — און מיר שטעלן די מערסטע דערפון לייוו אין בלויז עטליכע טעג. פרימיום ארבעט, באמת ביליג, און פולשטענדיג געמענעדזשד פאר אייך.</p>
+      <div class="cta-row rv rd2">
+        <a href="order.html" class="btn btn--green">באקומט א קוואוט <span class="caret">▾</span></a>
+        <a href="#work" class="btn btn--ghost">זעט אונזער ארבעט</a>
+      </div>
+    </div>
+    <div class="hero__art rv rd2" aria-hidden="true">
+      <div class="screens">
+        <div class="scr scr--a" style="background:#fff url('https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=560&amp;h=400') center top/cover no-repeat"></div>
+        <div class="scr scr--b" style="background:#fff url('https://s0.wp.com/mshots/v1/https%3A%2F%2Frelationshipfirstparenting.com?w=420&amp;h=300') center top/cover no-repeat"></div>
+        <div class="scr scr--c" style="background:#fff url('https://s0.wp.com/mshots/v1/https%3A%2F%2Fsafetyplumber.avrumy95.workers.dev?w=240&amp;h=240') center top/cover no-repeat"></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__strip"></div>
+</header>
+
+<!-- ===== SERVICES ===== -->
+<section class="services sec" id="services">
+  <div class="in">
+    <h2 class="rv">וועב דעוועלאופמענט <b>אויסגעשטעלט פונקט לויט אייער ביזנעס</b></h2>
+    <p class="lead rv rd1">מיט איבער 9 וועבסייטס שוין געבויט און ארויסגעגעבן — פון גרויסע אנליין סטארס ביז קאסטום בוקינג און ארדער פלאטפארמעס — בויען מיר הויכע קוואליטעט סייטס וואס זענען געמאכט צו ארבעטן שטארק און קאסטן א פרייז וואס מאכט סענס. אט זענען די זאכן מיט וואס מיר קענען אייך העלפן:</p>
+    <div class="svc-grid">
+      <div class="svc rv rd1"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div class="svc__t">וועב דיזיין</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 9h14M5 15h12M9 21c-2-3-2-15 0-18M15 3c1.6 2.6 1.9 9 1 13"/></svg></span><div class="svc__t">ווארדפרעס (WordPress) דעוועלאופמענט</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.2 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg></span><div class="svc__t">אי-קאמערס געשעפטן</div></div>
+      <div class="svc rv rd1"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="17" cy="17" r="1.3"/></svg></span><div class="svc__t">קאסטום פלאטפארמעס</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 3-4"/></svg></span><div class="svc__t">אנליין בוקינג סיסטעמען</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v3H6v11h12V9h-2V6a4 4 0 0 0-4-4Z"/><circle cx="12" cy="14.5" r="1.4"/></svg></span><div class="svc__t">מעמבער און קלייענט פאורטאלס</div></div>
+      <div class="svc rv rd1" id="migration"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 4h5v5M21 4l-9 9"/></svg></span><div class="svc__t">אריבערפירן פון ווארדפרעס צו סטאטיק (Static)</div></div>
+      <div class="svc rv rd2"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></span><div class="svc__t">פעמענט אינטעגראציע</div></div>
+      <div class="svc rv rd3"><span class="svc__ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span><div class="svc__t">סייטס גרייט פאר SEO</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESULTS ===== -->
+<section class="results sec">
+  <div class="in">
+    <h2 class="rv">מיר טוען פיל מער ווי בלויז בויען וועבסייטס; <b>מיר ברענגען עכטע רעזולטאטן:</b></h2>
+    <div class="stats">
+      <div class="stat rv rd1">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7l9-4 9 4-9 4-9-4Z"/><path d="M3 12l9 4 9-4M3 17l9 4 9-4"/></svg></span>
+        <div class="stat__n">+9</div>
+        <div class="stat__d">וועבסייטס דיזיינד און לאונטשד</div>
+        <div class="stat__l">און ס'האלט אין איין וואקסן</div>
+      </div>
+      <div class="stat rv rd2">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+        <div class="stat__n">~48h</div>
+        <div class="stat__d">טיפישע צייט, פון אנהויב ביז לייוו</div>
+        <div class="stat__l">שנעל</div>
+      </div>
+      <div class="stat rv rd3">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9h18l-1.4 9.3a2 2 0 0 1-2 1.7H6.4a2 2 0 0 1-2-1.7L3 9Z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg></span>
+        <div class="stat__n">700+</div>
+        <div class="stat__d">פראדוקטן אויף אונזער גרעסטע סטאר</div>
+        <div class="stat__l">Sprout Vitamins</div>
+      </div>
+      <div class="stat rv rd4">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+        <div class="stat__n">$0</div>
+        <div class="stat__d">האוסטינג אויף סטעטיק סייטס — בחינם</div>
+        <div class="stat__l">אן מאנאטליכע בילס</div>
+      </div>
+      <div class="stat rv rd4">
+        <span class="stat__ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M10 18h4"/></svg></span>
+        <div class="stat__n">100%</div>
+        <div class="stat__d">צופאסיג אויף פאון, טעבלעט און דעסקטאפ</div>
+        <div class="stat__l">פאר יעדן סקרין</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORK ===== -->
+<section class="work sec" id="work">
+  <div class="in">
+    <h2 class="rv">וועב דיזיין איז נישט בלויז אונזער נאמען — <b>ס'איז דאס וואס מיר שטעלן צו.</b></h2>
+    <p class="sub rv rd1">אט זענען עטליכע פון די עכטע ביזנעסער וואס מיר האבן דיזיינד, געבויט און לאונטשד. יעדער בילד אינטן איז א לייוו פאטא פונעם עכטן סייט.</p>
+    <div class="cards">
+
+      <a href="https://sproutvitamins.com" target="_blank" rel="noopener" class="card rv rd1">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Sprout Vitamins" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=1200&h=900" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Sprout Vitamins <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א ריזיגע כשר'ע וויטאמין און סופלעמענטס געשעפט — איבער 700 פראדוקטן מיט א שנעלע סוירטש, קאטעגאריע פילטערס, און א שיינע, פרעמיום סטארפראנט.</p><span class="card__tag">אי-קאמערס · 700+ פראדוקטן</span></div>
+      </a>
+
+      <a href="https://preshburgglutenfree.com" target="_blank" rel="noopener" class="card rv rd2">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Preshburg Gluten Free" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fpreshburgglutenfree.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Preshburg Gluten Free <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א גלוטען-פרי בעקעריי מיט אן אנליין סיסטעם צו באשטעלן קעיקס, קוקיס און פעסטריס, פלוס א ספעציעלע פארטאל פאר האולסעיל (wholesale) באשטעלונגען.</p><span class="card__tag">אי-קאמערס · האולסעיל</span></div>
+      </a>
+
+      <a href="https://antikele.com" target="_blank" rel="noopener" class="card rv rd3">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Antikele" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fantikele.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Antikele <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א פרעמיום ספרים און לעדער-געבונדענע יודאיקא געשעפט מיט פעי-פעל טשעקאוט און א בליץ-שנעלע סטאטיק פראנטענד.</p><span class="card__tag">אי-קאמערס · סטאטיק · שנעל</span></div>
+      </a>
+
+      <a href="https://rottenbergscatering.com" target="_blank" rel="noopener" class="card rv rd4">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Rottenberg's Catering" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Frottenbergscatering.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Rottenberg's Catering <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">אן עלעגאנטע קעיטערינג סייט מיט א הערליכע מעניו און א פליסיגע אינקוויירי פארעם וואס מאכט פון יעדע קליק א בוקינג.</p><span class="card__tag">מעניו סייט · ליעד-זשען</span></div>
+      </a>
+
+      <a href="https://ccmeals.net" target="_blank" rel="noopener" class="card rv rd1">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="CCMeals" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fccmeals.net?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">CCMeals <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א קאסטאם פלאטפארמע צו באשטעלן עסן מיט פרי-פעיד קרעדיטס, עטליכע סארט אקאונטס, וואלעט באלאנסעס, און אייגענע דעשבאורדס.</p><span class="card__tag">קאסטאם פלאטפארמע · וואלעט</span></div>
+      </a>
+
+      <a href="https://sanzmeatbp.com" target="_blank" rel="noopener" class="card rv rd2">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Sanz Meat" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsanzmeatbp.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Sanz Meat <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א כשר'ע פלייש געשעפט אין בארא פארק וואס צייגט פרישע פלייש, עוף און דעלי, מיט אלע דעטאלן פונעם געשעפט און א גרינגע וועג צו באשטעלן.</p><span class="card__tag">כשר'ע פלייש געשעפט · סטארפראנט</span></div>
+      </a>
+
+      <a href="https://heritagecitizenships.com" target="_blank" rel="noopener" class="card rv rd3">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Heritage Citizenships" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fheritagecitizenships.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Heritage Citizenships <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א ריינע, פראפעסיאנעלע סייט פאר סיטיזענשיפ און אימיגרעישאן סערוויסעס מיט א באקוועמע קאנטאקט פארעם און א פארלאזליכע דעזיין.</p><span class="card__tag">פראפעסיאנעל · ליעד פארעם</span></div>
+      </a>
+
+      <a href="https://ohrchodoshorg.com" target="_blank" rel="noopener" class="card rv rd4">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Ohr Chodosh" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fohrchodoshorg.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Ohr Chodosh <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א מוסד (נאן-פראפיט) וואס מיר האבן אריבערגעפירט פון ווארדפרעס צו א שנעלע און בחינם'דיגע סטאטיק האסטינג — מיר האבן געהאלטן די דאנעישאן פארעם און פארבעסערט די ספיד און זיכערהייט.</p><span class="card__tag">מיגראציע · נאן-פראפיט</span></div>
+      </a>
+
+      <a href="https://safetyplumber.avrumy95.workers.dev" target="_blank" rel="noopener" class="card rv rd1">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Verrazano Plumbing" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsafetyplumber.avrumy95.workers.dev?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Verrazano Plumbing <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א סייט פאר א לייסענסד מאסטער-פלאמבער אין ברוקלין — אלע סערוויסעס, אינפארמאציע איבער NYC Local Law 152, עכטע DOB פראיעקטן, און א גרינגע וועג צו קאנטאקטן דורך פאון אדער וואטסעפ.</p><span class="card__tag">פלאמינג · ליעד-זשען</span></div>
+      </a>
+
+      <a href="https://relationshipfirstparenting.com" target="_blank" rel="noopener" class="card rv rd2">
+        <div class="card__shot"><span class="card__badge"><span class="bd"></span>לייוו</span><img loading="lazy" alt="Relationship First Parenting" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Frelationshipfirstparenting.com?w=1000&h=750" onerror="this.closest('.card__shot').classList.add('noimg')"></div>
+        <div class="card__body"><div class="card__name">Relationship First Parenting <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></div><p class="card__desc">א ווארימע, בארואיגנדע ברענד סייט פאר א ביזנעס פון חינוך אוידיאו-קארסעס — מיט א קארס קאטאלוג, פרייע סעמפל קלאסן, און א גרינגע קארט און טשעק-אויט עקספיריענס.</p><span class="card__tag">אוידיאו קארסעס · אי-קאמערס</span></div>
+      </a>
+
+    </div>
+    <div class="work__more rv">
+      <a href="order.html" class="see-more">הייבט אן אייער פראיעקט <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-float"><a href="order.html" class="btn btn--green">באקומט א קוואוט <span class="caret">▾</span></a></div>
+
+<!-- ===== EXPECT ===== -->
+<section class="expect sec" id="expect">
+  <div class="in">
+    <h2 class="rv"><b>ערווארט מער</b> פון אייער וועב דעוועלאפער</h2>
+    <p class="lead rv rd1">BH Web Solutions בויט קאסטום וועבסייטס און אנליין געשעפטן פאר ביזנעסער וואס זוכן פרימיום קוואליטעט אן דעם פרימיום פרייז טעג. אט דאס קענט איר ערווארטן ווען איר ארבעט מיט אונז:</p>
+    <div class="feat-grid">
+      <div class="feat rv rd1"><span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><circle cx="11" cy="11" r="3.4"/><path d="m17 5 4-2-2 4"/></svg></span><p><b>א פערזענליכע צוגאנג</b> — איר וועט ארבעטן דירעקט מיט'ן דעוועלאפער וואס בויט אייער סייט, קיינמאל נישט מיט א סעילס טיים אדער ווארטן אין א רייע.</p></div>
+      <div class="feat rv rd2"><span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M5 9h14M5 15h12M9 21c-2-3-2-15 0-18M15 3c1.6 2.6 1.9 9 1 13"/></svg></span><p><b>עקספערט אין ווארדפרעס און אי-קאמערס</b> — קאסטום דיזיין, פולשטענדיגע אנליין געשעפטן, האלסעיל פארטאלן, און א שטארקע, פארלעסליכע ארבעט.</p></div>
+      <div class="feat rv rd3"><span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11H4V10zM7 10l4-7a2 2 0 0 1 2 1.4L12 9h6a2 2 0 0 1 2 2.3l-1.3 7A2 2 0 0 1 16.7 21H7"/></svg></span><p><b>אויספרובירטע מעטאדן</b> — שנעלע לאוד-טיים, א סטרוקטור גרייט פאר SEO, און א דיזיין וואס קוקט אויס פערפעקט אויף יעדע סקרין.</p></div>
+      <div class="feat rv rd4"><span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11 12 4l9 7"/><path d="M5 10v9h14v-9"/><circle cx="12" cy="14" r="1.4"/></svg></span><p><b>פרייע סטאטיק האוסטינג</b> — מיר קענען אריבערפירן אייער ווארדפרעס סייט צו א סטאטיק פלאטפארמע, וואס נעמט אינגאנצן אוועק אייערע האוסטינג קאסטן.</p></div>
+      <div class="feat rv rd4"><span class="feat__ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18 22 12 16 6"/><path d="M8 6 2 12l6 6"/><path d="M13.5 4 10.5 20"/></svg></span><p><b>ערליכע און פיינע פרייזן</b> — שיינע, פראפעסיאנאלע ארבעט פאר א פרייז וואס שטימט טאקע מיט אייער בודזשעט.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COUNT ===== -->
+<section class="count sec">
+  <div class="in count__wrap">
+    <div class="rv">
+      <h2>פארלאזט אייך אויף <b>BH Web Solutions</b> צו ענדיגן אייער נעקסטע פראיעקט אויפ'ן בעסטן אופן.</h2>
+      <p class="lead">צי עס איז א פרישע אנליין געשעפט אדער אן אלטע ווארדפרעס סייט וואס דארף א רעפרעש — אונזער ארבעט איז שנעל, ריין, און געבויט צו ברענגען רעזולטאטן, דעליווערט פונקטליך ווען איר דארפט עס.</p>
+      <ul class="checklist">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> מאדערנע דעזיין וואס פאקוסירט אויף ברענגען קאסטומערס</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> קאסטום ווארדפרעס און אי-קאמערס דעוועלאפמענט</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> אנליין בוקינג, פארטאלן און ספעציעלע פלאטפארמעס</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> אריבערפירן פון ווארדפרעס צו סטעיטיק מיט פרייע האוסטינג</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> שנעל, גרייט פאר SEO, און פערפעקט פאר מאביל</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> אינקלודינג עטליכע רונדעס פון איבערמאכן און פאררעכטן</li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg> אומגלויבליכע קוואליטעט פאר א יושר'דיגן פרייז</li>
+      </ul>
+    </div>
+    <div class="rv rd2">
+      <div class="orb">
+        <div class="orb__ring"><img loading="lazy" alt="פראיעקט" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com?w=1100&h=1100" onerror="this.closest('.orb__ring').classList.add('noimg')"></div>
+        <div class="orb__badge" aria-hidden="true"><b>ב"ה</b><i></i></div>
+        <div class="orb__float"><b>9+</b><span>פראיעקטן שוין געליפערט</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATEMENT ===== -->
+<section class="statement sec">
+  <div class="in">
+    <p class="rv">מיר קוקן אן יעדן פראיעקט כאילו עס וואלט געווען אונזער אייגענס. מיר הערן אויס אייערע געברויכן מיט קאפ און מח, מיר בויען מיט פונקטליכקייט, האלטן זיך צום סקעדזשועל, און מיר שטעלן צו פונקטליך וואס מיר צוזאגן. ביי אונז וועט איר נישט האבן קיין 'עיזשענסי רונארנאונד', קיין סורפרייז קאסטן, און קיין שום פוילע ארבעט.</p>
+    <cite class="rv rd1"><b>דער BH Web Solutions צוזאג</b> — פאר יעדן ביזנעס וואס מיר בויען</cite>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact sec" id="contact">
+  <div class="in contact__wrap">
+    <div class="rv">
+      <h2>גרייט אנצוהויבן אייער פראיעקט?</h2>
+      <p class="lead">דערציילט אונז איבער אייער וועבזייטל אדער אנליין סטאר, און מיר וועלן אייך צוריקענטפערן אינערהאלב עטליכע שעה.</p>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>
+        <div><div class="k">רופט אדער שיקט א טעקסט</div><div class="v"><a href="tel:8455870531">845-587-0531</a></div></div>
+      </div>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><div class="k">שיקט אונז אן אימעיל</div><div class="v"><a href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a></div></div>
+      </div>
+      <div class="cline">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><div class="k">עוועילעביליטי</div><div class="v">מיר ענטפערן אינערהאלב עטליכע שעה — אנליין, סערווירן קאסטומערס איבער די גאנצע וועלט</div></div>
+      </div>
+    </div>
+
+    <div class="form rv rd2">
+      <p class="req"><b>*</b> צייכנט אן פעלדער וואס מען מוז אויספילן.</p>
+      <form id="inquiry" action="https://forminit.com/f/nsf8hkp98fw" method="POST" novalidate>
+        <div class="fgroup"><label for="f-name">נאמען *</label><input id="f-name" name="fi-sender-fullName" type="text" autocomplete="name" required></div>
+        <div class="fgroup"><label for="f-org">ביזנעס / ארגאניזאציע</label><input id="f-org" name="fi-text-business" type="text" autocomplete="organization"></div>
+        <div class="fgroup"><label for="f-email">אימעיל *</label><input id="f-email" name="fi-sender-email" type="email" autocomplete="email" required></div>
+        <div class="fgroup"><label for="f-phone">טעלעפאן *</label><input id="f-phone" name="fi-text-phone" type="tel" autocomplete="tel" required></div>
+        <div class="fgroup"><label for="f-site">יעצטיגע וועבזייטל (אויב איר האט שוין)</label><input id="f-site" name="fi-text-existing_site" type="url" placeholder="https://"></div>
+        <div class="fgroup"><label for="f-msg">דערציילט אונז איבער אייער פראיעקט</label><textarea id="f-msg" name="fi-text-message" placeholder="וואספארא סייט דארפט איר? אנליין געשעפט, בוקינג, מיגראציע…"></textarea></div>
+        <input type="hidden" name="fi-text-landing_page" id="c_landing">
+        <input type="hidden" name="fi-text-submitted_at" id="c_submitted">
+        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button type="submit" class="btn btn--green" id="cSubmit">שיקט די אנפראגע
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
+        <p class="cnote">מיר וועלן ענטפערן אינערהאלב עטליכע שעה — געווענליך פיל שנעלער.</p>
+        <div class="cstatus" id="cStatus"></div>
+      </form>
+      <div class="csuccess" id="cSuccess">
+        <div class="cic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>א דאנק — מיר האבן עס באקומען!</h3>
+        <p>אייער מעסעדזש איז דא. מיר וועלן אייך צוריקקומען אינערהאלב עטליכע שעה. דארפט אונז גיכער? רופט <a href="tel:8455870531">845-587-0531</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="in foot__grid">
+    <div>
+      <a href="#top" class="brand">
+        <span class="brand__mark">BH</span>
+        <span class="brand__txt"><b>BH</b> Web Solutions</span>
+      </a>
+      <p class="foot__about">קאסטום וועבזייטלעך, אנליין סטארס, און אריבערפירן פון ווארדפרעס צו סטעיטיק — הערליך דעזיינט, שנעל געבויט, פאר א יושר'דיגן פרייז, און פולשטענדיג מענעזשד.</p>
+    </div>
+    <div>
+      <h5>סערוויסעס</h5>
+      <a class="fl" href="#services">וועב דעזיין</a>
+      <a class="fl" href="#services">ווארדפרעס און אי-קאמערס</a>
+      <a class="fl" href="#migration">אריבערפירן ווארדפרעס</a>
+      <a class="fl" href="#services">קאסטום פלאטפארמעס</a>
+    </div>
+    <div>
+      <h5>פירמע</h5>
+      <a class="fl" href="#expect">פארוואס אונז</a>
+      <a class="fl" href="#work">אונזערע ארבעט</a>
+      <a class="fl" href="#contact">קאנטאקט</a>
+      <a class="fl" href="order.html">באקומט א פרייז</a>
+    </div>
+    <div>
+      <h5>פארבינדט זיך</h5>
+      <a class="fl" dir="ltr" href="tel:8455870531"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>845-587-0531</a>
+      <a class="fl" dir="ltr" href="mailto:info@bhwebsolutions.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@bhwebsolutions.com</a>
+      <a class="fl" href="order.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>הייבט אן א פראיעקט</a>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>© 2026 BH Web Solutions. אלע רעכטן רעזערווירט.</span>
+    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> דעזיינד און געבויט דורך BH Web Solutions</span>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="ארויף"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+<script>
+(function(){
+  var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
+  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>20);totop.classList.toggle('show',y>620);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  function toggle(){var a=mobile.classList.toggle('on');burger.classList.toggle('on',a);burger.setAttribute('aria-expanded',a);document.body.style.overflow=a?'hidden':'';}
+  burger.addEventListener('click',toggle);
+  mobile.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(mobile.classList.contains('on'))toggle();});});
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
+
+  var FORM_ID='nsf8hkp98fw';
+  var cform=document.getElementById('inquiry'),cbtn=document.getElementById('cSubmit'),cstatus=document.getElementById('cStatus'),csuccess=document.getElementById('cSuccess');
+  var sendIcon='<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>';
+  if(cform){
+    try{document.getElementById('c_landing').value=document.referrer||location.href;}catch(e){}
+    var cErr=function(m){cstatus.textContent=m;cstatus.classList.add('show');};
+    cform.addEventListener('submit',async function(e){
+      e.preventDefault();
+      var v=function(id){var el=document.getElementById(id);return el?el.value.trim():'';};
+      if(!v('f-name')||!v('f-email')||!v('f-phone')){cErr('ביטע לייגט צו אייער נאמען, אימעיל און טעלעפאן כדי מיר זאלן אייך קענען דערגרייכן.');return;}
+      var hp=cform.querySelector('input[name="_honey"]');
+      if(hp&&hp.value){cform.style.display='none';csuccess.classList.add('show');return;}
+      document.getElementById('c_submitted').value=new Date().toISOString();
+      cstatus.classList.remove('show');cbtn.disabled=true;cbtn.textContent='שיקט…';
+      try{
+        if(typeof Forminit==='undefined')throw new Error('SDK not loaded');
+        var fd=new FormData(cform);fd.delete('_honey');
+        var fi=new Forminit();
+        var res=await fi.submit(FORM_ID,fd);
+        if(res&&res.error)throw new Error('failed');
+        cform.style.display='none';csuccess.classList.add('show');csuccess.scrollIntoView({behavior:'smooth',block:'center'});
+      }catch(ex){
+        cbtn.disabled=false;cbtn.innerHTML='שיקט די אנפראגע '+sendIcon;
+        cErr('עפעס איז שיף געגאנגען מיט'+"'"+'ן שיקן. ביטע פרובירט נאכאמאל, אדער רופט 845-587-0531.');
+      }
+    });
+  }
+
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('show');});}
+})();
+</script>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ed9203e68e4d09833e411cd68485df","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
