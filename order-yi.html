@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="yi" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>הייבט אן אייער פראיעקט — BH Web Solutions</title>
+<meta name="description" content="פארציילט אונז אלעס איבער אייער וועבסייט און מיר וועלן אנהייבן בויען — אן קיין אהין-און-צוריק. שנעלע, שיינע, ביליגע וועבסייטס דורך BH Web Solutions.">
+<meta name="theme-color" content="#fbfbf8">
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="https://bhwebsolutions.com/order.html">
+<link rel="alternate" hreflang="yi" href="https://bhwebsolutions.com/order-yi.html">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&family=Frank+Ruhl+Libre:wght@400;500;600;700&display=swap"></noscript>
+<style>
+:root{
+  --bg:#f5f8fb;--surface:#ffffff;--bg-dark:#0c2340;
+  --ink:#13243a;--ink2:#46586a;--muted:#7e8d99;
+  --line:rgba(12,35,64,.08);--line-strong:rgba(12,35,64,.14);
+  --accent:#6cb33f;--accent-deep:#5a9c33;--accent-bright:#7cc24f;--accent-tint:#eef6e7;--accent-tint2:#dceccb;
+  --blue:#15689f;--navy:#0c2340;
+  --r-xs:7px;--r-sm:10px;--r:14px;--r-lg:18px;--r-xl:24px;
+  --shadow-sm:0 1px 2px rgba(12,35,64,.05);
+  --shadow:0 1px 2px rgba(12,35,64,.05),0 16px 36px rgba(12,35,64,.08);
+  --shadow-lg:0 36px 70px rgba(12,35,64,.14);
+  --body:'Heebo','Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --display:'Heebo','Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --serif:'Frank Ruhl Libre','Newsreader',Georgia,serif;
+  --max:1120px;--nav:76px;
+  --ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.7;position:relative;overflow-x:hidden;letter-spacing:normal}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.2;letter-spacing:normal;color:var(--ink)}
+a{text-decoration:none;color:inherit}
+::selection{background:var(--accent);color:#fff}
+.nav{position:sticky;top:0;z-index:1000;height:var(--nav);display:flex;align-items:center;background:rgba(251,251,248,.82);backdrop-filter:saturate(1.5) blur(16px);-webkit-backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid var(--line)}
+.nav .in{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:800;font-size:1.18rem}
+.brand__mark{width:38px;height:38px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;position:relative;overflow:hidden}
+.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue))}
+.navright{display:flex;align-items:center;gap:8px}
+.back{display:inline-flex;align-items:center;gap:8px;color:var(--ink2);font-weight:500;font-size:.92rem;padding:9px 14px;border-radius:var(--r-sm);transition:.18s var(--ease)}
+.back:hover{color:var(--ink);background:rgba(16,18,14,.045)}
+.back svg{transform:scaleX(-1)}
+.lang{font-weight:700;font-size:.9rem;color:var(--accent-deep);padding:9px 13px;border-radius:var(--r-sm);border:1px solid var(--line-strong)}
+.lang:hover{background:var(--accent-tint)}
+.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:60px 28px 96px}
+.head{text-align:center;max-width:720px;margin:0 auto 16px}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.82rem;font-weight:600;color:var(--ink2)}
+.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-tint)}
+.head h1{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.4vw,3rem);margin:16px 0 12px;line-height:1.25}
+.head p{font-size:1.12rem;color:var(--ink2);line-height:1.7}
+.note-strip{max-width:780px;margin:22px auto 40px;display:flex;align-items:flex-start;gap:12px;background:var(--accent-tint);border:1px solid var(--accent-tint2);border-radius:var(--r);padding:15px 18px;font-size:.95rem;color:var(--accent-deep);line-height:1.6}
+.note-strip svg{flex:0 0 auto;color:var(--accent-deep);margin-top:3px}
+.layout{display:grid;grid-template-columns:1.55fr 1fr;gap:34px;align-items:start}
+.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(22px,3vw,38px);box-shadow:var(--shadow)}
+fieldset{border:none;margin-bottom:34px}
+fieldset:last-of-type{margin-bottom:18px}
+.legend{display:flex;align-items:center;gap:11px;margin-bottom:18px}
+.legend .n{width:27px;height:27px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:.82rem;flex:0 0 auto}
+.legend h2{font-size:1.2rem}
+.legend p{font-size:.86rem;color:var(--muted);margin-top:1px}
+.grp{margin-bottom:16px}
+.grp.row2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+label.fl{display:block;font-weight:600;font-size:.88rem;color:var(--ink2);margin-bottom:7px}
+label.fl .req{color:var(--accent-deep)}
+.hint{font-weight:400;color:var(--muted);font-size:.82rem}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;font-family:var(--body);font-size:.98rem;color:var(--ink);background:#fff;border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:12px 14px;transition:.18s var(--ease);outline:none}
+input::placeholder,textarea::placeholder{color:#aab0a6}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,179,63,.14)}
+textarea{resize:vertical;min-height:104px;line-height:1.6}
+select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e857b' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left 14px center;padding:12px 14px 12px 40px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{position:relative;display:flex;align-items:center;gap:11px;border:1.5px solid var(--line-strong);border-radius:var(--r);padding:12px 14px;cursor:pointer;transition:border-color .16s var(--ease),background .16s var(--ease),box-shadow .16s var(--ease);user-select:none}
+.opt:hover{border-color:#b9bdb2}
+.opt.on{border-color:var(--accent);background:var(--accent-tint);box-shadow:0 0 0 1px var(--accent) inset}
+.opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.opt .box{width:20px;height:20px;border-radius:6px;border:1.8px solid var(--line-strong);flex:0 0 auto;display:flex;align-items:center;justify-content:center;transition:.16s var(--ease)}
+.opt.on .box{background:var(--accent);border-color:var(--accent)}
+.opt .box svg{opacity:0;transform:scale(.5);transition:.16s var(--ease)}
+.opt.on .box svg{opacity:1;transform:none}
+.opt .lab{font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.4}
+.opt.radio .box{border-radius:50%}
+.reveal-box{margin-top:10px;display:none}
+.reveal-box.show{display:block;animation:fade .25s var(--ease-out)}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.upload{margin-bottom:16px}
+.dz{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;border:1.8px dashed var(--line-strong);border-radius:var(--r);padding:26px 18px;background:#fcfbf9;cursor:pointer;transition:.18s var(--ease)}
+.dz:hover{border-color:var(--accent);background:var(--accent-tint)}
+.dz.drag{border-color:var(--accent);background:var(--accent-tint);box-shadow:0 0 0 3px rgba(108,179,63,.13)}
+.dz:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,179,63,.16)}
+.dz__ic{width:46px;height:46px;border-radius:12px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;transition:.18s var(--ease)}
+.dz:hover .dz__ic,.dz.drag .dz__ic{background:#fff}
+.dz__t{font-weight:600;font-size:.95rem;color:var(--ink)}
+.dz__t b{color:var(--accent-deep)}
+.dz__s{font-size:.81rem;color:var(--muted)}
+.dz input{display:none}
+.filelist{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.fileitem{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px}
+.fileitem .fic{width:34px;height:34px;border-radius:8px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.fileitem .fmeta{flex:1;min-width:0}
+.fileitem .fname{font-size:.88rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fileitem .fsize{font-size:.78rem;color:var(--muted)}
+.fileitem .frm{flex:0 0 auto;width:28px;height:28px;border-radius:7px;border:none;background:rgba(16,18,14,.05);color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.16s var(--ease)}
+.fileitem .frm:hover{background:var(--accent-tint2);color:var(--accent-deep)}
+.filetotal{font-size:.81rem;color:var(--muted);margin-top:9px;text-align:left}
+.filetotal.over{color:#c0392b;font-weight:600}
+.fileerr{font-size:.84rem;color:#c0392b;font-weight:600;margin-top:8px;display:none}
+.fileerr.show{display:block}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.submit{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);font-weight:700;font-size:1.06rem;padding:16px 28px;border-radius:var(--r);border:none;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 10px 26px rgba(108,179,63,.3);transition:.2s var(--ease)}
+.submit:hover:not(:disabled){background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 16px 34px rgba(108,179,63,.4)}
+.submit:disabled{opacity:.65;cursor:default}
+.smallprint{font-size:.81rem;color:var(--muted);text-align:center;margin-top:12px}
+.status{margin-top:14px;font-size:.94rem;font-weight:600;display:none}
+.status.err{display:block;color:#c0392b}
+.success{display:none;text-align:center;padding:50px 30px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow)}
+.success.show{display:block}
+.success .ic{width:76px;height:76px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.success h2{font-size:1.8rem;margin-bottom:10px}
+.success p{color:var(--ink2);max-width:460px;margin:0 auto 8px}
+.success a{color:var(--accent-deep);font-weight:700;direction:ltr;display:inline-block}
+.side{display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--nav) + 22px)}
+.scard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.scard h3{font-size:1.1rem;margin-bottom:14px}
+.sitem{display:flex;gap:13px;align-items:flex-start;padding:11px 0}
+.sitem+.sitem{border-top:1px solid var(--line)}
+.sitem .si{width:40px;height:40px;border-radius:11px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sitem h4{font-size:.95rem;margin-bottom:2px}
+.sitem p{font-size:.85rem;color:var(--muted);line-height:1.55}
+.cc{background:var(--bg-dark);border:none;color:#fff}
+.cc h3{color:#fff}
+.cc a{display:flex;align-items:center;gap:11px;color:#fff;font-weight:600;padding:10px 0;font-size:1rem}
+.cc a+a{border-top:1px solid rgba(255,255,255,.13)}
+.cc a:hover{color:var(--accent-bright)}
+.cc a span.txt{direction:ltr}
+.cc .ci{width:40px;height:40px;border-radius:11px;background:rgba(251,146,60,.18);color:var(--accent-bright);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.foot{border-top:1px solid var(--line);background:#faf9f5;padding:26px 28px;text-align:center;font-size:.86rem;color:var(--muted)}
+.foot a{color:var(--accent-deep);font-weight:600}
+@media(max-width:880px){
+  .layout{grid-template-columns:1fr;gap:24px}
+  .side{position:static}
+  .grp.row2,.opts{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="in">
+    <a href="yi.html" class="brand"><span class="brand__mark">BH</span> BH Web Solutions</a>
+    <div class="navright">
+      <a href="order.html" class="lang">English</a>
+      <a href="yi.html" class="back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> צוריק צום הויפט בלאט</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="head">
+    <span class="eyebrow"><span class="dot"></span> הייבט אן אייער פראיעקט</span>
+    <h1>טיילט מיט אייער וויזיע — מיר וועלן עס אויספירן למעשה</h1>
+    <p>דער פארעם דינט אלס א פולשטענדיגע באריכט פאר אייער פראיעקט. אלס מער דעטאלן איר גיט אונז איבער, אלס ווייניגער וועלן מיר דארפן נאכפרעגן שפעטער. פילט עס אויס גוט און פונקטליך, און מיר וועלן געווענליך קענען אנהייבן די ארבעט תיכף ומיד.</p>
+  </div>
+  <div class="note-strip">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+    <span>עס פעלט נישט אויס קיין באזונדערע טעלעפאן קאל אדער אימעיל נאכדעם. שרייבט אריין די סערוויסעס וואס איר זוכט, די תוכן, דעזיין אויסוואלן, און אלע אנדערע רעלאווענטע אינפארמאציע דא אינטן, און מיר וועלן שוין קער נעמען פון אלעס איבעריג.</span>
+  </div>
+
+  <div class="layout">
+    <div>
+      <form class="form" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
+
+        <fieldset>
+          <div class="legend"><span class="n">1</span><div><h2>אייערע קאנטאקט דעטאלן</h2><p>אזוי וועלן מיר וויסן ווער איר זענט און וויאזוי זיך צו פארבינדן מיט אייך.</p></div></div>
+          <div class="grp row2">
+            <div><label class="fl" for="name">פולער נאמען <span class="req">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="משה כהן" autocomplete="name" required></div>
+            <div><label class="fl" for="email">אימעיל <span class="req">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="moshe@example.com" autocomplete="email" required></div>
+          </div>
+          <div class="grp row2">
+            <div><label class="fl" for="phone">טעלעפאן נומער <span class="req">*</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel" required></div>
+            <div><label class="fl" for="business">ביזנעס / פראיעקט נאמען</label><input type="text" id="business" name="fi-text-business" placeholder="אייער ביזנעס נאמען"></div>
+          </div>
+          <div class="grp">
+            <label class="fl" for="existing">עקזיסטירנדע וועבזייטל <span class="hint">(אויב ס'איז רעלאווענט; העלפט זייער שטארק ביי אריבערפירן א סייט)</span></label>
+            <input type="url" id="existing" name="fi-text-existing_site" placeholder="https://yoursite.com">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="legend"><span class="n">2</span><div><h2>פונקציעס פונעם וועבזייטל</h2><p>קלויבט אויס אלע פיטשערס וואס אייער וועבזייטל דארף האבן — אזויפיל וויפיל ס'פעלט אויס.</p></div></div>
+          <div class="opts" id="goals">
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showcase my business / brand"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">ארויסשטעלן מיין ביזנעס / ברענד</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Sell products online (store)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">פארקויפן פראדוקטן אנליין (סטאר)</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Take bookings / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">נעמען בוקינגס / אפוינטמענטס</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showroom / display products (no checkout)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">שאורום / ווייזן פראדוקטן</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Wholesale / B2B ordering"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">האלסעיל / B2B ארדערינג</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Generate leads / inquiries"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">ברענגען ליעדס / אנפראגעס</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Membership / client portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">מעמבערשיפ / קליענט פארטאל</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Blog / news / content"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">בלאג / נייעס / תוכן</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Multi-vendor / marketplace"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">מולטי-ווענדאר / מארקעטפלעיס</span></label>
+            <label class="opt js-other" data-target="goalsOther"><input type="checkbox" name="fi-checkbox-site_goals" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">אנדערש…</span></label>
+          </div>
+          <div class="reveal-box" id="goalsOther"><input type="text" name="fi-text-site_goals_other" placeholder="זאגט אונז וואס נאך אייער סייט דארף טון"></div>
+        </fieldset>
+
+        <fieldset>
+          <div class="legend"><span class="n">3</span><div><h2>דעזיין אויסוואלן</h2><p>וועלכע סארט סטייל זוכט איר? קלויבט אויס אלעס וואס פאסט, און שרייבט עס נאכדעם ארויס מיט אייערע אייגענע ווערטער.</p></div></div>
+          <div class="opts" id="style">
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Clean & minimal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">ריין און מינימאל</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Bold & modern"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">שטארק און מאדערן</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Elegant / luxury"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">עלעגאנט / לוקסוס</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Warm & friendly"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">ווארעם און פריינטליך</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Professional / corporate"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">פראפעסיאנעל / קארפאריט</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Playful & colorful"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">פארביג און לעבעדיג</span></label>
+            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">נישט זיכער — איר באשטימט</span></label>
+            <label class="opt js-other" data-target="styleOther"><input type="checkbox" name="fi-checkbox-design_style" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">אנדערש…</span></label>
+          </div>
+          <div class="reveal-box" id="styleOther"><input type="text" name="fi-text-design_style_other" placeholder="באשרייבט דעם סטייל וואס איר האט אין זינען"></div>
+          <div class="grp" style="margin-top:14px">
+            <label class="fl" for="design_notes">באשרייבט אייער געוואונטשענעם דעזיין <span class="hint">(קאלירן, פאנטס, די גאנצע אטמאספערע, און סיי וועלכע וועבזייטלעך איר גלייכט — ביטע לייגט אריין די לינקס!)</span></label>
+            <textarea id="design_notes" name="fi-text-design_notes" placeholder="למשל: איך גלייך ווארעמע ערד-קאלירן, א גרויס שטארק הער-בילד, אסאך ווייסע פלאץ. סייטס וואס איך גלייך: example.com. מיינע ברענד קאלירן זענען נעיווי און גאלד, און איך האב א לאגא צו שיקן."></textarea>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="legend"><span class="n">4</span><div><h2>אייער תוכן</h2><p>גיט אונז אלע נויטיגע פרטים כדי מיר זאלן קענען אויפבויען דעם גאנצן פראיעקט אן נאכפרעגן.</p></div></div>
+          <div class="grp">
+            <label class="fl" for="services">אייערע סערוויסעס / פראדוקטן און דעטאלן <span class="req">*</span></label>
+            <textarea id="services" name="fi-text-services_details" placeholder="ציילט אויס וואס איר אפערט מיט די דעטאלן וואס איר ווילט ווייזן — סערוויס נעמען, פראדוקט באשרייבונגען, פרייזן, פעקעדזשעס, אלעס וואס קאסטומערס דארפן זען." required></textarea>
+          </div>
+          <div class="grp">
+            <label class="fl" for="pages">וועלכע בלעטער דארפט איר האבן? <span class="hint">(אדער באשרייבט די געוואונטשענע חלקים פונעם סייט)</span></label>
+            <textarea id="pages" name="fi-text-pages_wanted" placeholder="למשל: היים, איבער אונז, סערוויסעס, גאלעריע / שאורום, סטאר, בוקינג, קאנטאקט — אדער זאגט אונז און מיר וועלן פארשלאגן א סטרוקטור." style="min-height:80px"></textarea>
+          </div>
+          <div class="grp">
+            <label class="fl" for="show_contact">קאנטאקט אינפארמאציע ארויסצושטעלן אויפ'ן וועבזייטל</label>
+            <textarea id="show_contact" name="fi-text-content_contact" placeholder="טעלעפאן, אימעיל, אדרעס, ארבעט שעות, סאשעל מידיא לינקס — וואס איר ווילט אז וויזיטארן זאלן זען." style="min-height:80px"></textarea>
+          </div>
+          <div class="grp">
+            <label class="fl" for="extra">איז דא נאך עפעס וואס מיר דארפן וויסן?</label>
+            <textarea id="extra" name="fi-text-extra_notes" placeholder="וואס נאר — ספעציעלע פיטשערס, אינטעגראציעס, זאכן וואס איר ווילט זיכער אדער ווילט אויסמיידן." style="min-height:80px"></textarea>
+          </div>
+          <div class="grp upload">
+            <label class="fl">ארויפלאדן פיילס אדער בילדער <span class="hint">(רשות — לאגא, בילדער, עקזיסטירנדע תוכן, דוגמאות · ביז 25 MB אינאיינעם)</span></label>
+            <div class="dz" id="dropzone" role="button" tabindex="0" aria-label="ארויפלאדן פיילס">
+              <span class="dz__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg></span>
+              <span class="dz__t"><b>דרוקט ארויפצולאדן</b> אדער שלעפט עס אריין דא</span>
+              <span class="dz__s">בילדער אדער דאקומענטן · ביז 25 MB אינאיינעם</span>
+              <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
+            </div>
+            <div class="filelist" id="fileList"></div>
+            <div class="fileerr" id="fileErr"></div>
+            <div class="filetotal" id="fileTotal" style="display:none"></div>
+          </div>
+          <div class="grp">
+            <label class="fl" for="filelink">…אדער לייגט אריין א לינק צו אייערע פיילס <span class="hint">(גוגל דרייוו, דראפבאקס, ווי-טרענספער — רשות)</span></label>
+            <input type="url" id="filelink" name="fi-text-file_link" placeholder="https://drive.google.com/...">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="legend"><span class="n">5</span><div><h2>צייט-פלאן און בודזשעט</h2><p>העלפט אונז פלאנירן אייער פראיעקט — אן קיין שום פליכט.</p></div></div>
+          <div class="grp row2">
+            <div>
+              <label class="fl" for="timeline">ווען דארפט איר עס גרייט?</label>
+              <select id="timeline" name="fi-select-timeline">
+                <option value="">קלויבט אויס…</option>
+                <option value="ASAP">ווי שנעלער (ASAP)</option>
+                <option value="Within a week">אינערהאלב א וואך</option>
+                <option value="2-4 weeks">צווישן 2 ביז 4 וואכן</option>
+                <option value="Flexible / no rush">נישט קיין איילעניש / פלעקסיבל</option>
+              </select>
+            </div>
+            <div>
+              <label class="fl" for="budget">בודזשעט <span class="hint">(רשות)</span></label>
+              <select id="budget" name="fi-select-budget">
+                <option value="">קלויבט אויס…</option>
+                <option value="As affordable as possible">אזוי ביליג ווי מעגליך</option>
+                <option value="Standard">סטאנדארט</option>
+                <option value="Premium">פרימיום — די בעסטע פון די בעסטע</option>
+                <option value="Not sure yet">נאכנישט זיכער</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="legend"><span class="n">6</span><div><h2>ריפערעל קאוד</h2><p>האט אייך עמיצער אהערגעשיקט אדער האט איר א קאוד? לייגט עס אריין דא.</p></div></div>
+          <div class="grp">
+            <label class="fl" for="ref_code">ריפערעל אדער פראמא קאוד <span class="hint">(רשות)</span></label>
+            <input type="text" id="ref_code" name="fi-text-referral_code" placeholder="למשל: FRIEND25" autocomplete="off">
+            <p class="hint" id="refAuto" style="margin-top:8px;display:none;"></p>
+          </div>
+        </fieldset>
+
+        <input type="hidden" name="fi-text-utm_source" id="utm_source">
+        <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
+        <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
+        <input type="hidden" name="fi-text-landing_page" id="landing_page">
+        <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
+        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <button type="submit" class="submit" id="submitBtn">
+          שיקט אריין מיין פראיעקט
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+        </button>
+        <p class="smallprint">מיר וועלן זיך גלייך נעמען צו דער ארבעט, און זיך פארבינדן מיט אייך נאר אויב עפעס דארף א קלארשטעלונג.</p>
+        <div class="status" id="status"></div>
+      </form>
+
+      <div class="success" id="success">
+        <div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h2>מיר האבן עס באקומען — א דאנק!</h2>
+        <p>אייער פולשטענדיגע פראיעקט-באריכט איז אנגעקומען. מיר וועלן אנהייבן צוזאמשטעלן אייער סייט און זיך נאר פארבינדן אויב עפעס דארף א קלארשטעלונג.</p>
+        <p>דארפט צולייגן עפעס? רופט <a href="tel:8455870531">845-587-0531</a> אדער שיקט אן אימעיל <a href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a>.</p>
+      </div>
+    </div>
+
+    <aside class="side">
+      <div class="scard">
+        <h3>וואס פאסירט ווייטער?</h3>
+        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></span><div><h4>1. איר שיקט אונז דעם דעטאלן-בויגן</h4><p>אלעס וואס מיר דארפן וויסן, אלעס אויף איין מאל.</p></div></div>
+        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span><div><h4>2. מיר הייבן אן בויען</h4><p>אפטמאל גלייך אויפן פלאץ — אן קיין איבריגע אהין-און-צוריק.</p></div></div>
+        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><h4>3. אייער סייט גייט ארויף לייוו</h4><p>געווענליך אינערהאלב בערך 48 שעה.</p></div></div>
+      </div>
+      <div class="scard cc">
+        <h3>ווילט איר ליבערשט רעדן צוערשט?</h3>
+        <a href="tel:8455870531"><span class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span><span class="txt">845-587-0531</span></a>
+        <a href="mailto:info@bhwebsolutions.com"><span class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="txt">info@bhwebsolutions.com</span></a>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="foot">&copy; 2026 BH Web Solutions · שיינע וועבזייטלעך, שנעל געבויט. <a href="yi.html">צוריק צום הויפט בלאט</a></footer>
+
+<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+<script>
+(function(){
+  document.querySelectorAll('.opt').forEach(function(opt){
+    var input=opt.querySelector('input');
+    if(!input)return;
+    function sync(){opt.classList.toggle('on',input.checked);}
+    input.addEventListener('change',sync);
+    opt.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();input.checked=!input.checked;input.dispatchEvent(new Event('change'));}});
+    opt.setAttribute('tabindex','0');
+    sync();
+  });
+  document.querySelectorAll('.js-other').forEach(function(opt){
+    var input=opt.querySelector('input'),box=document.getElementById(opt.dataset.target);
+    function sync(){if(box)box.classList.toggle('show',input.checked); if(box&&!input.checked){var t=box.querySelector('input');if(t)t.value='';}}
+    input.addEventListener('change',sync);sync();
+  });
+
+  (function(){
+    var input=document.getElementById('fileInput'),dz=document.getElementById('dropzone'),list=document.getElementById('fileList'),err=document.getElementById('fileErr'),totalEl=document.getElementById('fileTotal');
+    if(!input||typeof DataTransfer==='undefined')return;
+    var MAX=25*1024*1024,MAXN=10,dt=new DataTransfer();
+    function fmt(b){if(b<1024)return b+' B';if(b<1048576)return Math.round(b/1024)+' KB';return (b/1048576).toFixed(1)+' MB';}
+    function total(){var t=0;for(var i=0;i<dt.files.length;i++)t+=dt.files[i].size;return t;}
+    function showErr(m){err.textContent=m;err.classList.add('show');clearTimeout(showErr._t);showErr._t=setTimeout(function(){err.classList.remove('show');},5000);}
+    function render(){
+      list.innerHTML='';
+      for(var i=0;i<dt.files.length;i++){(function(f,idx){
+        var row=document.createElement('div');row.className='fileitem';
+        row.innerHTML='<span class="fic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="fmeta"><div class="fname"></div><div class="fsize"></div></div><button type="button" class="frm" aria-label="ווארף ארויס"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>';
+        row.querySelector('.fname').textContent=f.name;
+        row.querySelector('.fsize').textContent=fmt(f.size);
+        row.querySelector('.frm').addEventListener('click',function(){var ndt=new DataTransfer();for(var j=0;j<dt.files.length;j++){if(j!==idx)ndt.items.add(dt.files[j]);}dt=ndt;input.files=dt.files;render();});
+        list.appendChild(row);
+      })(dt.files[i],i);}
+      if(dt.files.length){totalEl.style.display='block';var t=total();totalEl.textContent=dt.files.length+' פיילס · '+fmt(t)+' פון 25 MB';totalEl.classList.toggle('over',t>MAX);}
+      else{totalEl.style.display='none';}
+    }
+    function add(files){
+      for(var i=0;i<files.length;i++){
+        var f=files[i];
+        if(dt.files.length>=MAXN){showErr('איר קענט צולייגן ביז 10 פיילס — ניצט די לינק פעלד אונטן פאר מער.');break;}
+        var dup=false;for(var j=0;j<dt.files.length;j++){if(dt.files[j].name===f.name&&dt.files[j].size===f.size){dup=true;break;}}
+        if(dup)continue;
+        if(total()+f.size>MAX){showErr('דאס וועט אריבער די 25 MB גרענעץ. פרובירט קלענערע פיילס, אדער לייגט אריין א לינק אונטן.');continue;}
+        dt.items.add(f);
+      }
+      input.files=dt.files;render();
+    }
+    input.addEventListener('change',function(){if(input.files&&input.files.length){var picked=[];for(var i=0;i<input.files.length;i++)picked.push(input.files[i]);add(picked);}});
+    dz.addEventListener('click',function(e){if(e.target.tagName!=='INPUT')input.click();});
+    dz.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();input.click();}});
+    ['dragenter','dragover'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();dz.classList.add('drag');});});
+    ['dragleave','dragend','drop'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();dz.classList.remove('drag');});});
+    dz.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files)add(e.dataTransfer.files);});
+  })();
+
+  function param(n){try{return new URLSearchParams(location.search).get(n)||'';}catch(e){return '';}}
+  function set(k,v){try{if(v)localStorage.setItem(k,v);}catch(e){}}
+  function get(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
+  var ref=param('ref')||param('code')||param('promo')||param('r')||get('bh_ref');
+  var uS=param('utm_source')||get('bh_utm_source'),uM=param('utm_medium')||get('bh_utm_medium'),uC=param('utm_campaign')||get('bh_utm_campaign');
+  set('bh_ref',ref);set('bh_utm_source',uS);set('bh_utm_medium',uM);set('bh_utm_campaign',uC);
+  var refField=document.getElementById('ref_code'),refAuto=document.getElementById('refAuto');
+  if(ref){if(refField&&!refField.value)refField.value=ref;if(refAuto){refAuto.style.display='block';refAuto.textContent='✓ ריפערעל קאוד '+ref+' איז אויטאמאטיש צוגעלייגט געווארן.';}}
+  document.getElementById('utm_source').value=uS;document.getElementById('utm_medium').value=uM;document.getElementById('utm_campaign').value=uC;
+  document.getElementById('landing_page').value=(get('bh_landing')||(function(){var l=document.referrer||location.href;set('bh_landing',l);return l;})());
+
+  var FORM_ID='nsf8hkp98fw';
+  var form=document.getElementById('orderForm'),btn=document.getElementById('submitBtn'),status=document.getElementById('status'),success=document.getElementById('success');
+  function showErr(m){status.textContent=m;status.className='status err';status.scrollIntoView({behavior:'smooth',block:'center'});}
+  function showSuccess(){form.style.display='none';success.classList.add('show');success.scrollIntoView({block:'center'});try{history.replaceState(null,'',location.pathname+'?sent=1');}catch(e){}}
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    var name=document.getElementById('name').value.trim(),
+        email=document.getElementById('email').value.trim(),
+        phone=document.getElementById('phone').value.trim(),
+        services=document.getElementById('services').value.trim();
+    var goals=form.querySelectorAll('input[name="fi-checkbox-site_goals"]:checked').length;
+    if(!name||!email||!phone){showErr('ביטע לייגט צו אייער נאמען, אימעיל, און טעלעפאן כדי מיר זאלן אייך קענען דערגרייכן.');return;}
+    if(!goals){showErr('ביטע קלויבט אויס כאטש איין זאך וואס אייער וועבסייט דארף טון.');return;}
+    if(!services){showErr('ביטע זאגט אונז איבער אייערע סערוויסעס אדער פראדוקטן כדי מיר זאלן קענען בויען אייער סייט.');return;}
+
+    var hp=form.querySelector('input[name="_honey"]');
+    if(hp&&hp.value){showSuccess();return;}
+
+    document.getElementById('submitted_at').value=new Date().toISOString();
+    status.className='status';status.textContent='';
+    btn.disabled=true;btn.textContent='שיקט…';
+
+    try{
+      if(typeof Forminit==='undefined') throw new Error('SDK not loaded');
+      var fd=new FormData(form);
+      fd.delete('_honey');
+      var fi=new Forminit();
+      var res=await fi.submit(FORM_ID,fd);
+      if(res&&res.error){throw new Error((res.error&&res.error.message)||'Submission failed');}
+      showSuccess();
+    }catch(ex){
+      btn.disabled=false;btn.textContent='שיקט אריין מיין פראיעקט';
+      showErr('אנטשולדיגט — עפעס איז שיף געגאנגען מיטן שיקן. ביטע פרובירט נאכאמאל, אדער רופט 845-587-0531 אדער שיקט אן אימעיל info@bhwebsolutions.com.');
+    }
+  });
+
+  try{if(new URLSearchParams(location.search).get('sent')==='1'){form.style.display='none';success.classList.add('show');}}catch(e){}
+})();
+</script>
+</body>
+</html>
