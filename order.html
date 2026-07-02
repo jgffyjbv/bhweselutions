@@ -5,374 +5,674 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start Your Project — BH Web Solutions</title>
 <meta name="description" content="Tell us everything about your website and we'll start building — no back-and-forth needed. Fast, beautiful, budget-friendly websites by BH Web Solutions.">
-<meta name="theme-color" content="#fbfbf8">
+<meta name="theme-color" content="#0b1c30">
 <meta name="robots" content="noindex">
+<link rel="canonical" href="https://bhwebsolutions.com/order.html">
+<link rel="alternate" hreflang="en" href="https://bhwebsolutions.com/order.html">
+<link rel="alternate" hreflang="yi" href="https://bhwebsolutions.com/order-yi.html">
+<link rel="alternate" hreflang="x-default" href="https://bhwebsolutions.com/order.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start Your Project — BH Web Solutions">
+<meta property="og:description" content="Tell us everything about your website and we'll start building — no back-and-forth needed.">
+<meta property="og:url" content="https://bhwebsolutions.com/order.html">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500;1,6..72,600&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
 <style>
 :root{
-  --bg:#f5f8fb;--surface:#ffffff;--bg-dark:#0c2340;
-  --ink:#13243a;--ink2:#46586a;--muted:#7e8d99;
-  --line:rgba(12,35,64,.08);--line-strong:rgba(12,35,64,.14);
-  /* green primary + blue, matching the homepage */
-  --accent:#6cb33f;--accent-deep:#5a9c33;--accent-bright:#7cc24f;--accent-tint:#eef6e7;--accent-tint2:#dceccb;
-  --blue:#15689f;--navy:#0c2340;
-  --r-xs:7px;--r-sm:10px;--r:14px;--r-lg:18px;--r-xl:24px;
-  --shadow-sm:0 1px 2px rgba(12,35,64,.05);
-  --shadow:0 1px 2px rgba(12,35,64,.05),0 16px 36px rgba(12,35,64,.08);
-  --shadow-lg:0 36px 70px rgba(12,35,64,.14);
-  --body:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --display:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ink:#0b1c30;        /* near-black navy canvas for the two dark bands */
+  --ink-2:#081524;
+  --navy:#0c2340;
+  --paper:#f6f3ec;      /* warm ivory — dominant surface */
+  --paper-2:#efe9dd;
+  --paper-3:#e9e2d4;
+  --line:#e2dccf;
+  --line-2:#d7cfbe;
+  --green:#6cb33f;      /* brand green — accent only */
+  --green-deep:#4e8f2c;
+  --ink-soft:#3f4c5a;
+  --muted:#5f6b78;
+  --muted-d:#9fb0c2;    /* secondary text on ink */
+  --white:#ffffff;
+  --r:14px;--r-lg:20px;--r-pill:999px;
+  --shadow-sm:0 1px 2px rgba(11,28,48,.05);
+  --shadow:0 1px 2px rgba(11,28,48,.06),0 14px 34px -14px rgba(11,28,48,.22);
+  --shadow-lg:0 40px 80px -32px rgba(11,28,48,.42);
+  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --serif:'Newsreader',Georgia,'Times New Roman',serif;
-  --max:1120px;--nav:76px;
-  --ease:cubic-bezier(.4,0,.2,1);--ease-out:cubic-bezier(.22,1,.36,1);
+  --max:1240px;--nav:76px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  --ease-type:cubic-bezier(.22,1,.36,1);
+  --display:clamp(3rem,7.4vw,6.6rem);
+  --h2:clamp(2.1rem,4.6vw,3.9rem);
+  --h3:clamp(1.28rem,2vw,1.7rem);
+  --lead:clamp(1.06rem,1.5vw,1.32rem);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;position:relative;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.06;letter-spacing:-.035em;color:var(--ink)}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav);font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.62;overflow-x:hidden;letter-spacing:.005em}
 a{text-decoration:none;color:inherit}
-::selection{background:var(--accent);color:#fff}
+img{max-width:100%;display:block}
+::selection{background:var(--green);color:#fff}
+.in{max-width:var(--max);margin:0 auto;padding:0 30px}
+.sec{padding:clamp(5.5rem,11vw,10rem) 0;position:relative}
 
-.nav{position:sticky;top:0;z-index:1000;height:var(--nav);display:flex;align-items:center;background:rgba(251,251,248,.82);backdrop-filter:saturate(1.5) blur(16px);-webkit-backdrop-filter:saturate(1.5) blur(16px);border-bottom:1px solid var(--line)}
-.nav .in{width:100%;max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:11px;font-family:var(--display);font-weight:800;font-size:1.18rem;letter-spacing:-.04em}
-.brand__mark{width:38px;height:38px;border-radius:9px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;letter-spacing:-.04em;position:relative;overflow:hidden}
-.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--accent),var(--blue))}
-.back{display:inline-flex;align-items:center;gap:8px;color:var(--ink2);font-weight:500;font-size:.92rem;padding:9px 14px;border-radius:var(--r-sm);transition:.18s var(--ease)}
-.back:hover{color:var(--ink);background:rgba(16,18,14,.045)}
+/* grain overlay for dark bands */
+.grain::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E")}
 
-.wrap{position:relative;z-index:1;max-width:var(--max);margin:0 auto;padding:60px 28px 96px}
-.head{text-align:center;max-width:700px;margin:0 auto 16px}
-.eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
-.eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-tint)}
-.head h1{font-family:var(--display);font-weight:800;font-size:clamp(2.1rem,4.6vw,3.2rem);letter-spacing:-.04em;margin:16px 0 12px}
-.head p{font-size:1.1rem;color:var(--ink2);line-height:1.6}
-.note-strip{max-width:760px;margin:22px auto 40px;display:flex;align-items:flex-start;gap:12px;background:var(--accent-tint);border:1px solid var(--accent-tint2);border-radius:var(--r);padding:15px 18px;font-size:.92rem;color:var(--accent-deep);line-height:1.5}
-.note-strip svg{flex:0 0 auto;color:var(--accent-deep);margin-top:1px}
+/* eyebrow label */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:.72rem;font-weight:700;color:var(--green-deep);margin-bottom:20px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--green);border-radius:2px}
+.on-ink .eyebrow{color:#9fd47a}
 
-.layout{display:grid;grid-template-columns:1.55fr 1fr;gap:34px;align-items:start}
+/* headings */
+h1,h2,.serif{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1;text-wrap:balance}
+h1{font-size:var(--display);letter-spacing:-.03em;line-height:.96}
+h2{font-size:var(--h2)}
+.lead{font-size:var(--lead);color:var(--muted);line-height:1.55;max-width:56ch}
+.on-ink .lead{color:var(--muted-d)}
 
-.form{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:clamp(22px,3vw,38px);box-shadow:var(--shadow)}
-fieldset{border:none;margin-bottom:34px}
-fieldset:last-of-type{margin-bottom:18px}
-.legend{display:flex;align-items:center;gap:11px;margin-bottom:18px}
-.legend .n{width:27px;height:27px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:.82rem;flex:0 0 auto}
-.legend h2{font-size:1.18rem;letter-spacing:-.03em}
+/* ---------- masked line reveal ---------- */
+.reveal-lines .ln{overflow:hidden;display:block}
+.reveal-lines .ln>i{display:block;font-style:inherit;transform:translateY(112%);transition:transform 1s var(--ease-type)}
+.reveal-lines.in .ln>i{transform:none}
+.reveal-lines.in .ln:nth-child(2)>i{transition-delay:.08s}
+.reveal-lines.in .ln:nth-child(3)>i{transition-delay:.16s}
+.reveal-lines.in .ln:nth-child(4)>i{transition-delay:.24s}
+
+/* ---------- generic scroll reveal ---------- */
+.rv{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:calc(var(--i,0)*70ms)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1.02rem;letter-spacing:-.01em;padding:15px 30px;border-radius:var(--r-pill);cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--ease),background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease);white-space:nowrap;will-change:transform}
+.btn svg{transition:transform .3s var(--ease)}
+.btn--green{background:var(--green);color:#fff}
+.btn--green:hover{background:var(--green-deep)}
+.btn--green:hover svg{transform:translateX(3px)}
+.btn--dark{background:var(--ink);color:#fff}
+.btn--dark:hover{background:var(--navy)}
+.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.07)}
+.btn--outline{background:transparent;color:var(--ink);border-color:var(--line-2)}
+.btn--outline:hover{border-color:var(--ink)}
+.btn--sm{padding:11px 22px;font-size:.94rem}
+.mag{will-change:transform}
+
+/* underline sweep link */
+.ul{position:relative;font-weight:600}
+.ul::after{content:"";position:absolute;left:0;bottom:-3px;width:100%;height:1.5px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
+.ul:hover::after{transform:scaleX(1)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:var(--nav);display:flex;align-items:center;background:rgba(246,243,236,.72);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:background .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
+.nav.scrolled{background:rgba(246,243,236,.9);border-bottom-color:var(--line);box-shadow:0 1px 18px rgba(11,28,48,.05)}
+.nav .in{width:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand__mark{width:42px;height:42px;flex:0 0 auto;border-radius:12px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:800;font-size:1rem;letter-spacing:-.02em;position:relative;overflow:hidden}
+.brand__mark::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:var(--green)}
+.brand__txt{font-family:var(--sans);font-weight:600;font-size:1.22rem;letter-spacing:-.025em;color:var(--ink);line-height:1.05;white-space:nowrap}
+.brand__txt b{font-weight:800}
+.nav__links{display:flex;align-items:center;gap:2px;list-style:none}
+.nav__links>li>a{color:var(--ink);padding:9px 15px;border-radius:8px;font-weight:600;font-size:.97rem;transition:color .2s var(--ease)}
+.nav__links>li>a:hover{color:var(--green-deep)}
+.lang{display:inline-flex;direction:ltr;align-items:center;gap:2px;background:var(--paper-2);border:1px solid var(--line);border-radius:999px;padding:3px;margin:0 4px}
+.lang a{padding:6px 12px;border-radius:999px;font-weight:700;font-size:.82rem;line-height:1;color:var(--muted)}
+.lang a[aria-current]{background:var(--ink);color:#fff}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:9px;border-radius:8px}
+.burger span{width:24px;height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--ease)}
+.burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.burger.on span:nth-child(2){opacity:0}
+.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile{position:fixed;inset:0;z-index:999;background:rgba(246,243,236,.98);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.mobile.on{opacity:1;pointer-events:all}
+.mobile a{font-family:var(--serif);font-weight:500;font-size:1.9rem;letter-spacing:-.02em;color:var(--ink);padding:6px 18px}
+.mobile .lang{margin-top:8px}
+.mobile .lang a{font-family:var(--sans);font-size:1rem;padding:8px 16px}
+.mobile .m-cta{margin-top:10px}
+
+/* ---------- hero (compact subpage band) ---------- */
+.hero{position:relative;background:radial-gradient(120% 120% at 15% 0%,#12335a 0%,var(--ink) 55%,var(--ink-2) 100%);color:#fff;overflow:hidden;padding:calc(var(--nav) + 70px) 0 0;min-height:100svh;display:flex;flex-direction:column}
+.hero__dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1.4px);background-size:32px 32px;-webkit-mask-image:radial-gradient(ellipse 80% 65% at 30% 25%,#000,transparent 78%);mask-image:radial-gradient(ellipse 80% 65% at 30% 25%,#000,transparent 78%)}
+.hero__glow,.hero__glow2{position:absolute;border-radius:50%;filter:blur(20px);pointer-events:none;will-change:transform}
+.hero__glow{top:-140px;right:-120px;width:620px;height:620px;background:radial-gradient(circle,rgba(61,143,199,.34),transparent 66%);animation:drift 18s ease-in-out infinite alternate}
+.hero__glow2{bottom:-180px;left:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(108,179,63,.22),transparent 66%);animation:drift2 22s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(4%,4%) scale(1.1)}}
+@keyframes drift2{to{transform:translate(-4%,-5%) scale(1.12)}}
+.hero__wrap{position:relative;z-index:2;flex:1;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;padding-bottom:70px}
+.hero h1{margin-bottom:26px}
+.hero h1 em{font-style:italic;color:#9fd47a;font-weight:500}
+.hero .sub{font-size:var(--lead);color:rgba(233,240,247,.8);max-width:52ch;margin-bottom:36px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero__meta{margin-top:34px;display:flex;flex-wrap:wrap;gap:8px 26px;font-size:.9rem;color:rgba(233,240,247,.62)}
+.hero__meta span{display:inline-flex;align-items:center;gap:8px}
+.hero__meta svg{color:#9fd47a}
+.hero__strip{position:relative;z-index:3;height:44px;background:var(--paper);border-radius:26px 26px 0 0;margin-top:auto}
+/* compact variant */
+.hero--sub{min-height:46vh;padding:calc(var(--nav) + 54px) 0 0}
+.hero--sub .hero__wrap{grid-template-columns:1fr;gap:0;padding-bottom:54px;align-items:end}
+.hero--sub h1{margin-bottom:20px}
+.hero--sub .sub{margin-bottom:0}
+.hero--sub .hero__meta{margin-top:26px}
+
+/* ---------- section head ---------- */
+.head{max-width:920px}
+.head h2{margin-bottom:14px}
+.head .lead{margin-top:10px}
+.head--center{margin:0 auto;text-align:center}
+.head--center .eyebrow{justify-content:center}
+.head--center .lead{margin-left:auto;margin-right:auto}
+
+/* ---------- order layout ---------- */
+.order{background:var(--paper-2)}
+.order__wrap{display:grid;grid-template-columns:1.55fr 1fr;gap:34px;align-items:start}
+.order__side{display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--nav) + 22px)}
+.note{display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:15px 18px;font-size:.93rem;color:var(--ink-soft);line-height:1.5;margin-bottom:22px}
+.note svg{flex:0 0 auto;color:var(--green-deep);margin-top:2px}
+
+/* ---------- form card ---------- */
+.form{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px;box-shadow:var(--shadow)}
+.form .req{font-size:.86rem;color:var(--muted);margin-bottom:20px}
+.form .req b{color:var(--ink)}
+fieldset{border:none;margin:0 0 36px}
+fieldset:last-of-type{margin-bottom:20px}
+.legend{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.legend .n{width:28px;height:28px;border-radius:8px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-weight:800;font-size:.82rem;flex:0 0 auto}
+.legend h2{font-family:var(--serif);font-weight:500;font-size:1.32rem;letter-spacing:-.02em;line-height:1.15}
 .legend p{font-size:.84rem;color:var(--muted);margin-top:1px}
-
-.grp{margin-bottom:16px}
-.grp.row2{display:grid;grid-template-columns:1fr 1fr;gap:15px}
-label.fl{display:block;font-weight:600;font-size:.85rem;color:var(--ink2);margin-bottom:7px}
-label.fl .req{color:var(--accent-deep)}
+.fgroup{margin-bottom:16px}
+.fgroup label{display:block;font-size:.86rem;font-weight:600;margin-bottom:7px;color:var(--ink-soft)}
+.fgroup .rq{color:var(--green-deep)}
 .hint{font-weight:400;color:var(--muted);font-size:.8rem}
-input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{width:100%;font-family:var(--body);font-size:.96rem;color:var(--ink);background:#fff;border:1.5px solid var(--line-strong);border-radius:var(--r-sm);padding:12px 14px;transition:.18s var(--ease);outline:none}
-input::placeholder,textarea::placeholder{color:#aab0a6}
-input:focus,select:focus,textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,179,63,.14)}
-textarea{resize:vertical;min-height:104px;line-height:1.55}
-select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237e857b' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.fgroup input,.fgroup textarea,.fgroup select{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.fgroup textarea{min-height:118px;resize:vertical;line-height:1.55}
+.fgroup input:focus,.fgroup textarea:focus,.fgroup select:focus{outline:none;background:#fff;border-color:var(--green)}
+.fgroup select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235f6b78' stroke-width='2.4'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.frow2{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:16px}
+.frow2 .fgroup{margin-bottom:0}
+.form .btn{width:100%;margin-top:6px}
+.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
+.cnote{font-size:.82rem;color:var(--muted);text-align:center;margin-top:12px}
 
 /* multi-select option chips */
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.opt{position:relative;display:flex;align-items:center;gap:11px;border:1.5px solid var(--line-strong);border-radius:var(--r);padding:12px 14px;cursor:pointer;transition:border-color .16s var(--ease),background .16s var(--ease),box-shadow .16s var(--ease);user-select:none}
-.opt:hover{border-color:#b9bdb2}
-.opt.on{border-color:var(--accent);background:var(--accent-tint);box-shadow:0 0 0 1px var(--accent) inset}
+.opt{position:relative;display:flex;align-items:center;gap:11px;background:var(--paper-2);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease);user-select:none}
+.opt:hover{border-color:var(--line-2);background:#fff}
+.opt.on{border-color:var(--green);background:#fff;box-shadow:0 0 0 1px var(--green) inset}
 .opt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.opt .box{width:20px;height:20px;border-radius:6px;border:1.8px solid var(--line-strong);flex:0 0 auto;display:flex;align-items:center;justify-content:center;transition:.16s var(--ease)}
-.opt.on .box{background:var(--accent);border-color:var(--accent)}
-.opt .box svg{opacity:0;transform:scale(.5);transition:.16s var(--ease)}
+.opt .box{width:20px;height:20px;border-radius:6px;border:1.8px solid var(--line-2);background:#fff;flex:0 0 auto;display:flex;align-items:center;justify-content:center;color:#fff;transition:.2s var(--ease)}
+.opt.on .box{background:var(--green);border-color:var(--green)}
+.opt .box svg{opacity:0;transform:scale(.5);transition:.2s var(--ease)}
 .opt.on .box svg{opacity:1;transform:none}
 .opt .lab{font-size:.9rem;font-weight:600;color:var(--ink);line-height:1.3}
-.opt.radio .box{border-radius:50%}
 .reveal-box{margin-top:10px;display:none}
-.reveal-box.show{display:block;animation:fade .25s var(--ease-out)}
-@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.reveal-box.show{display:block;animation:fadein .25s var(--ease)}
+.reveal-box input{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper-2);border:1.5px solid var(--line);border-radius:10px;padding:13px 15px;transition:border-color .2s var(--ease),background .2s var(--ease)}
+.reveal-box input:focus{outline:none;background:#fff;border-color:var(--green)}
+@keyframes fadein{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
 /* file upload */
-.upload{margin-bottom:16px}
-.dz{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;border:1.8px dashed var(--line-strong);border-radius:var(--r);padding:26px 18px;background:#fcfbf9;cursor:pointer;transition:.18s var(--ease)}
-.dz:hover{border-color:var(--accent);background:var(--accent-tint)}
-.dz.drag{border-color:var(--accent);background:var(--accent-tint);box-shadow:0 0 0 3px rgba(108,179,63,.13)}
-.dz:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(108,179,63,.16)}
-.dz__ic{width:46px;height:46px;border-radius:12px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;transition:.18s var(--ease)}
-.dz:hover .dz__ic,.dz.drag .dz__ic{background:#fff}
+.dz{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;border:1.8px dashed var(--line-2);border-radius:12px;padding:26px 18px;background:var(--paper-2);cursor:pointer;transition:border-color .2s var(--ease),background .2s var(--ease),box-shadow .2s var(--ease)}
+.dz:hover,.dz.drag{border-color:var(--green);background:#fff}
+.dz.drag{box-shadow:0 0 0 3px rgba(108,179,63,.15)}
+.dz__ic{width:46px;height:46px;border-radius:12px;background:var(--paper);color:var(--green-deep);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;transition:.2s var(--ease)}
+.dz:hover .dz__ic,.dz.drag .dz__ic{background:var(--green);color:#fff;border-color:var(--green)}
 .dz__t{font-weight:600;font-size:.93rem;color:var(--ink)}
-.dz__t b{color:var(--accent-deep)}
+.dz__t b{color:var(--green-deep)}
 .dz__s{font-size:.79rem;color:var(--muted)}
 .dz input{display:none}
 .filelist{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.fileitem{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--r-sm);padding:10px 12px}
-.fileitem .fic{width:34px;height:34px;border-radius:8px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.fileitem{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.fileitem .fic{width:34px;height:34px;border-radius:8px;background:var(--paper-2);color:var(--green-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 .fileitem .fmeta{flex:1;min-width:0}
 .fileitem .fname{font-size:.86rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fileitem .fsize{font-size:.76rem;color:var(--muted)}
-.fileitem .frm{flex:0 0 auto;width:28px;height:28px;border-radius:7px;border:none;background:rgba(16,18,14,.05);color:var(--ink2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.16s var(--ease)}
-.fileitem .frm:hover{background:var(--accent-tint2);color:var(--accent-deep)}
+.fileitem .frm{flex:0 0 auto;width:28px;height:28px;border-radius:7px;border:none;background:var(--paper-2);color:var(--muted);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.16s var(--ease)}
+.fileitem .frm:hover{background:var(--paper-3);color:var(--ink)}
 .filetotal{font-size:.79rem;color:var(--muted);margin-top:9px;text-align:right}
-.filetotal.over{color:#c0392b;font-weight:600}
-.fileerr{font-size:.82rem;color:#c0392b;font-weight:600;margin-top:8px;display:none}
+.filetotal.over{color:#b23b2c;font-weight:600}
+.fileerr{font-size:.82rem;color:#b23b2c;font-weight:600;margin-top:8px;display:none}
 .fileerr.show{display:block}
-.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
 
-.submit{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--body);font-weight:600;font-size:1.04rem;padding:16px 28px;border-radius:var(--r);border:none;cursor:pointer;background:var(--accent);color:#fff;box-shadow:0 10px 26px rgba(108,179,63,.3);transition:.2s var(--ease)}
-.submit svg{transition:transform .2s var(--ease)}
-.submit:hover:not(:disabled){background:var(--accent-deep);transform:translateY(-2px);box-shadow:0 16px 34px rgba(108,179,63,.4)}
-.submit:hover:not(:disabled) svg{transform:translateX(3px)}
-.submit:disabled{opacity:.65;cursor:default}
-.smallprint{font-size:.78rem;color:var(--muted);text-align:center;margin-top:12px}
+/* status + success */
 .status{margin-top:14px;font-size:.92rem;font-weight:600;display:none}
-.status.err{display:block;color:#c0392b}
-
-.success{display:none;text-align:center;padding:50px 30px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow)}
+.status.err{display:block;color:#b23b2c}
+.success{display:none;text-align:center;padding:50px 30px;background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow)}
 .success.show{display:block}
-.success .ic{width:76px;height:76px;border-radius:50%;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
-.success h2{font-size:1.8rem;margin-bottom:10px}
-.success p{color:var(--ink2);max-width:440px;margin:0 auto 8px}
-.success a{color:var(--accent-deep);font-weight:700}
+.success .ic{width:62px;height:62px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
+.success h2{font-family:var(--serif);font-weight:500;font-size:1.7rem;color:var(--ink);margin-bottom:8px}
+.success p{color:var(--muted);max-width:440px;margin:0 auto 8px}
+.success a{color:var(--green-deep);font-weight:700}
 
-.side{display:flex;flex-direction:column;gap:16px;position:sticky;top:calc(var(--nav) + 22px)}
-.scard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px}
-.scard h3{font-size:1.08rem;letter-spacing:-.025em;margin-bottom:14px}
-.sitem{display:flex;gap:13px;align-items:flex-start;padding:11px 0}
+/* sidebar cards */
+.scard{background:var(--paper);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow-sm)}
+.scard>h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.perk{display:flex;gap:11px;align-items:flex-start;padding:10px 0;font-size:.93rem;color:var(--muted);line-height:1.5}
+.perk+.perk{border-top:1px solid var(--line)}
+.perk svg{flex:0 0 auto;color:var(--green-deep);margin-top:3px}
+.perk b{color:var(--ink);font-weight:700}
+.sitem{display:flex;gap:14px;align-items:flex-start;padding:11px 0}
 .sitem+.sitem{border-top:1px solid var(--line)}
-.sitem .si{width:40px;height:40px;border-radius:11px;background:var(--accent-tint);color:var(--accent-deep);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.sitem h4{font-size:.93rem;letter-spacing:-.02em;margin-bottom:2px}
-.sitem p{font-size:.83rem;color:var(--muted);line-height:1.5}
-.cc{background:var(--bg-dark);border:none;color:#fff}
-.cc h3{color:#fff}
-.cc a{display:flex;align-items:center;gap:11px;color:#fff;font-weight:600;padding:10px 0;font-size:.98rem}
-.cc a+a{border-top:1px solid rgba(255,255,255,.13)}
-.cc a:hover{color:var(--accent-bright)}
-.cc .ci{width:40px;height:40px;border-radius:11px;background:rgba(251,146,60,.18);color:var(--accent-bright);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.sitem .sk{font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--green-deep);flex:0 0 auto;line-height:1.3;min-width:44px}
+.sitem h4{font-family:var(--sans);font-weight:800;font-size:.95rem;letter-spacing:-.01em;color:var(--ink);margin-bottom:2px}
+.sitem p{font-size:.84rem;color:var(--muted);line-height:1.5}
+.scard--dark{background:radial-gradient(120% 130% at 80% 10%,#12335a 0%,var(--ink) 60%,var(--ink-2) 100%);border-color:rgba(255,255,255,.08);position:relative;overflow:hidden}
+.scard--dark>h3{color:#fff}
+.scard--dark a{display:flex;align-items:center;gap:11px;color:#fff;font-weight:700;padding:11px 0;font-size:.97rem;letter-spacing:-.01em;transition:color .2s var(--ease)}
+.scard--dark a+a{border-top:1px solid rgba(255,255,255,.12)}
+.scard--dark a:hover{color:#9fd47a}
+.scard--dark .ci{width:38px;height:38px;border-radius:10px;background:rgba(108,179,63,.16);color:#9fd47a;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
 
-.foot{border-top:1px solid var(--line);background:#faf9f5;padding:26px 28px;text-align:center;font-size:.84rem;color:var(--muted)}
-.foot a{color:var(--accent-deep);font-weight:600}
+/* ---------- footer ---------- */
+.foot{background:var(--ink);color:rgba(216,226,236,.66);padding:70px 0 0;position:relative}
+.foot__grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1.3fr;gap:40px}
+.foot .brand{margin-bottom:16px}
+.foot .brand__txt{color:#fff}
+.foot .brand__mark{background:#fff;color:var(--ink)}
+.foot__about{font-size:.93rem;line-height:1.6;max-width:300px;color:rgba(216,226,236,.55)}
+.foot h5{color:#fff;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+.foot a.fl,.foot .fl{display:flex;align-items:center;gap:9px;color:rgba(216,226,236,.66);font-size:.94rem;padding:6px 0;transition:color .2s var(--ease)}
+.foot a.fl:hover{color:#9fd47a}
+.foot .fl svg{flex:0 0 auto;color:#9fd47a}
+.foot__bottom{max-width:var(--max);margin:52px auto 0;padding:24px 30px 32px;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:.84rem;color:rgba(216,226,236,.45)}
+.foot__badge{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.78rem;color:#9fd47a}
 
-@media(max-width:880px){
-  .layout{grid-template-columns:1fr;gap:24px}
-  .side{position:static}
-  .grp.row2,.opts{grid-template-columns:1fr}
+/* ---------- custom cursor ---------- */
+.cursor{position:fixed;top:0;left:0;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .3s var(--ease),height .3s var(--ease),background .3s var(--ease)}
+.cursor__dot{width:9px;height:9px;border-radius:50%;background:var(--ink);mix-blend-mode:difference;display:flex;align-items:center;justify-content:center;transition:.3s var(--ease)}
+.cursor.view .cursor__dot{width:78px;height:78px;background:#fff}
+.cursor__label{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--ink);opacity:0;transition:.3s var(--ease)}
+.cursor.view .cursor__label{opacity:1}
+
+/* ---------- back to top ---------- */
+.totop{position:fixed;bottom:24px;right:24px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--ease)}
+.totop.show{opacity:1;pointer-events:all;transform:none}
+.totop:hover{background:var(--green-deep);transform:translateY(-3px)}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+  .hero__wrap{grid-template-columns:1fr;gap:44px;padding-bottom:50px}
+  .hero{min-height:auto;padding-bottom:0}
+  .order__wrap{grid-template-columns:1fr;gap:28px}
+  .order__side{position:static}
+  .foot__grid{grid-template-columns:1fr 1fr}
 }
+@media(max-width:680px){
+  .nav__links{display:none}.burger{display:flex}
+  .sec{padding:64px 0}
+  .form{padding:26px 20px}
+  .frow2{grid-template-columns:1fr}
+  .opts{grid-template-columns:1fr}
+  .foot__grid{grid-template-columns:1fr;gap:30px}
+  .foot__bottom{flex-direction:column;text-align:center}
+  .hero .cta-row .btn{width:100%}
+  .cursor{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .rv,.reveal-lines .ln>i{opacity:1!important;transform:none!important}
+  .step__line{transform:scaleX(1)!important}
+  .cursor{display:none}
+}
+@media(hover:none),(pointer:coarse){.cursor{display:none}}
+:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:6px}
 </style>
 </head>
-<body>
-<nav class="nav">
+<body id="top">
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
   <div class="in">
-    <a href="index.html" class="brand"><span class="brand__mark">BH</span> BH Web Solutions</a>
-    <span style="display:flex;gap:8px;align-items:center">
-      <div style="display:inline-flex;direction:ltr;align-items:center;gap:3px;background:var(--bg);border:1px solid var(--line-strong);border-radius:999px;padding:3px;">
-        <a href="order.html" style="padding:5px 12px;border-radius:999px;font-weight:700;font-size:.85rem;line-height:1;background:var(--navy);color:#fff;">EN</a>
-        <a href="order-yi.html" lang="yi" style="padding:5px 12px;border-radius:999px;font-weight:700;font-size:.85rem;line-height:1;color:var(--ink2);">ייִדיש</a>
-      </div>
-      <a href="index.html" class="back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back to home</a>
-    </span>
+    <a href="#top" class="brand" aria-label="BH Web Solutions home">
+      <span class="brand__mark" aria-hidden="true">BH</span>
+      <span class="brand__txt"><b>BH</b> Web Solutions</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html#work">Work</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#how">How we work</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><div class="lang">
+        <a href="order.html" aria-current="page">EN</a>
+        <a href="order-yi.html" lang="yi">ייִדיש</a>
+      </div></li>
+      <li><a href="order.html" class="btn btn--green btn--sm mag">Order Now</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
-
-<div class="wrap">
-  <div class="head">
-    <span class="eyebrow"><span class="dot"></span> Start your project</span>
-    <h1>Tell us everything — and we'll start building</h1>
-    <p>This is your full project brief. The more you include, the less we'll need to go back and forth — fill it out completely and we can often start straight away.</p>
+<div class="mobile" id="mobile">
+  <a href="index.html#work">Work</a>
+  <a href="index.html#services">Services</a>
+  <a href="index.html#how">How we work</a>
+  <a href="about.html">About</a>
+  <a href="index.html#contact">Contact</a>
+  <div class="lang">
+    <a href="order.html" aria-current="page">EN</a>
+    <a href="order-yi.html" lang="yi">ייִדיש</a>
   </div>
-  <div class="note-strip">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-    <span>No need to call or email after this — include your services, content, design ideas and everything else below, and we'll take it from here.</span>
-  </div>
-
-  <div style="margin:18px 0 6px;padding:18px 20px;border:1px solid var(--line,#e3eaf1);border-left:4px solid var(--green,#6cb33f);border-radius:12px;background:var(--bg-soft,#f5f8fb)">
-    <div style="font-weight:700;color:var(--navy,#0c2340);margin-bottom:10px">Included free with every website</div>
-    <ul style="list-style:none;display:grid;gap:9px;margin:0;padding:0">
-      <li style="display:flex;gap:9px;align-items:flex-start;color:var(--ink-soft,#46586a)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6cb33f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="m20 6-11 11-5-5"/></svg><span><b style="color:var(--ink,#13243a)">A professional logo</b> — if you need one, we design it and include it free.</span></li>
-      <li style="display:flex;gap:9px;align-items:flex-start;color:var(--ink-soft,#46586a)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6cb33f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="m20 6-11 11-5-5"/></svg><span><b style="color:var(--ink,#13243a)">Edit your own site yourself</b> — after launch you get free access to update text, prices and photos anytime through a simple AI assistant. No coding, no extra fees.</span></li>
-      <li style="display:flex;gap:9px;align-items:flex-start;color:var(--ink-soft,#46586a)"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#6cb33f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto;margin-top:3px"><path d="m20 6-11 11-5-5"/></svg><span><b style="color:var(--ink,#13243a)">Free lifetime hosting</b> on static sites — no monthly bills.</span></li>
-    </ul>
-  </div>
-
-  <div class="layout">
-    <div>
-      <form class="form" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
-
-        <!-- 1. Details -->
-        <fieldset>
-          <div class="legend"><span class="n">1</span><div><h2>Your details</h2><p>So we know who you are and how to reach you.</p></div></div>
-          <div class="grp row2">
-            <div><label class="fl" for="name">Full name <span class="req">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="John Doe" autocomplete="name" required></div>
-            <div><label class="fl" for="email">Email <span class="req">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="john@example.com" autocomplete="email" required></div>
-          </div>
-          <div class="grp row2">
-            <div><label class="fl" for="phone">Phone <span class="req">*</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel" required></div>
-            <div><label class="fl" for="business">Business / project name</label><input type="text" id="business" name="fi-text-business" placeholder="Your business name"></div>
-          </div>
-          <div class="grp">
-            <label class="fl" for="existing">Existing website <span class="hint">(if you have one — great for migrations)</span></label>
-            <input type="url" id="existing" name="fi-text-existing_site" placeholder="https://yoursite.com">
-          </div>
-        </fieldset>
-
-        <!-- 2. What the site does (multi-select) -->
-        <fieldset>
-          <div class="legend"><span class="n">2</span><div><h2>What should your website do?</h2><p>Select all that apply — pick as many as you need.</p></div></div>
-          <div class="opts" id="goals">
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showcase my business / brand"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showcase my business / brand</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Sell products online (store)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Sell products online (store)</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Take bookings / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Take bookings / appointments</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showroom / display products (no checkout)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showroom / display products</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Wholesale / B2B ordering"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Wholesale / B2B ordering</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Generate leads / inquiries"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Generate leads / inquiries</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Membership / client portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Membership / client portal</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Blog / news / content"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Blog / news / content</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Multi-vendor / marketplace"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Multi-vendor / marketplace</span></label>
-            <label class="opt js-other" data-target="goalsOther"><input type="checkbox" name="fi-checkbox-site_goals" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
-          </div>
-          <div class="reveal-box" id="goalsOther"><input type="text" name="fi-text-site_goals_other" placeholder="Tell us what else your site needs to do"></div>
-        </fieldset>
-
-        <!-- 3. Design -->
-        <fieldset>
-          <div class="legend"><span class="n">3</span><div><h2>Your design</h2><p>What look are you going for? Pick any that fit, then describe it in your own words.</p></div></div>
-          <div class="opts" id="style">
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Clean & minimal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Clean & minimal</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Bold & modern"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Bold & modern</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Elegant / luxury"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Elegant / luxury</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Warm & friendly"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Warm & friendly</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Professional / corporate"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Professional / corporate</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Playful & colorful"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Playful & colorful</span></label>
-            <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Not sure — you decide</span></label>
-            <label class="opt js-other" data-target="styleOther"><input type="checkbox" name="fi-checkbox-design_style" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
-          </div>
-          <div class="reveal-box" id="styleOther"><input type="text" name="fi-text-design_style_other" placeholder="Describe the style you have in mind"></div>
-          <div class="grp" style="margin-top:14px">
-            <label class="fl" for="design_notes">Describe your ideal design <span class="hint">(colors, fonts, vibe, and any websites you love — paste links!)</span></label>
-            <textarea id="design_notes" name="fi-text-design_notes" placeholder="e.g. I love warm earthy colors, a big bold hero image, lots of white space. Sites I like: example.com, anothersite.com. My brand colors are navy and gold, and I have a logo I can send."></textarea>
-          </div>
-        </fieldset>
-
-        <!-- 4. Content -->
-        <fieldset>
-          <div class="legend"><span class="n">4</span><div><h2>Your content</h2><p>Give us the details so we can build the whole thing without chasing you for info.</p></div></div>
-          <div class="grp">
-            <label class="fl" for="services">Your services / products &amp; details <span class="req">*</span></label>
-            <textarea id="services" name="fi-text-services_details" placeholder="List what you offer with any details you want shown — service names, product descriptions, prices, packages, anything customers should see." required></textarea>
-          </div>
-          <div class="grp">
-            <label class="fl" for="pages">Which pages do you want? <span class="hint">(or describe the sections)</span></label>
-            <textarea id="pages" name="fi-text-pages_wanted" placeholder="e.g. Home, About, Services, Gallery / Showroom, Shop, Booking, Contact — or just tell us and we'll suggest a structure." style="min-height:80px"></textarea>
-          </div>
-          <div class="grp">
-            <label class="fl" for="show_contact">Contact info to show on the site</label>
-            <textarea id="show_contact" name="fi-text-content_contact" placeholder="Phone, email, address, opening hours, social media links — whatever you want visitors to see." style="min-height:80px"></textarea>
-          </div>
-          <div class="grp">
-            <label class="fl" for="extra">Anything else we should know?</label>
-            <textarea id="extra" name="fi-text-extra_notes" placeholder="Anything at all — special features, integrations, things you definitely want or want to avoid." style="min-height:80px"></textarea>
-          </div>
-          <div class="grp upload">
-            <label class="fl">Upload files or photos <span class="hint">(optional — logo, photos, existing content, examples · up to 25 MB total)</span></label>
-            <div class="dz" id="dropzone" role="button" tabindex="0" aria-label="Upload files">
-              <span class="dz__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg></span>
-              <span class="dz__t"><b>Click to upload</b> or drag &amp; drop</span>
-              <span class="dz__s">Images or documents · up to 25 MB total</span>
-              <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
-            </div>
-            <div class="filelist" id="fileList"></div>
-            <div class="fileerr" id="fileErr"></div>
-            <div class="filetotal" id="fileTotal" style="display:none"></div>
-          </div>
-          <div class="grp">
-            <label class="fl" for="filelink">…or paste a link to your files <span class="hint">(Google Drive, Dropbox, WeTransfer — optional)</span></label>
-            <input type="url" id="filelink" name="fi-text-file_link" placeholder="https://drive.google.com/...">
-          </div>
-        </fieldset>
-
-        <!-- 5. Timeline & budget -->
-        <fieldset>
-          <div class="legend"><span class="n">5</span><div><h2>Timeline &amp; budget</h2><p>Helps us plan — no commitment.</p></div></div>
-          <div class="grp row2">
-            <div>
-              <label class="fl" for="timeline">Timeline</label>
-              <select id="timeline" name="fi-select-timeline">
-                <option value="">Select…</option>
-                <option>ASAP</option>
-                <option>Within a week</option>
-                <option>2–4 weeks</option>
-                <option>Flexible / no rush</option>
-              </select>
-            </div>
-            <div>
-              <label class="fl" for="budget">Budget comfort level <span class="hint">(optional)</span></label>
-              <select id="budget" name="fi-select-budget">
-                <option value="">Select…</option>
-                <option>As affordable as possible</option>
-                <option>Standard</option>
-                <option>Premium — give me the works</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-        </fieldset>
-
-        <!-- 6. Referral -->
-        <fieldset>
-          <div class="legend"><span class="n">6</span><div><h2>Referral code</h2><p>Were you referred or given a code? Add it here.</p></div></div>
-          <div class="grp">
-            <label class="fl" for="ref_code">Referral or promo code <span class="hint">(optional)</span></label>
-            <input type="text" id="ref_code" name="fi-text-referral_code" placeholder="e.g. FRIEND25" autocomplete="off">
-            <p class="hint" id="refAuto" style="margin-top:8px;display:none;"></p>
-          </div>
-        </fieldset>
-
-        <!-- hidden tracking (sent as plain text blocks so they never clash with the SDK's auto tracking) -->
-        <input type="hidden" name="fi-text-utm_source" id="utm_source">
-        <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
-        <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
-        <input type="hidden" name="fi-text-landing_page" id="landing_page">
-        <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
-        <!-- honeypot (checked + stripped client-side before sending) -->
-        <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <button type="submit" class="submit" id="submitBtn">
-          Submit my project
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-        </button>
-        <p class="smallprint">We'll get started and only reach out if something needs clarifying.</p>
-        <div class="status" id="status"></div>
-      </form>
-
-      <div class="success" id="success">
-        <div class="ic"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h2>Got it — thank you!</h2>
-        <p>Your full project brief has been received. We'll start putting your site together and only reach out if we need to clarify anything.</p>
-        <p>Need to add something? Call <a href="tel:8455870531">845-587-0531</a> or email <a href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a>.</p>
-      </div>
-    </div>
-
-    <!-- sidebar -->
-    <aside class="side">
-      <div class="scard">
-        <h3>What happens next</h3>
-        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></span><div><h4>1. You send this brief</h4><p>Everything we need, in one go.</p></div></div>
-        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span><div><h4>2. We start building</h4><p>Often right away — no back-and-forth needed.</p></div></div>
-        <div class="sitem"><span class="si"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span><div><h4>3. Your site goes live</h4><p>Usually within about 48 hours.</p></div></div>
-      </div>
-      <div class="scard cc">
-        <h3>Prefer to talk first?</h3>
-        <a href="tel:8455870531"><span class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg></span>845-587-0531</a>
-        <a href="mailto:info@bhwebsolutions.com"><span class="ci"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>info@bhwebsolutions.com</a>
-      </div>
-    </aside>
-  </div>
+  <a href="order.html" class="m-cta btn btn--green">Order Now</a>
 </div>
 
-<footer class="foot">&copy; 2026 BH Web Solutions · Beautiful websites, built fast. <a href="index.html">Back to home</a></footer>
+<!-- ===== COMPACT HERO ===== -->
+<header class="hero hero--sub grain on-ink">
+  <span class="hero__dots" aria-hidden="true"></span>
+  <span class="hero__glow" aria-hidden="true"></span>
+  <span class="hero__glow2" aria-hidden="true"></span>
+  <div class="in hero__wrap">
+    <div>
+      <span class="eyebrow rv">Start your project</span>
+      <h1 class="reveal-lines">
+        <span class="ln"><i>Let's build</i></span>
+        <span class="ln"><i>your <em>website.</em></i></span>
+      </h1>
+      <p class="sub rv" style="--i:2">This is your full project brief — the more you include below, the less back-and-forth we'll need, and we can often start straight away.</p>
+      <div class="hero__meta rv" style="--i:3">
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Free logo included</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Edit it yourself, anytime</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> You see a design before you pay</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero__strip"></div>
+</header>
+
+<!-- ===== ORDER FORM ===== -->
+<section class="order sec" id="start">
+  <div class="in">
+    <div class="order__wrap">
+
+      <div>
+        <div class="note rv">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+          <span>No need to call or email after this — include your services, content, design ideas and everything else below, and we'll take it from here.</span>
+        </div>
+
+        <form class="form rv" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
+          <p class="req"><b>*</b> denotes required fields.</p>
+
+          <!-- 1. Details -->
+          <fieldset>
+            <div class="legend"><span class="n">1</span><div><h2>Your details</h2><p>So we know who you are and how to reach you.</p></div></div>
+            <div class="frow2">
+              <div class="fgroup"><label for="name">Full name <span class="rq">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="John Doe" autocomplete="name" required></div>
+              <div class="fgroup"><label for="email">Email <span class="rq">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="john@example.com" autocomplete="email" required></div>
+            </div>
+            <div class="frow2">
+              <div class="fgroup"><label for="phone">Phone <span class="rq">*</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel" required></div>
+              <div class="fgroup"><label for="business">Business / project name</label><input type="text" id="business" name="fi-text-business" placeholder="Your business name"></div>
+            </div>
+            <div class="fgroup">
+              <label for="existing">Existing website <span class="hint">(if you have one — great for migrations)</span></label>
+              <input type="url" id="existing" name="fi-text-existing_site" placeholder="https://yoursite.com">
+            </div>
+          </fieldset>
+
+          <!-- 2. What the site does (multi-select) -->
+          <fieldset>
+            <div class="legend"><span class="n">2</span><div><h2>What should your website do?</h2><p>Select all that apply — pick as many as you need.</p></div></div>
+            <div class="opts" id="goals">
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showcase my business / brand"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showcase my business / brand</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Sell products online (store)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Sell products online (store)</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Take bookings / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Take bookings / appointments</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Showroom / display products (no checkout)"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Showroom / display products</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Wholesale / B2B ordering"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Wholesale / B2B ordering</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Generate leads / inquiries"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Generate leads / inquiries</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Membership / client portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Membership / client portal</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Blog / news / content"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Blog / news / content</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Multi-vendor / marketplace"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Multi-vendor / marketplace</span></label>
+              <label class="opt js-other" data-target="goalsOther"><input type="checkbox" name="fi-checkbox-site_goals" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
+            </div>
+            <div class="reveal-box" id="goalsOther"><input type="text" name="fi-text-site_goals_other" placeholder="Tell us what else your site needs to do"></div>
+          </fieldset>
+
+          <!-- 3. Design -->
+          <fieldset>
+            <div class="legend"><span class="n">3</span><div><h2>Your design</h2><p>What look are you going for? Pick any that fit, then describe it in your own words.</p></div></div>
+            <div class="opts" id="style">
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Clean & minimal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Clean & minimal</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Bold & modern"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Bold & modern</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Elegant / luxury"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Elegant / luxury</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Warm & friendly"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Warm & friendly</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Professional / corporate"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Professional / corporate</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Playful & colorful"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Playful & colorful</span></label>
+              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Not sure — you decide</span></label>
+              <label class="opt js-other" data-target="styleOther"><input type="checkbox" name="fi-checkbox-design_style" value="Other"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Other…</span></label>
+            </div>
+            <div class="reveal-box" id="styleOther"><input type="text" name="fi-text-design_style_other" placeholder="Describe the style you have in mind"></div>
+            <div class="fgroup" style="margin-top:14px">
+              <label for="design_notes">Describe your ideal design <span class="hint">(colors, fonts, vibe, and any websites you love — paste links!)</span></label>
+              <textarea id="design_notes" name="fi-text-design_notes" placeholder="e.g. I love warm earthy colors, a big bold hero image, lots of white space. Sites I like: example.com, anothersite.com. My brand colors are navy and gold, and I have a logo I can send."></textarea>
+            </div>
+          </fieldset>
+
+          <!-- 4. Content -->
+          <fieldset>
+            <div class="legend"><span class="n">4</span><div><h2>Your content</h2><p>Give us the details so we can build the whole thing without chasing you for info.</p></div></div>
+            <div class="fgroup">
+              <label for="services">Your services / products &amp; details <span class="rq">*</span></label>
+              <textarea id="services" name="fi-text-services_details" placeholder="List what you offer with any details you want shown — service names, product descriptions, prices, packages, anything customers should see." required></textarea>
+            </div>
+            <div class="fgroup">
+              <label for="pages">Which pages do you want? <span class="hint">(or describe the sections)</span></label>
+              <textarea id="pages" name="fi-text-pages_wanted" placeholder="e.g. Home, About, Services, Gallery / Showroom, Shop, Booking, Contact — or just tell us and we'll suggest a structure." style="min-height:80px"></textarea>
+            </div>
+            <div class="fgroup">
+              <label for="show_contact">Contact info to show on the site</label>
+              <textarea id="show_contact" name="fi-text-content_contact" placeholder="Phone, email, address, opening hours, social media links — whatever you want visitors to see." style="min-height:80px"></textarea>
+            </div>
+            <div class="fgroup">
+              <label for="extra">Anything else we should know?</label>
+              <textarea id="extra" name="fi-text-extra_notes" placeholder="Anything at all — special features, integrations, things you definitely want or want to avoid." style="min-height:80px"></textarea>
+            </div>
+            <div class="fgroup">
+              <label>Upload files or photos <span class="hint">(optional — logo, photos, existing content, examples · up to 25 MB total)</span></label>
+              <div class="dz" id="dropzone" role="button" tabindex="0" aria-label="Upload files">
+                <span class="dz__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg></span>
+                <span class="dz__t"><b>Click to upload</b> or drag &amp; drop</span>
+                <span class="dz__s">Images or documents · up to 25 MB total</span>
+                <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
+              </div>
+              <div class="filelist" id="fileList"></div>
+              <div class="fileerr" id="fileErr"></div>
+              <div class="filetotal" id="fileTotal" style="display:none"></div>
+            </div>
+            <div class="fgroup">
+              <label for="filelink">…or paste a link to your files <span class="hint">(Google Drive, Dropbox, WeTransfer — optional)</span></label>
+              <input type="url" id="filelink" name="fi-text-file_link" placeholder="https://drive.google.com/...">
+            </div>
+          </fieldset>
+
+          <!-- 5. Timeline & budget -->
+          <fieldset>
+            <div class="legend"><span class="n">5</span><div><h2>Timeline &amp; budget</h2><p>Helps us plan — no commitment.</p></div></div>
+            <div class="frow2">
+              <div class="fgroup">
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="fi-select-timeline">
+                  <option value="">Select…</option>
+                  <option>ASAP</option>
+                  <option>Within a week</option>
+                  <option>2–4 weeks</option>
+                  <option>Flexible / no rush</option>
+                </select>
+              </div>
+              <div class="fgroup">
+                <label for="budget">Budget comfort level <span class="hint">(optional)</span></label>
+                <select id="budget" name="fi-select-budget">
+                  <option value="">Select…</option>
+                  <option>As affordable as possible</option>
+                  <option>Standard</option>
+                  <option>Premium — give me the works</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 6. Referral -->
+          <fieldset>
+            <div class="legend"><span class="n">6</span><div><h2>Referral code</h2><p>Were you referred or given a code? Add it here.</p></div></div>
+            <div class="fgroup">
+              <label for="ref_code">Referral or promo code <span class="hint">(optional)</span></label>
+              <input type="text" id="ref_code" name="fi-text-referral_code" placeholder="Your code" autocomplete="off">
+              <p class="hint" id="refAuto" style="margin-top:8px;display:none;"></p>
+            </div>
+          </fieldset>
+
+          <!-- hidden tracking (sent as plain text blocks so they never clash with the SDK's auto tracking) -->
+          <input type="hidden" name="fi-text-utm_source" id="utm_source">
+          <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
+          <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
+          <input type="hidden" name="fi-text-landing_page" id="landing_page">
+          <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
+          <!-- honeypot (checked + stripped client-side before sending) -->
+          <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <button type="submit" class="btn btn--green" id="submitBtn">
+            Submit my project
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
+          </button>
+          <p class="cnote">We'll get started and only reach out if something needs clarifying.</p>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </form>
+
+        <div class="success" id="success" role="status" aria-live="polite">
+          <div class="ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h2>Got it — thank you!</h2>
+          <p>Your full project brief has been received. We'll start putting your site together and only reach out if we need to clarify anything.</p>
+          <p>Need to add something? Call <a href="tel:8455870531">845-587-0531</a> or email <a href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a>.</p>
+        </div>
+      </div>
+
+      <!-- sidebar -->
+      <aside class="order__side">
+        <div class="scard rv">
+          <h3>Included free with every website</h3>
+          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Free logo design</b> — if you need one, we design a clean, professional logo and include it with your site.</span></div>
+          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Free editing — do it yourself</b> — after launch, update text, prices and photos anytime through a simple AI assistant. No coding, no extra fees.</span></div>
+          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Free lifetime hosting</b> on static sites — no monthly bills.</span></div>
+        </div>
+        <div class="scard rv" style="--i:1">
+          <h3>What happens next</h3>
+          <div class="sitem"><span class="sk">First</span><div><h4>You send this brief</h4><p>Everything we need, in one go.</p></div></div>
+          <div class="sitem"><span class="sk">Then</span><div><h4>We start building</h4><p>Often right away — no back-and-forth needed.</p></div></div>
+          <div class="sitem"><span class="sk">Live</span><div><h4>Your site goes live</h4><p>Fast, done properly — and it's yours.</p></div></div>
+        </div>
+        <div class="scard scard--dark grain rv" style="--i:2">
+          <h3>Prefer to talk first?</h3>
+          <a href="tel:8455870531"><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>845-587-0531</a>
+          <a href="mailto:info@bhwebsolutions.com"><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>info@bhwebsolutions.com</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="in foot__grid">
+    <div>
+      <a href="#top" class="brand">
+        <span class="brand__mark" aria-hidden="true">BH</span>
+        <span class="brand__txt"><b>BH</b> Web Solutions</span>
+      </a>
+      <p class="foot__about">Custom websites, online stores, and WordPress-to-static migrations — designed beautifully, built fast, and fully managed. In English and Yiddish.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a class="fl" href="index.html#work">Our work</a>
+      <a class="fl" href="index.html#services">Services</a>
+      <a class="fl" href="index.html#how">How we work</a>
+      <a class="fl" href="about.html">About us</a>
+    </div>
+    <div>
+      <h5>Get started</h5>
+      <a class="fl" href="order.html">Order now</a>
+      <a class="fl" href="index.html#contact">Contact</a>
+      <a class="fl" href="yi.html" lang="yi">ייִדיש</a>
+    </div>
+    <div>
+      <h5>Get in touch</h5>
+      <a class="fl" href="tel:8455870531"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg>845-587-0531</a>
+      <a class="fl" href="mailto:info@bhwebsolutions.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>info@bhwebsolutions.com</a>
+      <a class="fl" href="order.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Start a project</a>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>© 2026 BH Web Solutions. All rights reserved.</span>
+    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> Designed &amp; built by BH Web Solutions</span>
+  </div>
+</footer>
+
+<button class="totop" id="totop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<!-- custom cursor -->
+<div class="cursor" id="cursor" aria-hidden="true"><div class="cursor__dot"><span class="cursor__label">VIEW</span></div></div>
 
 <!-- Forminit SDK (handles submission + file uploads to your endpoint) -->
-<script src="https://forminit.com/sdk/v1/forminit.js"></script>
+<script src="https://forminit.com/sdk/v1/forminit.js" defer></script>
+<noscript><style>.rv,.reveal-lines .ln>i{opacity:1!important;transform:none!important}</style></noscript>
+<script>
+(function(){
+  var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>16);totop.classList.toggle('show',y>640);}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  function toggle(){var a=mobile.classList.toggle('on');burger.classList.toggle('on',a);burger.setAttribute('aria-expanded',a);document.body.style.overflow=a?'hidden':'';}
+  burger.addEventListener('click',toggle);
+  mobile.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(mobile.classList.contains('on'))toggle();});});
+  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
+
+  // ---- scroll reveal (generic + masked lines + rails) ----
+  var targets=document.querySelectorAll('.rv,.reveal-lines,.rail');
+  if('IntersectionObserver' in window && !reduce){
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.14,rootMargin:'0px 0px -8% 0px'});
+    targets.forEach(function(el){io.observe(el);});
+  }else{targets.forEach(function(el){el.classList.add('in');});}
+
+  // ---- pointer parallax on hero + magnetic buttons (pointer:fine only) ----
+  var fine=window.matchMedia('(pointer:fine)').matches;
+  if(fine && !reduce){
+    var hero=document.querySelector('.hero'),frame=document.getElementById('heroFrame'),glow2=document.querySelector('.hero__glow2');
+    if(hero&&frame){
+      hero.addEventListener('pointermove',function(e){
+        var dx=(e.clientX/window.innerWidth-.5),dy=(e.clientY/window.innerHeight-.5);
+        frame.style.transform='translate('+(dx*-16)+'px,'+(dy*-12)+'px)';
+        if(glow2)glow2.style.marginLeft=(dx*30)+'px';
+      });
+    }
+    // magnetic buttons
+    document.querySelectorAll('.mag').forEach(function(b){
+      b.addEventListener('pointermove',function(e){
+        var r=b.getBoundingClientRect();
+        b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.28)+'px,'+((e.clientY-r.top-r.height/2)*.42)+'px)';
+      });
+      b.addEventListener('pointerleave',function(){b.style.transform='';});
+    });
+  }
+
+  // ---- custom "VIEW" cursor over work cards ----
+  var cursor=document.getElementById('cursor');
+  if(cursor && fine && !reduce){
+    var cx=0,cy=0,tx=0,ty=0,running=false;
+    window.addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY;if(!running){running=true;requestAnimationFrame(loop);}});
+    function loop(){cx+=(tx-cx)*.2;cy+=(ty-cy)*.2;cursor.style.left=cx+'px';cursor.style.top=cy+'px';if(Math.abs(tx-cx)>.1||Math.abs(ty-cy)>.1){requestAnimationFrame(loop);}else{running=false;}}
+    document.querySelectorAll('[data-view]').forEach(function(el){
+      el.addEventListener('pointerenter',function(){cursor.classList.add('view');});
+      el.addEventListener('pointerleave',function(){cursor.classList.remove('view');});
+    });
+  }
+})();
+</script>
 <script>
 (function(){
   // chip multi-select toggle
@@ -487,5 +787,8 @@ select{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:u
   try{if(new URLSearchParams(location.search).get('sent')==='1'){form.style.display='none';success.classList.add('show');}}catch(e){}
 })();
 </script>
+
+<!-- Cloudflare Web Analytics (kept from existing site) -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ed9203e68e4d09833e411cd68485df","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 </html>
