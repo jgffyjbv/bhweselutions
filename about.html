@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://bhwebsolutions.com/about.html">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +211,7 @@ h2{font-size:var(--h2)}
 
 /* ---------- statement / CTA (dark) ---------- */
 .statement{background:radial-gradient(120% 130% at 80% 10%,#12335a 0%,var(--ink) 55%,var(--ink-2) 100%);color:#fff;overflow:hidden;text-align:center}
-.statement::after{content:"\201C";position:absolute;top:-60px;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:24rem;line-height:1;color:rgba(255,255,255,.05);pointer-events:none;will-change:transform}
+.statement::after{content:"\201C";position:absolute;top:-60px;left:50%;transform:translateX(-50%) translateY(var(--q,0));font-family:var(--serif);font-size:24rem;line-height:1;color:rgba(255,255,255,.05);pointer-events:none;will-change:transform}
 .statement .in{position:relative;z-index:2;max-width:1000px}
 .statement h2{font-size:clamp(1.9rem,4.2vw,3.4rem);line-height:1.12;letter-spacing:-.02em}
 .statement h2 em{font-style:italic;color:#9fd47a;font-weight:500}
@@ -538,6 +538,7 @@ h2{font-size:var(--h2)}
 }
 </script>
 
+<noscript><style>.rv,.reveal-lines .ln>i{opacity:1!important;transform:none!important}</style></noscript>
 <script>
 (function(){
   var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
