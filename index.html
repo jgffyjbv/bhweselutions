@@ -151,7 +151,7 @@ h2{font-size:var(--h2)}
 .hero__meta span{display:inline-flex;align-items:center;gap:8px}
 .hero__meta svg{color:#9fd47a}
 /* browser-framed screenshot */
-.hero__art{position:relative}
+.hero__art{position:relative;width:100%}
 .frame{position:relative;border-radius:14px;overflow:hidden;background:#0e2036;border:1px solid rgba(255,255,255,.14);box-shadow:0 50px 90px -30px rgba(0,0,0,.6);animation:bob 8s var(--ease) infinite alternate;will-change:transform}
 @keyframes bob{to{transform:translateY(-14px)}}
 .frame__bar{display:flex;align-items:center;gap:7px;padding:12px 14px;background:rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.08)}
@@ -159,6 +159,9 @@ h2{font-size:var(--h2)}
 .frame__bar .u{margin-left:10px;flex:1;height:20px;border-radius:6px;background:rgba(255,255,255,.08)}
 .frame__shot{position:relative;aspect-ratio:16/11;overflow:hidden;background:linear-gradient(160deg,#13325a,#0a1d35)}
 .frame__shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.frame__shot .slide{position:absolute;inset:0;opacity:0;transform:scale(1.045);transition:opacity .9s ease}
+.frame__shot .slide.on{opacity:1;transform:scale(1);transition:opacity .9s ease,transform 5.5s linear}
+@media (prefers-reduced-motion:reduce){.frame__shot .slide{transition:none;transform:none}}
 .frame__tag{position:absolute;left:-16px;bottom:34px;background:#fff;color:var(--ink);border-radius:12px;padding:12px 16px;box-shadow:var(--shadow-lg);z-index:3;animation:bob2 7s var(--ease) infinite alternate}
 @keyframes bob2{to{transform:translateY(10px)}}
 .frame__tag b{display:block;font-weight:800;font-size:.98rem;letter-spacing:-.02em}
@@ -427,10 +430,14 @@ h2{font-size:var(--h2)}
     <div class="hero__art rv" style="--i:2" aria-hidden="true">
       <div class="frame" id="heroFrame">
         <div class="frame__bar"><i></i><i></i><i></i><span class="u"></span></div>
-        <div class="frame__shot">
-          <img loading="eager" fetchpriority="high" decoding="async" alt="" src="https://s0.wp.com/mshots/v1/https%3A%2F%2Fsproutvitamins.com%2F%3Fv%3D2?w=1200&h=825">
+        <div class="frame__shot" id="heroSlides">
+          <img class="slide on" loading="eager" fetchpriority="high" decoding="async" alt="Hand-written website code in a dark editor" src="images/hero-dev-1.jpg" width="1280" height="880">
+          <img class="slide" loading="lazy" decoding="async" alt="Colorful website source code close-up" src="images/hero-dev-2.jpg" width="1280" height="880">
+          <img class="slide" loading="lazy" decoding="async" alt="A web developer's workspace with code on screen" src="images/hero-dev-3.jpg" width="1280" height="880">
+          <img class="slide" loading="lazy" decoding="async" alt="Website code being crafted line by line" src="images/hero-dev-4.jpg" width="1280" height="880">
+          <img class="slide" loading="lazy" decoding="async" alt="Developer tools inspecting a web page" src="images/hero-dev-5.jpg" width="1280" height="880">
         </div>
-        <div class="frame__tag"><b>Sprout Vitamins</b><span>Full online store, built by us</span></div>
+        <div class="frame__tag" id="heroTag"><b>Clean, hand-written code</b><span>No bloated templates</span></div>
       </div>
     </div>
   </div>
@@ -734,6 +741,27 @@ h2{font-size:var(--h2)}
   // ---- duplicate marquee track for a seamless loop ----
   var mq=document.getElementById('mq');
   if(mq){mq.innerHTML+=mq.innerHTML;}
+
+  // ---- hero showcase slideshow (cross-fade + tag update) ----
+  (function(){
+    var slides=document.querySelectorAll('#heroSlides .slide');
+    var tag=document.getElementById('heroTag');
+    if(slides.length<2||reduce)return;
+    var info=[
+      ["Clean, hand-written code","No bloated templates"],
+      ["Custom development","Built line by line"],
+      ["Design that converts","Every pixel deliberate"],
+      ["Fast & secure","Static sites, no bloat"],
+      ["Responsive everywhere","Phone, tablet, desktop"]
+    ];
+    var i=0;
+    setInterval(function(){
+      slides[i].classList.remove('on');
+      i=(i+1)%slides.length;
+      slides[i].classList.add('on');
+      if(tag&&info[i]){tag.querySelector('b').textContent=info[i][0];tag.querySelector('span').textContent=info[i][1];}
+    },4200);
+  })();
 
   // ---- pointer parallax on hero + magnetic buttons + drifting quote (pointer:fine only) ----
   var fine=window.matchMedia('(pointer:fine)').matches;
