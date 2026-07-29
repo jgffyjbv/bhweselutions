@@ -18,7 +18,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FRAG = os.path.join(ROOT, ".build", "fragments")
 OUT = os.path.join(ROOT, "guides")
 MANIFEST = os.path.join(ROOT, ".build", "manifest.json")
-SITE = "https://bhwebsolutions.com"
+SITE = "https://bhwebs.com"
 TODAY = date.today().isoformat()
 
 PILLARS = {
