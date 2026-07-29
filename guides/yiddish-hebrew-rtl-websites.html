@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Building a website in Yiddish and Hebrew: what actually goes wrong — BH Web Solutions</title>
+<meta name="description" content="Why Hebrew and Yiddish sites break: mirrored layouts, prices rendering backwards, fonts with no Hebrew letters, broken search, and translation that reads wrong.">
+<meta name="theme-color" content="#0b1c30">
+<link rel="canonical" href="https://bhwebsolutions.com/guides/yiddish-hebrew-rtl-websites.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Building a website in Yiddish and Hebrew: what actually goes wrong">
+<meta property="og:description" content="Why Hebrew and Yiddish sites break: mirrored layouts, prices rendering backwards, fonts with no Hebrew letters, broken search, and translation that reads wrong.">
+<meta property="og:url" content="https://bhwebsolutions.com/guides/yiddish-hebrew-rtl-websites.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap">
+<link rel="stylesheet" href="/guides/guides.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Building a website in Yiddish and Hebrew: what actually goes wrong", "description": "Why Hebrew and Yiddish sites break: mirrored layouts, prices rendering backwards, fonts with no Hebrew letters, broken search, and translation that reads wrong.", "author": {"@type": "Organization", "name": "BH Web Solutions", "url": "https://bhwebsolutions.com/"}, "publisher": {"@type": "Organization", "name": "BH Web Solutions", "url": "https://bhwebsolutions.com/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://bhwebsolutions.com/guides/yiddish-hebrew-rtl-websites.html"}, "inLanguage": "en", "dateModified": "2026-07-29"}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<nav class="gnav">
+  <div class="in">
+    <a href="/" class="brand" aria-label="BH Web Solutions home">
+      <span class="brand__mark" aria-hidden="true">BH</span>
+      <span class="brand__txt"><b>BH</b> Web Solutions</span>
+    </a>
+    <ul class="gnav__links">
+      <li><a href="/#work">Work</a></li>
+      <li><a href="/#services">Services</a></li>
+      <li><a href="/guides/">Guides</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/order.html" class="btn btn--green">Order Now</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="ghead">
+  <div class="in">
+    <p class="crumb"><a href="/">Home</a> &rsaquo; <a href="/guides/">Guides</a> &rsaquo; Heimish business web</p>
+    <span class="pill">Heimish business web</span>
+    <h1>Building a website in Yiddish and Hebrew: what actually goes wrong</h1>
+    <p class="lede">Why Hebrew and Yiddish sites break: mirrored layouts, prices rendering backwards, fonts with no Hebrew letters, broken search, and translation that reads wrong.</p>
+    <p class="meta">By BH Web Solutions &middot; Updated 2026-07-29</p>
+  </div>
+</header>
+
+<main id="main">
+  <div class="in">
+    <article class="prose">
+<p>Adding Yiddish or Hebrew to a website sounds like a translation job: translate the words, flip the text to the right, done. It isn't, because direction is a property of the whole page, not of the text inside it. Most of what goes wrong goes wrong quietly — the site still loads, it just looks broken to the only customers it was built for.</p>
+
+<h2>Right-to-left mirrors the page, not just the text</h2>
+
+<p>There are two separate switches, and they get confused constantly.</p>
+
+<ul>
+<li><strong>Direction</strong> (<code>dir="rtl"</code>) controls which way the page flows: where paragraphs start, which side bullets sit on, which side of a table holds the first column, where a checkbox sits relative to its label.</li>
+<li><strong>Language</strong> (<code>lang="he"</code> or <code>lang="yi"</code>) tells the browser and screen readers what language the text is. It affects which font the browser reaches for and how assistive software pronounces the words. A Hebrew page still labeled <code>lang="en"</code> gets read aloud as English gibberish — see our guide on <a href="/guides/ada-website-accessibility.html">website accessibility</a> for why that matters legally as well as practically.</li>
+</ul>
+
+<p>The direction attribute belongs on the outermost element of the page, the <code>html</code> tag, so the entire layout mirrors. What people do instead is set it on individual text blocks. The paragraphs go right-to-left and everything around them stays left-to-right. That is the half-finished look you have probably seen: Hebrew text hugging the right edge inside a layout still running the other way.</p>
+
+<h3>What breaks when you bolt RTL onto a left-to-right design</h3>
+
+<p>An existing design is full of instructions that say "left" and "right" out loud, and mirroring the page does not rewrite them. Padding lands on the wrong side and text jams against one edge. Arrows point backwards — next buttons, back arrows, breadcrumb separators, accordion chevrons, the mobile menu that now slides in from the wrong edge. Carousels advance the wrong way when swiped. Progress bars, star ratings, and quantity steppers fill in the wrong direction.</p>
+
+<p>Not everything should mirror. Arrows and anything meaning "forward" or "back" should flip. Clocks, checkmarks, logos, numerals, and media play buttons should not — a play button pointing right is universal and looks wrong reversed. Someone has to make that call icon by icon. No tool decides it for you.</p>
+
+<h3>The modern fix: logical properties</h3>
+
+<p>Modern CSS — the language controlling how a page looks — has replaced "left" and "right" with "start" and "end." Instead of <code>margin-left</code> you write <code>margin-inline-start</code>. In an English page start means left; in a Hebrew page it means right. One rule, both directions, no duplicate code. Every current browser has supported this for years.</p>
+
+<p>The consequence is financial. A site built this way from day one adds a second language cheaply. A site built the old way needs a second stylesheet flipping hundreds of rules, and every future design change has to be made twice.</p>
+
+<h2>English words, prices, and phone numbers inside Hebrew</h2>
+
+<p>This is the problem nobody warns you about, and the one that makes a site look amateur to a native reader.</p>
+
+<p>Every character in Unicode carries a direction. Hebrew letters are strongly right-to-left, Latin letters strongly left-to-right, digits are weak, and punctuation, spaces, and symbols like <code>$</code> and parentheses are neutral — they take the direction of whatever surrounds them. The browser applies a standard set of rules, the Unicode Bidirectional Algorithm, to settle the final order. Usually it gets it right. It fails at the boundaries:</p>
+
+<ul>
+<li>A price written as <code>$24.99</code> in a Hebrew sentence can render with the dollar sign after the number. For a grocery listing dozens of prices, that is dozens of small wrongnesses.</li>
+<li>A phone number in parentheses, like <code>(845) 587-0531</code>, comes apart — area code at the wrong end, parentheses reversed.</li>
+<li>A period at the end of a Hebrew sentence that ends with an English brand name jumps to the far side of the line.</li>
+<li>A product code like <code>KG-1420</code> renders number first, letters second.</li>
+<li>A Hebrew name and an English name on the same line of an order list swap places, so your packer reads the wrong customer.</li>
+</ul>
+
+<p>The fix is bidi isolation: telling the browser "this chunk is its own island, work out its direction separately, and don't let it renegotiate with its neighbors." In HTML that is the <code>&lt;bdi&gt;</code> element, or <code>dir="auto"</code> on anything a customer typed — names, addresses, review text. In plain text, where there is no HTML, invisible Unicode isolate characters do the same job.</p>
+
+<aside class="callout">
+<p>Bidi does not stop at the website. Confirmation emails, SMS notifications, packing slips, PDF invoices, and spreadsheet exports have the same problem, and none of them inherit your site's fix. Two specifics: Excel on Windows shows Hebrew in a CSV file as garbage unless the file is saved as UTF-8 with a byte-order mark, and a thermal receipt printer has no bidi algorithm at all — it prints characters in the order it receives them, so your software must hand it text already reversed, or send the receipt as an image.</p>
+</aside>
+
+<h2>Fonts: the failure that happens silently</h2>
+
+<p>Most beautiful Latin webfonts contain no Hebrew letters whatsoever. When the browser hits Hebrew in a font that has none, it does not warn anyone. It silently substitutes whatever Hebrew font is installed on that device — one thing on a Mac, another on Windows, another on an Android phone. So the designer approves the mockup on a Mac and half your customers see a different typeface at a different weight, sometimes with line spacing that jumps because the substitute has different vertical measurements. This is the most common reason a Hebrew page looks cheap without anyone being able to say why.</p>
+
+<p>Choose a family that genuinely covers both scripts, and check it on real devices. Free options with real Hebrew coverage include Noto Sans Hebrew and Noto Serif Hebrew, Heebo (drawn to match Roboto's Latin letters, so mixed English and Hebrew sit together properly), Rubik, Assistant, Alef, and Frank Ruhl Libre for something traditional. The Culmus project's free Hebrew fonts handle vowel points and cantillation marks better than most.</p>
+
+<p>Three type facts that surprise people:</p>
+
+<ul>
+<li><strong>Hebrew has no capital letters.</strong> If your design uses ALL CAPS for buttons, navigation, or labels, that hierarchy simply disappears. Use weight, size, or color instead.</li>
+<li><strong>Many Hebrew fonts have no true bold.</strong> The browser fakes it by thickening strokes, which fills in the small openings inside Hebrew letters and turns bold text into a smudge at small sizes.</li>
+<li><strong>Hebrew has no italic tradition.</strong> Browsers fake it by slanting, which looks foreign. Use a heavier weight.</li>
+</ul>
+
+<h3>Nikud, te'amim, and line height</h3>
+
+<p>Vowel points sit below the letters and cantillation marks above, making a line physically taller. Tight line spacing clips them: if a heading has a fixed height, or line height was tuned for English, the tops of the marks shear off. As a rule of thumb, Hebrew wants noticeably more line spacing than English — where English sits comfortably at 1.5, Hebrew reads better nearer 1.7 or 1.8, and pointed text needs more again. Hebrew also reads small at the same nominal size, because there is no mix of tall and short letters to give the line texture, so a size bump usually helps.</p>
+
+<p>The part that bites seforim stores: <strong>search breaks on nikud</strong>. A vowel point is a separate invisible character attached to the letter. Customers type the letters with no points, so if your product titles are stored with points, search finds nothing. The same applies to geresh and gershayim, which customers type as ordinary apostrophes and quote marks. The fix is to strip those marks from both the stored text and the search query before comparing. If you sell seforim online, ask directly whether search is normalized this way. It usually isn't.</p>
+
+<h2>Yiddish is not Hebrew</h2>
+
+<p>Yiddish uses the Hebrew alphabet but is a different language, with its own language code (<code>yi</code>), its own vocabulary, and more than one accepted spelling system.</p>
+
+<p>The YIVO standardized orthography is what dictionaries, academic sources, and most machine translation are trained on. It is not what heimish publications use. The traditional orthography used in Williamsburg, Boro Park, Monsey, and Kiryas Joel differs in visible ways, and YIVO spelling reads as foreign and slightly academic to your customers. It is the written equivalent of an accent.</p>
+
+<ul>
+<li><strong>Machine translation reads wrong.</strong> Not merely stiff — wrong register, wrong spelling system, and full of coined Germanic words for things the community says in English. Nobody asks for "delivery" in an invented Yiddish word; they say delivery, written in Hebrew letters.</li>
+<li><strong>Search matching is harder than it looks.</strong> Yiddish has single Unicode characters for its double-vav, vav-yod, and double-yod combinations, and the same combinations can also be typed as two separate letters. They look identical on screen and are completely different text underneath. Pointed alefs cause the same mismatch. Normalize both the stored text and the query, or customers will search your site and be told you don't stock something you do.</li>
+<li><strong>Don't justify Yiddish text.</strong> Browsers have no hyphenation dictionary for it, so forcing both edges straight produces huge word gaps. Leave one edge ragged.</li>
+</ul>
+
+<p>Related, for your English pages: customers search in heimish transliteration. They type cholov yisroel, kashrus, shabbos, sukkos — not the modern Israeli spellings. Write the way your customers write.</p>
+
+<h2>The parts everyone forgets: forms, checkout, and email</h2>
+
+<p>Page text gets translated. These almost never do: placeholder text inside form fields, button labels that live in a plugin rather than a page, validation messages like "This field is required," the order confirmation email and shipping SMS, the 404 page, and the empty-search page.</p>
+
+<p>Some of it you cannot translate at all. The browser's built-in validation popup uses the browser's language, not your site's, and native date pickers render in the browser's locale. If the language of those matters, the form has to do its own validation and show its own messages.</p>
+
+<p>Two field-level details worth insisting on. <strong>Phone, email, and website fields should be forced left-to-right</strong> even on a right-to-left page, or the cursor and punctuation behave bizarrely as the customer types. And a typed name should carry <code>dir="auto"</code> so Hebrew and English names both display correctly in your admin order list.</p>
+
+<p>Two platform realities. Payment providers generally offer a Hebrew checkout but none offer Yiddish, so your final screen will be Hebrew or English regardless — worth knowing before you promise a fully Yiddish store. And on WordPress, the admin and WooCommerce have mature Hebrew translations while Yiddish coverage of plugin strings is thin, so some customer-facing text falls back to English unless translated by hand.</p>
+
+<h2>Two languages means two sets of URLs</h2>
+
+<p>For search engines and for AI assistants reading your site, each language needs its own real address that can be linked, bookmarked, and crawled.</p>
+
+<div class="table-scroll"><table>
+<thead>
+<tr><th>Structure</th><th>Looks like</th><th>Notes</th></tr>
+</thead>
+<tbody>
+<tr><td>Subfolder</td><td>yourstore.com/yi/</td><td>Simplest and cheapest. One domain, one login session, one cart. Right answer for almost every small business.</td></tr>
+<tr><td>Subdomain</td><td>yi.yourstore.com</td><td>Workable, but treated as a more separate site, and cart and login state do not automatically carry across.</td></tr>
+<tr><td>Separate domain</td><td>yourstore.co.il</td><td>Only if you genuinely serve a different country. Doubles renewals, hosting, and maintenance.</td></tr>
+</tbody>
+</table></div>
+
+<p>Each version should carry <code>hreflang</code> tags — small pieces of code saying "this page has an equivalent in this language, at this address." Two rules people get wrong: the references must be <strong>reciprocal</strong> (if the English page points to the Yiddish page, the Yiddish page must point back, or search engines ignore both), and each page should also point at itself. Declaring an <code>x-default</code> version tells search engines which page to show a visitor whose language you don't support.</p>
+
+<h3>Why auto-translate widgets are the wrong answer</h3>
+
+<p>A drop-in widget that translates the page in the visitor's browser is tempting: free, ten minutes. It fails for search. The translation happens after the page is delivered, so there is still one page, in one language, at one address — nothing new to index and no visibility in the second language at all. The output reads wrong to the community, which can be worse than plain English. And publishing large volumes of unreviewed machine translation is treated by Google as low-quality automated content, which can drag down the rest of your site.</p>
+
+<p>Fewer pages, properly translated by a person, beats a whole site translated by a machine. A grocery with four genuinely Yiddish pages — home, how delivery works, ordering for Shabbos, contact — is in better shape than one with forty machine-translated ones.</p>
+
+<h2>Switching language without losing your place</h2>
+
+<p>The most common mistake in the whole category: the switcher dumps everyone on the homepage. A customer four scrolls into a product page clicks the Yiddish link and lands back at the top of the site. Most don't click it again. A correct switcher links to the <em>equivalent</em> page, and when there genuinely isn't one, says so rather than pretending. Beyond that:</p>
+
+<ul>
+<li><strong>Label each language in its own script</strong> — English, עברית, אידיש — so a visitor who can't read the current language can still find the switch.</li>
+<li><strong>Never use flags.</strong> Flags are countries, not languages. There is no country for Yiddish, and an Israeli flag is the wrong symbol for a Hebrew-reading customer in Monsey.</li>
+<li><strong>Don't auto-redirect</strong> by browser setting or location. It traps people who wanted the other version, breaks shared links, and since search crawlers mostly visit from United States addresses, a location-based redirect can hide your other language versions from search entirely.</li>
+<li><strong>Remember the choice</strong> in a small preference on the visitor's device. That is functional, not tracking, and is treated differently from advertising cookies.</li>
+<li><strong>Keep the cart</strong> across the switch. This is the practical argument for the subfolder structure above.</li>
+</ul>
+
+<h2>Translation is a content job, not a software feature</h2>
+
+<p>The technical work above can be specified and tested. The translation cannot, and it is where bilingual projects actually stall. Hire someone from the community that shops with you — not an agency, not a relative who "speaks Yiddish," not a machine with light editing after. The difference between a business that sounds like itself and one that sounds like a government pamphlet is entirely word choice.</p>
+
+<ol>
+<li>Export every string that needs translating into one document — page text, buttons, form labels, error messages, email templates, product names. Do it once, in full. Translating in dribs and drabs is where inconsistency creeps in.</li>
+<li>Agree a short glossary first: how you write delivery, pickup, order, credit card, in stock. Same word every time.</li>
+<li>Have a second community member read the finished pages on a phone before launch. Typos in Hebrew letters are invisible to anyone who doesn't read the script, and one wrong letter can produce a real word with an unintended meaning.</li>
+<li>Decide who maintains it. Every new product, sale banner, and holiday-hours notice now needs two versions. That ongoing cost is larger than the build cost, and it is why so many bilingual sites end up with a stale second language.</li>
+</ol>
+
+<p>A translated page is not always the right page, either. Your Yiddish-reading customers may care about different things — <a href="/guides/shabbos-yom-tov-online-orders.html">erev Shabbos cutoff times</a>, pickup rather than shipping, a phone number rather than a form.</p>
+
+<h2>What it costs, honestly</h2>
+
+<p>Building it in from the start is not expensive: a site designed with logical properties and a two-script font handles a second language with modest extra work, mostly the second set of pages and the testing. Retrofitting is a different project — every layout rule revisited, every icon audited, every form and email checked. As a planning rule of thumb rather than a quoted price, assume a second language added to a finished site costs a meaningful fraction of the original build, not a small add-on. Translation is billed separately, usually per word, and Yiddish sits at the higher end of the market range because the pool of qualified translators is small.</p>
+
+<p>For many businesses the honest answer is a narrower scope: keep the main site in English and build a small number of genuinely well-made Yiddish or Hebrew pages that carry the weight. Cheaper, faster, and it stays accurate. Our guide on <a href="/guides/what-a-website-should-cost.html">what a website should cost</a> covers scope generally.</p>
+
+<h2>Before you launch: a short test list</h2>
+
+<ol>
+<li>Open it on a Windows PC and an Android phone, not only the designer's Mac. Font fallback differs by device.</li>
+<li>Click every arrow, chevron, and carousel, and check that the mobile menu slides in from the correct side.</li>
+<li>Type a phone number, an email address, and a Hebrew name into checkout and watch the cursor.</li>
+<li>Place a real test order. Read the email in Gmail, Outlook, and iPhone Mail; print the packing slip; export the order to a spreadsheet and open it.</li>
+<li>Search your own site the way a customer types — no vowel points, ordinary apostrophes.</li>
+<li>Have a native reader check it. Not the developer, and not you if you don't read it fluently.</li>
+</ol>
+
+<h2>The short version</h2>
+
+<ul>
+<li>Right-to-left mirrors the whole page. Set direction and language on the page itself and build with CSS logical properties so one set of rules works both ways.</li>
+<li>English words, prices, phone numbers, and product codes inside Hebrew render in confusing order unless each is isolated — and the same problem hits emails, receipts, exports, and printed slips.</li>
+<li>Pick a font that actually contains Hebrew letters, or the browser silently substitutes something ugly that differs on every device. Give Hebrew more line spacing; it has no capitals, often no true bold, and no italics.</li>
+<li>Yiddish is its own language with its own community spelling. Machine translation gets the register wrong, and identical-looking characters can be different text underneath, which quietly breaks site search.</li>
+<li>Each language needs its own URL with reciprocal hreflang tags. Browser-side translate widgets give you nothing in search. A switcher must land on the equivalent page, keep the cart, and never auto-redirect.</li>
+<li>Plan it in at the start. Retrofitting right-to-left onto a finished site is a project, not a settings change.</li>
+</ul>
+
+<p>If you are weighing a Yiddish or Hebrew version of your site and want a straight answer about what it would involve, you can <a href="/order.html">start a project</a>, email info@bhwebsolutions.com, or call 845-587-0531. Written questions are welcome and answered in writing.</p>
+    </article>
+  </div>
+</main>
+
+<section class="gcta">
+  <div class="in">
+    <h2>Want this handled properly?</h2>
+    <p>We build websites and online stores for businesses that need them to actually work — in
+      English and Yiddish. Tell us what you're trying to do and we'll tell you straight what it takes.</p>
+    <div class="row">
+      <a class="btn btn--green" href="/order.html">Start a project</a>
+      <a class="btn btn--ghost" href="tel:8455870531">845-587-0531</a>
+    </div>
+  </div>
+</section>
+
+<section class="related">
+  <div class="in">
+    <h2>Keep reading</h2>
+    <div class="rgrid">
+        <a class="rcard" href="/guides/kosher-grocery-delivery-zones.html"><b>Delivery zones, minimums and cutoffs for a kosher grocery</b><span>Flat-rate delivery quietly loses money. How to draw zones by zip, set minimums and fees per zone, run cutoffs and windows, and survive the erev Yom Tov rush.</span></a>
+        <a class="rcard" href="/guides/shabbos-yom-tov-online-orders.html"><b>Running an online store that closes for Shabbos and Yom Tov</b><span>Why a fixed Friday 5pm cutoff is wrong most of the year, and how a frum store closes properly: real zmanim, Yom Tov, delivery dates, and automated emails.</span></a>
+        <a class="rcard" href="/guides/heimish-product-photography.html"><b>Photographing food, seforim and judaica for your website</b><span>Bad product photos read as a store nobody trusts. How to shoot food, seforim and packaged goods with a phone, a window and $60 of gear — and size the files right.</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="gfoot">
+  <div class="in">
+    <div class="gfoot__grid">
+      <div>
+        <a href="/" class="brand">
+          <span class="brand__mark" aria-hidden="true">BH</span>
+          <span class="brand__txt"><b>BH</b> Web Solutions</span>
+        </a>
+        <p class="gfoot__about">Custom websites, online stores, and WordPress-to-static migrations —
+          designed beautifully, built fast, and fully managed. In English and Yiddish.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <a class="fl" href="/#work">Our work</a>
+        <a class="fl" href="/#services">Services</a>
+        <a class="fl" href="/guides/">Guides</a>
+        <a class="fl" href="/about.html">About us</a>
+      </div>
+      <div>
+        <h5>Get started</h5>
+        <a class="fl" href="/order.html">Order now</a>
+        <a class="fl" href="/#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Get in touch</h5>
+        <a class="fl" href="tel:8455870531">845-587-0531</a>
+        <a class="fl" href="mailto:info@bhwebsolutions.com">info@bhwebsolutions.com</a>
+      </div>
+    </div>
+    <div class="gfoot__bottom">
+      <span>&copy; 2026 BH Web Solutions. All rights reserved.</span>
+      <span>Designed &amp; built by BH Web Solutions</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "ada-website-accessibility",
+    "title": "Does your website have to be ADA compliant?",
+    "metaDescription": "Small business owners really do get demand letters over their websites. What Title III actually covers, why courts disagree, WCAG 2.1 AA, and what to fix first.",
+    "pillar": "law"
+  },
+  {
+    "slug": "privacy-policy-requirements",
+    "title": "What privacy policy does a small business website actually need?",
+    "metaDescription": "No federal law requires one. CCPA has thresholds most small shops miss. New York's SHIELD Act applies to nearly everyone. What yours needs, plus a checklist.",
+    "pillar": "law"
+  },
+  {
+    "slug": "cookie-consent-tracking",
+    "title": "Do you need a cookie banner on your website?",
+    "metaDescription": "Short answer for most US small businesses: no. But advertising pixels change that. What ePrivacy, GDPR and state privacy laws actually require, in plain English.",
+    "pillar": "law"
+  },
+  {
+    "slug": "online-store-legal-requirements",
+    "title": "The legal basics of running an online store",
+    "metaDescription": "Refund policies, FTC shipping deadlines, auto-renewals, junk fees, sales tax nexus, PCI and allergen labeling — the rules a kosher online store has to get right.",
+    "pillar": "law"
+  },
+  {
+    "slug": "email-sms-marketing-law",
+    "title": "Email and text message marketing: the rules that actually bite",
+    "metaDescription": "Email needs no opt-in. A marketing text without written consent can cost $500 a message. What CAN-SPAM and the TCPA really require before your next Yom Tov blast.",
+    "pillar": "law"
+  },
+  {
+    "slug": "yiddish-hebrew-rtl-websites",
+    "title": "Building a website in Yiddish and Hebrew: what actually goes wrong",
+    "metaDescription": "Why Hebrew and Yiddish sites break: mirrored layouts, prices rendering backwards, fonts with no Hebrew letters, broken search, and translation that reads wrong.",
+    "pillar": "heimish"
+  },
+  {
+    "slug": "kosher-grocery-delivery-zones",
+    "title": "Delivery zones, minimums and cutoffs for a kosher grocery",
+    "metaDescription": "Flat-rate delivery quietly loses money. How to draw zones by zip, set minimums and fees per zone, run cutoffs and windows, and survive the erev Yom Tov rush.",
+    "pillar": "heimish"
+  },
+  {
+    "slug": "shabbos-yom-tov-online-orders",
+    "title": "Running an online store that closes for Shabbos and Yom Tov",
+    "metaDescription": "Why a fixed Friday 5pm cutoff is wrong most of the year, and how a frum store closes properly: real zmanim, Yom Tov, delivery dates, and automated emails.",
+    "pillar": "heimish"
+  },
+  {
+    "slug": "heimish-product-photography",
+    "title": "Photographing food, seforim and judaica for your website",
+    "metaDescription": "Bad product photos read as a store nobody trusts. How to shoot food, seforim and packaged goods with a phone, a window and $60 of gear — and size the files right.",
+    "pillar": "heimish"
+  },
+  {
+    "slug": "wordpress-vs-static",
+    "title": "WordPress or a custom-built site: which does your business need?",
+    "metaDescription": "From a studio that builds both: what each really costs, where plugins bite, the middle-ground options, and five questions that settle it for your own business.",
+    "pillar": "decisions"
+  },
+  {
+    "slug": "what-a-website-should-cost",
+    "title": "What should a business website actually cost?",
+    "metaDescription": "Why quotes differ tenfold, real ranges for template and custom builds, the ongoing costs owners miss, and the contract clause that matters more than the price.",
+    "pillar": "decisions"
+  },
+  {
+    "slug": "site-speed-for-online-stores",
+    "title": "Why a slow website costs you sales",
+    "metaDescription": "Your customers never tell you the page was slow, they just leave. The real causes, why images come first, and how to measure and fix your store for free.",
+    "pillar": "decisions"
+  }
+]
