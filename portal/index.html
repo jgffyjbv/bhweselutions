@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parkview Medical — Practice Portal</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Demo practice-management portal by BH Web Solutions — appointments, reminders and patient records for a medical office.">
+<meta name="theme-color" content="#0b2830">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M6 17h5l2.5-6 4 10 2.5-6h6' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="portal.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="login" class="login-screen">
+  <div class="login-brand">
+    <div class="logo-row">
+      <svg width="42" height="42" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#0f766e"/><path d="M6 17h5l2.5-6 4 10 2.5-6h6" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div>
+        <h1>Parkview Medical</h1>
+        <div class="tag">Practice Portal</div>
+      </div>
+    </div>
+    <div class="login-hero">
+      <h2>Your whole front desk, in one screen.</h2>
+      <p>Appointments, automatic reminders and patient records — built for how a busy medical office actually works.</p>
+      <ul class="login-points">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5cd6a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Day &amp; week scheduling for every provider</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5cd6a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Text, email &amp; phone reminders that send themselves</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5cd6a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Patients confirm by replying &ldquo;Y&rdquo; — no phone tag</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5cd6a8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Reports on visits, no-shows &amp; recalls</li>
+      </ul>
+    </div>
+    <div class="login-foot">A working demo by <a href="https://bhwebs.com" target="_blank" rel="noopener">BH Web Solutions</a> · Sample data only — no real patient information.</div>
+  </div>
+  <div class="login-form-wrap">
+    <form class="login-card" id="login-form" autocomplete="off">
+      <h3>Sign in</h3>
+      <p class="sub">Welcome back — please sign in to the office portal.</p>
+      <div class="demo-note">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v5"/><circle cx="12" cy="16.5" r=".5" fill="currentColor"/></svg>
+        <div><b>This is a live demo.</b> The login is filled in for you — just press <b>Sign in</b> and look around. Everything is sample data.</div>
+      </div>
+      <div class="field">
+        <label for="lg-email">Email</label>
+        <input id="lg-email" type="text" value="office@parkviewmedical.com" readonly>
+      </div>
+      <div class="field">
+        <label for="lg-pass">Password</label>
+        <input id="lg-pass" type="password" value="demo-portal" readonly>
+      </div>
+      <button type="submit" class="btn btn-primary" id="lg-btn">Sign in</button>
+      <div class="login-small">Demo portal · Built by <a href="https://bhwebs.com" target="_blank" rel="noopener">BH Web Solutions</a></div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="app" class="app" hidden>
+  <aside class="sidebar" id="sidebar">
+    <div class="side-logo">
+      <svg width="34" height="34" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#12a394"/><path d="M6 17h5l2.5-6 4 10 2.5-6h6" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <div><div class="nm">Parkview Medical</div><div class="sb">Practice Portal</div></div>
+    </div>
+    <nav class="nav" id="nav">
+      <a href="#/dashboard" data-r="dashboard"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a href="#/schedule" data-r="schedule"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 9.5h18"/></svg>Schedule</a>
+      <a href="#/appointments" data-r="appointments"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>Appointments<span class="count" id="nav-pending" hidden></span></a>
+      <a href="#/patients" data-r="patients"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5 6.5-5s5.7 1.6 6.5 5"/><circle cx="17.5" cy="9" r="2.6"/><path d="M16.5 15.2c2.7.1 4.5 1.5 5 4.3"/></svg>Patients</a>
+      <a href="#/reminders" data-r="reminders"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-12 0c0 6-2.5 7-2.5 7h17S18 15 18 9"/><path d="M10 20a2.2 2.2 0 0 0 4 0"/></svg>Reminders</a>
+      <a href="#/reports" data-r="reports"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/></svg>Reports</a>
+      <a href="#/settings" data-r="settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09a1.7 1.7 0 0 0-1-1.55 1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.7 1.7 0 0 0 .34-1.87 1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09a1.7 1.7 0 0 0 1.55-1 1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.7 1.7 0 0 0 1.87.34h.01a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.7 1.7 0 0 0-.34 1.87v.01a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1z"/></svg>Settings</a>
+    </nav>
+    <div class="side-foot">
+      <div class="demo-pill"><span class="dot"></span>Demo · sample data</div>
+      <div>Built by <a href="https://bhwebs.com" target="_blank" rel="noopener">BH Web Solutions</a></div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <button class="hamburger" id="hamburger" aria-label="Menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+      <div class="searchbox" id="searchbox">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="global-search" type="text" placeholder="Search patients or appointments…" autocomplete="off">
+      </div>
+      <div class="spacer"></div>
+      <button class="btn btn-primary" id="new-appt-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>New appointment</button>
+      <div style="position:relative" id="notif-wrap">
+        <button class="icon-btn" id="notif-btn" aria-label="Notifications">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 9a6 6 0 1 0-12 0c0 6-2.5 7-2.5 7h17S18 15 18 9"/><path d="M10 20a2.2 2.2 0 0 0 4 0"/></svg>
+          <span class="bubble" id="notif-count" hidden></span>
+        </button>
+      </div>
+      <button class="user-chip" id="user-chip">
+        <span class="avatar" style="background:#0f766e">RG</span>
+        <span class="who"><b>Rivky G.</b><span>Front desk</span></span>
+      </button>
+    </header>
+    <main class="view" id="view"></main>
+  </div>
+</div>
+
+<div id="modal-root"></div>
+<div id="drawer-root"></div>
+<div class="toast-root" id="toast-root"></div>
+
+<script src="portal.js"></script>
+</body>
+</html>
