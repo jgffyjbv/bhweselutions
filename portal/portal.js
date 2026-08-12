@@ -864,31 +864,14 @@ function render(route, force) {
 window.addEventListener('hashchange', () => { render(location.hash.replace('#/', '') || 'dashboard'); closeMenu(); });
 
 /* ================= boot & shell wiring ================= */
-function enterApp() {
-  $('#login').hidden = true;
-  $('#app').hidden = false;
-  sessionStorage.setItem('pvAuth', '1');
-  if (!location.hash || location.hash === '#/') location.hash = '#/dashboard';
-  render(location.hash.replace('#/', '') || 'dashboard');
-  updateBadges();
-}
-
 load();
 
-$('#login-form').addEventListener('submit', e => {
-  e.preventDefault();
-  const b = $('#lg-btn');
-  b.disabled = true; b.textContent = 'Signing in…';
-  setTimeout(() => { enterApp(); b.disabled = false; b.textContent = 'Sign in'; }, 650);
-});
-
-if (sessionStorage.getItem('pvAuth') === '1') enterApp();
+if (!location.hash || location.hash === '#/') location.hash = '#/dashboard';
+render(location.hash.replace('#/', '') || 'dashboard');
+updateBadges();
 
 $('#hamburger').addEventListener('click', () => $('#app').classList.toggle('nav-open'));
 $('#new-appt-btn').addEventListener('click', () => apptModal());
-$('#user-chip').addEventListener('click', e => openMenu(e.currentTarget, [
-  { id: 'so', label: 'Sign out', fn: () => { sessionStorage.removeItem('pvAuth'); $('#app').hidden = true; $('#login').hidden = false; } }
-]));
 
 /* notifications */
 $('#notif-btn').addEventListener('click', () => {
