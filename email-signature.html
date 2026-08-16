@@ -17,7 +17,7 @@ body{font-family:'Hanken Grotesk',-apple-system,sans-serif;background:var(--pape
 h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:2.2rem;letter-spacing:-.02em;margin-bottom:10px}
 .sub{color:var(--muted);margin-bottom:28px;font-size:.98rem;line-height:1.6}
 .sub b{color:var(--ink)}
-.sigbox{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:30px;box-shadow:0 18px 44px -18px rgba(17,22,31,.2)}
+.sigbox{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:34px;box-shadow:0 18px 44px -18px rgba(17,22,31,.2)}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--green);color:#fff;border:none;border-radius:999px;padding:14px 26px;font-family:inherit;font-weight:700;font-size:1rem;cursor:pointer;margin-top:24px;transition:background .2s}
 .btn:hover{background:var(--greend)}
 .ok{display:none;margin-left:12px;color:var(--greend);font-weight:700;font-size:.94rem}
@@ -30,30 +30,40 @@ h1{font-family:'Fraunces',Georgia,serif;font-weight:500;font-size:2.2rem;letter-
 <body>
 <div class="wrap">
   <h1>Your email signature</h1>
-  <p class="sub">Click <b>Copy signature</b>, then paste it into Gmail: <b>Settings ⚙ → See all settings → General → Signature → Create new</b> — paste in the box, scroll down, <b>Save changes</b>.</p>
+  <p class="sub">Click <b>Copy signature</b>, then paste it into Gmail: <b>Settings ⚙ → See all settings → General → Signature → Create new</b> — paste in the box, set both "Signature defaults" dropdowns to it, scroll down, <b>Save changes</b>.</p>
 
   <div class="sigbox">
     <!-- ===== SIGNATURE START ===== -->
     <div id="sig">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#11161f;line-height:1.5">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#11161f;line-height:1.45">
         <tr>
-          <td style="vertical-align:middle;padding-right:18px">
+          <td style="vertical-align:middle;padding:0 12px 0 0">
             <a href="https://bhwebs.com" target="_blank" style="text-decoration:none">
-              <img src="https://bhwebs.com/logo-email.png" alt="BH Web Solutions" width="88" height="88" style="display:block;border:0;width:88px;height:88px">
+              <img src="https://bhwebs.com/logo-email.png" alt="BH" width="46" height="46" style="display:block;border:0;width:46px;height:46px">
             </a>
           </td>
-          <td style="vertical-align:middle;border-left:3px solid #6cb33f;padding-left:18px">
-            <div style="font-size:16.5px;font-weight:bold;color:#11161f;letter-spacing:-.2px">Avrumy Neumann</div>
-            <div style="font-size:12.5px;color:#5c6672;padding-bottom:8px">BH Web Solutions · Websites, Stores &amp; Web Apps</div>
-            <div style="font-size:13px;padding-bottom:2px">
-              <span style="color:#ff5c39">&#9679;</span>&nbsp; <a href="tel:8455870531" style="color:#11161f;text-decoration:none">845-587-0531</a>
-            </div>
-            <div style="font-size:13px;padding-bottom:2px">
-              <span style="color:#2b4eff">&#9679;</span>&nbsp; <a href="mailto:info@bhwebsolutions.com" style="color:#11161f;text-decoration:none">info@bhwebsolutions.com</a>
-            </div>
-            <div style="font-size:13px">
-              <span style="color:#6cb33f">&#9679;</span>&nbsp; <a href="https://bhwebs.com" target="_blank" style="color:#11161f;text-decoration:none;font-weight:bold">bhwebs.com</a>
-            </div>
+          <td style="vertical-align:middle">
+            <div style="font-size:17px;font-weight:bold;color:#11161f;letter-spacing:-.2px">Avrumy Neumann</div>
+            <div style="font-size:12.5px;color:#5c6672">Websites, Stores &amp; Web Apps &mdash; BH Web Solutions</div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="padding:11px 0 10px 0">
+            <table cellpadding="0" cellspacing="0" border="0"><tr>
+              <td style="width:58px;height:3px;background-color:#2b4eff;font-size:1px;line-height:3px">&nbsp;</td>
+              <td style="width:58px;height:3px;background-color:#ff5c39;font-size:1px;line-height:3px">&nbsp;</td>
+              <td style="width:58px;height:3px;background-color:#ffc53d;font-size:1px;line-height:3px">&nbsp;</td>
+              <td style="width:58px;height:3px;background-color:#6cb33f;font-size:1px;line-height:3px">&nbsp;</td>
+            </tr></table>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" style="font-size:13px;color:#11161f">
+            <a href="tel:8455870531" style="color:#11161f;text-decoration:none;font-weight:bold">845-587-0531</a>
+            <span style="color:#6cb33f;font-weight:bold">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+            <a href="mailto:info@bhwebsolutions.com" style="color:#11161f;text-decoration:none">info@bhwebsolutions.com</a>
+            <span style="color:#6cb33f;font-weight:bold">&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+            <a href="https://bhwebs.com" target="_blank" style="color:#4e8f2c;text-decoration:none;font-weight:bold">bhwebs.com</a>
           </td>
         </tr>
       </table>
