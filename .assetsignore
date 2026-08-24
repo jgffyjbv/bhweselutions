@@ -1,4 +1,7 @@
-*.log
 .git
 .gitignore
+.build
+.wrangler
+.DS_Store
 .assetsignore
+*.log
