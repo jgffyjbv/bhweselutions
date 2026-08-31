@@ -234,6 +234,24 @@ h2{font-size:var(--h2)}
 .stp b{display:block;font-size:1.2rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
 .stp p{color:var(--muted);font-size:.98rem}
 
+/* ---------- reviews ---------- */
+.reviews{background:var(--paper2)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;display:flex;flex-direction:column;box-shadow:0 2px 6px rgba(17,22,31,.04)}
+.rstars{display:flex;gap:3px;color:var(--sun);margin-bottom:14px}
+.rstars svg{width:18px;height:18px}
+.rquote{font-family:var(--serif);font-size:1.1rem;line-height:1.45;letter-spacing:-.01em;flex:1}
+.rafter{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.93rem;color:var(--muted);line-height:1.5}
+.rafter b{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:.67rem;font-weight:800;color:var(--greend);margin-bottom:5px}
+.rwho{margin-top:18px;font-size:.92rem;color:var(--muted);display:flex;align-items:center;gap:10px}
+.rwho b{font-weight:800;color:var(--ink)}
+.rwho::before{content:"";width:22px;height:2px;background:var(--green);border-radius:2px;flex:0 0 auto}
+.rfoot{margin-top:40px;text-align:center;font-size:.95rem;color:var(--muted)}
+.rfoot a{font-weight:800;color:var(--greend)}
+.rfoot a:hover{text-decoration:underline}
+@media(max-width:1024px){.rgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.rgrid{grid-template-columns:1fr}}
+
 /* ---------- statement ---------- */
 .statement{background:var(--ink);color:#fff;text-align:center;overflow:hidden}
 .statement .glow1{position:absolute;top:-140px;left:-100px;width:480px;height:480px;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(43,78,255,.4),transparent 65%)}
@@ -657,6 +675,52 @@ h2{font-size:var(--h2)}
     </div>
   </div>
 </section>
+
+<!-- ===== REVIEWS ===== -->
+<!-- To add a review: paste an entry into the REVIEWS list below. The whole
+     section hides itself automatically while the list is empty. -->
+<section class="reviews sec" id="reviews" hidden>
+  <div class="in">
+    <div class="head head--center">
+      <span class="eyebrow rv"><i style="background:var(--cobalt)"></i>Reviews</span>
+      <h2 class="rl"><span class="ln"><i>In their words.</i></span></h2>
+    </div>
+    <div class="rgrid" id="rgrid"></div>
+  </div>
+</section>
+
+<script>
+/* Reviews are stored and moderated by the bhwebs-reviews Worker.
+   Nothing appears here until it is approved from the email. */
+(function(){
+  var sec=document.getElementById('reviews'),grid=document.getElementById('rgrid');
+  if(!sec||!grid||!window.fetch)return;
+  function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  var star='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg>';
+  fetch('https://reviews.bhwebs.com/list').then(function(r){return r.json();}).then(function(list){
+    if(!list||!list.length)return;
+    var html='';
+    for(var i=0;i<list.length;i++){
+      var r=list[i],n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
+      for(var j=0;j<n;j++)st+=star;
+      html+='<article class="rcard rv" style="--i:'+(i%3)+'">'
+        +(st?'<div class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</div>':'')
+        +'<p class="rquote">&ldquo;'+esc(r.quote)+'&rdquo;</p>'
+        +(r.after?'<div class="rafter"><b>After launch</b>'+esc(r.after)+'</div>':'')
+        +'<div class="rwho"><span><b>'+esc(r.name)+'</b>'+(r.business?' &middot; '+esc(r.business):'')+'</span></div>'
+        +'</article>';
+    }
+    grid.innerHTML=html;
+    sec.removeAttribute('hidden');
+    // make the freshly-added cards visible (the page reveal pass already ran)
+    setTimeout(function(){
+      grid.querySelectorAll('.rv').forEach(function(e){e.classList.add('in');});
+      sec.querySelectorAll('.rv,.rl').forEach(function(e){e.classList.add('in');});
+    },30);
+  }).catch(function(){});
+})();
+</script>
 
 <!-- ===== STATEMENT ===== -->
 <section class="statement sec">
