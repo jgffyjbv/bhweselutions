@@ -769,17 +769,13 @@ h2{font-size:var(--h2)}
 
     <div class="form rv" style="--i:1">
       <p class="req"><b>*</b> denotes required fields.</p>
-      <form id="inquiry" action="https://formsubmit.co/info@bhwebsolutions.com" method="POST" novalidate>
+      <form id="inquiry" action="https://reviews.bhwebs.com/contact" method="POST" novalidate>
         <div class="fgroup"><label for="f-name">Name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="fgroup"><label for="f-email">Email *</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
         <div class="fgroup"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel"></div>
         <div class="fgroup"><label for="f-org">Business / Organization</label><input id="f-org" name="business" type="text" autocomplete="organization"></div>
         <div class="fgroup"><label for="f-site">Current website (if any)</label><input id="f-site" name="existing_site" type="url" placeholder="https://"></div>
         <div class="fgroup"><label for="f-msg">Tell us about your project</label><textarea id="f-msg" name="message" placeholder="What kind of site do you need? Online store, booking, migration…"></textarea></div>
-        <input type="hidden" name="_subject" value="New inquiry — bhwebsolutions.com">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://bhwebs.com/?sent=1">
         <input type="hidden" name="landing_page" id="c_landing">
         <input type="hidden" name="submitted_at" id="c_submitted">
         <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -926,9 +922,9 @@ h2{font-size:var(--h2)}
       (async function(){
         try{
           var fd=new FormData(cform);fd.delete('_honey');fd.delete('_next');
-          var res=await fetch('https://formsubmit.co/ajax/info@bhwebsolutions.com',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
+          var res=await fetch('https://reviews.bhwebs.com/contact',{method:'POST',body:fd,headers:{'Accept':'application/json'}});
           var data=await res.json();
-          if(!res.ok||!(data&&(data.success===true||data.success==='true')))throw new Error('failed');
+          if(!res.ok||!(data&&data.ok===true))throw new Error('failed');
           cform.style.display='none';csuccess.classList.add('show');csuccess.scrollIntoView({behavior:'smooth',block:'center'});
         }catch(ex){
           cbtn.disabled=false;cbtn.innerHTML='Send inquiry '+sendIcon;
