@@ -243,6 +243,7 @@ h2{font-size:var(--h2)}
 .rquote{font-family:var(--serif);font-size:1.1rem;line-height:1.45;letter-spacing:-.01em;flex:1}
 .rafter{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:.93rem;color:var(--muted);line-height:1.5}
 .rafter b{display:block;text-transform:uppercase;letter-spacing:.14em;font-size:.67rem;font-weight:800;color:var(--greend);margin-bottom:5px}
+.rresult b{color:var(--cobalt)}
 .rwho{margin-top:18px;font-size:.92rem;color:var(--muted);display:flex;align-items:center;gap:10px}
 .rwho b{font-weight:800;color:var(--ink)}
 .rwho::before{content:"";width:22px;height:2px;background:var(--green);border-radius:2px;flex:0 0 auto}
@@ -717,6 +718,7 @@ h2{font-size:var(--h2)}
       html+='<article class="rcard rv in" style="--i:'+(i%3)+'">'
         +(st?'<div class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</div>':'')
         +'<p class="rquote">&ldquo;'+esc(r.quote)+'&rdquo;</p>'
+        +(r.result?'<div class="rafter rresult"><b>What it did</b>'+esc(r.result)+'</div>':'')
         +(r.after?'<div class="rafter"><b>After launch</b>'+esc(r.after)+'</div>':'')
         +'<div class="rwho"><span><b>'+esc(r.name)+'</b>'+(r.business?' &middot; '+esc(r.business):'')+'</span></div>'
         +'</article>';

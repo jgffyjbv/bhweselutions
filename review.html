@@ -70,6 +70,7 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
 .form{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.4vw,42px);box-shadow:var(--shadow)}
 .qnum{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:.86rem;font-weight:800;color:#fff;margin-right:10px;flex:0 0 auto}
 .q1 .qnum{background:var(--cobalt)}.q2 .qnum{background:var(--coral)}.q3 .qnum{background:var(--greend)}
+.q4 .qnum{background:#7c3aed}.q5 .qnum{background:var(--ink)}
 .fgroup{margin-bottom:26px}
 .fgroup>label,.qlabel{display:flex;align-items:center;font-size:1.06rem;font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
 .hint{font-size:.9rem;color:var(--muted);margin:0 0 10px 40px}
@@ -169,6 +170,18 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
         <textarea name="q3_after_launch_support" id="q3" placeholder="When I needed something changed later…"></textarea>
       </div>
 
+      <div class="fgroup q4">
+        <span class="qlabel"><span class="qnum">4</span> What has the site done for your business?</span>
+        <p class="hint">More calls or orders, less time on the phone, somewhere to send people &mdash; whatever you&rsquo;ve noticed.</p>
+        <textarea name="q4_results" id="q4" placeholder="Since the site went live…"></textarea>
+      </div>
+
+      <div class="fgroup q5">
+        <span class="qlabel"><span class="qnum">5</span> What would you tell someone thinking of calling us?</span>
+        <p class="hint">A line or two, the way you&rsquo;d say it to a friend.</p>
+        <textarea name="q5_advice" id="q5" placeholder="I&rsquo;d tell them…"></textarea>
+      </div>
+
       <div class="two">
         <div class="fgroup"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
         <div class="fgroup"><label for="f-biz">Business name</label><input id="f-biz" name="business" type="text" autocomplete="organization"></div>
@@ -226,7 +239,7 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
     if(!window.fetch){document.getElementById('c_submitted').value=new Date().toISOString();return;}
     e.preventDefault();
     var nm=document.getElementById('f-name').value.trim();
-    var any=['q1','q2','q3'].some(function(id){return document.getElementById(id).value.trim();});
+    var any=['q1','q2','q3','q4','q5'].some(function(id){return document.getElementById(id).value.trim();});
     var rated=!!f.querySelector('.stars input:checked');
     st.classList.remove('show');
     if(!nm){st.textContent='Please add your name so we know who to thank.';st.classList.add('show');return;}
