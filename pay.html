@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contractor Payment Statement — BH Web Solutions</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<style>
+:root{--paper:#faf7f0;--paper2:#f2ecdf;--ink:#11161f;--line:#e6dfd0;--line2:#d9d0bd;
+ --muted:#5c6672;--cobalt:#2b4eff;--coral:#ff5c39;--green:#6cb33f;--greend:#4e8f2c;--sun:#ffc53d;
+ --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+ --serif:'Fraunces',Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);background:var(--paper2);color:var(--ink);line-height:1.5;padding:24px}
+.wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:400px 1fr;gap:26px;align-items:start}
+@media(max-width:980px){.wrap{grid-template-columns:1fr}}
+h1{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:4px}
+.sub{color:var(--muted);font-size:.9rem;margin-bottom:18px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 2px 6px rgba(17,22,31,.05)}
+.panel h2{font-size:.72rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--greend);margin:20px 0 10px}
+.panel h2:first-child{margin-top:0}
+label{display:block;font-size:.78rem;font-weight:700;color:#39424e;margin:10px 0 4px}
+input,select,textarea{width:100%;font-family:var(--sans);font-size:.94rem;color:var(--ink);background:var(--paper);
+ border:1.5px solid var(--line);border-radius:10px;padding:9px 11px}
+input:focus,select:focus,textarea:focus{outline:none;background:#fff;border-color:var(--cobalt)}
+textarea{min-height:60px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--sans);font-weight:700;
+ font-size:.92rem;padding:11px 18px;border-radius:999px;border:1.5px solid transparent;cursor:pointer;transition:.2s}
+.btn--g{background:var(--green);color:#fff}.btn--g:hover{background:var(--greend)}
+.btn--o{background:#fff;color:var(--ink);border-color:var(--line2)}.btn--o:hover{border-color:var(--ink)}
+.btn--s{padding:7px 13px;font-size:.82rem}
+.btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+/* line items */
+.li{display:grid;grid-template-columns:1fr 62px 78px 84px 30px;gap:7px;align-items:end;margin-bottom:8px}
+.li label{margin:0 0 3px}
+.li .x{background:none;border:none;color:var(--coral);font-size:1.2rem;cursor:pointer;padding:6px 0;line-height:1}
+.hdr{font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+/* ytd */
+.ytd{margin-top:14px;background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;font-size:.88rem}
+.ytd b{font-size:1.15rem}
+.ytd.warn{border-color:var(--sun);background:#fffaed}
+.ytd .flag{display:block;margin-top:7px;font-weight:700;color:#8a6a00}
+/* ---------- the statement ---------- */
+.doc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:44px;box-shadow:0 2px 6px rgba(17,22,31,.05)}
+.doc__top{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding-bottom:22px;border-bottom:2px solid var(--ink)}
+.brand{display:flex;align-items:center;gap:11px}
+.brand svg{width:44px;height:44px;flex:0 0 auto}
+.brand .nm{font-weight:800;font-size:1.1rem;letter-spacing:-.025em}
+.brand .meta{font-size:.78rem;color:var(--muted);line-height:1.45;white-space:pre-line}
+.doc__title{text-align:right}
+.doc__title h3{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:-.02em;line-height:1.1}
+.doc__title .n{font-size:.8rem;color:var(--muted);margin-top:3px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin:24px 0}
+.blk .k{font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--greend);margin-bottom:5px}
+.blk .v{font-size:.94rem;line-height:1.5;white-space:pre-line}
+.blk .v strong{font-size:1.05rem}
+table{width:100%;border-collapse:collapse;margin-top:6px}
+th{text-align:left;font-size:.66rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+ padding:9px 8px;border-bottom:1.5px solid var(--line2)}
+th.r,td.r{text-align:right}
+td{padding:11px 8px;border-bottom:1px solid var(--line);font-size:.93rem;vertical-align:top}
+tfoot td{border:none;padding-top:15px;font-size:1rem}
+tfoot .tot{font-family:var(--serif);font-weight:600;font-size:1.5rem;letter-spacing:-.02em}
+tfoot .tl{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--greend)}
+.bar{display:flex;margin:26px 0 0}
+.bar i{height:5px;flex:1}
+.bar i:nth-child(1){background:var(--cobalt)}.bar i:nth-child(2){background:var(--coral)}
+.bar i:nth-child(3){background:var(--sun)}.bar i:nth-child(4){background:var(--green)}
+.note{margin-top:22px;font-size:.82rem;color:var(--muted);line-height:1.6}
+.note b{color:var(--ink)}
+.notice{margin-top:16px;background:var(--paper);border-left:4px solid var(--green);border-radius:0 10px 10px 0;
+ padding:13px 16px;font-size:.82rem;color:var(--muted);line-height:1.6}
+/* ---------- lock ---------- */
+#lock{position:fixed;inset:0;z-index:9999;background:var(--paper2);display:flex;align-items:center;
+ justify-content:center;padding:24px}
+#lock .box{background:#fff;border:1px solid var(--line);border-radius:22px;padding:38px 34px;max-width:390px;
+ width:100%;text-align:center;box-shadow:0 18px 44px -18px rgba(17,22,31,.22)}
+#lock svg{width:56px;height:56px;margin:0 auto 16px;display:block}
+#lock h2{font-family:var(--serif);font-weight:600;font-size:1.45rem;letter-spacing:-.02em;margin:0 0 6px;color:var(--ink)}
+#lock p{color:var(--muted);font-size:.9rem;margin-bottom:20px}
+#lock input{text-align:center;font-size:1.05rem;letter-spacing:.06em;padding:13px}
+#lock .btn{width:100%;margin-top:12px}
+#lock .err{color:#b23b2c;font-weight:700;font-size:.88rem;margin-top:12px;display:none}
+#lock .err.show{display:block}
+body.locked .wrap{display:none}
+@media print{
+  body{background:#fff;padding:0}
+  .wrap{display:block;max-width:none}
+  .panel,.noprint{display:none!important}
+  .doc{border:none;border-radius:0;box-shadow:none;padding:0}
+  @page{margin:16mm}
+}
+</style>
+</head>
+<body>
+<div id="lock">
+  <div class="box">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <defs><linearGradient id="lg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88">
+        <stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/>
+        <stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs>
+      <g fill="none" stroke="url(#lg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+        <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g>
+      <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+    <h2>Payment Statements</h2>
+    <p>Enter the password to continue.</p>
+    <input id="lockPw" type="password" autocomplete="current-password" placeholder="Password">
+    <button class="btn btn--g" id="lockGo" type="button">Unlock</button>
+    <div class="err" id="lockErr">Wrong password &mdash; try again.</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <!-- ================= CONTROLS ================= -->
+  <div class="panel noprint">
+    <h1>Payment Statement</h1>
+    <p class="sub">For contractors paid on a 1099 basis &mdash; no tax is withheld.</p>
+
+    <h2>Your business</h2>
+    <label for="bName">Business name</label>
+    <input id="bName" value="BH Web Solutions">
+    <label for="bAddr">Address</label>
+    <textarea id="bAddr" placeholder="Street&#10;City, State ZIP"></textarea>
+    <div class="row">
+      <div><label for="bPhone">Phone</label><input id="bPhone" value="845-587-0531"></div>
+      <div><label for="bEmail">Email</label><input id="bEmail" value="info@bhwebsolutions.com"></div>
+    </div>
+    <label for="bEin">EIN / Tax ID (optional)</label>
+    <input id="bEin" placeholder="XX-XXXXXXX">
+
+    <h2>Contractor</h2>
+    <label for="cPick">Saved contractors</label>
+    <select id="cPick"><option value="">— new contractor —</option></select>
+    <label for="cName">Full name</label>
+    <input id="cName" placeholder="e.g. Yoel Weiss">
+    <label for="cAddr">Address (optional)</label>
+    <textarea id="cAddr" placeholder="Street&#10;City, State ZIP"></textarea>
+    <div class="row">
+      <div><label for="cEmail">Email (optional)</label><input id="cEmail"></div>
+      <div><label for="cId">SSN / EIN last 4 (optional)</label><input id="cId" placeholder="••••1234"></div>
+    </div>
+
+    <h2>This payment</h2>
+    <div class="row">
+      <div><label for="sNum">Statement #</label><input id="sNum"></div>
+      <div><label for="sDate">Payment date</label><input id="sDate" type="date"></div>
+    </div>
+    <div class="row">
+      <div><label for="pFrom">Period from</label><input id="pFrom" type="date"></div>
+      <div><label for="pTo">Period to</label><input id="pTo" type="date"></div>
+    </div>
+    <label for="sMethod">Paid by</label>
+    <select id="sMethod">
+      <option>Check</option><option>Zelle</option><option>Bank transfer</option>
+      <option>Cash</option><option>PayPal</option><option>Venmo</option><option>Other</option>
+    </select>
+
+    <h2>Work &amp; amounts</h2>
+    <div class="li hdr"><span>Description</span><span>Hrs/Qty</span><span>Rate</span><span>Amount</span><span></span></div>
+    <div id="items"></div>
+    <button class="btn btn--o btn--s" id="addLine" type="button">+ Add line</button>
+
+    <label for="sNotes" style="margin-top:14px">Notes on the statement (optional)</label>
+    <textarea id="sNotes" placeholder="e.g. Thank you!"></textarea>
+
+    <div class="ytd" id="ytdBox">Year to date: <b id="ytdVal">$0.00</b> <span id="ytdFlag"></span></div>
+
+    <div class="btns">
+      <button class="btn btn--g" id="btnPrint" type="button">Print / Save PDF</button>
+      <button class="btn btn--o" id="btnRecord" type="button">Record payment</button>
+      <button class="btn btn--o" id="btnNew" type="button">Clear</button>
+    </div>
+  </div>
+
+  <!-- ================= THE STATEMENT ================= -->
+  <div class="doc" id="doc">
+    <div class="doc__top">
+      <div class="brand">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88">
+            <stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/>
+            <stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs>
+          <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+            <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g>
+          <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <div class="nm" id="oName">BH Web Solutions</div>
+          <div class="meta" id="oMeta"></div>
+        </div>
+      </div>
+      <div class="doc__title">
+        <h3>Payment Statement</h3>
+        <div class="n" id="oNum"></div>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="blk">
+        <div class="k">Paid to</div>
+        <div class="v" id="oTo"><strong>—</strong></div>
+      </div>
+      <div class="blk">
+        <div class="k">Payment details</div>
+        <div class="v" id="oDetails">—</div>
+      </div>
+    </div>
+
+    <table>
+      <thead><tr><th>Description</th><th class="r">Hrs/Qty</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead>
+      <tbody id="oRows"></tbody>
+      <tfoot><tr>
+        <td colspan="2"></td>
+        <td class="r tl">Total paid</td>
+        <td class="r tot" id="oTotal">$0.00</td>
+      </tr></tfoot>
+    </table>
+
+    <div class="bar"><i></i><i></i><i></i><i></i></div>
+
+    <div class="notice" id="oNotice">
+      <b>No taxes were withheld from this payment.</b> This payment was made to an independent contractor.
+      The contractor is responsible for their own federal, state and self-employment taxes.
+    </div>
+    <div class="note" id="oNotes"></div>
+  </div>
+</div>
+
+<script>
+/* simple gate: keeps the page private from casual visitors.
+   All contractor data lives in this browser only, never on the server. */
+(function(){
+  var HASH='d46f9f3df79a2e2daeb3d965d50efb11cab564c4a3c608a3b8bb31419bcb6226';
+  var lock=document.getElementById('lock'),pw=document.getElementById('lockPw'),
+      go=document.getElementById('lockGo'),err=document.getElementById('lockErr');
+  document.body.classList.add('locked');
+  function open_(){lock.style.display='none';document.body.classList.remove('locked');
+    try{localStorage.setItem('bh_pay_ok','1');}catch(e){}}
+  try{if(localStorage.getItem('bh_pay_ok')==='1'){open_();}}catch(e){}
+  function sha(t){
+    if(window.crypto&&crypto.subtle&&window.isSecureContext){
+      return crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)).then(function(b){
+        return [].map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0');}).join('');});
+    }
+    return Promise.resolve(null); // older browser: fall back to direct compare
+  }
+  function tryPw(){
+    var v=pw.value;
+    sha(v).then(function(h){
+      if(h===HASH||(h===null&&v==='bh2026')){open_();}
+      else{err.classList.add('show');pw.value='';pw.focus();}
+    });
+  }
+  go.addEventListener('click',tryPw);
+  pw.addEventListener('keydown',function(e){if(e.key==='Enter')tryPw();});
+  setTimeout(function(){pw.focus();},60);
+})();
+</script>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  var money=function(n){return '$'+(Number(n)||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});};
+  var esc=function(t){return String(t==null?'':t).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});};
+  var LS={get:function(k,d){try{return JSON.parse(localStorage.getItem(k))||d;}catch(e){return d;}},
+          set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
+
+  var BIZ=['bName','bAddr','bPhone','bEmail','bEin'];
+  var CON=['cName','cAddr','cEmail','cId'];
+  var PAY=['sNum','sDate','pFrom','pTo','sMethod','sNotes'];
+
+  /* ---------- line items ---------- */
+  function addLine(d,q,r){
+    var w=document.createElement('div'); w.className='li';
+    w.innerHTML='<input class="d" placeholder="Website build — Weiss Bakery">'
+      +'<input class="q" type="number" step="0.25" min="0" placeholder="0">'
+      +'<input class="r" type="number" step="0.01" min="0" placeholder="0.00">'
+      +'<input class="a" type="number" step="0.01" min="0" placeholder="0.00">'
+      +'<button class="x" type="button" title="Remove">&times;</button>';
+    $('items').appendChild(w);
+    if(d!=null)w.querySelector('.d').value=d;
+    if(q!=null)w.querySelector('.q').value=q;
+    if(r!=null)w.querySelector('.r').value=r;
+    var q_=w.querySelector('.q'),r_=w.querySelector('.r'),a_=w.querySelector('.a');
+    function calc(){ if(q_.value&&r_.value){a_.value=(parseFloat(q_.value)*parseFloat(r_.value)).toFixed(2);} render(); }
+    q_.addEventListener('input',calc); r_.addEventListener('input',calc);
+    w.querySelector('.d').addEventListener('input',render);
+    a_.addEventListener('input',render);
+    w.querySelector('.x').addEventListener('click',function(){w.remove();render();});
+    return w;
+  }
+  function lines(){
+    return [].slice.call(document.querySelectorAll('#items .li')).map(function(w){
+      return {d:w.querySelector('.d').value,q:w.querySelector('.q').value,
+              r:w.querySelector('.r').value,a:parseFloat(w.querySelector('.a').value)||0};
+    }).filter(function(l){return l.d||l.a;});
+  }
+  function total(){return lines().reduce(function(s,l){return s+l.a;},0);}
+
+  /* ---------- render the statement ---------- */
+  function fmtDate(v){
+    if(!v)return '';
+    var p=v.split('-'); if(p.length!==3)return v;
+    return new Date(p[0],p[1]-1,p[2]).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+  }
+  function render(){
+    $('oName').textContent=$('bName').value||'—';
+    var meta=[$('bAddr').value,$('bPhone').value,$('bEmail').value,
+              $('bEin').value?('EIN '+$('bEin').value):''].filter(Boolean).join('\n');
+    $('oMeta').textContent=meta;
+    $('oNum').textContent=$('sNum').value?('No. '+$('sNum').value):'';
+
+    var to='<strong>'+esc($('cName').value||'—')+'</strong>';
+    if($('cAddr').value)to+='\n'+esc($('cAddr').value);
+    if($('cEmail').value)to+='\n'+esc($('cEmail').value);
+    if($('cId').value)to+='\nTax ID: '+esc($('cId').value);
+    $('oTo').innerHTML=to;
+
+    var d=[];
+    if($('sDate').value)d.push('Payment date: '+fmtDate($('sDate').value));
+    if($('pFrom').value||$('pTo').value)
+      d.push('Period: '+fmtDate($('pFrom').value)+(($('pFrom').value&&$('pTo').value)?' – ':'')+fmtDate($('pTo').value));
+    d.push('Paid by: '+$('sMethod').value);
+    $('oDetails').textContent=d.join('\n');
+
+    var rows='';
+    lines().forEach(function(l){
+      rows+='<tr><td>'+esc(l.d||'')+'</td><td class="r">'+esc(l.q||'')+'</td>'
+        +'<td class="r">'+(l.r?money(l.r):'')+'</td><td class="r">'+money(l.a)+'</td></tr>';
+    });
+    $('oRows').innerHTML=rows||'<tr><td colspan="4" style="color:#5c6672">No lines added yet.</td></tr>';
+    $('oTotal').textContent=money(total());
+    $('oNotes').textContent=$('sNotes').value||'';
+    updateYtd();
+  }
+
+  /* ---------- contractors + YTD ---------- */
+  function store(){return LS.get('bh_pay_contractors',{});}
+  function key(){return ($('cName').value||'').trim().toLowerCase();}
+  function ytdFor(name){
+    var c=store()[name]; if(!c)return 0;
+    var y=new Date().getFullYear();
+    return (c.payments||[]).filter(function(p){return (p.date||'').slice(0,4)==String(y);})
+      .reduce(function(s,p){return s+(p.amount||0);},0);
+  }
+  function updateYtd(){
+    var paid=ytdFor(key()), pending=total(), t=paid+pending;
+    $('ytdVal').textContent=money(paid);
+    var box=$('ytdBox'),flag=$('ytdFlag');
+    box.classList.toggle('warn',t>=600);
+    flag.innerHTML = t>=600
+      ? '<span class="flag">Including this payment: '+money(t)+' — at or over $600, so a 1099-NEC is required for this contractor.</span>'
+      : (pending? '<span class="flag" style="color:#5c6672;font-weight:600">Including this payment: '+money(t)+'</span>' : '');
+  }
+  function refreshPicker(){
+    var s=store(),sel=$('cPick'),cur=sel.value;
+    sel.innerHTML='<option value="">— new contractor —</option>';
+    Object.keys(s).sort().forEach(function(k){
+      var o=document.createElement('option'); o.value=k; o.textContent=s[k].name+' ('+money(ytdFor(k))+' YTD)';
+      sel.appendChild(o);
+    });
+    sel.value=cur;
+  }
+
+  /* ---------- wiring ---------- */
+  BIZ.concat(CON,PAY).forEach(function(id){
+    var el=$(id); if(el){el.addEventListener('input',function(){render(); if(BIZ.indexOf(id)>=0)saveBiz();});}
+  });
+  function saveBiz(){var o={};BIZ.forEach(function(id){o[id]=$(id).value;});LS.set('bh_pay_business',o);}
+  (function loadBiz(){var o=LS.get('bh_pay_business',null); if(o)BIZ.forEach(function(id){if(o[id]!=null)$(id).value=o[id];});})();
+
+  $('cPick').addEventListener('change',function(){
+    var c=store()[this.value];
+    if(c){$('cName').value=c.name||'';$('cAddr').value=c.addr||'';$('cEmail').value=c.email||'';$('cId').value=c.id||'';}
+    render();
+  });
+
+  $('addLine').addEventListener('click',function(){addLine();});
+  $('btnPrint').addEventListener('click',function(){window.print();});
+  $('btnNew').addEventListener('click',function(){
+    CON.concat(['sNum','sNotes']).forEach(function(id){$(id).value='';});
+    $('items').innerHTML=''; addLine(); $('cPick').value=''; setDefaults(); render();
+  });
+
+  $('btnRecord').addEventListener('click',function(){
+    var k=key();
+    if(!k){alert('Add the contractor’s name first.');return;}
+    if(total()<=0){alert('Add an amount first.');return;}
+    var s=store();
+    s[k]=s[k]||{name:$('cName').value.trim(),payments:[]};
+    s[k].name=$('cName').value.trim(); s[k].addr=$('cAddr').value;
+    s[k].email=$('cEmail').value; s[k].id=$('cId').value;
+    s[k].payments=s[k].payments||[];
+    s[k].payments.push({date:$('sDate').value||new Date().toISOString().slice(0,10),
+                        amount:total(),num:$('sNum').value});
+    LS.set('bh_pay_contractors',s);
+    refreshPicker(); updateYtd();
+    alert('Recorded '+money(total())+' for '+s[k].name+'.\nYear to date is now '+money(ytdFor(k))+'.');
+  });
+
+  function setDefaults(){
+    var t=new Date(), iso=function(d){return d.toISOString().slice(0,10);};
+    $('sDate').value=iso(t);
+    $('sNum').value=t.getFullYear()+'-'+String(Date.now()).slice(-4);
+  }
+
+  addLine(); setDefaults(); refreshPicker(); render();
+})();
+</script>
+</body>
+</html>
