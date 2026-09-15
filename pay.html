@@ -245,17 +245,19 @@ body.locked .wrap{display:none}
   function open_(){lock.style.display='none';document.body.classList.remove('locked');
     try{localStorage.setItem('bh_pay_ok','1');}catch(e){}}
   try{if(localStorage.getItem('bh_pay_ok')==='1'){open_();}}catch(e){}
+  var ALT=-202455911; // fallback check for browsers without crypto.subtle
+  function alt(t){var h=5381;for(var i=0;i<t.length;i++){h=((h<<5)+h+t.charCodeAt(i))|0;}return h;}
   function sha(t){
     if(window.crypto&&crypto.subtle&&window.isSecureContext){
       return crypto.subtle.digest('SHA-256',new TextEncoder().encode(t)).then(function(b){
         return [].map.call(new Uint8Array(b),function(x){return x.toString(16).padStart(2,'0');}).join('');});
     }
-    return Promise.resolve(null); // older browser: fall back to direct compare
+    return Promise.resolve(null);
   }
   function tryPw(){
     var v=pw.value;
     sha(v).then(function(h){
-      if(h===HASH||(h===null&&v==='bh2026')){open_();}
+      if(h===HASH||(h===null&&alt(v)===ALT)){open_();}
       else{err.classList.add('show');pw.value='';pw.focus();}
     });
   }
