@@ -186,11 +186,13 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .strip{margin-top:52px;position:relative;
   -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
   mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.strip__row{display:flex;width:max-content;gap:22px;margin-bottom:22px;will-change:transform}
-.strip__row--a{animation:slide 68s linear infinite}
-.strip__row--b{animation:slide 92s linear infinite}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.strip:hover .strip__row{animation-play-state:paused}
+.strip__row{display:flex;gap:22px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;
+  scroll-behavior:auto;scrollbar-width:none;-ms-overflow-style:none;cursor:grab;
+  padding:12px 28px 34px;margin-bottom:-12px;user-select:none;-webkit-user-select:none}
+.strip__row::-webkit-scrollbar{display:none}
+.strip__row.dragging{cursor:grabbing}
+.strip__row .wcard{-webkit-user-drag:none}
+.strip__row .wcard img{-webkit-user-drag:none;pointer-events:none}
 .wcard{position:relative;flex:0 0 auto;width:330px;border-radius:var(--r);overflow:hidden;background:var(--ink);
   box-shadow:0 2px 6px rgba(17,22,31,.08);transition:transform .45s var(--exp),box-shadow .45s var(--exp)}
 .wcard:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 30px 60px -22px rgba(17,22,31,.5)}
@@ -564,7 +566,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     </div>
   </div>
   <div class="in">
-    <p class="strip__note rv">Hover to pause &middot; click any site to open it</p>
+    <p class="strip__note rv">Swipe or drag sideways to browse &middot; click any site to open it</p>
     <div class="work__cta rv"><a href="work.html" class="btn btn--outline">View All Work</a></div>
   </div>
 </section>
@@ -730,11 +732,48 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
 
-  /* ---- duplicate the marquee rows so the loop is seamless ---- */
-  ['rowA','rowB'].forEach(function(id){
-    var r=document.getElementById(id);
-    if(r)r.innerHTML=r.innerHTML+r.innerHTML;
-  });
+  /* ---- portfolio strip: a real scroll container that also drifts on its own ----
+     Two copies of the cards make the loop seamless in BOTH directions. Any touch,
+     wheel, hover or drag pauses the drift; it resumes a moment after you let go. */
+  var canHover=window.matchMedia('(hover:hover)').matches;
+  function strip(id,speed){
+    var row=document.getElementById(id); if(!row)return;
+    row.innerHTML=row.innerHTML+row.innerHTML;
+    var half=0,paused=false,idle=null,dragging=false,sx=0,sl=0,moved=0,pos=1;
+    function measure(){half=row.scrollWidth/2;}
+    function hold(ms){paused=true;clearTimeout(idle);idle=setTimeout(function(){paused=false;},ms||2500);}
+    function wrap(){
+      if(!half)measure();
+      if(row.scrollLeft>=half){row.scrollLeft-=half;sl-=half;pos-=half;}
+      else if(row.scrollLeft<=0){row.scrollLeft+=half;sl+=half;pos+=half;}
+    }
+    measure();row.scrollLeft=1;
+    window.addEventListener('load',measure);window.addEventListener('resize',measure);
+    /* pos is a float so sub-pixel speeds accumulate instead of rounding away */
+    if(!reduce){(function tick(){
+      if(!paused&&!dragging){pos+=speed;row.scrollLeft=pos;}else{pos=row.scrollLeft;}
+      wrap();requestAnimationFrame(tick);})();}
+    else{row.addEventListener('scroll',wrap,{passive:true});}
+    row.addEventListener('wheel',function(){hold();},{passive:true});
+    row.addEventListener('touchstart',function(){hold(4000);},{passive:true});
+    row.addEventListener('touchmove',function(){hold(4000);},{passive:true});
+    if(canHover){
+      row.addEventListener('mouseenter',function(){paused=true;clearTimeout(idle);});
+      row.addEventListener('mouseleave',function(){if(!dragging)hold(700);});
+    }
+    row.addEventListener('pointerdown',function(e){
+      if(e.pointerType==='touch')return;
+      dragging=true;moved=0;sx=e.clientX;sl=row.scrollLeft;row.classList.add('dragging');
+      try{row.setPointerCapture(e.pointerId);}catch(x){}
+    });
+    row.addEventListener('pointermove',function(e){
+      if(!dragging)return;var dx=e.clientX-sx;moved=Math.max(moved,Math.abs(dx));row.scrollLeft=sl-dx;
+    });
+    function up(){if(!dragging)return;dragging=false;row.classList.remove('dragging');hold(1800);}
+    row.addEventListener('pointerup',up);row.addEventListener('pointercancel',up);
+    row.addEventListener('click',function(e){if(moved>6){e.preventDefault();e.stopPropagation();}},true);
+  }
+  strip('rowA',.55);strip('rowB',.42);
 
   /* ---- scroll reveal: rAF sweep (catches elements jumped past by anchors) ---- */
   var pend=[].slice.call(document.querySelectorAll('.rv,.rl'));
