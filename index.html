@@ -242,6 +242,8 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 /* ---------- reviews ---------- */
 .reviews{background:var(--paper)}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.rgrid[data-n="1"]{grid-template-columns:minmax(0,600px);justify-content:center}
+.rgrid[data-n="2"]{grid-template-columns:repeat(2,minmax(0,480px));justify-content:center}
 .rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;display:flex;flex-direction:column}
 .rstars{display:flex;gap:3px;color:var(--sun);margin-bottom:14px}
 .rstars svg{width:18px;height:18px}
@@ -373,6 +375,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   <ul class="nav__links">
     <li><a href="#services">Services</a></li>
     <li><a href="#work">Work</a></li>
+    <li id="navReviews" hidden><a href="#reviews">Reviews</a></li>
     <li><a href="#how">Process</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -383,6 +386,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 <div class="mobile" id="mobile">
   <a href="#services">Services</a>
   <a href="#work">Work</a>
+  <a href="#reviews" id="mobReviews" hidden>Reviews</a>
   <a href="#how">Process</a>
   <a href="about.html">About</a>
   <a href="guides/">Guides</a>
@@ -571,6 +575,16 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   </div>
 </section>
 
+<section class="reviews sec" id="reviews" hidden>
+  <div class="in">
+    <div class="head head--center" style="text-align:center;max-width:820px;margin:0 auto">
+      <span class="eyebrow rv" style="justify-content:center"><i style="background:var(--cobalt)"></i>Reviews</span>
+      <h2 class="rl"><span class="ln"><i>What clients say.</i></span></h2>
+    </div>
+    <div class="rgrid" id="rgrid"></div>
+  </div>
+</section>
+
 <section class="promise sec">
   <div class="in">
     <div class="head" style="max-width:860px">
@@ -609,16 +623,6 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
       <div class="stp rv" style="--i:1"><i>2</i><b>See your design</b><p>Review the site and ask for changes before any final payment.</p></div>
       <div class="stp rv" style="--i:2"><i>3</i><b>Go live</b><p>Approve it and we'll get everything live &mdash; usually within days.</p></div>
     </div>
-  </div>
-</section>
-
-<section class="reviews sec" id="reviews" hidden>
-  <div class="in">
-    <div class="head head--center" style="text-align:center;max-width:820px;margin:0 auto">
-      <span class="eyebrow rv" style="justify-content:center"><i style="background:var(--cobalt)"></i>Reviews</span>
-      <h2 class="rl"><span class="ln"><i>What clients say.</i></span></h2>
-    </div>
-    <div class="rgrid" id="rgrid"></div>
   </div>
 </section>
 
@@ -693,6 +697,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <div class="foot__links">
       <a href="#services">Services</a>
       <a href="work.html">Work</a>
+      <a href="#reviews">Reviews</a>
       <a href="about.html">About</a>
       <a href="guides/">Guides</a>
       <a href="website-transfers.html">Website Transfers</a>
@@ -847,8 +852,9 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
           +'<div class="rwho"><span><b>'+esc(r.name)+'</b>'+(r.business?' &middot; '+esc(r.business):'')+'</span></div>'
           +'</article>';
       }
-      grid.innerHTML=html;
+      grid.innerHTML=html;grid.setAttribute('data-n',Math.min(list.length,3));
       sec.removeAttribute('hidden');
+      ['navReviews','mobReviews'].forEach(function(id){var e=document.getElementById(id);if(e)e.removeAttribute('hidden');});
       var h=sec.querySelectorAll('.rv,.rl');
       for(var k=0;k<h.length;k++)h[k].classList.add('in');
     }).catch(function(){});
