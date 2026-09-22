@@ -802,7 +802,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
         html+='<article class="rcard rv in" style="--i:'+(i%3)+'">'
           +(st?'<div class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</div>':'')
           +'<p class="rquote">&ldquo;'+esc(r.quote)+'&rdquo;</p>'
-          +(r.result?'<div class="rafter rresult"><b>What it did</b>'+esc(r.result)+'</div>':'')
+          +(r.surprise?'<div class="rafter rresult"><b>What surprised them</b>'+esc(r.surprise)+'</div>':'')
           +(r.after?'<div class="rafter"><b>After launch</b>'+esc(r.after)+'</div>':'')
           +'<div class="rwho"><span><b>'+esc(r.name)+'</b>'+(r.business?' &middot; '+esc(r.business):'')+'</span></div>'
           +'</article>';

@@ -132,7 +132,7 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
   <div class="in">
     <span class="eyebrow rv"><i></i>Your feedback</span>
     <h1 class="rv" style="--i:1">How did we <em>do?</em></h1>
-    <p class="sub rv" style="--i:2">Three short questions — about a minute. Your words help other business owners know what to expect before they reach out.</p>
+    <p class="sub rv" style="--i:2">Four short questions — about a minute. Your words help other business owners know what to expect before they reach out.</p>
   </div>
 </header>
 
@@ -171,15 +171,9 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
       </div>
 
       <div class="fgroup q4">
-        <span class="qlabel"><span class="qnum">4</span> What has the site done for your business?</span>
-        <p class="hint">More calls or orders, less time on the phone, somewhere to send people &mdash; whatever you&rsquo;ve noticed.</p>
-        <textarea name="q4_results" id="q4" placeholder="Since the site went live…"></textarea>
-      </div>
-
-      <div class="fgroup q5">
-        <span class="qlabel"><span class="qnum">5</span> What would you tell someone thinking of calling us?</span>
-        <p class="hint">A line or two, the way you&rsquo;d say it to a friend.</p>
-        <textarea name="q5_advice" id="q5" placeholder="I&rsquo;d tell them…"></textarea>
+        <span class="qlabel"><span class="qnum">4</span> What surprised you the most about doing your website with us?</span>
+        <p class="hint">The speed? How hassle-free it was? The price? Whatever caught you off guard.</p>
+        <textarea name="q4_surprise" id="q4" placeholder="What surprised me most was…"></textarea>
       </div>
 
       <div class="two">
@@ -239,7 +233,7 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
     if(!window.fetch){document.getElementById('c_submitted').value=new Date().toISOString();return;}
     e.preventDefault();
     var nm=document.getElementById('f-name').value.trim();
-    var any=['q1','q2','q3','q4','q5'].some(function(id){return document.getElementById(id).value.trim();});
+    var any=['q1','q2','q3','q4'].some(function(id){return document.getElementById(id).value.trim();});
     var rated=!!f.querySelector('.stars input:checked');
     st.classList.remove('show');
     if(!nm){st.textContent='Please add your name so we know who to thank.';st.classList.add('show');return;}
