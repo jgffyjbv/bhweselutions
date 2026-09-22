@@ -313,8 +313,10 @@ def main():
     print("  wrote guides/index.html")
 
     # sitemap covering the marketing pages plus every guide
-    urls = [("/", "weekly", "1.0"), ("/about.html", "yearly", "0.7"),
-            ("/order.html", "monthly", "0.9"), ("/guides/", "weekly", "0.9")]
+    urls = [("/", "weekly", "1.0"), ("/work.html", "weekly", "0.9"),
+            ("/about.html", "yearly", "0.7"), ("/order.html", "monthly", "0.9"),
+            ("/website-transfers.html", "monthly", "0.8"), ("/stuck-on-wix.html", "monthly", "0.8"),
+            ("/guides/", "weekly", "0.9")]
     urls += [(f"/guides/{a['slug']}.html", "monthly", "0.8") for a in articles]
     body = "\n".join(
         f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n"
