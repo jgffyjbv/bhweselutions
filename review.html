@@ -88,6 +88,15 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
 .stars label:hover{transform:scale(1.12)}
 .stars input:focus-visible + label{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
 .rate-out{font-size:.92rem;font-weight:700;color:var(--muted);margin-top:8px;min-height:1.2em}
+/* publish-as options */
+.pub{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px 18px 10px;margin-bottom:22px;background:var(--paper)}
+.pub legend{font-size:.95rem;font-weight:800;letter-spacing:-.01em;padding:0 6px}
+.pub legend b{color:var(--coral)}
+.pub__opt{display:flex;gap:11px;align-items:center;padding:9px 6px;border-radius:10px;cursor:pointer;font-weight:500;margin:0}
+.pub__opt:hover{background:#fff}
+.pub__opt input{width:18px;height:18px;flex:0 0 auto;accent-color:var(--green);margin:0}
+.pub__opt span b{font-weight:600;color:var(--ink)}
+.pub__note{font-size:.84rem;color:var(--muted);margin:6px 6px 4px}
 /* consent */
 .consent{position:relative;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:22px}
 .consent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--green)}
@@ -182,10 +191,14 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
       </div>
       <div class="fgroup"><label for="f-email">Email (so we can thank you — never published)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
 
-      <label class="consent" for="f-ok">
-        <input type="checkbox" id="f-ok" name="permission_to_publish" value="Yes — may publish on bhwebs.com" checked>
-        <span><b>You may publish this on bhwebs.com.</b> We'll show your words with your name and business — never your email or phone. Untick this if you'd rather we keep it private.</span>
-      </label>
+      <fieldset class="pub">
+        <legend>Show this review on bhwebs.com as: <b>*</b></legend>
+        <label class="pub__opt"><input type="radio" name="publish_as" value="name_and_business" required><span><b>My name and my business name</b></span></label>
+        <label class="pub__opt"><input type="radio" name="publish_as" value="name_only"><span><b>Just my name</b></span></label>
+        <label class="pub__opt"><input type="radio" name="publish_as" value="business_only"><span><b>Just my business name</b></span></label>
+        <label class="pub__opt"><input type="radio" name="publish_as" value="anonymous"><span><b>Without my name or business name</b></span></label>
+        <p class="pub__note">We never show your email or phone number.</p>
+      </fieldset>
 
       <input type="hidden" name="submitted_at" id="c_submitted">
       <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -238,6 +251,7 @@ h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height
     st.classList.remove('show');
     if(!nm){st.textContent='Please add your name so we know who to thank.';st.classList.add('show');return;}
     if(!any&&!rated){st.textContent='Please answer at least one question or leave a star rating.';st.classList.add('show');return;}
+    if(!f.querySelector('input[name="publish_as"]:checked')){st.textContent='Please choose how we may show your review.';st.classList.add('show');return;}
     var hp=f.querySelector('input[name="_honey"]');
     if(hp&&hp.value){f.style.display='none';done.classList.add('show');return;}
     document.getElementById('c_submitted').value=new Date().toISOString();
