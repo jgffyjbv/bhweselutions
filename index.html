@@ -672,6 +672,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
         <div class="fgroup"><label for="f-site">Current website</label><input id="f-site" name="existing_site" type="url" placeholder="https://"></div>
         <div class="fgroup"><label for="f-msg">What do you need?</label><textarea id="f-msg" name="message" placeholder="A website, an online store, a booking system, moving an existing site&hellip;"></textarea></div>
         <input type="hidden" name="landing_page" id="c_landing">
+        <input type="hidden" name="loaded_at" id="c_loaded">
         <input type="hidden" name="submitted_at" id="c_submitted">
         <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn--green" id="cSubmit">Start My Project
@@ -865,7 +866,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
       cstatus=document.getElementById('cStatus'),csuccess=document.getElementById('cSuccess');
   var sendIcon=' <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>';
   if(cform){
-    try{document.getElementById('c_landing').value=document.referrer||location.href;}catch(e){}
+    try{document.getElementById('c_landing').value=document.referrer||location.href;document.getElementById('c_loaded').value=new Date().toISOString();}catch(e){}
     if(/[?&]sent=1/.test(location.search)){cform.style.display='none';csuccess.classList.add('show');}
     var cErr=function(m){cstatus.textContent=m;cstatus.classList.add('show');};
     cform.addEventListener('submit',function(e){
