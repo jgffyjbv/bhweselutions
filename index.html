@@ -45,7 +45,7 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 ::selection{background:var(--cobalt);color:#fff}
 .in{max-width:var(--max);margin:0 auto;padding:0 28px}
-.sec{padding:clamp(4.5rem,9vw,7.5rem) 0;position:relative}
+.sec{padding:80px 0;padding:clamp(4.5rem,9vw,7.5rem) 0;position:relative}
 
 /* ---------- type ---------- */
 h1,h2,h3.dsp{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
@@ -134,11 +134,12 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
    copy stays on the side so the photos can be seen. Negative delays = no dark flash at start. */
 .hslides{position:relative;padding:75% 0 0;margin:0;max-width:none;border-radius:var(--r-lg);overflow:hidden;background:#0a0f16;
   box-shadow:var(--shadow-lg);isolation:isolate;transform:rotate(1.2deg)}  /* margin/max-width reset: the revealed ".in" class drags in the .in layout rule */
+.hslides.rv.in{transform:rotate(1.2deg)}
 .hslides img{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;
   animation:hslide 17.2s ease-in-out infinite;will-change:opacity,transform;backface-visibility:hidden}
 .hslides img:nth-child(1){animation-delay:-1.5s}.hslides img:nth-child(2){animation-delay:2.8s}
 .hslides img:nth-child(3){animation-delay:7.1s}.hslides img:nth-child(4){animation-delay:11.4s}
-@keyframes hslide{0%{opacity:0;transform:scale(1)}8.7%{opacity:1}25%{opacity:1}33.7%{opacity:0;transform:scale(1.11)}100%{opacity:0;transform:scale(1.11)}}
+@keyframes hslide{0%{opacity:0;z-index:2;transform:scale(1)}8.7%{opacity:1;z-index:2}25%{opacity:1;z-index:1}33.7%{opacity:1;z-index:1;transform:scale(1.11)}34%{opacity:0;z-index:0}100%{opacity:0;z-index:0;transform:scale(1.11)}}
 .hslides__cap{position:absolute;left:16px;bottom:14px;z-index:5;display:inline-flex;align-items:center;gap:8px;
   background:rgba(255,255,255,.9);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:.78rem;font-weight:800;letter-spacing:.03em;
   box-shadow:0 8px 24px -10px rgba(17,22,31,.4)}
@@ -149,7 +150,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
 /* waved two-tone bands (house doctrine): gradient + faint radial shine + wave SVG edges */
 .band{position:relative}
-.band__wave{position:absolute;left:0;right:0;width:100%;height:clamp(28px,4.5vw,64px);display:block;z-index:3;pointer-events:none}
+.band__wave{position:absolute;left:0;right:0;width:100%;height:40px;height:clamp(28px,4.5vw,64px);display:block;z-index:1;pointer-events:none}
 .band__wave--top{top:-1px}.band__wave--bot{bottom:-1px;transform:scaleY(-1)}
 .band__shine{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;
   background:radial-gradient(ellipse at 72% 18%,rgba(255,255,255,.16),transparent 52%),radial-gradient(ellipse at 12% 90%,rgba(255,255,255,.08),transparent 46%)}
@@ -194,10 +195,11 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .scard__shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
 /* ---------- the BH standard (what every build comes with) ---------- */
-.std{background:linear-gradient(160deg,#fffdf8,#f2ecdf 58%,#efe6d3);padding-top:clamp(5.5rem,10vw,9rem);padding-bottom:clamp(5.5rem,10vw,9rem)}
+.std{background:linear-gradient(160deg,#fffdf8,#f2ecdf 58%,#efe6d3);padding-top:96px;padding-top:clamp(5.5rem,10vw,9rem);padding-bottom:96px;padding-bottom:clamp(5.5rem,10vw,9rem)}
 .std__wrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(30px,5vw,72px);align-items:start}
 .std__side{position:sticky;top:112px}
-.std__side .lead{margin-top:16px}
+.std__side>.rv,.std__side>.rl{padding:0;margin-left:0;margin-right:0;max-width:none}  /* the revealed "in" class drags in the .in container rule */
+.std__side .lead{margin:16px 0 0;max-width:54ch}
 .std__side .cta-row{margin-top:26px}
 .std__list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .srow{position:relative;margin:0;max-width:none;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px 22px;
@@ -205,8 +207,8 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .srow:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
 .srow i{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:11px;color:#fff;
   font-style:normal;font-weight:800;font-size:.82rem;letter-spacing:.02em;margin-bottom:14px}
-.srow:nth-child(6n+1) i{background:var(--cobalt)}.srow:nth-child(6n+2) i{background:var(--coral)}
-.srow:nth-child(6n+3) i{background:var(--green)}.srow:nth-child(6n+4) i{background:var(--violet)}
+.srow:nth-child(6n+1) i{background:var(--cobalt)}.srow:nth-child(6n+2) i{background:var(--coral);color:var(--ink)}
+.srow:nth-child(6n+3) i{background:var(--green);color:var(--ink)}.srow:nth-child(6n+4) i{background:var(--violet)}
 .srow:nth-child(6n+5) i{background:var(--sun);color:var(--ink)}.srow:nth-child(6n+6) i{background:var(--ink)}
 .srow b{display:block;font-size:1.08rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
 .srow p{color:var(--muted);font-size:.95rem;line-height:1.5}
@@ -382,9 +384,11 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .cursor.view .cursor__label{opacity:1}
 
 /* ---------- responsive ---------- */
+@media(min-width:1025px){.hero h1{font-size:clamp(2.9rem,5.4vw,4.6rem);padding:0;margin:0;max-width:none}.hero{padding-top:clamp(96px,12vh,140px)}}
+@media(max-height:860px){.std__side{position:static}}
 @media(max-width:1024px){
   .hero__in{grid-template-columns:1fr;gap:34px}
-  .hslides{transform:none;max-width:640px;padding-top:66%}
+  .hslides,.hslides.rv.in{transform:none;max-width:640px;padding-top:66%;padding-top:min(66%,422px)}
   .std__wrap{grid-template-columns:1fr}
   .std__side{position:static}
   .scard{grid-template-columns:1fr;min-height:0;gap:28px}
@@ -479,9 +483,9 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     </div>
     <div class="hslides rv" style="--i:2" role="group" aria-label="Four of our live client websites, cross-fading">
       <img src="images/hero/kjhaven.jpg" width="1200" height="900" alt="The Haven — 37 private lots in Kiryas Joel, website by BH Web Solutions" decoding="async" fetchpriority="high">
-      <img src="images/hero/preshburg.jpg" width="1200" height="900" alt="Preshburg Gluten Free bakery website" decoding="async">
-      <img src="images/hero/fifthc.jpg" width="1200" height="900" alt="The Fifth C fine jewelry store website" decoding="async">
-      <img src="images/hero/abctoys.jpg" width="1200" height="900" alt="ABC Toys online toy store website" decoding="async">
+      <img src="images/hero/preshburg.jpg" width="1200" height="900" alt="Preshburg Gluten Free bakery website" decoding="async" fetchpriority="low">
+      <img src="images/hero/fifthc.jpg" width="1200" height="900" alt="The Fifth C fine jewelry store website" decoding="async" fetchpriority="low">
+      <img src="images/hero/abctoys.jpg" width="1200" height="900" alt="ABC Toys online toy store website" decoding="async" fetchpriority="low">
       <span class="hslides__frame" aria-hidden="true"></span>
       <span class="hslides__cap"><i></i>Live client sites</span>
     </div>
@@ -664,14 +668,14 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     </div>
     <div class="std__list">
       <div class="srow rv"><i>01</i><b>You run it yourself</b><p>Prices, photos, hours, products, the homepage pictures, promo codes &mdash; all in a plain-language admin. No calling us for a price change.</p></div>
-      <div class="srow rv" style="--i:1"><i>02</i><b>Your own photos, made to look fine</b><p>We restage the photos you already have into one consistent treatment. No stock photos, no invented products.</p></div>
+      <div class="srow rv" style="--i:1"><i>02</i><b>Your own photos, made to look fine</b><p>We restage the photos you already have into one consistent treatment. Your own photos first &mdash; never an invented product.</p></div>
       <div class="srow rv" style="--i:2"><i>03</i><b>A front page that moves</b><p>Your best photos cross-fade at the top with a slow, quiet zoom &mdash; like the one above. Photos first, words second, lots of air.</p></div>
       <div class="srow rv" style="--i:3"><i>04</i><b>Never flat, never loud</b><p>A parchment ground with faint grain, two-tone bands with a soft shine and wave edges. It reads as a fine shop, not a commercial site.</p></div>
-      <div class="srow rv" style="--i:4"><i>05</i><b>Orders that add up</b><p>Every order is re-priced on the server. Delivery zones, a free-over threshold and a shipping option you edit yourself. Order slips, delivery labels and a day sheet you print.</p></div>
+      <div class="srow rv" style="--i:4"><i>05</i><b>Orders that add up <small style="font-weight:600;color:var(--muted);font-size:.8rem">(online stores)</small></b><p>Every order is re-priced on the server. Delivery zones, a free-over threshold and a shipping option you edit yourself. Order slips, delivery labels and a day sheet you print.</p></div>
       <div class="srow rv" style="--i:5"><i>06</i><b>Works on the old iPad in the store</b><p>Built for older Safari and filtered devices: the content shows without JavaScript, and the forms still send.</p></div>
       <div class="srow rv"><i>07</i><b>Messages reach you. Spam doesn't.</b><p>Every message is saved first and emailed second, so nothing gets lost. Junk is scored and capped, and Hebrew or Yiddish is never treated as spam.</p></div>
       <div class="srow rv" style="--i:1"><i>08</i><b>Everything in your name</b><p>Your domain, your payment account, your admin password handed over in writing. If you ever leave, you leave with all of it.</p></div>
-      <div class="srow rv" style="--i:2"><i>09</i><b>A real order before launch</b><p>One paid test order end to end, the confirmation checked in your inbox, desktop and mobile on your real domain. Then it goes live.</p></div>
+      <div class="srow rv" style="--i:2"><i>09</i><b>A real test before launch</b><p>Forms sent and checked in your inbox, desktop and mobile on your real domain. On a store, one paid order end to end. Then it goes live.</p></div>
       <div class="srow rv" style="--i:3"><i>10</i><b>Support that keeps going</b><p>Send a change from your phone at bhwebs.com/support &mdash; typed, a photo, or a voice message. Usually done within 24 hours. Small edits stay free.</p></div>
     </div>
   </div>
