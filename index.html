@@ -128,6 +128,32 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .grain{position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero .in{position:relative;z-index:2}
+/* NB: the reveal script adds a class literally named "in" to .rv/.rl elements — never style ".in" descendants */
+.hero__in{display:grid;grid-template-columns:1.04fr .96fr;gap:clamp(28px,5vw,64px);align-items:center}
+/* moving hero (house doctrine): 4 live sites cross-fade with a slow Ken Burns zoom, pure CSS,
+   copy stays on the side so the photos can be seen. Negative delays = no dark flash at start. */
+.hslides{position:relative;padding:75% 0 0;margin:0;max-width:none;border-radius:var(--r-lg);overflow:hidden;background:#0a0f16;
+  box-shadow:var(--shadow-lg);isolation:isolate;transform:rotate(1.2deg)}  /* margin/max-width reset: the revealed ".in" class drags in the .in layout rule */
+.hslides img{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;width:100%;height:100%;object-fit:cover;object-position:top center;opacity:0;
+  animation:hslide 17.2s ease-in-out infinite;will-change:opacity,transform;backface-visibility:hidden}
+.hslides img:nth-child(1){animation-delay:-1.5s}.hslides img:nth-child(2){animation-delay:2.8s}
+.hslides img:nth-child(3){animation-delay:7.1s}.hslides img:nth-child(4){animation-delay:11.4s}
+@keyframes hslide{0%{opacity:0;transform:scale(1)}8.7%{opacity:1}25%{opacity:1}33.7%{opacity:0;transform:scale(1.11)}100%{opacity:0;transform:scale(1.11)}}
+.hslides__cap{position:absolute;left:16px;bottom:14px;z-index:5;display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.9);color:var(--ink);border-radius:999px;padding:7px 14px;font-size:.78rem;font-weight:800;letter-spacing:.03em;
+  box-shadow:0 8px 24px -10px rgba(17,22,31,.4)}
+.hslides__cap i{width:8px;height:8px;border-radius:50%;background:var(--coral);flex:0 0 auto}
+.hslides__frame{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;z-index:4;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);pointer-events:none}
+/* ground: flat parchment + a faint fixed grain (never a flat colour, never a loud texture) */
+.ground{position:fixed;inset:0;top:0;left:0;right:0;bottom:0;z-index:900;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
+/* waved two-tone bands (house doctrine): gradient + faint radial shine + wave SVG edges */
+.band{position:relative}
+.band__wave{position:absolute;left:0;right:0;width:100%;height:clamp(28px,4.5vw,64px);display:block;z-index:3;pointer-events:none}
+.band__wave--top{top:-1px}.band__wave--bot{bottom:-1px;transform:scaleY(-1)}
+.band__shine{position:absolute;inset:0;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at 72% 18%,rgba(255,255,255,.16),transparent 52%),radial-gradient(ellipse at 12% 90%,rgba(255,255,255,.08),transparent 46%)}
+.band>.in{position:relative;z-index:2}
 .hero__tag{display:inline-flex;align-items:center;gap:9px;background:rgba(255,255,255,.82);border:1px solid var(--line);
   border-radius:999px;padding:8px 17px;font-size:.8rem;font-weight:700;letter-spacing:.05em;color:var(--muted);
   box-shadow:0 6px 22px -10px rgba(17,22,31,.2);margin-bottom:26px}
@@ -167,6 +193,29 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .scard--sun .scard__shot{border-color:rgba(17,22,31,.16)}
 .scard__shot img{width:100%;height:100%;object-fit:cover;object-position:top center}
 
+/* ---------- the BH standard (what every build comes with) ---------- */
+.std{background:linear-gradient(160deg,#fffdf8,#f2ecdf 58%,#efe6d3);padding-top:clamp(5.5rem,10vw,9rem);padding-bottom:clamp(5.5rem,10vw,9rem)}
+.std__wrap{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(30px,5vw,72px);align-items:start}
+.std__side{position:sticky;top:112px}
+.std__side .lead{margin-top:16px}
+.std__side .cta-row{margin-top:26px}
+.std__list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.srow{position:relative;margin:0;max-width:none;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px 22px 22px;
+  transition:transform .4s var(--exp),box-shadow .4s var(--exp),border-color .4s var(--exp)}
+.srow:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:transparent}
+.srow i{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:11px;color:#fff;
+  font-style:normal;font-weight:800;font-size:.82rem;letter-spacing:.02em;margin-bottom:14px}
+.srow:nth-child(6n+1) i{background:var(--cobalt)}.srow:nth-child(6n+2) i{background:var(--coral)}
+.srow:nth-child(6n+3) i{background:var(--green)}.srow:nth-child(6n+4) i{background:var(--violet)}
+.srow:nth-child(6n+5) i{background:var(--sun);color:var(--ink)}.srow:nth-child(6n+6) i{background:var(--ink)}
+.srow b{display:block;font-size:1.08rem;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.srow p{color:var(--muted);font-size:.95rem;line-height:1.5}
+.vows{margin:30px 0 0;padding:0;max-width:none;display:flex;flex-wrap:wrap;gap:10px}
+.vow{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:#fff;border-radius:999px;padding:9px 16px;
+  font-size:.86rem;font-weight:700;letter-spacing:-.01em}
+.vow svg{color:var(--mint);flex:0 0 auto}
+.vows__label{width:100%;font-size:.72rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+
 /* ---------- included pills ---------- */
 .inc__row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:34px}
 .ipill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:999px;
@@ -181,7 +230,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .ipill--violet i{background:var(--violet)}.ipill--violet:hover{border-color:var(--violet)}
 
 /* ---------- PORTFOLIO MARQUEE ---------- */
-.work{background:var(--paper2);overflow:hidden}
+.work{background:linear-gradient(170deg,#f6f1e6,#f2ecdf 40%,#ebe3cf);overflow:hidden}
 .work .head{position:relative;z-index:3}
 .strip{margin-top:52px;position:relative;
   -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);
@@ -256,7 +305,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .rwho::before{content:"";width:22px;height:2px;background:var(--green);border-radius:2px;flex:0 0 auto}
 
 /* ---------- statement ---------- */
-.statement{background:var(--ink);color:#fff;text-align:center;overflow:hidden}
+.statement{background:linear-gradient(135deg,#0c1120,#161e33 48%,#241d4a);color:#fff;text-align:center;overflow:hidden}
 .statement .g1{position:absolute;top:-150px;left:-110px;width:520px;height:520px;border-radius:50%;filter:blur(84px);
   background:radial-gradient(circle,rgba(43,78,255,.46),transparent 66%)}
 .statement .g2{position:absolute;bottom:-150px;right:-110px;width:520px;height:520px;border-radius:50%;filter:blur(84px);
@@ -334,6 +383,10 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 
 /* ---------- responsive ---------- */
 @media(max-width:1024px){
+  .hero__in{grid-template-columns:1fr;gap:34px}
+  .hslides{transform:none;max-width:640px;padding-top:66%}
+  .std__wrap{grid-template-columns:1fr}
+  .std__side{position:static}
   .scard{grid-template-columns:1fr;min-height:0;gap:28px}
   .scard__shot{order:-1;max-height:280px;aspect-ratio:16/9}
   .contact__wrap{grid-template-columns:1fr;gap:40px}
@@ -347,6 +400,8 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 }
 @media(max-width:680px){
   .sec{padding:62px 0}
+  .std__list{grid-template-columns:1fr}
+  .ground{opacity:.035}
   .pgrid,.steps,.rgrid{grid-template-columns:1fr}
   .wcard{width:268px}
   .hero .cta-row .btn,.statement .cta-row .btn{width:100%}
@@ -360,12 +415,15 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   .udl svg path{stroke-dashoffset:0!important}
   .cursor{display:none}
   .scard{transform:none!important;filter:none!important}
+  .hslides img{animation:none!important;opacity:0}
+  .hslides img:first-child{opacity:1}
 }
 @media(hover:none),(pointer:coarse){.cursor{display:none}}
 :focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
 </style>
 </head>
 <body id="top">
+<span class="ground" aria-hidden="true"></span>
 
 <nav class="nav" id="nav">
   <a href="#top" class="brand" aria-label="BH Web Solutions home">
@@ -380,7 +438,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <li><a href="about.html">About</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="order.html" class="btn btn--green btn--sm mag">Start a Project</a>
+  <a href="order.html" class="btn btn--green btn--sm mag">Start a project</a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile" id="mobile">
@@ -391,7 +449,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   <a href="about.html">About</a>
   <a href="guides/">Guides</a>
   <a href="#contact">Contact</a>
-  <a href="order.html" class="m-cta btn btn--green">Start a Project</a>
+  <a href="order.html" class="m-cta btn btn--green">Start a project</a>
 </div>
 
 <header class="hero">
@@ -399,8 +457,9 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   <span class="blob blob--2" aria-hidden="true"></span>
   <span class="blob blob--3" aria-hidden="true"></span>
   <span class="grain" aria-hidden="true"></span>
-  <div class="in">
-    <span class="hero__tag rv"><i></i>Websites &middot; Online Stores &middot; Web Apps</span>
+  <div class="in hero__in">
+    <div class="hero__copy">
+    <span class="hero__tag rv"><i></i>Websites &middot; Online stores &middot; Web apps</span>
     <h1 class="rl">
       <span class="ln"><i><span class="gt">Beautiful</span> websites.</i></span>
       <span class="ln"><i>Fair prices.</i></span>
@@ -408,14 +467,23 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     </h1>
     <p class="sub rv" style="--i:2">Custom websites, stores and web apps &mdash; built around your business, with direct contact from start to finish.</p>
     <div class="cta-row rv" style="--i:3">
-      <a href="order.html" class="btn btn--green mag">Start a Project
+      <a href="order.html" class="btn btn--green mag">Start a project
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="#work" class="btn btn--outline">See Our Work</a>
+      <a href="#work" class="btn btn--outline">See our work</a>
     </div>
     <div class="hero__meta rv" style="--i:4">
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Free logo</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Free small edits</span>
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> See your design before final payment</span>
+    </div>
+    </div>
+    <div class="hslides rv" style="--i:2" role="group" aria-label="Four of our live client websites, cross-fading">
+      <img src="images/hero/kjhaven.jpg" width="1200" height="900" alt="The Haven — 37 private lots in Kiryas Joel, website by BH Web Solutions" decoding="async" fetchpriority="high">
+      <img src="images/hero/preshburg.jpg" width="1200" height="900" alt="Preshburg Gluten Free bakery website" decoding="async">
+      <img src="images/hero/fifthc.jpg" width="1200" height="900" alt="The Fifth C fine jewelry store website" decoding="async">
+      <img src="images/hero/abctoys.jpg" width="1200" height="900" alt="ABC Toys online toy store website" decoding="async">
+      <span class="hslides__frame" aria-hidden="true"></span>
+      <span class="hslides__cap"><i></i>Live client sites</span>
     </div>
   </div>
 </header>
@@ -487,11 +555,14 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
       <span class="ipill ipill--coral rv" style="--i:2"><i></i>SEO-ready</span>
       <span class="ipill ipill--sun rv" style="--i:3"><i></i>English &amp; Yiddish</span>
       <span class="ipill ipill--violet rv" style="--i:4"><i></i>Design preview before final payment</span>
+      <span class="ipill ipill--cobalt rv" style="--i:5"><i></i>An admin you run yourself</span>
+      <span class="ipill ipill--coral rv" style="--i:6"><i></i>Works on old iPads &amp; filtered devices</span>
     </div>
   </div>
 </section>
 
-<section class="work sec" id="work">
+<section class="work sec band" id="work">
+  <svg class="band__wave band__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,22 C1180,58 900,4 640,30 C420,52 200,48 0,18 Z" fill="#faf7f0"/></svg>
   <div class="in">
     <div class="head">
       <span class="eyebrow rv"><i style="background:var(--coral)"></i>Recent work</span>
@@ -567,8 +638,44 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   </div>
   <div class="in">
     <p class="strip__note rv">Swipe or drag sideways to browse &middot; click any site to open it</p>
-    <div class="work__cta rv"><a href="work.html" class="btn btn--outline">View All Work</a></div>
+    <div class="work__cta rv"><a href="work.html" class="btn btn--outline">View all work</a></div>
   </div>
+</section>
+
+<section class="std sec band" id="standard">
+  <svg class="band__wave band__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,20 C1200,56 980,2 720,28 C480,52 240,46 0,16 Z" fill="#ebe3cf"/></svg>
+  <span class="band__shine" aria-hidden="true"></span>
+  <div class="in std__wrap">
+    <div class="std__side">
+      <span class="eyebrow rv"><i style="background:var(--violet)"></i>The BH standard</span>
+      <h2 class="rl"><span class="ln"><i>Every site</i></span><span class="ln"><i>comes with</i></span><span class="ln"><i><span class="gt">all of this.</span></i></span></h2>
+      <p class="lead rv" style="--i:1">Dozens of builds for heimish businesses taught us what a site needs on day one. So it's included every time &mdash; not sold as extras.</p>
+      <div class="cta-row rv" style="--i:2">
+        <a href="order.html" class="btn btn--green mag">Start a project
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="vows rv" style="--i:3">
+        <span class="vows__label">Our promises</span>
+        <span class="vow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>Never a photo we haven't looked at</span>
+        <span class="vow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>Never a hechsher we made up</span>
+        <span class="vow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>Your approved photos stay yours</span>
+        <span class="vow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>Running costs told up front</span>
+      </div>
+    </div>
+    <div class="std__list">
+      <div class="srow rv"><i>01</i><b>You run it yourself</b><p>Prices, photos, hours, products, the homepage pictures, promo codes &mdash; all in a plain-language admin. No calling us for a price change.</p></div>
+      <div class="srow rv" style="--i:1"><i>02</i><b>Your own photos, made to look fine</b><p>We restage the photos you already have into one consistent treatment. No stock photos, no invented products.</p></div>
+      <div class="srow rv" style="--i:2"><i>03</i><b>A front page that moves</b><p>Your best photos cross-fade at the top with a slow, quiet zoom &mdash; like the one above. Photos first, words second, lots of air.</p></div>
+      <div class="srow rv" style="--i:3"><i>04</i><b>Never flat, never loud</b><p>A parchment ground with faint grain, two-tone bands with a soft shine and wave edges. It reads as a fine shop, not a commercial site.</p></div>
+      <div class="srow rv" style="--i:4"><i>05</i><b>Orders that add up</b><p>Every order is re-priced on the server. Delivery zones, a free-over threshold and a shipping option you edit yourself. Order slips, delivery labels and a day sheet you print.</p></div>
+      <div class="srow rv" style="--i:5"><i>06</i><b>Works on the old iPad in the store</b><p>Built for older Safari and filtered devices: the content shows without JavaScript, and the forms still send.</p></div>
+      <div class="srow rv"><i>07</i><b>Messages reach you. Spam doesn't.</b><p>Every message is saved first and emailed second, so nothing gets lost. Junk is scored and capped, and Hebrew or Yiddish is never treated as spam.</p></div>
+      <div class="srow rv" style="--i:1"><i>08</i><b>Everything in your name</b><p>Your domain, your payment account, your admin password handed over in writing. If you ever leave, you leave with all of it.</p></div>
+      <div class="srow rv" style="--i:2"><i>09</i><b>A real order before launch</b><p>One paid test order end to end, the confirmation checked in your inbox, desktop and mobile on your real domain. Then it goes live.</p></div>
+      <div class="srow rv" style="--i:3"><i>10</i><b>Support that keeps going</b><p>Send a change from your phone at bhwebs.com/support &mdash; typed, a photo, or a voice message. Usually done within 24 hours. Small edits stay free.</p></div>
+    </div>
+  </div>
+  <svg class="band__wave band__wave--bot" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,20 C1200,56 980,2 720,28 C480,52 240,46 0,16 Z" fill="#faf7f0"/></svg>
 </section>
 
 <section class="reviews sec" id="reviews" hidden>
@@ -622,7 +729,9 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   </div>
 </section>
 
-<section class="statement sec">
+<section class="statement sec band">
+  <svg class="band__wave band__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#f2ecdf"/></svg>
+  <span class="band__shine" aria-hidden="true"></span>
   <span class="g1" aria-hidden="true"></span>
   <span class="g2" aria-hidden="true"></span>
   <span class="grain" aria-hidden="true"></span>
@@ -630,11 +739,12 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <h2 class="rl"><span class="ln"><i>Ready for a</i></span><span class="ln"><i><span class="gt">better website?</span></i></span></h2>
     <p class="lead rv" style="--i:1;text-align:center">Tell us what you need. We'll take it from there.</p>
     <div class="cta-row rv" style="--i:2">
-      <a href="order.html" class="btn btn--green mag">Start a Project
+      <a href="order.html" class="btn btn--green mag">Start a project
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="#contact" class="btn btn--ghost">Or just ask a question</a>
     </div>
   </div>
+  <svg class="band__wave band__wave--bot" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#f2ecdf"/></svg>
 </section>
 
 <section class="contact sec" id="contact">
@@ -671,7 +781,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
         <input type="hidden" name="loaded_at" id="c_loaded">
         <input type="hidden" name="submitted_at" id="c_submitted">
         <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button type="submit" class="btn btn--green" id="cSubmit">Start My Project
+        <button type="submit" class="btn btn--green" id="cSubmit">Start my project
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg></button>
         <p class="cnote">We'll reply within hours &mdash; usually much sooner.</p>
         <div class="cstatus" id="cStatus" role="status" aria-live="polite"></div>
@@ -694,6 +804,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <div class="foot__links">
       <a href="#services">Services</a>
       <a href="work.html">Work</a>
+      <a href="#standard">The BH standard</a>
       <a href="#reviews">Reviews</a>
       <a href="about.html">About</a>
       <a href="guides/">Guides</a>
@@ -883,7 +994,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
           csuccess.scrollIntoView({behavior:'smooth',block:'center'});
         })
         .catch(function(){
-          cbtn.disabled=false;cbtn.innerHTML='Start My Project'+sendIcon;
+          cbtn.disabled=false;cbtn.innerHTML='Start my project'+sendIcon;
           cErr('Something went wrong sending your message. Please try again, or call 845-587-0531.');
         });
     });

@@ -250,7 +250,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .rwho::before{content:"";width:22px;height:2px;background:var(--green);border-radius:2px;flex:0 0 auto}
 
 /* ---------- statement ---------- */
-.statement{background:var(--ink);color:#fff;text-align:center;overflow:hidden}
+.statement{background:linear-gradient(135deg,#0c1120,#161e33 48%,#241d4a);color:#fff;text-align:center;overflow:hidden}
 .statement .g1{position:absolute;top:-150px;left:-110px;width:520px;height:520px;border-radius:50%;filter:blur(84px);
   background:radial-gradient(circle,rgba(43,78,255,.46),transparent 66%)}
 .statement .g2{position:absolute;bottom:-150px;right:-110px;width:520px;height:520px;border-radius:50%;filter:blur(84px);
@@ -326,6 +326,18 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .cursor__label{font-size:.68rem;font-weight:800;letter-spacing:.1em;color:var(--ink);opacity:0;transition:.3s var(--exp)}
 .cursor.view .cursor__label{opacity:1}
 
+
+/* waved two-tone band (house doctrine) */
+.band{position:relative}
+.band__wave{position:absolute;left:0;right:0;width:100%;height:clamp(28px,4.5vw,64px);display:block;z-index:3;pointer-events:none}
+.band__wave--top{top:-1px}.band__wave--bot{bottom:-1px;transform:scaleY(-1)}
+.band__shine{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at 72% 18%,rgba(255,255,255,.16),transparent 52%),radial-gradient(ellipse at 12% 90%,rgba(255,255,255,.08),transparent 46%)}
+.band>.in{position:relative;z-index:2}
+/* ground: flat parchment + faint fixed grain */
+.ground{position:fixed;top:0;left:0;right:0;bottom:0;z-index:900;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
+
 /* ---------- responsive ---------- */
 @media(max-width:1024px){
   .scard{grid-template-columns:1fr;min-height:0;gap:28px}
@@ -366,6 +378,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 </style>
 </head>
 <body id="top">
+<span class="ground" aria-hidden="true"></span>
 
 <nav class="nav" id="nav">
   <a href="index.html" class="brand" aria-label="BH Web Solutions home">
@@ -379,7 +392,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <li><a href="about.html">About</a></li>
     <li><a href="index.html#contact">Contact</a></li>
   </ul>
-  <a href="order.html" class="btn btn--green btn--sm mag">Start a Project</a>
+  <a href="order.html" class="btn btn--green btn--sm mag">Start a project</a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile" id="mobile">
@@ -389,7 +402,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   <a href="about.html">About</a>
   <a href="guides/">Guides</a>
   <a href="index.html#contact">Contact</a>
-  <a href="order.html" class="m-cta btn btn--green">Start a Project</a>
+  <a href="order.html" class="m-cta btn btn--green">Start a project</a>
 </div>
 
 
@@ -474,7 +487,9 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   </div>
 </section>
 
-<section class="statement sec">
+<section class="statement sec band">
+  <svg class="band__wave band__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#faf7f0"/></svg>
+  <span class="band__shine" aria-hidden="true"></span>
   <span class="g1" aria-hidden="true"></span>
   <span class="g2" aria-hidden="true"></span>
   <span class="grain" aria-hidden="true"></span>
@@ -482,11 +497,12 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
     <h2 class="rl"><span class="ln"><i>Want yours on</i></span><span class="ln"><i><span class="gt">this page?</span></i></span></h2>
     <p class="lead rv" style="--i:1;text-align:center">Tell us what you need. We'll take it from there.</p>
     <div class="cta-row rv" style="--i:2">
-      <a href="order.html" class="btn btn--green mag">Start a Project
+      <a href="order.html" class="btn btn--green mag">Start a project
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       <a href="index.html#contact" class="btn btn--ghost">Ask a question</a>
     </div>
   </div>
+  <svg class="band__wave band__wave--bot" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#11161f"/></svg>
 </section>
 
 <footer class="foot">
