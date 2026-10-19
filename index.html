@@ -297,7 +297,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
 .rgrid[data-n="1"]{grid-template-columns:minmax(0,600px);justify-content:center}
 .rgrid[data-n="2"]{grid-template-columns:repeat(2,minmax(0,480px));justify-content:center}
-.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;display:flex;flex-direction:column}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 28px;display:flex;flex-direction:column;margin:0;max-width:none} /* cards carry the reveal class "in" (= layout container: margin auto) - reset it so short reviews fill their column */
 .rstars{display:flex;gap:3px;color:var(--sun);margin-bottom:14px}
 .rstars svg{width:18px;height:18px}
 .rquote{font-family:var(--serif);font-size:1.1rem;line-height:1.45;letter-spacing:-.01em;flex:1}
