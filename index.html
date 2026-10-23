@@ -442,6 +442,31 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .faqlist p a{color:var(--cobalt);font-weight:700}
 @media(max-width:1024px){.build4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.stp{padding:26px 24px}.stp i{font-size:2.6rem;margin-bottom:8px}.build4{grid-template-columns:1fr}.how .cta-row .btn{width:100%}.inc__title{font-size:1.4rem;margin-top:48px}}
+
+/* ---------- hero = the client-site slides, big on the right, fading out before the text (Oct 23 2026) ---------- */
+.hero{min-height:min(880px,94vh);display:flex;align-items:center}
+.hero>.in{width:100%}
+.hero__in{grid-template-columns:minmax(0,560px);gap:0}
+.hslides--bg{position:absolute;top:0;right:0;bottom:0;left:40%;padding:0;border-radius:0;transform:none!important;z-index:0;box-shadow:none;max-width:none;background:var(--paper);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 34%);mask-image:linear-gradient(90deg,transparent 0%,#000 34%)}
+.hslides--bg img{object-position:left top}
+.hslides--bg .hslides__cap{left:auto;right:28px;bottom:26px}
+.hero__scrim{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;pointer-events:none;background:
+  linear-gradient(180deg,rgba(250,247,240,.6) 0%,rgba(250,247,240,0) 16%,rgba(250,247,240,0) 84%,rgba(250,247,240,1) 100%),
+  linear-gradient(90deg,rgba(250,247,240,1) 0%,rgba(250,247,240,.92) 44%,rgba(250,247,240,0) 60%)}
+@media(min-width:1025px) and (max-width:1280px){.hslides--bg{left:46%}.hero__in{grid-template-columns:minmax(0,500px)}}
+.hero .blob{z-index:1;opacity:.35}
+@media(max-width:1024px){
+  .hero{min-height:0;display:flex;flex-direction:column;align-items:stretch}
+  .hero>.in{order:1}
+  .hero__in{grid-template-columns:1fr}
+  .hslides--bg,.hslides--bg.rv.in{order:2;position:relative;top:auto;left:auto;right:auto;bottom:auto;height:62vw;max-height:460px;margin:34px 28px 0;padding:0;border-radius:var(--r-lg);overflow:hidden;
+    -webkit-mask-image:none;mask-image:none;box-shadow:0 30px 60px -30px rgba(17,22,31,.45)}
+  .hslides--bg img{object-position:center top}
+  .hero__scrim{display:none}
+  .hslides--bg .hslides__cap{right:auto;left:14px;bottom:12px}
+}
+@media(max-width:680px){.hslides--bg,.hslides--bg.rv.in{margin:28px 16px 0}}
 </style>
 </head>
 <body id="top">
@@ -477,6 +502,14 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
   <span class="blob blob--1" aria-hidden="true"></span>
   <span class="blob blob--2" aria-hidden="true"></span>
   <span class="blob blob--3" aria-hidden="true"></span>
+  <div class="hslides hslides--bg" role="group" aria-label="Four of our live client websites, cross-fading">
+      <img src="images/hero/kjhaven.jpg" width="1200" height="900" alt="The Haven — 37 private lots in Kiryas Joel, website by BH Web Solutions" decoding="async" fetchpriority="high">
+      <img src="images/hero/preshburg.jpg" width="1200" height="900" alt="Preshburg Gluten Free bakery website" decoding="async" fetchpriority="low">
+      <img src="images/hero/fifthc.jpg" width="1200" height="900" alt="The Fifth C fine jewelry store website" decoding="async" fetchpriority="low">
+      <img src="images/hero/abctoys.jpg" width="1200" height="900" alt="ABC Toys online toy store website" decoding="async" fetchpriority="low">
+            <span class="hslides__cap"><i></i>Live client sites</span>
+    </div>
+  <span class="hero__scrim" aria-hidden="true"></span>
   <span class="grain" aria-hidden="true"></span>
   <div class="in hero__in">
     <div class="hero__copy">
@@ -498,14 +531,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
       <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Pay the balance after you see the design</span>
     </div>
     </div>
-    <div class="hslides rv" style="--i:2" role="group" aria-label="Four of our live client websites, cross-fading">
-      <img src="images/hero/kjhaven.jpg" width="1200" height="900" alt="The Haven — 37 private lots in Kiryas Joel, website by BH Web Solutions" decoding="async" fetchpriority="high">
-      <img src="images/hero/preshburg.jpg" width="1200" height="900" alt="Preshburg Gluten Free bakery website" decoding="async" fetchpriority="low">
-      <img src="images/hero/fifthc.jpg" width="1200" height="900" alt="The Fifth C fine jewelry store website" decoding="async" fetchpriority="low">
-      <img src="images/hero/abctoys.jpg" width="1200" height="900" alt="ABC Toys online toy store website" decoding="async" fetchpriority="low">
-      <span class="hslides__frame" aria-hidden="true"></span>
-      <span class="hslides__cap"><i></i>Live client sites</span>
-    </div>
+
   </div>
 </header>
 
