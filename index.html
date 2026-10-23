@@ -443,32 +443,42 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 @media(max-width:1024px){.build4{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:680px){.stp{padding:26px 24px}.stp i{font-size:2.6rem;margin-bottom:8px}.build4{grid-template-columns:1fr}.how .cta-row .btn{width:100%}.inc__title{font-size:1.4rem;margin-top:48px}}
 
-/* ---------- hero = the client-site slides, big on the right, fading out before the text (Oct 23 2026) ---------- */
-.hero{min-height:min(880px,94vh);display:flex;align-items:center}
+/* ---------- hero = the client-site slides across the WHOLE hero; the words sit on a frosted panel (Oct 23 2026) ---------- */
+.hero{min-height:min(860px,92vh);display:flex;align-items:center}
 .hero>.in{width:100%}
-.hero__in{grid-template-columns:minmax(0,560px);gap:0}
-.hslides--bg{position:absolute;top:0;right:0;bottom:0;left:40%;padding:0;border-radius:0;transform:none!important;z-index:0;box-shadow:none;max-width:none;background:var(--paper);
-  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 34%);mask-image:linear-gradient(90deg,transparent 0%,#000 34%)}
-.hslides--bg img{object-position:left top}
-.hslides--bg .hslides__cap{left:auto;right:28px;bottom:26px}
+.hero__in{grid-template-columns:minmax(0,600px);gap:0}
+.hslides--bg{position:absolute;top:0;right:0;bottom:0;left:0;padding:0;border-radius:0;transform:none!important;z-index:0;box-shadow:none;max-width:none;background:#0a0f16}
+.hslides--bg img{object-position:center top}
+.hslides--bg .hslides__cap{left:auto;right:24px;bottom:24px}
 .hero__scrim{position:absolute;top:0;left:0;right:0;bottom:0;z-index:1;pointer-events:none;background:
-  linear-gradient(180deg,rgba(250,247,240,.6) 0%,rgba(250,247,240,0) 16%,rgba(250,247,240,0) 84%,rgba(250,247,240,1) 100%),
-  linear-gradient(90deg,rgba(250,247,240,1) 0%,rgba(250,247,240,.92) 44%,rgba(250,247,240,0) 60%)}
-@media(min-width:1025px) and (max-width:1280px){.hslides--bg{left:46%}.hero__in{grid-template-columns:minmax(0,500px)}}
-.hero .blob{z-index:1;opacity:.35}
-@media(max-width:1024px){
-  .hero{min-height:0;display:flex;flex-direction:column;align-items:stretch}
-  .hero>.in{order:1}
-  .hero__in{grid-template-columns:1fr}
-  .hslides--bg,.hslides--bg.rv.in{order:2;position:relative;top:auto;left:auto;right:auto;bottom:auto;height:62vw;max-height:460px;margin:34px 28px 0;padding:0;border-radius:var(--r-lg);overflow:hidden;
-    -webkit-mask-image:none;mask-image:none;box-shadow:0 30px 60px -30px rgba(17,22,31,.45)}
-  .hslides--bg img{object-position:center top}
-  .hero__scrim{display:none}
-  .hslides--bg .hslides__cap{right:auto;left:14px;bottom:12px}
+  linear-gradient(180deg,rgba(10,15,22,.45) 0%,rgba(10,15,22,.12) 22%,rgba(10,15,22,.12) 80%,rgba(250,247,240,.9) 100%)}
+.hero .blob{display:none}
+.hero__copy{background:rgba(250,247,240,.95);border:1px solid rgba(255,255,255,.7);border-radius:28px;padding:40px 44px 36px;box-shadow:0 40px 90px -30px rgba(10,15,22,.6)}
+@supports ((-webkit-backdrop-filter:blur(2px)) or (backdrop-filter:blur(2px))){
+  .hero__copy{background:rgba(250,247,240,.84);-webkit-backdrop-filter:blur(18px) saturate(1.25);backdrop-filter:blur(18px) saturate(1.25)}
 }
-@media(max-width:680px){.hslides--bg,.hslides--bg.rv.in{margin:28px 16px 0}}
-.foot__areas{max-width:var(--max);margin:26px auto 0;padding:18px 28px 0;border-top:1px solid rgba(255,255,255,.1);font-size:.9rem;line-height:1.9;color:rgba(255,255,255,.62)}
-.foot__areas b{color:rgba(255,255,255,.85);margin-right:6px}.foot__areas a{white-space:nowrap}.foot__areas a:hover{color:#fff}
+.hero__copy .hero__tag{margin-bottom:18px}
+.hero__copy .sub{margin:22px 0 26px}
+.hero__copy .hero__meta{margin-top:20px}
+@media(max-width:1024px){
+  .hero{min-height:0;display:block;padding-top:110px;padding-bottom:56px}
+  .hero__in{grid-template-columns:1fr}
+  .hslides--bg,.hslides--bg.rv.in{position:absolute;top:0;left:0;right:0;bottom:0;height:auto;max-height:none;margin:0;border-radius:0;box-shadow:none}
+  .hslides--bg .hslides__cap{right:16px;left:auto;bottom:14px}
+}
+@media(max-width:680px){
+  .hero{padding-top:calc(52vw + 84px);padding-bottom:40px}
+  .hero>.in{padding-left:12px;padding-right:12px}
+  .hero__copy{padding:22px 20px 20px;border-radius:22px}
+  .hero__copy .hero__tag{display:none}
+  .hero h1{font-size:2.2rem;line-height:1.02}
+  .hero__copy .sub{margin:14px 0 18px;font-size:1rem}
+  .hero__copy .hero__meta{margin-top:12px}
+}
+.wtopics{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:22px}
+.wtopics b{font-weight:800;margin-right:4px}
+.wtopics a{display:inline-flex;padding:9px 16px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:.92rem;transition:border-color .2s,transform .2s}
+.wtopics a:hover{border-color:var(--coral);transform:translateY(-2px)}
 </style>
 </head>
 <body id="top">
@@ -560,6 +570,7 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
       <span class="eyebrow rv"><i style="background:var(--coral)"></i>Recent work</span>
       <h2 class="rl"><span class="ln"><i>Real businesses.</i></span><span class="ln"><i>Real websites.</i></span></h2>
       <p class="lead rv" style="--i:1">A few of the projects we've designed and built &mdash; every screenshot is the live site.</p>
+      <nav class="wtopics rv" style="--i:2" aria-label="Our work by topic"><b>See work for:</b><a href="work.html#food">Food &amp; groceries</a><a href="work.html#stores">Stores &amp; catalogs</a><a href="work.html#services">Services, rentals &amp; real estate</a><a href="work.html#professionals">Professionals &amp; health</a><a href="work.html#community">Community &amp; web apps</a></nav>
     </div>
   </div>
   <div class="strip" id="strip">

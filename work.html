@@ -369,6 +369,17 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 .wgrid .wcard{width:auto}
 @media(max-width:1024px){.wgrid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.wgrid{grid-template-columns:1fr}}
+
+/* work page by topic (Oct 23 2026) */
+.topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.topics a{display:inline-flex;align-items:center;padding:10px 18px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;font-size:.95rem;transition:border-color .2s,transform .2s}
+.topics a:hover{border-color:var(--cobalt);transform:translateY(-2px)}
+.topic{margin-top:64px;scroll-margin-top:96px}
+.topic__head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:1.5px solid var(--line);padding-bottom:12px}
+.topic__head h2{font-size:clamp(1.7rem,3.2vw,2.5rem)}
+.topic__head span{font-weight:700;color:var(--muted);white-space:nowrap}
+.topic__blurb{color:var(--muted);margin-top:12px}
+.topic .wgrid{margin-top:26px}
 </style>
 </head>
 <body id="top">
@@ -416,32 +427,106 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
 
 <section class="sec" style="padding-top:1.5rem">
   <div class="in">
-    <div class="wgrid">
-      <a class="wcard" href="https://yossikleintherapy.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Yosef Klein, LMHC website" src="images/work/yosefklein.jpg"></div>
-        <div class="wmeta"><div class="wname">Yosef Klein, LMHC</div><div class="wpills"><span>Therapy practice</span><span>Yiddish &amp; English</span></div></div>
+    <nav class="topics" aria-label="Topics"><a href="#food">Food &amp; groceries</a><a href="#stores">Stores &amp; catalogs</a><a href="#services">Services, rentals &amp; real estate</a><a href="#professionals">Professionals &amp; health</a><a href="#community">Community &amp; web apps</a></nav>
+    <div class="topic" id="food">
+      <div class="topic__head"><h2>Food &amp; groceries</h2><span>5 sites</span></div>
+      <p class="topic__blurb">Bakeries, fish markets, groceries and meal programs that take orders online.</p>
+      <div class="wgrid">
+      <a class="wcard" href="https://preshburgglutenfree.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Preshburg Gluten Free website" src="images/work/preshburg.jpg"></div>
+        <div class="wmeta"><div class="wname">Preshburg Gluten Free</div><div class="wpills"><span>Online store</span><span>Stripe checkout</span></div></div>
       </a>
-      <a class="wcard" href="https://sanz1.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sanz Records website" src="images/work/sanz1.jpg"></div>
-        <div class="wmeta"><div class="wname">Sanz Records</div><div class="wpills"><span>Genealogy records</span><span>Paid downloads</span></div></div>
+      <a class="wcard" href="https://bakerspantryny.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Baker's Pantry website" src="images/work/bakers.jpg"></div>
+        <div class="wmeta"><div class="wname">The Baker's Pantry</div><div class="wpills"><span>Bakery</span><span>Online orders</span></div></div>
+      </a>
+      <a class="wcard" href="https://lindenseablue.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Linden SeaBlue website" src="images/work/lindenseablue.jpg"></div>
+        <div class="wmeta"><div class="wname">Linden SeaBlue</div><div class="wpills"><span>Kosher grocery</span><span>Delivery</span></div></div>
+      </a>
+      <a class="wcard" href="https://seabluefish.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sea Blue Fish website" src="images/work/seabluefish.jpg"></div>
+        <div class="wmeta"><div class="wname">Sea Blue Fish</div><div class="wpills"><span>Fish market</span><span>Online orders</span></div></div>
+      </a>
+      <a class="wcard" href="https://ccmeals.net" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="MealFlow website" src="images/work/mealflow.jpg"></div>
+        <div class="wmeta"><div class="wname">MealFlow</div><div class="wpills"><span>Web app</span><span>4 role portals</span></div></div>
+      </a>
+      </div>
+    </div>
+    <div class="topic" id="stores">
+      <div class="topic__head"><h2>Stores &amp; catalogs</h2><span>7 sites</span></div>
+      <p class="topic__blurb">Online stores and catalogs: toys, vitamins, gifts, flowers, jewelry and more.</p>
+      <div class="wgrid">
+      <a class="wcard" href="https://abctoysusa.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="ABC Toys website" src="images/work/abctoys.jpg"></div>
+        <div class="wmeta"><div class="wname">ABC Toys</div><div class="wpills"><span>Toy store</span><span>Online orders</span></div></div>
+      </a>
+      <a class="wcard" href="https://sproutvitamins.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sprout Vitamins website" src="images/work/sprout.jpg"></div>
+        <div class="wmeta"><div class="wname">Sprout Vitamins</div><div class="wpills"><span>E-commerce</span><span>Fast search</span></div></div>
+      </a>
+      <a class="wcard" href="https://trademarkgreetings.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Trademark Greetings website" src="images/work/trademark.jpg"></div>
+        <div class="wmeta"><div class="wname">Trademark Greetings</div><div class="wpills"><span>Online store</span><span>Wholesale portal</span></div></div>
+      </a>
+      <a class="wcard" href="https://chaimhersh.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Samemunim Aromatics website" src="images/work/samemunim.jpg"></div>
+        <div class="wmeta"><div class="wname">Samemunim Aromatics</div><div class="wpills"><span>Besamim gifts</span><span>Custom orders</span></div></div>
+      </a>
+      <a class="wcard" href="https://bleemin.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Bleemin website" src="images/work/bleemin.jpg"></div>
+        <div class="wmeta"><div class="wname">Bleemin</div><div class="wpills"><span>Simcha florals</span><span>Online orders</span></div></div>
+      </a>
+      <a class="wcard" href="https://shopthefifthc.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Fifth C website" src="images/work/fifthc.jpg"></div>
+        <div class="wmeta"><div class="wname">The Fifth C</div><div class="wpills"><span>Jewelry catalog</span><span>AI designer</span></div></div>
+      </a>
+      <a class="wcard" href="https://kiyorusa.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="KIYOR website" src="images/work/kiyor.jpg"></div>
+        <div class="wmeta"><div class="wname">KIYOR</div><div class="wpills"><span>Vanity catalog</span><span>Stock sync</span></div></div>
+      </a>
+      </div>
+    </div>
+    <div class="topic" id="services">
+      <div class="topic__head"><h2>Services, rentals &amp; real estate</h2><span>7 sites</span></div>
+      <p class="topic__blurb">Local services, rentals and real estate that need calls, quotes and bookings.</p>
+      <div class="wgrid">
+      <a class="wcard" href="https://junkoutli.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="JunkOutLI website" src="images/work/junkoutli.jpg"></div>
+        <div class="wmeta"><div class="wname">JunkOutLI</div><div class="wpills"><span>Junk removal</span><span>English &amp; Spanish</span></div></div>
+      </a>
+      <a class="wcard" href="https://jerseyportapotty.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Jersey Porta Potty website" src="images/work/jerseypp.jpg"></div>
+        <div class="wmeta"><div class="wname">Jersey Porta Potty</div><div class="wpills"><span>Equipment rental</span><span>Instant quote</span></div></div>
       </a>
       <a class="wcard" href="https://www.premierprintusa.com" target="_blank" rel="noopener" data-view>
         <div class="wshot"><img decoding="async" width="700" height="560" alt="Premier Print USA website" src="images/work/premierprint.jpg"></div>
         <div class="wwin"><b aria-hidden="true">&#9650;</b><span>Owner reports a few new quote requests every week since launch</span></div>
         <div class="wmeta"><div class="wname">Premier Print USA</div><div class="wpills"><span>Custom printing</span><span>Quote requests</span></div></div>
       </a>
-      <a class="wcard" href="https://abctoysusa.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="ABC Toys website" src="images/work/abctoys.jpg"></div>
-        <div class="wmeta"><div class="wname">ABC Toys</div><div class="wpills"><span>Toy store</span><span>Online orders</span></div></div>
+      <a class="wcard" href="https://highbarfit.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="High Bar Fitness website" src="images/work/highbar.jpg"></div>
+        <div class="wmeta"><div class="wname">High Bar Fitness</div><div class="wpills"><span>Fitness studio</span><span>CRM leads</span></div></div>
       </a>
-      <a class="wcard" href="https://junkoutli.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="JunkOutLI website" src="images/work/junkoutli.jpg"></div>
-        <div class="wmeta"><div class="wname">JunkOutLI</div><div class="wpills"><span>Junk removal</span><span>English &amp; Spanish</span></div></div>
+      <a class="wcard" href="https://flyaheadtravel.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Fly Ahead Travel website" src="images/work/flyahead.jpg"></div>
+        <div class="wmeta"><div class="wname">Fly Ahead Travel</div><div class="wpills"><span>Travel agency</span><span>Dashboard</span></div></div>
       </a>
-      <a class="wcard" href="https://chaimhersh.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Samemunim Aromatics website" src="images/work/samemunim.jpg"></div>
-        <div class="wmeta"><div class="wname">Samemunim Aromatics</div><div class="wpills"><span>Besamim gifts</span><span>Custom orders</span></div></div>
+      <a class="wcard" href="https://kjhaven.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Haven website" src="images/work/haven.jpg"></div>
+        <div class="wmeta"><div class="wname">The Haven</div><div class="wpills"><span>Real estate</span><span>Fee calculator</span></div></div>
       </a>
+      <a class="wcard" href="https://priluxvillas.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Prilux Villa website" src="images/work/prilux.jpg"></div>
+        <div class="wmeta"><div class="wname">Prilux Villa</div><div class="wpills"><span>Vacation rental</span><span>Live availability</span></div></div>
+      </a>
+      </div>
+    </div>
+    <div class="topic" id="professionals">
+      <div class="topic__head"><h2>Professionals &amp; health</h2><span>5 sites</span></div>
+      <p class="topic__blurb">Accountants, lawyers, therapists, coaches and care services.</p>
+      <div class="wgrid">
       <a class="wcard" href="https://kellnerandco.com" target="_blank" rel="noopener" data-view>
         <div class="wshot"><img decoding="async" width="700" height="560" alt="Kellner &amp; Co. website" src="images/work/kellner.jpg"></div>
         <div class="wmeta"><div class="wname">Kellner &amp; Co.</div><div class="wpills"><span>CPA firm</span><span>Lead capture</span></div></div>
@@ -450,70 +535,24 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
         <div class="wshot"><img decoding="async" width="700" height="560" alt="Albon Solicitors website" src="images/work/albon.jpg"></div>
         <div class="wmeta"><div class="wname">Albon Solicitors</div><div class="wpills"><span>Law firm</span><span>Landlord services</span></div></div>
       </a>
-      <a class="wcard" href="https://jerseyportapotty.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Jersey Porta Potty website" src="images/work/jerseypp.jpg"></div>
-        <div class="wmeta"><div class="wname">Jersey Porta Potty</div><div class="wpills"><span>Equipment rental</span><span>Instant quote</span></div></div>
+      <a class="wcard" href="https://yossikleintherapy.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Yosef Klein, LMHC website" src="images/work/yosefklein.jpg"></div>
+        <div class="wmeta"><div class="wname">Yosef Klein, LMHC</div><div class="wpills"><span>Therapy practice</span><span>Yiddish &amp; English</span></div></div>
       </a>
-      <a class="wcard" href="https://seabluefish.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sea Blue Fish website" src="images/work/seabluefish.jpg"></div>
-        <div class="wmeta"><div class="wname">Sea Blue Fish</div><div class="wpills"><span>Fish market</span><span>Online orders</span></div></div>
+      <a class="wcard" href="https://yancheinu.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Yancheinu Coaching website" src="images/work/yancheinu.jpg"></div>
+        <div class="wmeta"><div class="wname">Yancheinu Coaching</div><div class="wpills"><span>Coaching</span><span>Courses</span></div></div>
       </a>
       <a class="wcard" href="https://thecompasscareny.com" target="_blank" rel="noopener" data-view>
         <div class="wshot"><img decoding="async" width="700" height="560" alt="The Compass Care website" src="images/work/compass.jpg"></div>
         <div class="wmeta"><div class="wname">The Compass Care</div><div class="wpills"><span>Social care</span><span>Eligibility check</span></div></div>
       </a>
-      <a class="wcard" href="https://lindenseablue.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Linden SeaBlue website" src="images/work/lindenseablue.jpg"></div>
-        <div class="wmeta"><div class="wname">Linden SeaBlue</div><div class="wpills"><span>Kosher grocery</span><span>Delivery</span></div></div>
-      </a>
-      <a class="wcard" href="https://kjhaven.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Haven website" src="images/work/haven.jpg"></div>
-        <div class="wmeta"><div class="wname">The Haven</div><div class="wpills"><span>Real estate</span><span>Fee calculator</span></div></div>
-      </a>
-      <a class="wcard" href="https://sproutvitamins.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sprout Vitamins website" src="images/work/sprout.jpg"></div>
-        <div class="wmeta"><div class="wname">Sprout Vitamins</div><div class="wpills"><span>E-commerce</span><span>Fast search</span></div></div>
-      </a>
-      <a class="wcard" href="https://preshburgglutenfree.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Preshburg Gluten Free website" src="images/work/preshburg.jpg"></div>
-        <div class="wmeta"><div class="wname">Preshburg Gluten Free</div><div class="wpills"><span>Online store</span><span>Stripe checkout</span></div></div>
-      </a>
-      <a class="wcard" href="https://highbarfit.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="High Bar Fitness website" src="images/work/highbar.jpg"></div>
-        <div class="wmeta"><div class="wname">High Bar Fitness</div><div class="wpills"><span>Fitness studio</span><span>CRM leads</span></div></div>
-      </a>
-      <a class="wcard" href="https://shopthefifthc.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Fifth C website" src="images/work/fifthc.jpg"></div>
-        <div class="wmeta"><div class="wname">The Fifth C</div><div class="wpills"><span>Jewelry catalog</span><span>AI designer</span></div></div>
-      </a>
-      <a class="wcard" href="https://bleemin.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Bleemin website" src="images/work/bleemin.jpg"></div>
-        <div class="wmeta"><div class="wname">Bleemin</div><div class="wpills"><span>Simcha florals</span><span>Online orders</span></div></div>
-      </a>
-      <a class="wcard" href="https://priluxvillas.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Prilux Villa website" src="images/work/prilux.jpg"></div>
-        <div class="wmeta"><div class="wname">Prilux Villa</div><div class="wpills"><span>Vacation rental</span><span>Live availability</span></div></div>
-      </a>
-      <a class="wcard" href="https://trademarkgreetings.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Trademark Greetings website" src="images/work/trademark.jpg"></div>
-        <div class="wmeta"><div class="wname">Trademark Greetings</div><div class="wpills"><span>Online store</span><span>Wholesale portal</span></div></div>
-      </a>
-      <a class="wcard" href="https://ccmeals.net" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="MealFlow website" src="images/work/mealflow.jpg"></div>
-        <div class="wmeta"><div class="wname">MealFlow</div><div class="wpills"><span>Web app</span><span>4 role portals</span></div></div>
-      </a>
-      <a class="wcard" href="https://kiyorusa.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="KIYOR website" src="images/work/kiyor.jpg"></div>
-        <div class="wmeta"><div class="wname">KIYOR</div><div class="wpills"><span>Vanity catalog</span><span>Stock sync</span></div></div>
-      </a>
-      <a class="wcard" href="https://bakerspantryny.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="The Baker's Pantry website" src="images/work/bakers.jpg"></div>
-        <div class="wmeta"><div class="wname">The Baker's Pantry</div><div class="wpills"><span>Bakery</span><span>Online orders</span></div></div>
-      </a>
-      <a class="wcard" href="https://flyaheadtravel.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Fly Ahead Travel website" src="images/work/flyahead.jpg"></div>
-        <div class="wmeta"><div class="wname">Fly Ahead Travel</div><div class="wpills"><span>Travel agency</span><span>Dashboard</span></div></div>
-      </a>
+      </div>
+    </div>
+    <div class="topic" id="community">
+      <div class="topic__head"><h2>Community &amp; web apps</h2><span>3 sites</span></div>
+      <p class="topic__blurb">Nonprofits, applications and records, built as real web apps.</p>
+      <div class="wgrid">
       <a class="wcard" href="https://kollelchatzosusa.org" target="_blank" rel="noopener" data-view>
         <div class="wshot"><img decoding="async" width="700" height="560" alt="Kollel Chatzos website" src="images/work/kollel.jpg"></div>
         <div class="wmeta"><div class="wname">Kollel Chatzos</div><div class="wpills"><span>Nonprofit</span><span>Bilingual</span></div></div>
@@ -522,10 +561,11 @@ h2{font-size:clamp(2.3rem,5.2vw,4.2rem)}
         <div class="wshot"><img decoding="async" width="700" height="560" alt="Free Food Stockpile website" src="images/work/stockpile.jpg"></div>
         <div class="wmeta"><div class="wname">Free Food Stockpile</div><div class="wpills"><span>Web app</span><span>Applications</span></div></div>
       </a>
-      <a class="wcard" href="https://yancheinu.com" target="_blank" rel="noopener" data-view>
-        <div class="wshot"><img decoding="async" width="700" height="560" alt="Yancheinu Coaching website" src="images/work/yancheinu.jpg"></div>
-        <div class="wmeta"><div class="wname">Yancheinu Coaching</div><div class="wpills"><span>Coaching</span><span>Courses</span></div></div>
+      <a class="wcard" href="https://sanz1.com" target="_blank" rel="noopener" data-view>
+        <div class="wshot"><img decoding="async" width="700" height="560" alt="Sanz Records website" src="images/work/sanz1.jpg"></div>
+        <div class="wmeta"><div class="wname">Sanz Records</div><div class="wpills"><span>Genealogy records</span><span>Paid downloads</span></div></div>
       </a>
+      </div>
     </div>
   </div>
 </section>
