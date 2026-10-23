@@ -25,7 +25,7 @@ TODAY = date.today().isoformat()
 PHONE, TEL, EMAIL = "845-587-0531", "+1-845-587-0531", "info@bhwebs.com"
 WA = "https://wa.me/18455870531?text=" + "Hi%2C%20I%27d%20like%20a%20website%20for%20my%20business."
 REG = {r["slug"]: r for r in REGIONS}
-STATE_NAME = {"NY": "New York", "NJ": "New Jersey", "OH": "Ohio"}
+STATE_NAME = {"NY": "New York", "NJ": "New Jersey", "OH": "Ohio", "MD": "Maryland", "IL": "Illinois", "FL": "Florida", "CA": "California"}
 
 def e(s):
     return escape(str(s), quote=True)
@@ -257,8 +257,8 @@ def region_page(r):
     return head(title, desc, canon, schema) + body + foot()
 
 def hub_page():
-    title = "Areas We Serve: Website Design in New York, New Jersey & Ohio | BH Web Solutions"
-    desc = "BH Web Solutions builds websites, online stores and booking systems for businesses in Rockland, Orange County, Brooklyn, Queens, Long Island, New Jersey and Ohio."
+    title = "Areas We Serve: Website Design for Jewish Communities Across the US | BH Web Solutions"
+    desc = "Websites, online stores and booking for businesses in Rockland, Orange County, Brooklyn, Queens, Long Island, New Jersey, Baltimore, Chicago, Miami, LA and Ohio."
     canon = url("")
     area = [{"@type": "AdministrativeArea", "name": r["full"]} for r in REGIONS]
     schema = [business(area), crumbs([("Home", SITE + "/"), ("Areas we serve", canon)])]
@@ -270,7 +270,7 @@ def hub_page():
 <section class="hero"><div class="in">
   <p class="crumb"><a href="/">Home</a> › Areas we serve</p>
   <h1>Websites for businesses <span class="gt">near you.</span></h1>
-  <p class="lead">We build websites, online stores and booking systems for businesses across Rockland and Orange County, the five boroughs, Long Island, Westchester, New Jersey and Ohio. Find your town below.</p>
+  <p class="lead">We build websites, online stores and booking systems for businesses across Rockland and Orange County, the five boroughs, Long Island, Westchester and New Jersey, and for communities further away in Baltimore, Chicago, South Florida, Los Angeles and Ohio. Find your town below.</p>
   <p class="row"><a class="btn btn--green" href="/order.html">Start my website {ARROW}</a><a class="btn btn--line" href="/work.html">See our work</a></p>
 </div></section>
 <section class="sec"><div class="in">{''.join(blocks)}</div></section>
