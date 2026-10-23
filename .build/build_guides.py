@@ -143,7 +143,7 @@ def article_page(a, siblings):
         "publisher": {"@type": "Organization", "name": "BH Web Solutions",
                       "url": SITE + "/"},
         "mainEntityOfPage": {"@type": "WebPage",
-                             "@id": f"{SITE}/guides/{slug}.html"},
+                             "@id": f"{SITE}/guides/{slug}"},
         "inLanguage": "en",
         "dateModified": TODAY,
     }
@@ -156,11 +156,11 @@ def article_page(a, siblings):
 <title>{esc(title)} — BH Web Solutions</title>
 <meta name="description" content="{esc(a['metaDescription'])}">
 <meta name="theme-color" content="#0b1c30">
-<link rel="canonical" href="{SITE}/guides/{slug}.html">
+<link rel="canonical" href="{SITE}/guides/{slug}">
 <meta property="og:type" content="article">
 <meta property="og:title" content="{esc(title)}">
 <meta property="og:description" content="{esc(a['metaDescription'])}">
-<meta property="og:url" content="{SITE}/guides/{slug}.html">
+<meta property="og:url" content="{SITE}/guides/{slug}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -313,11 +313,16 @@ def main():
     print("  wrote guides/index.html")
 
     # sitemap covering the marketing pages plus every guide
-    urls = [("/", "weekly", "1.0"), ("/work.html", "weekly", "0.9"),
-            ("/about.html", "yearly", "0.7"), ("/order.html", "monthly", "0.9"),
-            ("/website-transfers.html", "monthly", "0.8"), ("/stuck-on-wix.html", "monthly", "0.8"),
+    urls = [("/", "weekly", "1.0"), ("/work", "weekly", "0.9"),
+            ("/about", "yearly", "0.7"), ("/order", "monthly", "0.9"),
+            ("/website-transfers", "monthly", "0.8"), ("/stuck-on-wix", "monthly", "0.8"),
             ("/guides/", "weekly", "0.9")]
-    urls += [(f"/guides/{a['slug']}.html", "monthly", "0.8") for a in articles]
+    urls += [(f"/guides/{a['slug']}", "monthly", "0.8") for a in articles]
+    # the area pages (built by build_areas.py) stay in the sitemap
+    wd = os.path.join(ROOT, "web-design")
+    if os.path.isdir(wd):
+        urls += [("/web-design/" + ("" if f == "index.html" else f[:-5]), "monthly", "0.7")
+                 for f in sorted(os.listdir(wd)) if f.endswith(".html")]
     body = "\n".join(
         f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n"
         f"    <changefreq>{c}</changefreq>\n    <priority>{p}</priority>\n  </url>"
