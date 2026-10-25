@@ -83,7 +83,7 @@ FOOT = """<footer class="gfoot">
       </div>
       <div>
         <h5>Get in touch</h5>
-        <a class="fl" href="tel:8455870531">845-587-0531</a>
+        <a class="fl" href="tel:8455766607">845-576-6607</a>
         <a class="fl" href="mailto:info@bhwebs.com">info@bhwebs.com</a>
       </div>
     </div>
@@ -101,7 +101,7 @@ CTA = """<section class="gcta">
       English and Yiddish. Tell us what you're trying to do and we'll tell you straight what it takes.</p>
     <div class="row">
       <a class="btn btn--green" href="/order.html">Start a project</a>
-      <a class="btn btn--ghost" href="tel:8455870531">845-587-0531</a>
+      <a class="btn btn--ghost" href="tel:8455766607">845-576-6607</a>
     </div>
   </div>
 </section>"""

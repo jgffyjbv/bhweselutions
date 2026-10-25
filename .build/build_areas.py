@@ -22,7 +22,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "web-design")
 SITE = "https://bhwebs.com"
 TODAY = date.today().isoformat()
-PHONE, TEL, EMAIL = "845-587-0531", "+1-845-587-0531", "info@bhwebs.com"
+PHONE, TEL, EMAIL = "845-576-6607", "+1-845-576-6607", "info@bhwebs.com"
 WA = "https://wa.me/18455870531?text=" + "Hi%2C%20I%27d%20like%20a%20website%20for%20my%20business."
 REG = {r["slug"]: r for r in REGIONS}
 STATE_NAME = {"NY": "New York", "NJ": "New Jersey", "OH": "Ohio", "MD": "Maryland", "IL": "Illinois", "FL": "Florida", "CA": "California"}
@@ -85,7 +85,7 @@ def foot():
   <div class="in foot__grid">
     <div><a href="/" class="brand">{LOGO}<span>BH Web Solutions</span></a>
       <p>Custom websites, online stores and web apps for businesses in New York, New Jersey and beyond. English and Yiddish.</p>
-      <p><a href="tel:8455870531">{PHONE}</a> &middot; <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
+      <p><a href="tel:8455766607">{PHONE}</a> &middot; <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
     <div><b>Areas we serve</b>{regions}<a href="/web-design/">All areas</a></div>
     <div><b>BH Web Solutions</b><a href="/">Home</a><a href="/work.html">Our work</a><a href="/about.html">About</a><a href="/guides/">Guides</a><a href="/order.html">Start a project</a></div>
   </div>
