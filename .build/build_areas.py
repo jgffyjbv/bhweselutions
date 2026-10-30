@@ -8,7 +8,8 @@ and the /web-design/ entries in sitemap.xml (other sitemap entries are kept as t
 
 The page shell (head icons/fonts/site.css, the svg symbols, header, footer + phone bar) is read from
 .build/partials/ at build time, so every area page carries the same shell as the main pages.
-Page styles: /css/site.css (shared) + /web-design/areas.css (area-page bits only).
+Page styles: /css/site.css (shared: the owner's look in the BH logo colours) + /web-design/areas.css (area-page bits only:
+the four build cards, town cards, region cards + town pills, the steps, the centred final call).
 
 Run from the repo root:  python3 .build/build_areas.py
 """
@@ -104,22 +105,23 @@ def faq_ld(qas):
     return {"@context": "https://schema.org", "@type": "FAQPage",
             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qas]}
 
-def rh(left, right):
-    return f'<div class="rh sv"><span>{left}</span>{right if right.startswith("<a") else "<span>" + right + "</span>"}</div>'
+def rh(left, right=""):
+    # the centred dot label (site.css); a section's link goes under its heading as .sec-more, not in here
+    return f'<div class="rh"><span>{left}</span>' + (f"<span>{right}</span>" if right else "") + "</div>"
 
 def work_cards(keys):
     out = []
     for i, k in enumerate(keys[:3]):
         n, label, img = WORK[k]
-        out.append(f'<li><a href="/work"><figure class="duo sv"><img src="/images/work/{img}" alt="{e(n)} website by BH Web Solutions" loading="lazy" decoding="async" width="700" height="560"></figure>'
+        out.append(f'<li><a href="/work"><figure class="duo"><img src="/images/work/{img}" alt="{e(n)} website by BH Web Solutions" loading="lazy" decoding="async" width="700" height="560"></figure>'
                    f'<span class="cap"><span class="n">{i + 1:02d}</span><span class="nm">{e(n)}</span><span class="tr">{e(label)}</span></span></a></li>')
     return '<ol class="grid three">' + "".join(out) + "</ol>"
 
 def work_sec(keys):
     return f"""<section class="sec work" aria-labelledby="work-h">
   <div class="wrap">
-    {rh("Recent work", '<a href="/work">See our work →</a>')}
-    <div class="sec-head"><h2 id="work-h">Recent <em>work</em></h2><p>Real websites for real businesses. Every picture is the live site.</p></div>
+    {rh("Recent work")}
+    <div class="sec-head"><h2 id="work-h">Recent <em>work</em></h2><p>Real websites for real businesses. Every picture is the live site.</p><a class="sec-more" href="/work">See our work →</a></div>
   </div>
   {work_cards(keys)}
 </section>"""
@@ -169,7 +171,7 @@ def cta(place, label):
     <h2 id="call-h">Ready for a website in <em>{e(place)}</em>?</h2>
     <div class="call-grid">
       <div class="call-l"><p class="call-sub">Tell us what you need. You see the design before you pay.</p></div>
-      <div class="call-r cta-btns"><a class="btn btn-inv btn-lg" href="/order">Start my website{AR}</a><a class="btn btn-pl btn-lg" href="{WA}" target="_blank" rel="noopener">WhatsApp us</a></div>
+      <div class="call-r cta-btns"><a class="btn btn-lg" href="/order">Start my website{AR}</a><a class="btn btn-pl btn-lg" href="{WA}" target="_blank" rel="noopener">WhatsApp us</a></div>
     </div>
   </div>
 </section>"""
@@ -236,8 +238,8 @@ def town_page(t):
 
 <section class="sec tight" aria-labelledby="near-h">
   <div class="wrap">
-    {rh("Nearby", '<a href="/web-design/">Areas we serve →</a>')}
-    <div class="sec-head"><h2 id="near-h">Nearby areas <em>we serve</em></h2></div>
+    {rh("Nearby")}
+    <div class="sec-head"><h2 id="near-h">Nearby areas <em>we serve</em></h2><a class="sec-more" href="/web-design/">Areas we serve →</a></div>
     <ol class="idx near">{near_html}</ol>
   </div>
 </section>
@@ -321,7 +323,7 @@ def hub_page():
   </div>
 </section>
 
-{cta('your area', 'Monsey, NY · and beyond')}
+{cta('your area', 'Brooklyn, NY · and beyond')}
 
 </main>
 """

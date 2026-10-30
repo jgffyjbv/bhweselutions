@@ -15,65 +15,85 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="BH Web Solutions — Beautiful websites. Fair prices. Live in days.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* work page only: the topic chips carry a count; a tile's trade + what was built sit on a second line;
-   below 980px the first tile of each topic spans the row so no topic ends on a lone half tile */
-.phead .hero-row{margin-top:26px}
-.phead .lede{margin-top:0}
-.tally{-webkit-flex:none;flex:none;margin:0 0 0 auto;padding-left:48px;text-align:right}
-.tally .big{display:block;font-family:var(--serif);font-size:130px;font-size:9vw;line-height:.76;letter-spacing:-.05em;color:var(--cobalt)}
-.tally .unit{display:block;margin-top:14px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
-.phead .topics{margin:40px 0 0}
-.topics .k{margin-left:10px;color:var(--cobalt)}
-.topics a:hover .k,.topics a:focus .k{color:var(--paper)}
-.topic .cap .tr span{white-space:nowrap}
-.topic .sec-head{margin-bottom:48px}
-.win{display:block;margin:12px 0 0;padding:2px 0 2px 12px;border-left:2px solid var(--cobalt);font-size:15.5px;line-height:1.4;color:var(--ink)}
-.win b{font-family:var(--mono);font-weight:400;font-size:11px;color:var(--cobalt);margin-right:8px;vertical-align:1px}
-.cta-row{margin:0}
-.cta-row .btn{margin:0 28px 14px 0}
-.call .tlink{color:var(--paper);border-bottom-color:var(--paper)}
-.call .tlink .ar{color:var(--paper)}
-.call .contact li{display:inline-block;vertical-align:top;margin:0 40px 18px 0}
-@media (min-width:761px){
-  .topic .cap{-webkit-flex-wrap:wrap;flex-wrap:wrap}
-  .topic .cap .nm{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0}
-  .topic .cap .tr{-webkit-box-ordinal-group:5;-webkit-order:4;order:4;width:100%;margin:8px 0 0;padding:0 0 0 40px;text-align:left}
-  .topic .win{margin-left:40px}
+/* work page only (shared look in /css/site.css): the "27" sits in a white card with the logo-gradient bar; the
+   topic chips carry a coloured count badge; a tile's tags are separate pills; the Premier Print result is the
+   green badge on its tile (live); topics alternate white / cool tint; the Start band is centred (live).
+   Below 980px the first tile of each topic spans the row so no topic ends on a lone half tile. */
+.phead .hero-row{margin-top:26px;-webkit-box-align:center;-webkit-align-items:center;align-items:center}
+.phead .lede{margin:0 40px 0 0}
+.tally{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-flex:none;flex:none;margin:0 0 0 auto;padding:24px 30px 20px 26px;background:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
+.tally:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.tally .big{display:block;-webkit-flex:none;flex:none;font-family:var(--serif);font-weight:500;font-size:88px;line-height:.86;letter-spacing:-.05em;color:#2b4eff}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .tally .big{padding:0 .04em .06em;background-image:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 }
-@media (min-width:1640px){.tally .big{font-size:150px}}
+.tally .unit{display:block;margin:0 0 0 18px;white-space:nowrap;font-size:12px;font-weight:800;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.tally .unit:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff5c39;margin-right:9px;vertical-align:1px}
+.phead .topics{margin:40px 0 0}
+.topics .k{display:inline-block;min-width:24px;height:24px;line-height:24px;margin:0 -7px 0 10px;padding:0 7px;border-radius:999px;background:#2b4eff;color:#fff;font-size:12.5px;font-weight:800;text-align:center;vertical-align:1px}
+.topics li:nth-child(2) .k{background:#7c3aed}
+.topics li:nth-child(3) .k{background:#ff5c39;color:#11161f}
+.topics li:nth-child(4) .k{background:#6cb33f;color:#11161f}
+.topics li:nth-child(5) .k{background:#ffc53d;color:#11161f}
+.topic.sec{padding-top:84px;padding-top:clamp(4rem,6vw,5.5rem)}
+#stores,#professionals{background-color:#f6f7fb;background-image:radial-gradient(ellipse at 100% 0%,rgba(255,92,57,.06),rgba(255,92,57,0) 40%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%)}
+/* the tags: one small pill each (the separator dot stays in the text for screen readers) */
+.topic .cap .tr{padding:0;border:0;background:none;font-size:0;line-height:0}
+.topic .cap .tr span{display:inline-block;margin:0 6px 0 0;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);font-size:12.5px;font-weight:700;line-height:1.35;white-space:nowrap;color:#fff}
+/* the owner's result: the live green badge on the tile */
+.win{position:absolute;left:14px;top:14px;z-index:3;display:block;max-width:24em;max-width:calc(100% - 28px);margin:0;padding:7px 12px 8px 11px;border-radius:12px;background:#6cb33f;color:#0f1a08;font-size:13px;font-weight:700;line-height:1.3;-webkit-box-shadow:0 8px 20px -8px rgba(0,0,0,.45);box-shadow:0 8px 20px -8px rgba(0,0,0,.45)}
+.win b{font-size:11px;font-weight:800;margin-right:7px;vertical-align:1px}
+/* Start band: centred like live (heading, line, white pill + ghost pill, the three ways to reach me) */
+.call .call-grid{display:block;margin-top:30px;text-align:center}
+.call .call-l,.call .call-r{width:auto;padding:0}
+.call .call-sub{margin:0 auto 28px}
+.cta-row{margin:0}
+.cta-row .btn{margin:0 7px 12px}
+.call .call-r{margin-top:30px}
+.call .contact li{display:inline-block;vertical-align:top;min-width:250px;margin:0 6px 12px;text-align:left}
 @media (max-width:980px){
   .topic .grid li.lead{width:100%}
   .topic .grid li.lead .duo{padding-bottom:58%}
-  .tally{padding-left:0;margin-top:30px;text-align:left}
-  .tally .big{font-size:120px}
+  .tally{display:-webkit-inline-box;display:-webkit-inline-flex;display:inline-flex;margin:30px 0 0}
 }
 @media (max-width:760px){
   .tally{display:none}
   .phead .hero-row{margin-top:18px}
   .phead .topics{margin-top:26px}
-  .topics{font-size:12px;letter-spacing:.03em}
   .topics li{margin:0 6px 8px 0}
-  .topics a{padding:13px 10px 12px}
-  .topics .k{margin-left:7px}
-  .topic .sec-head{margin-bottom:30px}
-  .win{font-size:14.5px}
-  .cta-row .btn{display:block;text-align:center;margin-right:0}
-  .call .contact li{display:block;margin-right:0}
+  .topics a{padding:11px 14px;font-size:14.5px}
+  .topics .k{margin-left:8px}
+  .win{left:10px;top:10px;font-size:12.5px}
+  .cta-row .btn{display:block;margin:0 0 12px;text-align:center}
+  .call .contact li{display:block;min-width:0;margin:0 0 10px}
 }
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -83,11 +103,14 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work" aria-current="page">Work</a>
       <a href="/#build">What I build</a>
@@ -97,7 +120,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work" aria-current="page">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about">About</a>
@@ -105,13 +128,14 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
 <!-- ============ PAGE HEAD ============ -->
 <section class="phead" aria-labelledby="h1">
   <div class="wrap">
-    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Our work · 27 live client sites · 5 topics</span></p>
+    <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Our work · 27 live client sites · 5 topics</span></p>
     <h1 id="h1">Real businesses. <em class="sw">Real websites.</em></h1>
     <div class="hero-row">
       <p class="lede">Every one of these is a live site for a real business. Click any card to open it. Many of their owners tell me the same thing after launch: the phone rings more and the quote requests went up.</p>
@@ -130,92 +154,97 @@
 <!-- ============ FOOD & GROCERIES ============ -->
 <section class="sec tight topic" id="food" aria-labelledby="food-h">
   <div class="wrap">
-    <div class="rh sv"><span>Topic 01 / 05 · 5 sites</span><a href="#topics">All topics<span aria-hidden="true"> ↑</span></a></div>
+    <div class="rh"><span>Topic 01 / 05 · 5 sites</span></div>
     <div class="sec-head">
       <h2 id="food-h">Food &amp; <em>groceries</em></h2>
       <p>Bakeries, fish markets, groceries and meal programs that take orders online.</p>
+      <a class="sec-more" href="#topics">All topics<span aria-hidden="true"> ↑</span></a>
     </div>
   </div>
   <ol class="grid" start="1">
-    <li class="w2 lead"><a href="https://preshburgglutenfree.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/preshburg.jpg" srcset="/images/shots/preshburg-m.jpg 640w, /images/shots/preshburg.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" alt="Preshburg Gluten Free website"></figure><span class="cap"><span class="n">01</span><span class="nm">Preshburg Gluten Free</span><span class="tr"><span>Online store</span> · <span>Stripe checkout</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://bakerspantryny.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/bakers.jpg" width="700" height="560" alt="The Baker's Pantry website"></figure><span class="cap"><span class="n">02</span><span class="nm">The Baker’s Pantry</span><span class="tr"><span>Bakery</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://lindenseablue.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/lindenseablue.jpg" width="700" height="560" loading="lazy" alt="Linden SeaBlue website"></figure><span class="cap"><span class="n">03</span><span class="nm">Linden SeaBlue</span><span class="tr"><span>Kosher grocery</span> · <span>Delivery</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://seabluefish.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/seabluefish.jpg" width="700" height="560" loading="lazy" alt="Sea Blue Fish website"></figure><span class="cap"><span class="n">04</span><span class="nm">Sea Blue Fish</span><span class="tr"><span>Fish market</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://ccmeals.net" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/mealflow.jpg" width="700" height="560" loading="lazy" alt="MealFlow website"></figure><span class="cap"><span class="n">05</span><span class="nm">MealFlow</span><span class="tr"><span>Web app</span> · <span>4 role portals</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2 lead"><a href="https://preshburgglutenfree.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/preshburg.jpg" srcset="/images/shots/preshburg-m.jpg 640w, /images/shots/preshburg.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" alt="Preshburg Gluten Free website"></figure><span class="cap"><span class="n">01</span><span class="nm">Preshburg Gluten Free</span><span class="tr"><span>Online store</span> · <span>Stripe checkout</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://bakerspantryny.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/bakers.jpg" width="700" height="560" alt="The Baker's Pantry website"></figure><span class="cap"><span class="n">02</span><span class="nm">The Baker’s Pantry</span><span class="tr"><span>Bakery</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://lindenseablue.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/lindenseablue.jpg" width="700" height="560" loading="lazy" alt="Linden SeaBlue website"></figure><span class="cap"><span class="n">03</span><span class="nm">Linden SeaBlue</span><span class="tr"><span>Kosher grocery</span> · <span>Delivery</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://seabluefish.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/seabluefish.jpg" width="700" height="560" loading="lazy" alt="Sea Blue Fish website"></figure><span class="cap"><span class="n">04</span><span class="nm">Sea Blue Fish</span><span class="tr"><span>Fish market</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://ccmeals.net" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/mealflow.jpg" width="700" height="560" loading="lazy" alt="MealFlow website"></figure><span class="cap"><span class="n">05</span><span class="nm">MealFlow</span><span class="tr"><span>Web app</span> · <span>4 role portals</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
   </ol>
 </section>
 
 <!-- ============ STORES & CATALOGS ============ -->
 <section class="sec tight topic" id="stores" aria-labelledby="stores-h">
   <div class="wrap">
-    <div class="rh sv"><span>Topic 02 / 05 · 7 sites</span><a href="#topics">All topics<span aria-hidden="true"> ↑</span></a></div>
+    <div class="rh"><span>Topic 02 / 05 · 7 sites</span></div>
     <div class="sec-head">
       <h2 id="stores-h">Stores &amp; <em>catalogs</em></h2>
       <p>Online stores and catalogs: toys, vitamins, gifts, flowers, jewelry and more.</p>
+      <a class="sec-more" href="#topics">All topics<span aria-hidden="true"> ↑</span></a>
     </div>
   </div>
   <ol class="grid" start="6">
-    <li class="w2 lead"><a href="https://abctoysusa.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/abctoys.jpg" srcset="/images/shots/abctoys-m.jpg 640w, /images/shots/abctoys.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" loading="lazy" alt="ABC Toys website"></figure><span class="cap"><span class="n">06</span><span class="nm">ABC Toys</span><span class="tr"><span>Toy store</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://sproutvitamins.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/sprout.jpg" width="700" height="560" loading="lazy" alt="Sprout Vitamins website"></figure><span class="cap"><span class="n">07</span><span class="nm">Sprout Vitamins</span><span class="tr"><span>E-commerce</span> · <span>Fast search</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://trademarkgreetings.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/trademark.jpg" width="700" height="560" loading="lazy" alt="Trademark Greetings website"></figure><span class="cap"><span class="n">08</span><span class="nm">Trademark Greetings</span><span class="tr"><span>Online store</span> · <span>Wholesale portal</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://chaimhersh.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/samemunim.jpg" width="700" height="560" loading="lazy" alt="Samemunim Aromatics website"></figure><span class="cap"><span class="n">09</span><span class="nm">Samemunim Aromatics</span><span class="tr"><span>Besamim gifts</span> · <span>Custom orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://bleemin.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/bleemin.jpg" srcset="/images/shots/bleemin-m.jpg 640w, /images/shots/bleemin.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="Bleemin website"></figure><span class="cap"><span class="n">10</span><span class="nm">Bleemin</span><span class="tr"><span>Simcha florals</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://shopthefifthc.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/fifthc.jpg" srcset="/images/shots/fifthc-m.jpg 640w, /images/shots/fifthc.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="The Fifth C website"></figure><span class="cap"><span class="n">11</span><span class="nm">The Fifth C</span><span class="tr"><span>Jewelry catalog</span> · <span>AI designer</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://kiyorusa.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/kiyor.jpg" width="700" height="560" loading="lazy" alt="KIYOR website"></figure><span class="cap"><span class="n">12</span><span class="nm">KIYOR</span><span class="tr"><span>Vanity catalog</span> · <span>Stock sync</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2 lead"><a href="https://abctoysusa.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/abctoys.jpg" srcset="/images/shots/abctoys-m.jpg 640w, /images/shots/abctoys.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" loading="lazy" alt="ABC Toys website"></figure><span class="cap"><span class="n">06</span><span class="nm">ABC Toys</span><span class="tr"><span>Toy store</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://sproutvitamins.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/sprout.jpg" width="700" height="560" loading="lazy" alt="Sprout Vitamins website"></figure><span class="cap"><span class="n">07</span><span class="nm">Sprout Vitamins</span><span class="tr"><span>E-commerce</span> · <span>Fast search</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://trademarkgreetings.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/trademark.jpg" width="700" height="560" loading="lazy" alt="Trademark Greetings website"></figure><span class="cap"><span class="n">08</span><span class="nm">Trademark Greetings</span><span class="tr"><span>Online store</span> · <span>Wholesale portal</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://chaimhersh.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/samemunim.jpg" width="700" height="560" loading="lazy" alt="Samemunim Aromatics website"></figure><span class="cap"><span class="n">09</span><span class="nm">Samemunim Aromatics</span><span class="tr"><span>Besamim gifts</span> · <span>Custom orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://bleemin.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/bleemin.jpg" srcset="/images/shots/bleemin-m.jpg 640w, /images/shots/bleemin.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="Bleemin website"></figure><span class="cap"><span class="n">10</span><span class="nm">Bleemin</span><span class="tr"><span>Simcha florals</span> · <span>Online orders</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://shopthefifthc.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/fifthc.jpg" srcset="/images/shots/fifthc-m.jpg 640w, /images/shots/fifthc.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="The Fifth C website"></figure><span class="cap"><span class="n">11</span><span class="nm">The Fifth C</span><span class="tr"><span>Jewelry catalog</span> · <span>AI designer</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://kiyorusa.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/kiyor.jpg" width="700" height="560" loading="lazy" alt="KIYOR website"></figure><span class="cap"><span class="n">12</span><span class="nm">KIYOR</span><span class="tr"><span>Vanity catalog</span> · <span>Stock sync</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
   </ol>
 </section>
 
 <!-- ============ SERVICES, RENTALS & REAL ESTATE ============ -->
 <section class="sec tight topic" id="services" aria-labelledby="services-h">
   <div class="wrap">
-    <div class="rh sv"><span>Topic 03 / 05 · 7 sites</span><a href="#topics">All topics<span aria-hidden="true"> ↑</span></a></div>
+    <div class="rh"><span>Topic 03 / 05 · 7 sites</span></div>
     <div class="sec-head">
       <h2 id="services-h">Services, rentals &amp; <em>real estate</em></h2>
       <p>Local services, rentals and real estate that need calls, quotes and bookings.</p>
+      <a class="sec-more" href="#topics">All topics<span aria-hidden="true"> ↑</span></a>
     </div>
   </div>
   <ol class="grid" start="13">
-    <li class="w2 lead"><a href="https://junkoutli.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/junkoutli.jpg" srcset="/images/shots/junkoutli-m.jpg 640w, /images/shots/junkoutli.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" loading="lazy" alt="JunkOutLI website"></figure><span class="cap"><span class="n">13</span><span class="nm">JunkOutLI</span><span class="tr"><span>Junk removal</span> · <span>English &amp; Spanish</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://jerseyportapotty.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/jerseypp.jpg" width="700" height="560" loading="lazy" alt="Jersey Porta Potty website"></figure><span class="cap"><span class="n">14</span><span class="nm">Jersey Porta Potty</span><span class="tr"><span>Equipment rental</span> · <span>Instant quote</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://www.premierprintusa.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/premierprint.jpg" srcset="/images/shots/premierprint-m.jpg 640w, /images/shots/premierprint.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="Premier Print USA website"></figure><span class="cap"><span class="n">15</span><span class="nm">Premier Print USA</span><span class="tr"><span>Custom printing</span> · <span>Quote requests</span></span><span class="go" aria-hidden="true">↗</span></span><span class="win"><b aria-hidden="true">▲</b>Owner reports a few new quote requests every week since launch</span></a></li>
-    <li class="w2"><a href="https://highbarfit.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/highbar.jpg" width="700" height="560" loading="lazy" alt="High Bar Fitness website"></figure><span class="cap"><span class="n">16</span><span class="nm">High Bar Fitness</span><span class="tr"><span>Fitness studio</span> · <span>CRM leads</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://flyaheadtravel.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/flyahead.jpg" width="700" height="560" loading="lazy" alt="Fly Ahead Travel website"></figure><span class="cap"><span class="n">17</span><span class="nm">Fly Ahead Travel</span><span class="tr"><span>Travel agency</span> · <span>Dashboard</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://kjhaven.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/haven.jpg" srcset="/images/shots/haven-m.jpg 640w, /images/shots/haven.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="The Haven website"></figure><span class="cap"><span class="n">18</span><span class="nm">The Haven</span><span class="tr"><span>Real estate</span> · <span>Fee calculator</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://priluxvillas.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/prilux.jpg" width="700" height="560" loading="lazy" alt="Prilux Villa website"></figure><span class="cap"><span class="n">19</span><span class="nm">Prilux Villa</span><span class="tr"><span>Vacation rental</span> · <span>Live availability</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2 lead"><a href="https://junkoutli.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/junkoutli.jpg" srcset="/images/shots/junkoutli-m.jpg 640w, /images/shots/junkoutli.jpg 1000w" sizes="(max-width:980px) 100vw, 48vw" width="1000" height="625" loading="lazy" alt="JunkOutLI website"></figure><span class="cap"><span class="n">13</span><span class="nm">JunkOutLI</span><span class="tr"><span>Junk removal</span> · <span>English &amp; Spanish</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://jerseyportapotty.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/jerseypp.jpg" width="700" height="560" loading="lazy" alt="Jersey Porta Potty website"></figure><span class="cap"><span class="n">14</span><span class="nm">Jersey Porta Potty</span><span class="tr"><span>Equipment rental</span> · <span>Instant quote</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://www.premierprintusa.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/premierprint.jpg" srcset="/images/shots/premierprint-m.jpg 640w, /images/shots/premierprint.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="Premier Print USA website"></figure><span class="cap"><span class="n">15</span><span class="nm">Premier Print USA</span><span class="tr"><span>Custom printing</span> · <span>Quote requests</span></span><span class="go" aria-hidden="true">↗</span></span><span class="win"><b aria-hidden="true">▲</b>Owner reports a few new quote requests every week since launch</span></a></li>
+    <li class="w2"><a href="https://highbarfit.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/highbar.jpg" width="700" height="560" loading="lazy" alt="High Bar Fitness website"></figure><span class="cap"><span class="n">16</span><span class="nm">High Bar Fitness</span><span class="tr"><span>Fitness studio</span> · <span>CRM leads</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://flyaheadtravel.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/flyahead.jpg" width="700" height="560" loading="lazy" alt="Fly Ahead Travel website"></figure><span class="cap"><span class="n">17</span><span class="nm">Fly Ahead Travel</span><span class="tr"><span>Travel agency</span> · <span>Dashboard</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://kjhaven.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/haven.jpg" srcset="/images/shots/haven-m.jpg 640w, /images/shots/haven.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="The Haven website"></figure><span class="cap"><span class="n">18</span><span class="nm">The Haven</span><span class="tr"><span>Real estate</span> · <span>Fee calculator</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://priluxvillas.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/prilux.jpg" width="700" height="560" loading="lazy" alt="Prilux Villa website"></figure><span class="cap"><span class="n">19</span><span class="nm">Prilux Villa</span><span class="tr"><span>Vacation rental</span> · <span>Live availability</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
   </ol>
 </section>
 
 <!-- ============ PROFESSIONALS & HEALTH ============ -->
 <section class="sec tight topic" id="professionals" aria-labelledby="professionals-h">
   <div class="wrap">
-    <div class="rh sv"><span>Topic 04 / 05 · 5 sites</span><a href="#topics">All topics<span aria-hidden="true"> ↑</span></a></div>
+    <div class="rh"><span>Topic 04 / 05 · 5 sites</span></div>
     <div class="sec-head">
       <h2 id="professionals-h">Professionals &amp; <em>health</em></h2>
       <p>Accountants, lawyers, therapists, coaches and care services.</p>
+      <a class="sec-more" href="#topics">All topics<span aria-hidden="true"> ↑</span></a>
     </div>
   </div>
   <ol class="grid" start="20">
-    <li class="lead"><a href="https://kellnerandco.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/kellner.jpg" width="700" height="560" loading="lazy" alt="Kellner &amp; Co. website"></figure><span class="cap"><span class="n">20</span><span class="nm">Kellner &amp; Co.</span><span class="tr"><span>CPA firm</span> · <span>Lead capture</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://albonsolicitors.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/albon.jpg" width="700" height="560" loading="lazy" alt="Albon Solicitors website"></figure><span class="cap"><span class="n">21</span><span class="nm">Albon Solicitors</span><span class="tr"><span>Law firm</span> · <span>Landlord services</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://yossikleintherapy.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/yosefklein.jpg" width="700" height="560" loading="lazy" alt="Yosef Klein, LMHC website"></figure><span class="cap"><span class="n">22</span><span class="nm">Yosef Klein, LMHC</span><span class="tr"><span>Therapy practice</span> · <span>Yiddish &amp; English</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://yancheinu.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/yancheinu.jpg" srcset="/images/shots/yancheinu-m.jpg 640w, /images/shots/yancheinu.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="Yancheinu Coaching website"></figure><span class="cap"><span class="n">23</span><span class="nm">Yancheinu Coaching</span><span class="tr"><span>Coaching</span> · <span>Courses</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li class="w2"><a href="https://thecompasscareny.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/compass.jpg" width="700" height="560" loading="lazy" alt="The Compass Care website"></figure><span class="cap"><span class="n">24</span><span class="nm">The Compass Care</span><span class="tr"><span>Social care</span> · <span>Eligibility check</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="lead"><a href="https://kellnerandco.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/kellner.jpg" width="700" height="560" loading="lazy" alt="Kellner &amp; Co. website"></figure><span class="cap"><span class="n">20</span><span class="nm">Kellner &amp; Co.</span><span class="tr"><span>CPA firm</span> · <span>Lead capture</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://albonsolicitors.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/albon.jpg" width="700" height="560" loading="lazy" alt="Albon Solicitors website"></figure><span class="cap"><span class="n">21</span><span class="nm">Albon Solicitors</span><span class="tr"><span>Law firm</span> · <span>Landlord services</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://yossikleintherapy.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/yosefklein.jpg" width="700" height="560" loading="lazy" alt="Yosef Klein, LMHC website"></figure><span class="cap"><span class="n">22</span><span class="nm">Yosef Klein, LMHC</span><span class="tr"><span>Therapy practice</span> · <span>Yiddish &amp; English</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://yancheinu.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/yancheinu.jpg" srcset="/images/shots/yancheinu-m.jpg 640w, /images/shots/yancheinu.jpg 1000w" sizes="(max-width:980px) 50vw, 48vw" width="1000" height="625" loading="lazy" alt="Yancheinu Coaching website"></figure><span class="cap"><span class="n">23</span><span class="nm">Yancheinu Coaching</span><span class="tr"><span>Coaching</span> · <span>Courses</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="w2"><a href="https://thecompasscareny.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/compass.jpg" width="700" height="560" loading="lazy" alt="The Compass Care website"></figure><span class="cap"><span class="n">24</span><span class="nm">The Compass Care</span><span class="tr"><span>Social care</span> · <span>Eligibility check</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
   </ol>
 </section>
 
 <!-- ============ COMMUNITY & WEB APPS ============ -->
 <section class="sec tight topic" id="community" aria-labelledby="community-h">
   <div class="wrap">
-    <div class="rh sv"><span>Topic 05 / 05 · 3 sites</span><a href="#topics">All topics<span aria-hidden="true"> ↑</span></a></div>
+    <div class="rh"><span>Topic 05 / 05 · 3 sites</span></div>
     <div class="sec-head">
       <h2 id="community-h">Community &amp; <em>web apps</em></h2>
       <p>Nonprofits, applications and records, built as real web apps.</p>
+      <a class="sec-more" href="#topics">All topics<span aria-hidden="true"> ↑</span></a>
     </div>
   </div>
   <ol class="grid" start="25">
-    <li class="lead"><a href="https://kollelchatzosusa.org" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/kollel.jpg" srcset="/images/shots/kollel-m.jpg 640w, /images/shots/kollel.jpg 1000w" sizes="(max-width:980px) 100vw, 32vw" width="1000" height="625" loading="lazy" alt="Kollel Chatzos website"></figure><span class="cap"><span class="n">25</span><span class="nm">Kollel Chatzos</span><span class="tr"><span>Nonprofit</span> · <span>Bilingual</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://freefoodstockpile.org" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/work/stockpile.jpg" width="700" height="560" loading="lazy" alt="Free Food Stockpile website"></figure><span class="cap"><span class="n">26</span><span class="nm">Free Food Stockpile</span><span class="tr"><span>Web app</span> · <span>Applications</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
-    <li><a href="https://sanz1.com" target="_blank" rel="noopener"><figure class="duo sv"><img src="/images/shots/sanz1.jpg" srcset="/images/shots/sanz1-m.jpg 640w, /images/shots/sanz1.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="Sanz Records website"></figure><span class="cap"><span class="n">27</span><span class="nm">Sanz Records</span><span class="tr"><span>Genealogy records</span> · <span>Paid downloads</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li class="lead"><a href="https://kollelchatzosusa.org" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/kollel.jpg" srcset="/images/shots/kollel-m.jpg 640w, /images/shots/kollel.jpg 1000w" sizes="(max-width:980px) 100vw, 32vw" width="1000" height="625" loading="lazy" alt="Kollel Chatzos website"></figure><span class="cap"><span class="n">25</span><span class="nm">Kollel Chatzos</span><span class="tr"><span>Nonprofit</span> · <span>Bilingual</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://freefoodstockpile.org" target="_blank" rel="noopener"><figure class="duo"><img src="/images/work/stockpile.jpg" width="700" height="560" loading="lazy" alt="Free Food Stockpile website"></figure><span class="cap"><span class="n">26</span><span class="nm">Free Food Stockpile</span><span class="tr"><span>Web app</span> · <span>Applications</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
+    <li><a href="https://sanz1.com" target="_blank" rel="noopener"><figure class="duo"><img src="/images/shots/sanz1.jpg" srcset="/images/shots/sanz1-m.jpg 640w, /images/shots/sanz1.jpg 1000w" sizes="(max-width:980px) 50vw, 32vw" width="1000" height="625" loading="lazy" alt="Sanz Records website"></figure><span class="cap"><span class="n">27</span><span class="nm">Sanz Records</span><span class="tr"><span>Genealogy records</span> · <span>Paid downloads</span></span><span class="go" aria-hidden="true">↗</span></span></a></li>
   </ol>
 </section>
 
@@ -227,7 +256,7 @@
     <div class="call-grid">
       <div class="call-l">
         <p class="call-sub">Tell us what you need. We’ll take it from there.</p>
-        <p class="cta-row"><a class="btn btn-lg btn-inv" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="/#contact">Ask a question<span class="ar" aria-hidden="true">→</span></a></p>
+        <p class="cta-row"><a class="btn btn-lg" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a><a class="btn btn-lg btn-pl" href="/#contact">Ask a question<span class="ar" aria-hidden="true">→</span></a></p>
       </div>
       <div class="call-r">
         <ul class="contact">
@@ -242,24 +271,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ed9203e68e4d09833e411cd68485df","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>

@@ -19,92 +19,130 @@
 <meta property="og:image:alt" content="BH Web Solutions — Beautiful websites. Fair prices. Live in days.">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* about page only (shared components live in /css/site.css) */
+/* about page only (shared look in /css/site.css): the person card on the logo gradient; the story centred on the
+   waved indigo band; "who" as white cards with the logo-gradient bar; the places as pills; a centred Start band */
 .ab-top{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:stretch;-webkit-align-items:stretch;align-items:stretch}
 .ab-l{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;padding-right:56px}
 .phead h1 em{display:block;white-space:normal}
 .ab-act{margin-top:32px}
-.ab-act .tlink{margin-left:28px}
-/* the person: a cobalt field with his mark */
-.me{position:relative;width:35%;-webkit-flex:none;flex:none;min-height:0;padding:36px 40px 40px}
-.me .fk{padding-bottom:34px}
-.me-mark{position:absolute;top:24px;right:34px;width:62px;height:62px;color:var(--paper)}
-.me .big{font-size:56px;font-size:4.3vw;margin-top:44px}
-.me-r{position:relative;margin:18px 0 26px;font-size:17px;line-height:1.45;max-width:22em}
-.me .contact{position:relative}
+.ab-act .tlink{margin-left:12px;padding:15px 24px 16px;border:0;border-radius:999px;line-height:1.1;-webkit-box-shadow:inset 0 0 0 1.5px var(--line2);box-shadow:inset 0 0 0 1.5px var(--line2)}
+.ab-act .tlink:hover,.ab-act .tlink:focus{color:var(--ink);-webkit-box-shadow:inset 0 0 0 1.5px var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+/* the person: the logo-gradient field with the white mark */
+.me{width:35%;-webkit-flex:none;flex:none;padding:36px 40px 40px;border-radius:26px;-webkit-box-shadow:0 40px 90px -36px rgba(43,78,255,.65);box-shadow:0 40px 90px -36px rgba(43,78,255,.65)}
+.me .fk{padding-bottom:30px}
+.me .fk:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffc53d;margin-right:10px;vertical-align:1px}
+.me-mark{position:absolute;top:24px;right:34px;width:62px;height:62px;color:#fff}
+.me .big{font-size:56px;font-size:4.3vw;margin-top:40px}
+.me-r{margin:18px 0 26px;font-size:17px;line-height:1.45;max-width:22em}
 .me .contact li:last-child{margin-bottom:0}
-/* the story on the ink band */
-.ab-story .said{margin-top:48px}
-.letter{font-family:var(--serif);font-weight:400;font-size:40px;font-size:3.9vw;line-height:1.06;letter-spacing:-.018em;margin:0;max-width:21em}
-.letter em{color:var(--cobalt-l)}
-.sig{margin:36px 0 0}
-.sig em{display:block;font-family:var(--serif);font-size:40px;line-height:1;color:var(--cobalt-l)}
-.sig span{display:block;margin-top:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,238,228,.78)}
-.ab-story .ways{width:auto;margin-top:76px;border-top:1px solid var(--pline)}
-.ab-story .ways li:first-child{border-left:0;padding-left:0}
-.ab-story .ways .n{margin-bottom:36px}
-/* who: an editorial list, sentence captions */
-.who a{padding:22px 10px 21px}
-.who .nm{width:36%;-webkit-flex:none;flex:none;font-size:40px;line-height:1.02}
-.who .tr{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;margin-left:0;padding-left:24px;text-align:left;font-family:var(--sans);font-size:17px;line-height:1.4;letter-spacing:0;text-transform:none}
-.places .nm{font-size:32px}
-/* closing band */
-.ab-cta{margin-top:46px}
-.ab-cta .btn+.btn{margin-left:14px}
-.ab-ghost{background:transparent;color:var(--paper);-webkit-box-shadow:inset 0 0 0 1px var(--paper);box-shadow:inset 0 0 0 1px var(--paper)}
-.ab-alt{margin:22px 0 0;font-size:17px}
-.ab-alt a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--pline);padding-bottom:1px}
-.ab-alt a:hover{border-bottom-color:var(--paper)}
+/* the story, centred on the indigo band (light logo gradient on the promise) */
+.ab-story .said{margin-top:40px}
+.letter{font-family:var(--serif);font-weight:400;font-size:44px;font-size:clamp(1.9rem,3.3vw,3.1rem);line-height:1.14;letter-spacing:-.018em;margin:0 auto;max-width:21em;text-align:center}
+.letter em{color:#ffd36b}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .letter em{background-image:var(--grad-l);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+}
+.sig{margin:34px 0 0;text-align:center}
+.sig em{display:block;font-family:var(--serif);font-size:32px;line-height:1.1;color:#fff}
+.sig em:before{content:"";display:inline-block;width:26px;height:3px;border-radius:2px;background:#6cb33f;margin-right:12px;vertical-align:.32em}
+.sig span{display:block;margin-top:10px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff}
+.ab-story .ways{margin-top:64px}
+#why{background-color:#f6f7fb;background-image:radial-gradient(ellipse at 100% 0%,rgba(124,58,237,.06),rgba(124,58,237,0) 42%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%)}
+/* who: white cards with the gradient bar, a coloured numeral badge and a green arrow */
+.who{margin:0 -11px;-webkit-box-pack:start;-webkit-justify-content:flex-start;justify-content:flex-start}
+.idx.who li{display:-webkit-box;display:-webkit-flex;display:flex;width:31.3%;width:calc(33.333% - 22px);margin:0 11px 22px}
+.who a{-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;display:block;position:relative;overflow:hidden;min-height:0;padding:30px 28px 28px;border:1px solid var(--line);border-radius:22px;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.who a:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.who li:nth-child(5n+1) .n{background:#2b4eff;color:#fff}
+.who li:nth-child(5n+2) .n{background:#ff5c39;color:#11161f}
+.who li:nth-child(5n+3) .n{background:#6cb33f;color:#11161f}
+.who li:nth-child(5n+4) .n{background:#7c3aed;color:#fff}
+.who li:nth-child(5n) .n{background:#ffc53d;color:#11161f}
+.who .n{display:inline-block;min-width:38px;height:38px;line-height:38px;margin:0;padding:0 6px;border-radius:12px;font-size:13px}
+.who .nm{display:block;margin-top:16px;font-weight:600;font-size:24px;line-height:1.15}
+.who .tr{display:block;margin:8px 0 0;padding:0;font-size:16px;font-weight:400;line-height:1.5;text-align:left}
+.who .go{position:absolute;top:30px;right:26px;width:38px;height:38px;line-height:38px;border-radius:50%;background:#ecf6e4;color:#376d22;text-align:center;font-size:16px}
+.who a:hover .go,.who a:focus .go{background:#43822a;color:#fff}
+/* places: centred white pills (live area pills) */
+.places{max-width:1000px;margin:0 auto;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}
+.places li{width:auto;margin:0 5px 10px}
+.places a{-webkit-flex-wrap:nowrap;flex-wrap:nowrap;min-height:52px;padding:7px 18px 7px 8px;border-radius:999px;-webkit-box-shadow:0 8px 22px -14px rgba(17,22,31,.35);box-shadow:0 8px 22px -14px rgba(17,22,31,.35)}
+.places .n{min-width:36px;height:36px;line-height:36px;margin-right:12px;padding:0 4px;border-radius:999px}
+.places .nm{-webkit-box-flex:0;-webkit-flex:none;flex:none;font-family:var(--sans);font-weight:700;font-size:16.5px;letter-spacing:-.01em}
+.places .tr{width:auto;margin:0 0 0 10px;padding:0;font-size:14px;text-align:left;-webkit-box-ordinal-group:1;-webkit-order:0;order:0}
+.places .go{width:auto;margin-left:12px}
+/* closing band, centred */
+.ab-cta{margin-top:40px;text-align:center}
+.ab-cta .btn{margin:0 7px 12px}
+.ab-alt{margin:16px 0 0;font-size:17px;text-align:center}
+.ab-alt a{color:#fff;font-weight:700;text-decoration:none;border-bottom:2px solid rgba(255,255,255,.55);padding-bottom:1px}
+.ab-alt a:hover,.ab-alt a:focus{border-bottom-color:#fff}
 @media (min-width:1640px){
   .me .big{font-size:72px}
-  .letter{font-size:64px}
 }
 @media (max-width:980px){
   .ab-top{display:block}
   .ab-l{padding-right:0}
   .me{width:auto;margin-top:40px}
   .me .big{font-size:8vw}
-  .letter{font-size:5.4vw}
-  .who .nm{width:42%;font-size:34px}
-  .me .contact li{display:inline-block;vertical-align:top;margin:0 36px 10px 0}
+  .me .contact li{display:inline-block;vertical-align:top;margin:0 10px 10px 0}
+  .idx.who li{width:47%;width:calc(50% - 22px)}
 }
 @media (max-width:760px){
   .ab-act{margin-top:24px}
-  .ab-act .btn{display:block;text-align:center;font-size:17px;padding:17px 18px 18px}
-  .ab-act .tlink{margin:16px 0 0}
-  .me{margin:32px -16px 0;padding:22px 16px 28px}
-  .me .fk{padding-bottom:26px}
-  .me-mark{top:14px;right:16px;width:46px;height:46px}
-  .me .big{font-size:12vw;margin-top:30px}
-  .me .contact li{display:block;margin:0 0 14px}
-  .ab-story .said{margin-top:36px}
-  .letter{font-size:8.4vw;line-height:1.08}
-  .sig em{font-size:32px}
-  .ab-story .ways{margin-top:46px;border-top:0}
-  .ab-story .ways .n{margin-bottom:0}
-  .ab-story .ways b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-size:28px;line-height:1.05}
-  .who a{padding:15px 4px 14px}
-  .who .nm{width:auto;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;font-size:28px}
-  .who .tr{width:100%;-webkit-box-flex:0;-webkit-flex:none;flex:none;margin:6px 0 0;padding-left:36px;font-size:16px}
-  .places .nm{font-size:25px}
-  .ab-cta{margin-top:34px}
-  .ab-cta .btn{display:block;text-align:center}
-  .ab-cta .btn+.btn{margin:12px 0 0}
+  .ab-act .btn,.ab-act .tlink{display:block;text-align:center;margin:0}
+  .ab-act .btn{font-size:17px;padding:17px 18px 18px}
+  .ab-act .tlink{margin-top:12px}
+  .me{margin:32px 0 0;padding:26px 22px 26px;border-radius:22px}
+  .me .fk{padding-bottom:22px}
+  .me-mark{top:18px;right:20px;width:46px;height:46px}
+  .me .big{font-size:11vw;margin-top:28px}
+  .me .contact li{display:block;margin:0 0 10px}
+  .ab-story .said{margin-top:30px}
+  .letter{font-size:28px;font-size:7.4vw;line-height:1.16}
+  .sig em{font-size:27px}
+  .ab-story .ways{margin-top:44px}
+  .who{margin:0}
+  .idx.who li{width:100%;margin:0 0 14px}
+  .who a{padding:26px 22px 24px}
+  .who .go{top:26px;right:20px}
+  .who .nm{font-size:22px}
+  .places li{width:100%;margin:0 0 8px}
+  .places a{padding:6px 14px 6px 6px;min-height:48px}
+  .places .n{margin-right:10px}
+  .places .nm{font-size:15.5px}
+  .places .tr{font-size:13px;margin-left:auto;padding-left:10px;text-align:right}
+  .places .go{margin-left:8px}
+  .ab-cta .btn{display:block;margin:0 0 12px;text-align:center}
+  .ab-alt{font-size:16.5px}
 }
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -114,11 +152,14 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work">Work</a>
       <a href="/#build">What I build</a>
@@ -128,7 +169,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about" aria-current="page">About</a>
@@ -136,6 +177,7 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
@@ -143,7 +185,7 @@
 <section class="phead" aria-labelledby="h1">
   <div class="wrap ab-top">
     <div class="ab-l">
-      <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>About BH Web Solutions<span class="wide"> · Avrumy Neumann</span> · Brooklyn, NY</span></p>
+      <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>About BH Web Solutions<span class="wide"> · Avrumy Neumann</span> · Brooklyn, NY</span></p>
       <h1 id="h1">Not an agency. <em>Not a template shop.</em></h1>
       <p class="lede">One hands-on developer in Brooklyn, building premium websites at prices that make sense — in English and Yiddish. You talk directly to the person designing and coding your site.</p>
       <div class="ab-act">
@@ -157,7 +199,7 @@
         <li>Direct with the builder</li>
       </ul>
     </div>
-    <aside class="field me press" aria-label="Who you talk to">
+    <aside class="field me" aria-label="Who you talk to">
       <p class="fk">Who you talk to</p>
       <svg class="me-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg>
       <p class="big">Avrumy <em>Neumann</em></p>
@@ -174,9 +216,9 @@
 <!-- ============ 01 THE STORY (ink band) ============ -->
 <section class="sec dark ab-story" id="story" aria-labelledby="story-h">
   <div class="wrap">
-    <div class="rh sv"><span>The story</span><span>Avrumy Neumann · owner</span></div>
+    <div class="rh"><span>The story</span><span>Avrumy Neumann · owner</span></div>
     <h2 class="said" id="story-h">Why BH Web Solutions exists</h2>
-    <p class="letter sv-big">A frum business owner shouldn't have to choose between a website that looks cheap and one that costs a fortune. We build the in-between that should have existed all along — <em>genuinely premium work, priced fairly, delivered fast.</em></p>
+    <p class="letter">A frum business owner shouldn't have to choose between a website that looks cheap and one that costs a fortune. We build the in-between that should have existed all along — <em>genuinely premium work, priced fairly, delivered fast.</em></p>
     <p class="sig"><em>Avrumy Neumann</em><span>Owner · BH Web Solutions · Brooklyn, NY</span></p>
     <ol class="ways">
       <li><span class="n">01</span><b>Every project handled personally</b><span class="c">No sales reps, no queues.</span></li>
@@ -189,8 +231,8 @@
 <!-- ============ 02 WHO WE BUILD FOR (editorial list) ============ -->
 <section class="sec" id="serve" aria-labelledby="serve-h">
   <div class="wrap">
-    <div class="rh sv"><span>Who we build for</span><a href="/work">Work by topic →</a></div>
-    <div class="sec-head"><h2 id="serve-h">Businesses <em>like yours.</em></h2></div>
+    <div class="rh"><span>Who we build for</span></div>
+    <div class="sec-head"><h2 id="serve-h">Businesses <em>like yours.</em></h2><a class="sec-more" href="/work">Work by topic →</a></div>
     <ol class="idx one who">
       <li><a href="/work#stores"><span class="n">01</span><span class="nm">Kosher stores</span><span class="tr">Groceries, vitamins, sefarim, Judaica — with search and secure checkout.</span><span class="go" aria-hidden="true">→</span></a></li>
       <li><a href="/work#food"><span class="n">02</span><span class="nm">Catering &amp; food</span><span class="tr">Menu sites and online ordering that turn browsers into bookings.</span><span class="go" aria-hidden="true">→</span></a></li>
@@ -205,7 +247,7 @@
 <!-- ============ 03 WHY US (numbered cells) ============ -->
 <section class="sec" id="why" aria-labelledby="why-h">
   <div class="wrap">
-    <div class="rh sv"><span>Why us</span><span>Six reasons</span></div>
+    <div class="rh"><span>Why us</span><span>Six reasons</span></div>
     <div class="sec-head">
       <h2 id="why-h">The sweet <em>spot.</em></h2>
       <p>Not a clip-art template shop. Not a bloated agency. Real custom work — personal, fair, fast.</p>
@@ -224,10 +266,11 @@
 <!-- ============ 04 WHERE WE WORK ============ -->
 <section class="sec" id="areas" aria-labelledby="areas-h">
   <div class="wrap">
-    <div class="rh sv"><span>Where we work</span><a href="/web-design/">All areas →</a></div>
+    <div class="rh"><span>Where we work</span></div>
     <div class="sec-head">
       <h2 id="areas-h">Brooklyn &amp; <em>everywhere.</em></h2>
       <p>Everything is done online, so distance is never a problem.</p>
+      <a class="sec-more" href="/web-design/">All areas →</a>
     </div>
     <ol class="idx places">
       <li><a href="/web-design/monsey-ny"><span class="n">01</span><span class="nm">Monsey</span><span class="tr">Rockland County</span><span class="go" aria-hidden="true">→</span></a></li>
@@ -245,7 +288,7 @@
 <!-- ============ 05 FAQ (open rows, nothing hidden) ============ -->
 <section class="sec faqs" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
-    <div class="rh sv"><span>FAQ</span><span>Six questions</span></div>
+    <div class="rh"><span>FAQ</span><span>Six questions</span></div>
     <div class="sec-head"><h2 id="faq-h">Quick <em>answers.</em></h2></div>
     <div class="faq">
       <div class="qa"><h3><span class="n">Q.1</span><span>Do you build websites for kosher and Jewish businesses?</span></h3><p class="a">Yes — it's our specialty. We build websites and online stores for kosher stores, caterers, bakeries, sefarim and Judaica shops, mosdos and frum-owned businesses, and we understand the community you're serving.</p></div>
@@ -264,8 +307,8 @@
     <div class="rh"><span>Start</span><span>Brooklyn, NY · and beyond</span></div>
     <h2 id="call-h">Ready for a website you'll actually be <em>proud of?</em></h2>
     <div class="ab-cta">
-      <a class="btn btn-lg btn-inv" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a>
-      <a class="btn btn-lg ab-ghost" href="tel:8455766607">Call 845-576-6607</a>
+      <a class="btn btn-lg" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn-lg btn-pl" href="tel:8455766607">Call 845-576-6607</a>
     </div>
     <p class="ab-alt">Prefer to write? <a href="/#contact">Send me a message</a> or <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp me</a>.</p>
   </div>
@@ -273,24 +316,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <!-- ===== STRUCTURED DATA (SEO) ===== -->
 <script type="application/ld+json">

@@ -14,75 +14,113 @@
 <meta property="og:image" content="https://bhwebs.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* review page only: question rows (question left, answer right, like the FAQ), stars, publish chips, thank-you */
+/* review page only: one white card per question (question left, answer right, like the FAQ cards on the
+   homepage), sun-yellow stars, round tick chips, a gradient-bordered send row, the thank-you card */
+main>.sec{background-image:radial-gradient(ellipse at 100% 30%,rgba(255,92,57,.06),rgba(255,92,57,0) 40%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%),linear-gradient(180deg,rgba(246,247,251,0) 0,#f6f7fb 260px)}
 .rform{margin-top:40px}
-.rrow{display:-webkit-box;display:-webkit-flex;display:flex;border-top:1px solid var(--line2);padding:30px 0 34px}
-.rrow:last-child{border-bottom:1px solid var(--line2)}
-.rq{display:-webkit-box;display:-webkit-flex;display:flex;width:44%;-webkit-flex:none;flex:none;padding-right:48px}
-.rq .n{width:64px;-webkit-flex:none;flex:none;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--cobalt);padding-top:12px}
+.rrow{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;margin:0 0 16px;padding:34px 34px 34px;background:#fff;border:1px solid var(--line);border-radius:22px;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.rrow:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.rq{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;width:44%;-webkit-flex:none;flex:none;padding-right:44px}
+/* Q.1-Q.4: the FAQ's coloured pill numbers */
+.rq .n{-webkit-flex:none;flex:none;width:46px;margin:5px 14px 0 0;padding:4px 0;border-radius:999px;background:#eef1ff;color:#1f3bd6;font-size:12px;font-weight:800;line-height:1.35;letter-spacing:.04em;text-align:center}
+.rq .n:empty{display:none}
+.q2 .n{background:#f3ecff;color:#6a2ed6}
+.q3 .n{background:#fff0eb;color:#c8361b}
+.q4 .n{background:#ecf6e4;color:#3a7524}
 .rq .qt{min-width:0;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px}
-.form .ql{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;letter-spacing:-.012em;text-transform:none;color:var(--ink);margin:0;max-width:13em}
-.form .ql b{font-weight:400;color:var(--cobalt)}
-.form .rq .hint{margin:12px 0 0;font-size:16px;line-height:1.45;max-width:24em}
+.form .ql{display:block;font-family:var(--serif);font-weight:500;font-size:29px;line-height:1.12;letter-spacing:-.015em;color:var(--ink);margin:0;max-width:14em}
+.form .ql b{font-weight:500;color:#c4351c}
+.form .rq .hint{margin:12px 0 0;font-size:16px;line-height:1.5;max-width:26em}
 .ra{min-width:0;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px}
 .ra>.fgroup:last-child{margin-bottom:0}
 /* stars: inputs first (5 to 1) and a reversed row, so a checked or hovered star fills the ones to its left; no script */
-.stars{position:relative;display:-webkit-flex;display:flex;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-justify-content:flex-end;justify-content:flex-end}
+.stars{position:relative;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-box-pack:end;-webkit-justify-content:flex-end;justify-content:flex-end}
 .stars input{position:absolute;top:0;left:0;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
-.form .stars label{display:block;margin:0 8px 0 0;padding:3px;line-height:0;cursor:pointer}
+.form .stars label{display:block;margin:0 6px 0 0;padding:3px;line-height:0;cursor:pointer;border-radius:12px}
 .stars svg{display:block;width:48px;height:48px}
-.stars path{fill:transparent;stroke:#57534B;stroke-width:1.3;stroke-linejoin:round}
-.stars input:checked~label path,.stars label:hover path,.stars label:hover~label path{fill:#2A49F2;stroke:#2A49F2}
-.stars input:focus+label{outline:2px solid #2A49F2;outline-offset:0}
-.rate-out{min-height:1.25em;margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.2;color:var(--cobalt)}
-/* how the review is shown: the shared chips, freed from the mono label style */
+.stars path{fill:transparent;stroke:#7c8596;stroke-width:1.3;stroke-linejoin:round}
+.stars input:checked~label path,.stars label:hover path,.stars label:hover~label path{fill:#ffc53d;stroke:#bf8700}
+.stars input:focus+label{outline:3px solid #2b4eff;outline-offset:1px}
+.rate-out{min-height:1.25em;margin:12px 0 0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:25px;line-height:1.2;color:#1f3bd6}
+/* how the review is shown: the shared chips with a round tick box that turns green */
 .pub{border:0;margin:0;padding:0;min-width:0}
-.form .chip{display:inline-block;margin:0;font-family:var(--sans);font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink)}
-.chip span:hover{-webkit-box-shadow:inset 0 0 0 1px var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.chip span{position:relative;padding-left:44px}
+.chip span:before{content:"";position:absolute;left:15px;top:12px;width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line2);background:#fff}
+.chip input:checked+span:before{border-color:#6cb33f;background:#6cb33f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:11px 11px}
 .pub__note{margin:6px 0 0;font-size:15px;color:var(--ink2)}
-.form .rthanks{margin:0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.2;color:var(--ink);max-width:14em}
-.rsend .cstatus a{color:var(--cobalt)}
-/* thank-you */
-.rdone{padding:44px 0 10px}
-.rdone .cic{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;width:66px;height:66px;border-radius:50%;background:var(--cobalt);color:var(--paper)}
-.rdone h2{margin:26px 0 18px}
-.rdone p{font-size:19px;max-width:30em;color:var(--ink2);margin:0 0 30px}
+/* the send row: the price pill's gradient border, no top bar */
+.rrow.rsend{-webkit-box-align:center;-webkit-align-items:center;align-items:center;border:2px solid transparent;background:#fff;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d) border-box;-webkit-box-shadow:0 14px 34px -18px rgba(124,58,237,.5);box-shadow:0 14px 34px -18px rgba(124,58,237,.5)}
+.rrow.rsend:before{display:none}
+.form .rthanks{margin:0;font-family:var(--serif);font-style:italic;font-weight:500;font-size:25px;line-height:1.2;color:var(--ink);max-width:14em;text-align:left}
+.rsend .btn{margin-top:0}
+.rsend .cstatus a{color:#1f3bd6}
+/* thank-you: a white card with the gradient bar and the live green tick */
+.rdone{position:relative;overflow:hidden;max-width:760px;margin:40px auto 0;padding:52px 40px 46px;background:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
+.rdone:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--grad)}
+.rdone .cic{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center;width:66px;height:66px;margin:0 auto;border-radius:50%;background:#43822a;color:#fff;-webkit-box-shadow:0 12px 28px -12px rgba(108,179,63,.8);box-shadow:0 12px 28px -12px rgba(108,179,63,.8)}
+.rdone h2{margin:24px 0 16px}
+.rdone p{font-size:19px;max-width:30em;color:var(--ink2);margin:0 auto 28px}
 @media (max-width:980px){
-  .rq{width:46%;padding-right:32px}
-  .form .ql{font-size:30px}
+  .rrow{padding:30px 28px}
+  .rq{width:46%;padding-right:28px}
+  .form .ql{font-size:26px}
 }
 @media (max-width:760px){
   .rform{margin-top:26px}
-  .rrow{display:block;padding:22px 0 26px}
+  .rrow{display:block;margin-bottom:14px;padding:26px 20px 22px}
   .rq{display:block;width:100%;padding-right:0}
-  .rq .n{display:block;width:auto;padding:0;margin:0 0 8px}
+  .rq .n{display:inline-block;width:auto;margin:0 0 10px;padding:4px 10px}
   .rq .n:empty{display:none}
-  .form .ql{font-size:27px}
+  .form .ql{font-size:24px}
   .form .rq .hint{font-size:15.5px;margin-top:8px}
   .ra{margin-top:16px}
   .stars svg{width:44px;height:44px}
-  .form .stars label{margin-right:6px}
-  .rate-out{font-size:23px;min-height:0;margin-top:10px}
+  .form .stars label{margin-right:4px}
+  .rate-out{font-size:21px;min-height:0;margin-top:10px}
   .rate-out:empty{margin:0}
-  .form .rthanks{font-size:23px}
+  .form .rthanks{font-size:22px}
   .rsend .btn,.rdone .btn{display:block;width:100%;text-align:center;font-size:17px}
-  .rdone{padding-top:30px}
+  .rdone{margin-top:26px;padding:36px 20px 26px}
   .rdone p{font-size:17px}
+}
+@media (max-width:360px){
+  .stars svg{width:38px;height:38px}
+  .form .stars label{margin-right:2px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .form .stars label{-webkit-transition:-webkit-transform .15s;transition:transform .15s}
+  .form .stars label:hover{-webkit-transform:scale(1.12);transform:scale(1.12)}
+  @supports (animation-timeline:view()){
+    .rrow{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+  }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -92,11 +130,14 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work">Work</a>
       <a href="/#build">What I build</a>
@@ -106,7 +147,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about">About</a>
@@ -114,13 +155,14 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
 <!-- ============ PAGE HEAD ============ -->
 <section class="phead" aria-labelledby="h1">
   <div class="wrap">
-    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Your feedback</span></p>
+    <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Your feedback</span></p>
     <h1 id="h1">How did we <em class="sw">do?</em></h1>
     <p class="lede">Four short questions — about a minute. Your words help other business owners know what to expect before they reach out.</p>
   </div>
@@ -129,7 +171,7 @@
 <!-- ============ THE REVIEW FORM (posts to reviews.bhwebs.com; a plain POST still works without script) ============ -->
 <section class="sec" aria-label="Your review">
   <div class="wrap">
-    <div class="rh sv"><span>Your review</span><span>Stars + four questions</span></div>
+    <div class="rh"><span>Your review</span><span>Stars + four questions</span></div>
 
     <form id="revform" class="form rform" action="https://reviews.bhwebs.com/submit" method="POST" novalidate>
 
@@ -218,24 +260,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <script>
 /* ES5 only (old iPads, filtered browsers). Without script the form is a plain POST to reviews.bhwebs.com;

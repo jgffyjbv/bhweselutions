@@ -1,137 +1,205 @@
 /* ==========================================================================
-   BH Web Solutions · guides.css · the reading layer for /guides/ (Doctrine B "Paper", Oct 2026)
-   Loaded AFTER /css/site.css, which already carries the tokens (paper, cobalt, ink), the header,
-   footer, buttons, .idx rows, the cobalt .call band and the one motion motif ("the press").
-   This file only adds what long articles need. Same rules as site.css: Safari 10.3 (no grid,
-   no flex gap, -webkit- prefixes), nothing hidden or moving outside the reduced-motion block.
+   BH Web Solutions · guides.css · the reading layer for /guides/ (the owner's look, Oct 30 2026)
+   Loaded AFTER /css/site.css, which carries the tokens (white ground, the logo colours), the header,
+   footer, green pill buttons, dot labels (.rh), centred heads (.sec-head), the ghost pill (.sec-more),
+   the waved two-tone .call band and the rise + fade reveal. This file only adds what long articles need:
+   the "About this guide" card, the article (coloured numeral badges, cards for the key point, rounded
+   tables), and the guide cards (white, gradient top bar, coloured numeral) on the hub and under each guide.
+   Same rules as site.css: Safari 10.3 (no grid, no flex gap, -webkit- prefixes, clamp after a fallback),
+   nothing hidden or moving outside the reduced-motion block.
    ========================================================================== */
 
 /* ---------- page head ---------- */
-.ghead{padding-bottom:40px}
-.ghead h1{font-size:40px;font-size:5.3vw;line-height:.96;letter-spacing:-.02em;max-width:15em}
+.ghead{padding-bottom:48px}
+.ghead h1{font-size:46px;font-size:clamp(2.3rem,4.4vw,4rem);line-height:1.02;max-width:16em}
 .ghead .lede{max-width:36em}
-.hubhead h1{font-size:46px;font-size:8.05vw;line-height:.9}
-.gtopics{margin:26px 0 0;font-family:var(--mono);font-size:12.5px;line-height:2;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2)}
-.gtopics a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--cobalt)}
-.gtopics a:hover{color:var(--cobalt)}
+.hubhead h1{font-size:64px;font-size:clamp(3.2rem,7vw,6.4rem);line-height:.98}
+.hubhead .lede{margin-top:40px}
+/* the count and the three topics as pills; the " · " separators stay in the text, set to zero size */
+.gtopics{margin:30px 0 0;font-size:0;line-height:0}
+.gtopics .gcount,.gtopics a{display:inline-block;vertical-align:middle;margin:0 8px 10px 0;font-size:15px;line-height:1.3}
+.gtopics .gcount{margin-right:14px;font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2)}
+.gtopics a{padding:11px 18px 11px 16px;min-height:44px;border-radius:999px;background:#fff;border:1.5px solid var(--line);font-weight:700;color:var(--ink);text-decoration:none;-webkit-box-shadow:0 6px 18px -12px rgba(17,22,31,.35);box-shadow:0 6px 18px -12px rgba(17,22,31,.35)}
+.gtopics a:before{content:"";display:inline-block;vertical-align:1px;width:8px;height:8px;margin-right:9px;border-radius:50%;background:#2b4eff}
+.gtopics a:nth-of-type(2):before{background:#ff5c39}
+.gtopics a:nth-of-type(3):before{background:#6cb33f}
+.gtopics a:hover,.gtopics a:focus{border-color:#2b4eff;color:#1f3bd6}
 
-/* ---------- body: a quiet sticky rail + the reading column ---------- */
-.gbody{padding-bottom:110px}
-.gcols{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;border-top:1px solid var(--ink)}
-.gside{width:31%;-webkit-flex:none;flex:none;padding:13px 48px 0 0;position:-webkit-sticky;position:sticky;top:24px}
-.gk{margin:0 0 12px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
-.gk:before{content:"";display:inline-block;vertical-align:middle;width:28px;height:1px;margin:-2px 12px 0 0;background:var(--cobalt)}
-.gmeta{margin:0 0 20px;font-family:var(--mono);font-size:12.5px;line-height:1.7;letter-spacing:.04em;color:var(--ink2)}
-.gmeta span{display:block}
+/* ---------- body: the "About this guide" card (sticky beside the text on desktop) + the reading column ---------- */
+.gbody{padding-bottom:120px}
+.gcols{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start}
+.gside{position:relative;overflow:hidden;width:30%;-webkit-flex:none;flex:none;margin-right:56px;padding:30px 28px 28px;background:#fff;border:1px solid var(--line);border-radius:22px;
+  -webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.gside:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.gk{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin:0 0 14px;font-size:12.5px;font-weight:800;line-height:1.35;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.gk:before{content:"";display:block;-webkit-flex:none;flex:none;width:9px;height:9px;margin-right:10px;border-radius:50%;background:#2b4eff}
+.g-heimish .gk:before{background:#ff5c39}
+.g-decisions .gk:before{background:#6cb33f}
+.gmeta{margin:0 0 18px;font-size:14.5px;line-height:1.6;color:var(--ink2)}
+.gmeta span{display:block;white-space:nowrap}
 .gmeta .dot{display:none}
 .gall{margin:0}
-.ggo{margin:30px 0 0}
-.gcols .prose{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;max-width:37em;padding-top:30px}
+.ggo{margin:24px 0 0}
+.ggo .btn{display:block;text-align:center}
+.gcols .prose{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;max-width:38em}
 
 /* ---------- the article ---------- */
 .gbody .prose{font-size:18px;line-height:1.68;counter-reset:gh;overflow-wrap:break-word;word-wrap:break-word}
-.gbody .prose>p:first-child{font-size:21px;line-height:1.5;margin-bottom:1.2em}
+.gbody .prose>p:first-child{font-size:21px;line-height:1.5;margin-bottom:1.2em;color:var(--ink)}
 .gbody .prose p,.gbody .prose ul,.gbody .prose ol{margin:0 0 1.15em}
-.gbody .prose h2{position:relative;font-size:40px;line-height:1.02;letter-spacing:-.015em;margin:68px 0 22px;padding-top:15px;border-top:1px solid var(--line2)}
-.gbody .prose h2:before{counter-increment:gh;content:counter(gh,decimal-leading-zero);display:block;margin:0 0 18px;font-family:var(--mono);font-size:12.5px;line-height:1;letter-spacing:.06em;color:var(--cobalt)}
-.gbody .prose h3{font-size:27px;line-height:1.1;letter-spacing:-.01em;margin:42px 0 12px}
+.gbody .prose h2{font-size:38px;line-height:1.06;letter-spacing:-.02em;margin:72px 0 20px}
+/* each section's small coloured numeral (01, 02 …) as a pill, the colours of the logo in turn */
+.gbody .prose h2:before{counter-increment:gh;content:counter(gh,decimal-leading-zero);display:table;margin:0 0 16px;padding:5px 11px 4px;border-radius:999px;background:#eef1ff;color:#1f3bd6;font-family:var(--sans);font-size:12.5px;font-weight:800;line-height:1.3;letter-spacing:.04em}
+.gbody .prose h2:nth-of-type(4n+2):before{background:#f3ecff;color:#6a2ed6}
+.gbody .prose h2:nth-of-type(4n+3):before{background:#fff0eb;color:#c8361b}
+.gbody .prose h2:nth-of-type(4n):before{background:#ecf6e4;color:#3a7524}
+.gbody .prose h3{font-size:26px;line-height:1.12;letter-spacing:-.012em;margin:42px 0 12px}
 .gbody .prose h2+h3{margin-top:10px}
-.gbody .prose a{color:var(--cobalt);text-decoration:underline;-webkit-text-decoration-color:rgba(42,73,242,.45);text-decoration-color:rgba(42,73,242,.45);text-underline-offset:3px}
-.gbody .prose a:hover{color:var(--ink);-webkit-text-decoration-color:var(--ink);text-decoration-color:var(--ink)}
-.gbody .prose strong{font-weight:600}
-.gbody .prose code{font-family:var(--mono);font-size:.84em;background:rgba(21,21,26,.06);padding:.12em .36em}
-.gbody .prose hr{border:0;border-top:1px solid var(--line2);margin:48px 0}
-/* lists: a cobalt dash for bullets, mono numbers for steps */
+.gbody .prose a{color:#1f3bd6;text-decoration:underline;-webkit-text-decoration-color:rgba(43,78,255,.35);text-decoration-color:rgba(43,78,255,.35);text-underline-offset:3px}
+.gbody .prose a:hover{-webkit-text-decoration-color:#6cb33f;text-decoration-color:#6cb33f}
+.gbody .prose strong{font-weight:700}
+.gbody .prose code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.84em;background:#eef1ff;border-radius:6px;padding:.12em .38em}
+.gbody .prose hr{border:0;border-top:1px solid var(--line);margin:48px 0}
+/* lists: a small cobalt dot for bullets, green numeral pills for steps */
 .gbody .prose ul{list-style:none;padding:0}
-.gbody .prose ul>li{position:relative;padding-left:30px;margin:0 0 .55em}
-.gbody .prose ul>li:before{content:"";position:absolute;left:2px;top:.84em;width:14px;height:1px;background:var(--cobalt)}
+.gbody .prose ul>li{position:relative;padding-left:28px;margin:0 0 .55em}
+.gbody .prose ul>li:before{content:"";position:absolute;left:4px;top:.62em;width:8px;height:8px;border-radius:50%;background:#2b4eff}
 .gbody .prose ol{list-style:none;padding:0;counter-reset:gli}
-.gbody .prose ol>li{position:relative;padding-left:40px;margin:0 0 .55em;counter-increment:gli}
-.gbody .prose ol>li:before{content:counter(gli,decimal-leading-zero);position:absolute;left:0;top:.42em;font-family:var(--mono);font-size:12.5px;line-height:1.4;color:var(--cobalt)}
-/* the example banners quoted in the Shabbos guide */
-.gbody .prose blockquote{margin:30px 0;padding:4px 0 4px 22px;border-left:3px solid var(--cobalt);font-size:24px;line-height:1.25}
+.gbody .prose ol>li{position:relative;padding-left:46px;margin:0 0 .7em;counter-increment:gli}
+.gbody .prose ol>li:before{content:counter(gli,decimal-leading-zero);position:absolute;left:0;top:.2em;min-width:32px;padding:3px 0 2px;border-radius:999px;background:#ecf6e4;color:#3a7524;text-align:center;font-family:var(--sans);font-size:12.5px;font-weight:800;line-height:1.4}
+/* the example banners quoted in the Shabbos guide (site.css draws the tinted box with the violet edge) */
+.gbody .prose blockquote{font-size:22px}
 .gbody .prose blockquote p:last-child{margin-bottom:0}
-/* asides: the key point (callout) and the not-legal-advice note (disclaimer) */
-.gbody .prose .callout{margin:38px 0;padding:4px 0 4px 24px;border-left:3px solid var(--cobalt);font-family:var(--serif);font-size:23px;line-height:1.3;letter-spacing:-.003em}
-.gbody .prose .callout strong{font-weight:400;color:var(--cobalt)}
+/* asides: the key point is a white card with the gradient bar; the not-legal-advice note is a quiet tinted box */
+.gbody .prose .callout{position:relative;overflow:hidden;margin:40px 0;padding:32px 32px 28px;background:#fff;border:1px solid var(--line);border-radius:22px;font-family:var(--serif);font-size:22px;line-height:1.4;letter-spacing:-.005em;
+  -webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.gbody .prose .callout:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.gbody .prose .callout strong{font-weight:600;color:#1f3bd6}
 .gbody .prose .callout p:last-child,.gbody .prose .disclaimer p:last-child{margin-bottom:0}
-.gbody .prose .disclaimer{margin:40px 0;padding:14px 0 0;border-top:1px solid var(--ink);font-size:15.5px;line-height:1.55;color:var(--ink2)}
+.gbody .prose .disclaimer{margin:40px 0;padding:20px 24px;border-radius:18px;background:#f6f7fb;border:1px solid var(--line);font-size:15.5px;line-height:1.55;color:var(--ink2)}
 .gbody .prose .disclaimer strong{color:var(--ink)}
-/* tables scroll inside their own box on small screens, never the page */
-.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:30px 0 34px;border-top:1px solid var(--ink)}
+/* tables: a rounded white card that scrolls inside itself on small screens, never the page */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:30px 0 34px;background:#fff;border:1px solid var(--line);border-radius:18px;
+  -webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
 .gbody .prose table{width:100%;margin:0;border-collapse:collapse;font-size:15.5px;line-height:1.45}
-.gbody .prose th{font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);text-align:left;vertical-align:bottom;padding:12px 18px 10px 0;border-bottom:1px solid var(--line2)}
-.gbody .prose td{text-align:left;vertical-align:top;padding:12px 18px 12px 0;border-bottom:1px solid var(--line)}
-.gbody .prose td:first-child{font-weight:500}
-.gbody .prose tr>:last-child{padding-right:0}
+.gbody .prose th{font-family:var(--sans);font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);text-align:left;vertical-align:bottom;padding:14px 18px 12px;background:#eef1ff;border-bottom:0}
+.gbody .prose td{text-align:left;vertical-align:top;padding:13px 18px;border-bottom:1px solid var(--line)}
+.gbody .prose tr:last-child td{border-bottom:0}
+.gbody .prose td:first-child{font-weight:600}
 
-/* ---------- guide lists (hub + keep reading): editorial rows on site.css .idx ---------- */
-.glist .gt{display:block;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;padding-right:28px}
-.glist .nm{display:block;font-size:31px;line-height:1.06;letter-spacing:-.01em}
-.glist .gd{display:block;margin-top:8px;max-width:44em;font-size:16px;line-height:1.45;color:var(--ink2)}
-.idx.glist a{padding:22px 10px 24px}
-.glist .tr{white-space:nowrap}
-.glist .tr .ar{margin-left:8px}
-.idx a:hover .gd,.idx a:focus .gd{color:rgba(243,238,228,.8)}
+/* ---------- guide cards (hub + keep reading): white, rounded, the gradient top bar, a coloured numeral ---------- */
+.grel{background-color:#f6f7fb;background-image:radial-gradient(ellipse at 100% 0%,rgba(255,92,57,.06),rgba(255,92,57,0) 40%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%)}
+.grel.sec,.ghub.sec{padding-top:88px;padding-bottom:96px}
+.ghub:nth-of-type(odd){background-color:#f6f7fb;background-image:radial-gradient(ellipse at 100% 0%,rgba(124,58,237,.06),rgba(124,58,237,0) 42%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%)}
 .ghub .sec-head p{max-width:30em}
-.grel{padding-top:0}
+.gcards{list-style:none;margin:0 -11px;padding:0;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}
+.gcards li{width:33.333%;padding:0 11px 22px;display:-webkit-box;display:-webkit-flex;display:flex}
+.ghub .gcards li{width:50%}
+.ghub .gcards li:last-child:nth-child(odd){width:100%}
+.gcards a{position:relative;overflow:hidden;-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;padding:32px 30px 26px;color:var(--ink);text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:22px;
+  -webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.gcards a:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.gcards a:hover,.gcards a:focus{border-color:#ccd3e1;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.05),0 26px 50px -24px rgba(43,78,255,.45);box-shadow:0 2px 6px rgba(17,22,31,.05),0 26px 50px -24px rgba(43,78,255,.45)}
+/* the numeral: a solid logo-colour badge, in turn (ink on coral / green / sun, white on cobalt / violet) */
+.gcards .n{display:inline-block;min-width:38px;height:38px;line-height:38px;margin-bottom:18px;padding:0 6px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#2b4eff;color:#fff}
+.gcards li:nth-child(5n+2) .n{background:#ff5c39;color:#11161f}
+.gcards li:nth-child(5n+3) .n{background:#6cb33f;color:#11161f}
+.gcards li:nth-child(5n+4) .n{background:#7c3aed;color:#fff}
+.gcards li:nth-child(5n) .n{background:#ffc53d;color:#11161f}
+.gcards .gtx{display:block;width:100%}
+.gcards .nm{display:block;font-family:var(--serif);font-weight:600;font-size:24px;line-height:1.15;letter-spacing:-.015em}
+.ghub .gcards .nm{font-size:27px}
+.gcards .gd{display:block;margin-top:10px;max-width:40em;font-size:16px;line-height:1.5;color:var(--ink2)}
+.gcards .tr{margin-top:auto;padding-top:20px;font-size:15.5px;font-weight:700;color:#376d22;white-space:nowrap}
+.gcards .tr .ar{display:inline-block;margin-left:8px}
+.gcards a:hover .nm,.gcards a:focus .nm{color:#1f3bd6}
 
-/* ---------- closing band (site.css .call, without the form) ---------- */
-.gcall .call-sub{margin:0}
-.gcall-go{margin:4px 0 30px}
-.gcall .contact a{font-size:17px}
+/* ---------- closing band (site.css .call, without the form): centred under the heading, the white pill
+   button and the phone side by side ---------- */
+.gcall .call-grid{display:block;margin-top:34px;text-align:center}
+.gcall .call-l,.gcall .call-r{width:auto;padding:0}
+.gcall .call-sub{margin:0 auto;max-width:34em}
+.gcall .call-r{margin-top:34px;font-size:0}
+.gcall-go,.gcall .contact{display:inline-block;vertical-align:middle;margin:0 8px 12px;font-size:17px}
+.gcall .contact li{margin:0;padding:10px 22px 11px;border-radius:999px;text-align:left}
 
 /* ---------- responsive ---------- */
-@media (min-width:1640px){
-  .ghead h1{font-size:88px}
-  .hubhead h1{font-size:132px}
+@media (min-width:981px){
+  /* the header pill sticks at the top on desktop, so the card sticks just under it */
+  .gside{position:-webkit-sticky;position:sticky;top:108px}
 }
 @media (max-width:1180px){
-  .gside{width:28%;padding-right:36px}
+  .gside{width:31%;margin-right:40px;padding:28px 24px 24px}
 }
 @media (max-width:980px){
   .gcols{display:block}
-  .gside{width:auto;position:static;padding:13px 0 0}
-  .gk{display:inline;margin:0 14px 0 0}
-  .gk:before{display:none}
+  .gside{width:auto;margin:0 0 34px;padding:22px 22px 20px}
+  .gk{display:inline-block;vertical-align:middle;margin:0 14px 6px 0}
+  .gk:before{display:inline-block;vertical-align:1px}
   .gmeta{display:inline;margin:0}
   .gmeta span{display:inline}
   .gmeta .dot{display:inline}
-  .gall{margin:12px 0 0}
+  .gall{margin:10px 0 0}
   .ggo{display:none}
-  .gcols .prose{max-width:40em;padding-top:34px}
-  .ghead h1{font-size:7vw}
+  .gcols .prose{max-width:40em}
+  .gcards li,.ghub .gcards li{width:50%}
+  .gcards li:last-child:nth-child(odd){width:100%}
 }
 @media (max-width:760px){
-  .ghead{padding-bottom:26px}
-  .ghead h1{font-size:34px;font-size:9.4vw;line-height:.98;letter-spacing:-.015em}
-  .hubhead h1{font-size:44px;font-size:15vw}
-  .gtopics{font-size:12px;letter-spacing:.06em;margin-top:18px}
-  .gbody{padding-bottom:72px}
-  .gk{display:block;margin:0 0 4px}
-  .gmeta{display:block;font-size:12px}
-  .gcols .prose{padding-top:26px}
+  .ghead{padding-bottom:30px}
+  .ghead h1{font-size:34px;font-size:9vw;line-height:1.04;letter-spacing:-.02em}
+  .hubhead h1{font-size:52px;font-size:15vw}
+  .gtopics{margin-top:22px}
+  .gtopics .gcount{display:block;margin-bottom:12px}
+  .gtopics a{font-size:14px;padding:11px 13px 10px 12px;margin-right:6px}
+  .gtopics a:before{margin-right:7px}
+  .gbody{padding-bottom:80px}
+  .gside{margin-bottom:28px;padding:20px 18px 18px;border-radius:20px}
+  .gk{display:-webkit-box;display:-webkit-flex;display:flex;margin:0 0 6px}
+  .gk:before{display:block}
+  .gmeta{display:block;font-size:14px}
   .gbody .prose{font-size:17px;line-height:1.62}
   .gbody .prose>p:first-child{font-size:19px}
-  .gbody .prose h2{font-size:32px;margin-top:52px}
-  .gbody .prose h3{font-size:24px;margin-top:34px}
+  .gbody .prose h2{font-size:30px;margin-top:54px}
+  .gbody .prose h3{font-size:23px;margin-top:34px}
   .gbody .prose ul>li{padding-left:24px}
-  .gbody .prose ul>li:before{width:12px}
-  .gbody .prose ol>li{padding-left:34px}
-  .gbody .prose blockquote{font-size:21px;padding-left:16px}
-  .gbody .prose .callout{font-size:21px;padding-left:16px}
+  .gbody .prose ul>li:before{left:3px}
+  .gbody .prose ol>li{padding-left:42px}
+  .gbody .prose blockquote{font-size:20px;padding:16px 18px}
+  .gbody .prose .callout{font-size:19.5px;padding:28px 20px 22px;border-radius:20px}
+  .gbody .prose .disclaimer{padding:18px 18px}
   .gbody .prose table{min-width:34em;font-size:15px}
+  .gbody .prose th{padding:12px 14px 10px}
+  .gbody .prose td{padding:12px 14px}
   /* a soft edge shadow says "swipe for more" and disappears at the end of the table */
-  .table-scroll{background:linear-gradient(90deg,#F3EEE4 30%,rgba(243,238,228,0)) 0 0/28px 100% no-repeat,linear-gradient(270deg,#F3EEE4 30%,rgba(243,238,228,0)) 100% 0/28px 100% no-repeat,radial-gradient(farthest-side at 0 50%,rgba(21,21,26,.16),rgba(21,21,26,0)) 0 0/12px 100% no-repeat,radial-gradient(farthest-side at 100% 50%,rgba(21,21,26,.16),rgba(21,21,26,0)) 100% 0/12px 100% no-repeat;background-attachment:local,local,scroll,scroll}
-  .glist .nm{font-size:24px}
-  .glist .gd{font-size:15.5px}
-  .glist .gt{padding-right:0}
-  .idx.glist a{padding:16px 4px 18px}
-  .idx.glist .tr{margin-top:10px}
+  .table-scroll{border-radius:16px;background:linear-gradient(90deg,#fff 30%,rgba(255,255,255,0)) 0 0/28px 100% no-repeat,linear-gradient(270deg,#fff 30%,rgba(255,255,255,0)) 100% 0/28px 100% no-repeat,radial-gradient(farthest-side at 0 50%,rgba(17,22,31,.16),rgba(17,22,31,0)) 0 0/12px 100% no-repeat,radial-gradient(farthest-side at 100% 50%,rgba(17,22,31,.16),rgba(17,22,31,0)) 100% 0/12px 100% no-repeat,#fff;background-attachment:local,local,scroll,scroll,scroll}
+  .grel.sec,.ghub.sec{padding-top:60px;padding-bottom:72px}
+  .gcards{margin:0}
+  .gcards li,.ghub .gcards li{width:100%;padding:0 0 14px}
+  .gcards a{padding:26px 22px 22px;border-radius:20px}
+  .gcards .n{margin-bottom:14px}
+  .gcards .nm,.ghub .gcards .nm{font-size:22px}
+  .gcards .gd{font-size:15.5px}
+  .gcall .call-sub{font-size:17px}
+  .gcall-go,.gcall .contact{display:block;margin:0 0 12px}
   .gcall-go .btn{display:block;text-align:center}
+  .gcall .contact li{display:inline-block;text-align:center}
 }
 
-/* motion: only the colour that rides along with the site's press wipe on .idx rows */
+/* motion: hover lifts + the site's rise + fade reveal for the cards (all inside the reduced-motion guard) */
 @media (prefers-reduced-motion:no-preference){
-  .glist .gd,.gtopics a{-webkit-transition:color .3s;transition:color .3s}
+  .gcards a,.gtopics a{-webkit-transition:border-color .25s,color .25s,-webkit-box-shadow .35s var(--exp),-webkit-transform .35s var(--exp);transition:border-color .25s,color .25s,box-shadow .35s var(--exp),transform .35s var(--exp)}
+  .gcards .nm{-webkit-transition:color .25s;transition:color .25s}
+  .gcards .tr .ar{-webkit-transition:-webkit-transform .3s var(--exp);transition:transform .3s var(--exp)}
+  @media (hover:hover){
+    .gcards a:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+    .gcards a:hover .tr .ar{-webkit-transform:translateX(4px);transform:translateX(4px)}
+    .gtopics a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
+  }
+  @supports (animation-timeline:view()){
+    @keyframes grv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+    .gcards li,.gtopics{animation:grv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+    .gcards li:nth-child(3n+2){animation-range:entry 6% entry 54%}
+    .gcards li:nth-child(3n){animation-range:entry 12% entry 60%}
+  }
 }

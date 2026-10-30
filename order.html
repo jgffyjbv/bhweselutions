@@ -17,105 +17,127 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="BH Web Solutions — Beautiful websites. Fair prices. Live in days.">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* order page only: the form on the cobalt band, the sidebar beside it */
+/* order page only: the form card on the Start band (cobalt into violet), the sidebar beside it.
+   Live old look: coloured number badges, round tick chips, a green drop box, sidebar rows on the band. */
 .phead .proof{margin-top:24px}
-.order{padding-bottom:96px}
-.ogrid{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:34px}
+.ogrid{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:40px}
 .ofm{width:62%;min-width:0}
-.oside{width:38%;min-width:0;padding-left:56px}
-/* the card sits inside .call: undo the band's big paper headings for the questions */
-.call .card h2{color:var(--ink);font-size:34px;line-height:1.04;letter-spacing:-.012em;margin:0;max-width:none}
-.call .card h2 em{color:var(--cobalt)}
-.call .card a:focus{outline-color:var(--cobalt)}
+.oside{width:38%;min-width:0;padding-left:48px}
+/* the questions inside the white card */
+.call .card h2{font-size:30px;line-height:1.1;letter-spacing:-.015em;margin:0;max-width:none}
 .intro{font-size:17px;margin:0 0 6px}
-.req{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--ink2);margin:0 0 22px}
-.req b,.rq{color:var(--cobalt);font-weight:500}
-/* one question = one numbered row */
-.step{position:relative;min-width:0;margin:0;border:0;border-top:1px solid var(--line2);padding:26px 0 12px 58px}
-.step.s1{border-top-color:var(--ink)}
+.req{font-size:14px;color:var(--ink2);margin:0 0 18px}
+.req b,.rq{color:#c4351c;font-weight:800}
+/* one question = one step with a coloured number badge (cobalt, coral, sun, green, violet) */
+.step{position:relative;min-width:0;margin:0;border:0;border-top:1px solid var(--line);padding:28px 0 12px 60px}
 .qhead{margin:0 0 18px}
-.qhead .n{position:absolute;left:0;top:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--cobalt)}
+.qhead .n{position:absolute;left:0;top:24px;width:40px;height:40px;line-height:40px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#2b4eff;color:#fff}
+.step:nth-of-type(2) .n{background:#ff5c39;color:#11161f}
+.step:nth-of-type(3) .n{background:#ffc53d;color:#11161f}
+.step:nth-of-type(4) .n{background:#6cb33f;color:#11161f}
+.step:nth-of-type(5) .n{background:#7c3aed;color:#fff}
+.qhead .n.plus{font-size:21px}
 .qhead p{margin:6px 0 0;font-size:16px;color:var(--ink2)}
-.qhead .n.plus{font-size:22px;line-height:1;top:29px}
-.form label .hint{display:inline;margin:0;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;text-transform:none;color:var(--ink2)}
-/* chips: site.css .form label would make them mono blocks */
-.form .chip{display:inline-block;margin:0;font-family:var(--sans);font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink)}
-.chip span:before{content:"+";display:inline-block;width:14px;margin-right:8px;font-family:var(--mono);color:var(--cobalt)}
-.chip input:checked+span:before{content:"✓";color:var(--paper)}
-.chip span:hover{-webkit-box-shadow:inset 0 0 0 1px var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.chip input:checked+span:hover{-webkit-box-shadow:none;box-shadow:none}
+.form label .hint{display:inline;margin:0;font-size:14px}
+/* chips: a round tick box that turns green when picked */
+.chip span{position:relative;padding-left:44px}
+.chip span:before{content:"";position:absolute;left:15px;top:12px;width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line2);background:#fff}
+.chip input:checked+span:before{border-color:#6cb33f;background:#6cb33f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:11px 11px}
 /* boxes show by default; once the script runs they open with their chip */
 .reveal{margin:8px 0 10px}
 .js .reveal{display:none}
 .js .reveal.show{display:block}
 /* files: a plain file picker without script, the drop box with it */
-.dz{display:block;text-align:center;background:#FBF8F2;border:1px dashed var(--cobalt);padding:24px 18px 22px}
+.dz{display:block;text-align:center;background:#f6f7fb;border:2px dashed var(--line2);border-radius:18px;padding:24px 18px 22px}
 .dz-js{cursor:pointer}
-.dz-js:hover,.dz.drag{border-style:solid;background:var(--paper)}
-.dz__ic{display:block;width:22px;height:22px;margin:0 auto 8px;color:var(--cobalt)}
-.dz__t{display:block;font-size:16px}
-.dz__t b{font-weight:600;color:var(--cobalt)}
-.dz__s{display:block;margin-top:4px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink2)}
+.dz-js:hover,.dz.drag{border-color:#6cb33f;background:#fff}
+.dz__ic{display:block;width:46px;height:46px;margin:0 auto 10px;padding:12px;border-radius:50%;background:#e9f5df;color:#376d22}
+.dz__t{display:block;font-size:16px;font-weight:600}
+.dz__t b{font-weight:800;color:#376d22}
+.dz__s{display:block;margin-top:4px;font-size:13.5px;color:var(--ink2)}
 .dz input{display:block;max-width:100%;margin:14px auto 0;font-size:15px}
 .dz-js input{display:none}
-.filelist{margin-top:8px}
-.fileitem{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;border-bottom:1px solid var(--line2);padding:4px 0 4px 2px}
-.fic{-webkit-flex:none;flex:none;margin-right:12px;line-height:0;color:var(--cobalt)}
+.fileitem{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin-top:8px;padding:3px 3px 3px 12px;background:#f6f7fb;border:1px solid var(--line);border-radius:12px}
+.fic{-webkit-flex:none;flex:none;margin-right:12px;line-height:0;color:#1f3bd6}
 .fmeta{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0}
-.fname{font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fsize{font-family:var(--mono);font-size:12px;color:var(--ink2)}
-.frm{-webkit-flex:none;flex:none;width:44px;height:44px;padding:0;background:none;border:0;cursor:pointer;color:var(--ink2);line-height:0}
-.frm:hover{color:var(--cobalt)}
-.fileerr{display:none;margin-top:10px;font-size:15px;color:#8C1D18}
+.fname{font-size:15.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fsize{font-size:13px;color:var(--ink2)}
+.frm{-webkit-flex:none;flex:none;width:44px;height:44px;padding:0;background:none;border:0;border-radius:10px;cursor:pointer;color:var(--ink2);line-height:0}
+.frm:hover{color:#c4351c;background:rgba(255,92,57,.1)}
+.fileerr{display:none;margin-top:10px;font-size:15px;font-weight:600;color:#8c1d18}
 .fileerr.show{display:block}
-.filetotal{margin-top:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--ink2)}
-.filetotal.over{color:#8C1D18}
+.filetotal{margin-top:10px;font-size:13.5px;color:var(--ink2)}
+.filetotal.over{color:#8c1d18;font-weight:700}
 #submitBtn{display:block;width:100%;text-align:center;margin-top:26px}
-.call .card .csuccess h2{font-size:46px;line-height:.98;margin:0 0 16px}
-.csuccess p{font-size:17px;max-width:32em}
-/* the sidebar, paper on cobalt */
-.sbox{border-top:1px solid var(--pline);padding-top:20px;margin:0 0 46px}
+/* thank-you: the live green tick circle above the words */
+.card .csuccess:before{content:"";display:block;width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:#43822a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:32px 32px;-webkit-box-shadow:0 12px 28px -12px rgba(108,179,63,.8);box-shadow:0 12px 28px -12px rgba(108,179,63,.8)}
+.call .card .csuccess h2{font-size:44px;line-height:1;margin:0 0 16px;text-align:center}
+.csuccess p{font-size:17px;max-width:32em;margin-left:auto;margin-right:auto}
+/* the sidebar on the band: white words on darker see-through rows (like the Start band's contact boxes) */
+.sbox{margin:0 0 36px}
 .sbox:last-child{margin-bottom:0}
-.oside h3{font-size:34px;line-height:1.02;margin:0 0 14px;color:var(--paper)}
+.oside h3{font-size:28px;line-height:1.08;margin:0 0 16px;color:#fff}
 .perks,.steps{list-style:none;margin:0;padding:0}
-.perks li{position:relative;padding:12px 0 13px 26px;border-bottom:1px solid var(--pline);font-size:16px;line-height:1.5}
-.perks li:before{content:"";position:absolute;left:0;top:24px;width:14px;height:1px;background:var(--paper)}
-.perks b{font-weight:600}
-.steps li{display:-webkit-box;display:-webkit-flex;display:flex;padding:13px 0 14px;border-bottom:1px solid var(--pline)}
-.steps .sk{width:64px;-webkit-flex:none;flex:none;padding-top:7px;font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
-.steps h4{margin:0;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.08;letter-spacing:-.01em}
+.perks li,.steps li{margin:0 0 10px;padding:14px 18px 15px;border-radius:16px;background:rgba(15,22,64,.16);border:1px solid rgba(255,255,255,.26);font-size:16px;line-height:1.5}
+.perks li{position:relative;padding-left:52px}
+.perks li:before{content:"";position:absolute;left:17px;top:16px;width:22px;height:22px;border-radius:50%;background:#ffc53d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%2311161f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:12px 12px}
+.perks b{font-weight:800}
+.steps li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start}
+.steps .sk{-webkit-flex:none;flex:none;width:60px;margin:4px 16px 0 0;padding:5px 0 4px;border-radius:999px;background:#ffc53d;color:#11161f;font-size:11px;font-weight:800;line-height:1.2;letter-spacing:.1em;text-transform:uppercase;text-align:center}
+.steps li:nth-child(2) .sk{background:#ff5c39}
+.steps li:nth-child(3) .sk{background:#6cb33f}
+.steps h4{margin:0;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.01em}
 .steps p{margin:4px 0 0;font-size:15.5px}
-.oside .contact{margin-top:6px}
-@media (min-width:1640px){.call .card h2{font-size:40px}.oside h3{font-size:40px}}
 @media (max-width:980px){
   .ogrid{display:block}
   .ofm,.oside{width:100%;padding-left:0}
-  .oside{margin-top:56px}
+  .oside{margin-top:52px}
 }
 @media (max-width:760px){
-  .order{padding-bottom:64px}
-  .ogrid{margin-top:24px}
-  .call .card h2{font-size:30px}
-  .step{padding:22px 0 8px}
-  .qhead .n{position:static;display:block;margin-bottom:8px}
-  .call .card .csuccess h2{font-size:38px}
-  .oside h3{font-size:30px}
+  .ogrid{margin-top:26px}
+  .call .card h2{font-size:25px}
+  .step{padding:24px 0 8px}
+  .qhead .n{position:static;display:block;margin-bottom:12px}
+  .call .card .csuccess h2{font-size:36px}
+  .oside h3{font-size:25px}
   .chips li{margin-right:6px}
+  .perks li,.steps li{padding:13px 14px 14px}
+  .perks li{padding-left:48px}
+  .perks li:before{left:14px;top:15px}
+  .steps .sk{margin-right:12px}
+}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .oside .sbox{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+  }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -125,11 +147,14 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work">Work</a>
       <a href="/#build">What I build</a>
@@ -139,7 +164,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about">About</a>
@@ -147,13 +172,14 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
 <!-- ============ PAGE HEAD ============ -->
 <section class="phead" aria-labelledby="h1">
   <div class="wrap">
-    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Start your project</span></p>
+    <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Start your project</span></p>
     <h1 id="h1">Let’s build your <em class="sw">website.</em></h1>
     <p class="lede">Three quick questions and you're done. Upload your logo if you have one, and we'll take it from there.</p>
     <ul class="proof">
@@ -167,7 +193,7 @@
 <!-- ============ ORDER FORM (cobalt band, paper card) ============ -->
 <section class="call order" id="start" aria-label="Start your project">
   <div class="wrap">
-    <div class="rh sv"><span>Your project</span><span>Three quick questions</span></div>
+    <div class="rh"><span>Your project</span><span>Three quick questions</span></div>
     <div class="ogrid">
 
       <div class="ofm">
@@ -298,24 +324,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <!-- Forminit SDK (handles submission + file uploads to your endpoint) -->
 <script src="https://forminit.com/sdk/v1/forminit.js" defer></script>

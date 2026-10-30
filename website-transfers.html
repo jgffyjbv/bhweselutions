@@ -16,76 +16,82 @@
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* website-transfers only. Safari 10.3 safe: flex with -webkit- prefixes, no grid, no gap. */
-.phead .wrap{position:relative}
+/* website-transfers only (the shared look lives in /css/site.css). Safari 10.3 safe: flex with -webkit- prefixes, no grid, no gap. */
 .phead h1{max-width:none}
-.phead .stamp{top:-6px}
 .phead .hero-row{margin-top:30px}
 .phead .lede{margin-top:0}
-/* 01 what we move: numbered cells with real headings */
-.incl h3{font-size:34px;line-height:1.02;letter-spacing:-.01em;margin:0 0 10px}
-.incl h3 .to{font-family:var(--mono);font-size:.56em;color:var(--cobalt);margin:0 .2em;vertical-align:.2em}
-.incl .c a{color:var(--cobalt);font-weight:500}
-.incl .own h3{color:var(--cobalt)}
-/* 02 what carries over: heading beside a ledger of rows */
-.split{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:34px}
-.split-l{width:40%;padding-right:48px;position:-webkit-sticky;position:sticky;top:24px}
-.carry{width:60%;list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
-.carry li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;padding:22px 0 24px;border-bottom:1px solid var(--line2)}
-.carry .ck{width:44px;-webkit-flex:none;flex:none;color:var(--cobalt)}
-.carry .ck svg{display:block;width:20px;height:20px}
-.carry b{width:44%;-webkit-flex:none;flex:none;padding-right:24px;font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.04;letter-spacing:-.01em}
-.carry .c{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-size:16px;color:var(--ink2)}
-/* 03 process: dark band, four outlined numerals */
-.four{width:auto}
-.four li:first-child{border-left:0;padding-left:0}
-.four .num{display:block;font-family:var(--serif);font-size:96px;font-size:8.2vw;line-height:.8;letter-spacing:-.04em;color:var(--cobalt-l);margin:0 0 34px}
-@supports (-webkit-text-stroke:1px #000){.four .num{color:transparent;-webkit-text-stroke:1.15px #7D90FF}}
-.ways h3{font-size:34px;line-height:1.02;letter-spacing:-.01em;margin:0 0 12px}
-.dark .ways h3{color:var(--paper)}
-/* 04 why static: one statement, three reasons */
-.why-q{font-family:var(--serif);font-size:40px;font-size:3.9vw;line-height:1.06;letter-spacing:-.015em;margin:34px 0 56px;max-width:21em}
-.why-q b{font-weight:400;font-style:italic;color:var(--cobalt)}
-/* final band: buttons on cobalt */
+/* 01 what we move: the shared numbered cards; the arrow between the two platforms */
+.incl h3 .to{font-family:var(--sans);font-weight:700;font-size:.8em;color:#2b4eff;margin:0 .12em}
+.incl .c a{color:#1f3bd6;font-weight:700}
+/* 02 what carries over: one white card (gradient top bar), two columns of green-check rows, on the cool tint */
+/* the cool tint fades in from the white ground (no hard line); the soft logo-colour washes sit in the bottom corners */
+.keeps{background-image:radial-gradient(ellipse at 0% 100%,rgba(108,179,63,.09),rgba(108,179,63,0) 42%),radial-gradient(ellipse at 100% 100%,rgba(124,58,237,.07),rgba(124,58,237,0) 44%),linear-gradient(180deg,rgba(246,247,251,0) 0,#f6f7fb 160px)}
+.carry{list-style:none;max-width:1100px;margin:0 auto;padding:16px 44px 18px;background-color:#fff;background-image:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background-size:100% 5px;background-repeat:no-repeat;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow);
+  display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between}
+.carry li{width:46%;width:calc(50% - 24px);display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:24px 0 24px;border-bottom:1px solid var(--line)}
+.carry li:nth-last-child(-n+2){border-bottom:0}
+.carry .ck{width:32px;height:32px;margin-right:14px;-webkit-flex:none;flex:none;border-radius:50%;background:#e9f5df;color:#3a7524;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}
+.carry .ck svg{display:block;width:17px;height:17px}
+.carry b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.15;letter-spacing:-.015em}
+.carry .c{width:100%;padding-left:46px;margin-top:6px;font-size:16px;color:var(--ink2)}
+/* 03 process (the dark band): four glass cards, each with the old italic numeral in a logo colour */
+.four .num{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:64px;line-height:.9;letter-spacing:-.03em;color:#ffc53d;margin:0 0 22px}
+.four li:nth-child(2) .num{color:#ff8f70}
+.four li:nth-child(3) .num{color:#9fd47a}
+.four li:nth-child(4) .num{color:#c9b8ff}
+/* 04 why static: one centred statement (the promise in the logo gradient), three cards */
+.why-q{font-family:var(--serif);font-weight:400;font-size:40px;font-size:clamp(1.75rem,3.3vw,2.85rem);line-height:1.16;letter-spacing:-.018em;margin:26px auto 56px;max-width:22em;text-align:center}
+.why-q b{font-weight:500;color:#2b4eff}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .why-q b{background-image:linear-gradient(100deg,#2b4eff 0%,#7438e6 52%,#b3301a 100%);background-image:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+}
+/* the Start band: centred like the other pages (heading, line, the green pill, then the four ways to reach us) */
+.call .call-grid{display:block;margin-top:30px;text-align:center}
+.call .call-l,.call .call-r{width:auto;padding:0}
+.call .call-sub{margin:0 auto 26px}
 .call-acts{margin:0}
-.call-r .contact{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;font-size:16px}
-.call-r .contact li{width:50%;padding-right:20px;margin-bottom:24px}
-@media (min-width:1640px){.four .num{font-size:140px}.why-q{font-size:64px}}
+.call .call-r{margin-top:30px}
+.call .contact li{display:inline-block;vertical-align:top;min-width:228px;margin:0 5px 10px;text-align:left}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .carry li,.why-q{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+    .carry li:nth-child(even){animation-range:entry 6% entry 54%}
+  }
+}
+/* the four contact boxes go two by two once a single row no longer fits */
+@media (max-width:1180px){
+  .call .contact{max-width:600px;margin:0 auto}
+  .call .contact li{min-width:0;width:46%;width:calc(50% - 16px)}
+}
 @media (max-width:980px){
-  .split{display:block}
-  .split-l{width:auto;padding-right:0;position:static;margin-bottom:34px}
-  .carry{width:auto}
-  .four{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap}
-  .dark .four{border-top:0}
-  .four li{-webkit-box-flex:0;-webkit-flex:none;flex:none;width:50%;border-top:1px solid var(--pline);padding-bottom:30px}
-  .four li:nth-child(odd){border-left:0;padding-left:0}
-  .four .num{font-size:96px;margin-bottom:22px}
-  .why-q{font-size:5vw}
+  .four{-webkit-flex-wrap:wrap;flex-wrap:wrap}
+  .four li{-webkit-box-flex:0;-webkit-flex:none;flex:none;width:48%;width:calc(50% - 8px);margin:0 0 16px 16px}
+  .four li:nth-child(odd){margin-left:0}
+  .carry{padding:10px 32px 12px}
 }
 @media (max-width:760px){
-  .incl h3{font-size:30px}
-  .carry li{-webkit-flex-wrap:wrap;flex-wrap:wrap;padding:18px 0 20px}
-  .carry .ck{width:36px}
-  .carry b{width:auto;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;padding-right:0;font-size:28px}
-  .carry .c{-webkit-box-flex:0;-webkit-flex:none;flex:none;width:100%;padding-left:36px;margin-top:6px;font-size:16.5px}
-  .four{display:block}
-  .four li{width:auto;padding:18px 0 22px}
-  .four .num{width:48px;-webkit-flex:none;flex:none;font-size:52px;margin:0}
-  .ways h3{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-size:28px;margin:0}
-  .four span.c{padding-left:48px}
-  .why-q{font-size:30px;font-size:7.6vw;margin:26px 0 34px}
+  .carry{display:block;padding:6px 20px 8px;border-radius:22px}
+  .carry li{width:auto;padding:18px 0}
+  .carry li:nth-last-child(2){border-bottom:1px solid var(--line)}
+  .carry b{font-size:21px}
+  .carry .c{font-size:16px}
+  .four li{width:auto;margin:0 0 12px}
+  .four .num{font-size:52px;margin-bottom:14px}
+  .why-q{font-size:26px;font-size:6.8vw;margin:20px auto 34px}
   .call-acts .btn{display:block;text-align:center}
-  .call-r .contact{display:block}
-  .call-r .contact li{width:auto;padding-right:0;margin-bottom:14px}
+  .call .contact{max-width:none}
+  .call .contact li{display:block;width:auto;margin:0 0 10px}
 }
 </style>
 <script type="application/ld+json">
@@ -114,7 +120,18 @@
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -124,14 +141,17 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M20 6 9 17l-5-5"/></symbol>
 </svg>
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work">Work</a>
       <a href="/#build">What I build</a>
@@ -141,7 +161,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about">About</a>
@@ -149,13 +169,14 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
 <!-- ============ PAGE HEAD ============ -->
 <section class="phead" aria-labelledby="h1">
   <div class="wrap">
-    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Transfers &amp; migrations<span class="wide"> · WordPress · WooCommerce · Wix</span></span></p>
+    <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Transfers &amp; migrations<span class="wide"> · WordPress · WooCommerce · Wix</span></span></p>
     <h1 id="h1">Move your website.<br> Lose <em class="sw">nothing.</em></h1>
     <div class="hero-row">
       <p class="lede">Slow WordPress. Expensive hosting. A shop drowning in plugins. A builder that won't let go. Whatever you're moving from, we rebuild it as fast, custom-coded work you actually own — and your content, your domain and your Google rankings all come along.</p>
@@ -171,33 +192,13 @@
       <li>Domains, DNS &amp; email</li>
       <li class="price"><!-- PRICE SLOT: the owner can put "Moves from $X" here --><span class="slot">Fair price in writing before we start</span></li>
     </ul>
-    <div class="stamp" aria-hidden="true">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-          <path id="ring" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/>
-          <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
-            <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="7" result="t"/>
-            <feDisplacementMap in="SourceGraphic" in2="t" scale="2.4" result="d"/>
-            <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75" result="holes"/>
-            <feComposite in="d" in2="holes" operator="in"/>
-          </filter>
-        </defs>
-        <g filter="url(#ink)">
-          <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="100" cy="100" r="89" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          <text font-family="IBM Plex Mono, Menlo, monospace" font-size="11.4" font-weight="500" letter-spacing="1.6" fill="currentColor"><textPath xlink:href="#ring" href="#ring">SAME ADDRESS · BETTER EVERYTHING · LOSE NOTHING ·</textPath></text>
-          <use xlink:href="#bh" href="#bh" x="66" y="64" width="68" height="68"/>
-        </g>
-      </svg>
-    </div>
   </div>
 </section>
 
 <!-- ============ 01 WHAT WE MOVE ============ -->
 <section class="sec" id="moves" aria-labelledby="moves-h">
   <div class="wrap">
-    <div class="rh sv"><span>What we move</span><span>Six kinds of transfer</span></div>
+    <div class="rh"><span>What we move</span><span>Six kinds of transfer</span></div>
     <div class="sec-head">
       <h2 id="moves-h">Every kind of <em>transfer.</em></h2>
     </div>
@@ -213,29 +214,27 @@
 </section>
 
 <!-- ============ 02 WHAT CARRIES OVER ============ -->
-<section class="sec" id="keeps" aria-labelledby="keeps-h">
+<section class="sec keeps" id="keeps" aria-labelledby="keeps-h">
   <div class="wrap">
-    <div class="rh sv"><span>What carries over</span><span>Lose nothing</span></div>
-    <div class="split">
-      <div class="split-l">
-        <h2 id="keeps-h">Everything that <em>matters.</em></h2>
-      </div>
-      <ul class="carry">
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your content</b><span class="c">Every page, every word, every photo — it's yours, and it all comes.</span></li>
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your products &amp; prices</b><span class="c">Full catalogs move over — hundreds of products is routine, not a problem.</span></li>
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your domain</b><span class="c">Same address, freed from whoever was holding it, safe at a neutral registrar.</span></li>
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your Google rankings</b><span class="c">Redirects map every old page to its new home, so search traffic keeps flowing.</span></li>
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your email</b><span class="c">Checked before the move, carried over during it — no message ever bounces.</span></li>
-        <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your look — or a better one</b><span class="c">Keep the design you have, or use the move to finally upgrade it.</span></li>
-      </ul>
+    <div class="rh"><span>What carries over</span><span>Lose nothing</span></div>
+    <div class="sec-head">
+      <h2 id="keeps-h">Everything that <em>matters.</em></h2>
     </div>
+    <ul class="carry">
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your content</b><span class="c">Every page, every word, every photo — it's yours, and it all comes.</span></li>
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your products &amp; prices</b><span class="c">Full catalogs move over — hundreds of products is routine, not a problem.</span></li>
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your domain</b><span class="c">Same address, freed from whoever was holding it, safe at a neutral registrar.</span></li>
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your Google rankings</b><span class="c">Redirects map every old page to its new home, so search traffic keeps flowing.</span></li>
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your email</b><span class="c">Checked before the move, carried over during it — no message ever bounces.</span></li>
+      <li><span class="ck"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-check" href="#i-check"/></svg></span><b>Your look — or a better one</b><span class="c">Keep the design you have, or use the move to finally upgrade it.</span></li>
+    </ul>
   </div>
 </section>
 
 <!-- ============ 03 PROCESS (dark band) ============ -->
 <section class="sec dark" id="process" aria-labelledby="process-h">
   <div class="wrap">
-    <div class="rh sv"><span>How it works</span><span>Four steps</span></div>
+    <div class="rh"><span>How it works</span><span>Four steps</span></div>
     <div class="sec-head">
       <h2 id="process-h">Four quiet <em>steps.</em></h2>
     </div>
@@ -251,9 +250,9 @@
 <!-- ============ 04 WHY STATIC ============ -->
 <section class="sec" id="whystatic" aria-labelledby="why-h">
   <div class="wrap">
-    <div class="rh sv"><span>Why static</span><span>Fast · secure · cheap</span></div>
+    <div class="rh"><span>Why static</span><span>Fast · secure · cheap</span></div>
     <h2 class="vh" id="why-h">Why a static rebuild</h2>
-    <p class="why-q sv-big">Most business sites don't need a database, a plugin stack and a monthly hosting bill — they need to be <b>fast, secure, and cheap to keep alive.</b> That's exactly what a custom-coded static rebuild gives you.</p>
+    <p class="why-q">Most business sites don't need a database, a plugin stack and a monthly hosting bill — they need to be <b>fast, secure, and cheap to keep alive.</b> That's exactly what a custom-coded static rebuild gives you.</p>
     <ol class="incl">
       <li><span class="n">01</span><b>Nothing to update or patch</b><span class="c">No plugins means no plugin emergencies.</span></li>
       <li><span class="n">02</span><b>Loads in a blink</b><span class="c">Served from a global network, not one rented server.</span></li>
@@ -265,7 +264,7 @@
 <!-- ============ 05 FAQ: open rows, nothing hidden ============ -->
 <section class="sec faqs" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
-    <div class="rh sv"><span>FAQ</span><span>The ones I hear most</span></div>
+    <div class="rh"><span>FAQ</span><span>The ones I hear most</span></div>
     <div class="sec-head"><h2 id="faq-h">Before you <em>ask.</em></h2></div>
     <div class="faq">
       <div class="qa"><h3><span class="n">Q.1</span><span>Will my website go down during the transfer?</span></h3><p class="a">No. The new site is built while the old one keeps running, and the switch is a DNS change — visitors never see a gap.</p></div>
@@ -285,7 +284,7 @@
     <div class="call-grid">
       <div class="call-l">
         <p class="call-sub">Send us your address. We look first, free, and give you a straight quote with a timeline.</p>
-        <p class="call-acts"><a class="btn btn-lg btn-inv" href="/order">Start my transfer<span class="ar" aria-hidden="true">→</span></a></p>
+        <p class="call-acts"><a class="btn btn-lg" href="/order">Start my transfer<span class="ar" aria-hidden="true">→</span></a></p>
       </div>
       <div class="call-r">
         <ul class="contact">
@@ -301,24 +300,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"59ed9203e68e4d09833e411cd68485df","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>

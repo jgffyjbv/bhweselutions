@@ -1,146 +1,164 @@
 /* ==========================================================================
    Area pages ("website design in <town>"), loaded AFTER /css/site.css.
-   site.css carries the whole look (paper + cobalt + ink, the press motif, header, footer, .phead,
-   .rh/.sec-head, .incl, .inc, .grid/.duo/.cap, .faq/.qa, .idx, .dark, .call). This file only adds
-   what the 89 generated pages need on top. Same rules as site.css: Safari 10.3 safe (no grid,
-   no flex gap), nothing hidden or animated outside the reduced-motion block at the bottom.
+   site.css carries the whole look (the owner's own design in the BH logo colours: white ground, centred
+   dot labels, white rounded cards with the gradient top bar, green pills, waved two-tone bands, rounded
+   photo tiles, the header, the footer, .phead, .rh/.sec-head/.sec-more, .incl, .inc, .grid/.cap, .faq,
+   .idx, .dark, .call). This file only adds what the 89 generated pages need on top: the four "what we
+   build" cards, the town cards, the region cards with their town pills, the "how it works" steps and the
+   centred final call. Same rules as site.css: Safari 10.3 safe (no grid, no unguarded flex gap, a plain
+   fallback before every calc()), nothing hidden or animated outside the reduced-motion block at the bottom.
    ========================================================================== */
 
-/* ---------- page head ---------- */
-.phead .hero-row{margin-top:30px}
-.phead .hero-row .lede{margin-top:0}
-.phead h1 em{white-space:normal}
-.phead .proof{margin-top:30px}
+/* ---------- page head: stacked like the live area pages (words, green pill + ghost pill, checks) ---------- */
+.phead{padding-bottom:40px}
+.phead .crumbs:before{content:"";display:inline-block;width:9px;height:9px;border-radius:50%;background:#6cb33f;margin-right:11px;vertical-align:1px}
 .crumbs [aria-current]{color:var(--ink)}
+.phead .hero-row{display:block;margin-top:26px}
+.phead .hero-row .lede{margin-top:0;max-width:36em}
+.phead .actions{margin:32px 0 0}
+.phead .proof{margin-top:28px}
+/* the promise that matters most gets the homepage's gradient-border pill */
+.phead .proof li:last-child{padding:8px 16px 8px 36px;border-radius:999px;color:var(--ink);font-weight:800;border:2px solid transparent;
+  background:#fff;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d) border-box;-webkit-box-shadow:0 8px 22px -12px rgba(124,58,237,.55);box-shadow:0 8px 22px -12px rgba(124,58,237,.55)}
+.phead .proof li:last-child:before{left:15px;top:.95em}
 
-/* ---------- what we build: four cells instead of three ---------- */
-@media (min-width:981px){
-  .incl.four li{width:25%;padding-left:26px;padding-right:22px;border-left:1px solid var(--line2)}
-  .incl.four li:first-child{padding-left:0;border-left:0}
-  .incl.four b{font-size:32px}
-}
-.dark .incl{border-top-color:var(--paper)}
-.dark .incl li,.dark .incl li:nth-child(n){border-color:var(--pline)}
-.dark .incl .n{color:var(--cobalt-l)}
-.dark .incl span.c{color:rgba(243,238,228,.78)}
-.dark .sec-head p{color:rgba(243,238,228,.78)}
+/* ---------- what we build: four cards in a row ---------- */
+.incl.four li{width:23%;width:calc(25% - 22px)}
+.incl.four span.c{max-width:none}
+/* on the dark band the first badge is sun yellow, then coral, green, violet (a cobalt badge was dull on indigo) */
+.dark .incl li:first-child .n{background:#ffc53d;color:#11161f}
 
-/* ---------- built for <town> + how it works (ink band) ---------- */
-.two{display:-webkit-box;display:-webkit-flex;display:flex;margin-top:34px}
+/* ---------- built for <town> + how it works (the dark band) ---------- */
+.two{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:40px}
 .two .col{width:50%;min-width:0}
-.two .col+.col{padding-left:56px}
-.two .col:first-child{padding-right:56px;border-right:1px solid var(--line2)}
-.dark .two .col:first-child{border-right-color:var(--pline)}
-.two h2{font-size:44px;font-size:3.9vw;line-height:.96;max-width:10em;margin:0 0 30px}
-.inc{margin-bottom:0}
-.dark .inc{border-top-color:var(--pline)}
-.dark .inc li{border-bottom-color:rgba(243,238,228,.2)}
-.dark .inc li:before{background:var(--cobalt-l)}
-.more{margin:22px 0 0;font-size:16px;color:var(--ink2)}
-.more a{color:var(--cobalt)}
-.dark .more{color:rgba(243,238,228,.78)}
-.dark .more a{color:var(--cobalt-l)}
-.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line2)}
-.steps li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;padding:18px 0 20px;border-bottom:1px solid var(--line)}
-.steps .n{width:56px;-webkit-flex:none;flex:none;font-family:var(--mono);font-size:12.5px;color:var(--cobalt)}
-.steps b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.02;letter-spacing:-.01em}
-.steps .c{display:block;width:100%;padding-left:56px;margin-top:6px;font-size:16.5px;color:var(--ink2)}
-.dark .steps{border-top-color:var(--pline)}
-.dark .steps li{border-bottom-color:rgba(243,238,228,.2)}
-.dark .steps .n{color:var(--cobalt-l)}
-.dark .steps .c{color:rgba(243,238,228,.78)}
+.two .col:first-child{padding-right:30px}
+.two .col+.col{padding-left:30px}
+.two h2{font-size:44px;font-size:3.5vw;line-height:1.02;max-width:11em;margin:0 0 26px}
+/* the checks sit in one glass card, beside the three step cards */
+.two .inc{margin:0;padding:10px 28px 14px;border-radius:24px;background:#fff;border:1px solid var(--line);-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
+.two .inc li:last-child{border-bottom:0}
+.dark .two .inc{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);-webkit-box-shadow:none;box-shadow:none}
+.dark .inc li{border-bottom-color:rgba(255,255,255,.18)}
+.more{margin:20px 0 0;font-size:16px;color:var(--ink2)}
+.more a{color:#1f3bd6;font-weight:700}
+.dark .more{color:rgba(255,255,255,.92)}
+.dark .more a{color:#ffe08a}
+.steps{list-style:none;margin:0;padding:0}
+.steps li{position:relative;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin:0 0 14px;padding:22px 26px 22px 22px;border-radius:22px;background:#fff;border:1px solid var(--line);-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
+.steps li:last-child{margin-bottom:0}
+.steps .n{-webkit-flex:none;flex:none;width:40px;height:40px;line-height:40px;margin-right:16px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#ffc53d;color:#11161f}
+.steps li:nth-child(2) .n{background:#ff5c39}
+.steps li:nth-child(3) .n{background:#6cb33f}
+.steps b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.08;letter-spacing:-.015em}
+.steps .c{display:block;width:100%;padding-left:56px;margin-top:6px;font-size:16.5px;line-height:1.45;color:var(--ink2)}
+.dark .steps li{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.18);-webkit-box-shadow:none;box-shadow:none}
+.dark .steps .c{color:rgba(255,255,255,.92)}
 
-/* ---------- recent work: three pictures ---------- */
-.grid.three li{padding-bottom:0}
-
-/* ---------- nearby: the index list, the region link last ---------- */
+/* ---------- nearby: the index rows, the region link last with the gradient border ---------- */
 .idx.near .go{margin-left:auto}
-.idx .hub .n{color:var(--cobalt)}
-.idx .hub .nm{font-style:italic;color:var(--cobalt)}
-.idx .hub a:hover .nm,.idx .hub a:focus .nm{color:var(--paper)}
+.idx .hub a{border:2px solid transparent;background:#fff;background:linear-gradient(#fff,#fff) padding-box,linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d) border-box}
+.idx .hub .n,.idx li.hub:nth-child(n) .n{background:#ecf6e4;color:#3a7524}
+.idx .hub .nm{color:#1f3bd6}
 
-/* ---------- region page: the towns, one numbered cell each ---------- */
-.tl{list-style:none;margin:0;padding:0;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;border-top:1px solid var(--ink)}
-.tl li{width:33.3333%;display:-webkit-box;display:-webkit-flex;display:flex;border-bottom:1px solid var(--line2);border-left:1px solid var(--line2)}
-.tl li:nth-child(3n+1){border-left:0}
-.tl a{position:relative;z-index:0;display:block;-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;padding:22px 24px 26px;color:inherit;text-decoration:none}
-.tl a:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background:var(--ink);-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:0 50%;transform-origin:0 50%}
-.tl a:hover:before,.tl a:focus:before{-webkit-transform:scaleX(1);transform:scaleX(1)}
-.tl a:hover,.tl a:focus{color:var(--paper)}
-.tl .n{display:block;font-family:var(--mono);font-size:12.5px;color:var(--cobalt);margin-bottom:22px}
-.tl b{display:block;font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.02;letter-spacing:-.01em;margin-bottom:10px}
-.tl .c{display:block;font-size:16px;line-height:1.5;color:var(--ink2);margin-bottom:18px}
-.tl .go{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cobalt)}
-.tl .go .ar{margin-left:8px}
-.tl a:hover .n,.tl a:hover .c,.tl a:hover .go,.tl a:focus .n,.tl a:focus .c,.tl a:focus .go{color:var(--paper)}
+/* ---------- region page: one white card per town (gradient bar, coloured number, name, line, link) ---------- */
+.tl{list-style:none;margin:0 -11px;padding:0;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-webkit-justify-content:center;justify-content:center}
+.tl li{width:31.3%;width:calc(33.333% - 22px);margin:0 11px 22px;display:-webkit-box;display:-webkit-flex;display:flex}
+.tl a{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-flex-direction:column;flex-direction:column;-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;padding:32px 28px 24px;color:inherit;text-decoration:none;background:#fff;border:1px solid var(--line);border-radius:22px;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.tl a:before,.rblock:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
+.tl a:hover,.tl a:focus{border-color:#c3cdff;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.05),0 26px 50px -24px rgba(43,78,255,.45);box-shadow:0 2px 6px rgba(17,22,31,.05),0 26px 50px -24px rgba(43,78,255,.45)}
+.tl .n,.rb-l .n{display:inline-block;-webkit-align-self:flex-start;align-self:flex-start;min-width:38px;height:38px;line-height:38px;margin-bottom:16px;padding:0 6px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#2b4eff;color:#fff}
+.tl li:nth-child(5n+2) .n,.rblock:nth-child(5n+2) .n{background:#ff5c39;color:#11161f}
+.tl li:nth-child(5n+3) .n,.rblock:nth-child(5n+3) .n{background:#6cb33f;color:#11161f}
+.tl li:nth-child(5n+4) .n,.rblock:nth-child(5n+4) .n{background:#7c3aed;color:#fff}
+.tl li:nth-child(5n) .n,.rblock:nth-child(5n) .n{background:#ffc53d;color:#11161f}
+.tl b{display:block;font-family:var(--serif);font-weight:500;font-size:32px;line-height:1.04;letter-spacing:-.02em;margin-bottom:10px}
+.tl .c{display:block;font-size:16px;line-height:1.5;color:var(--ink2);margin-bottom:20px}
+.tl .go{display:block;margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-size:15px;font-weight:700;line-height:1.35;color:#1f3bd6}
+.tl .go .ar{display:inline-block;margin-left:8px;color:#376d22}
 
-/* ---------- areas hub: one row per region ---------- */
-.regions{list-style:none;margin:0;padding:0}
-.rblock{display:-webkit-box;display:-webkit-flex;display:flex;padding:26px 0 30px;border-bottom:1px solid var(--line2)}
-.rblock:first-child{padding-top:30px}
-.rb-l{width:40%;-webkit-flex:none;flex:none;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;padding-right:40px}
-.rb-l .n{width:48px;-webkit-flex:none;flex:none;font-family:var(--mono);font-size:12.5px;color:var(--cobalt)}
-.rblock h2{font-size:42px;font-size:3.3vw;line-height:1;max-width:none;min-width:0}
-.rblock h2 a{text-decoration:none;border-bottom:1px solid transparent}
-.rblock h2 a:hover,.rblock h2 a:focus{color:var(--cobalt);border-bottom-color:var(--cobalt)}
-.rb-r{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0}
-.rb-r p{margin:0 0 16px;color:var(--ink2);max-width:44em}
+/* ---------- areas hub: one white card per region, its towns as pills ---------- */
+.regions{list-style:none;margin:40px 0 0;padding:0}
+.rblock{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;margin:0 0 18px;padding:34px 36px 26px;background:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3);box-shadow:0 2px 6px rgba(17,22,31,.04),0 16px 36px -22px rgba(17,22,31,.3)}
+.rb-l{width:36%;-webkit-flex:none;flex:none;padding-right:36px}
+.rb-l .n{display:block;width:38px;min-width:0;padding:0}
+.rblock h2{font-size:40px;font-size:2.9vw;line-height:1.04;max-width:none;min-width:0}
+.rblock h2 a{text-decoration:none;border-bottom:2px solid transparent}
+.rblock h2 a:hover,.rblock h2 a:focus{color:#1f3bd6;border-bottom-color:#2b4eff}
+.rb-r{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;padding-top:4px}
+.rb-r p{margin:0 0 18px;color:var(--ink2);max-width:44em}
 .towns{list-style:none;margin:0;padding:0}
 .towns li{display:inline-block;margin:0 8px 10px 0}
-.towns a{position:relative;z-index:0;overflow:hidden;display:inline-block;padding:11px 14px;min-height:44px;font-size:15.5px;line-height:1.4;text-decoration:none;-webkit-box-shadow:inset 0 0 0 1px var(--line2);box-shadow:inset 0 0 0 1px var(--line2)}
-.towns a:before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background:var(--ink);-webkit-transform:scaleX(0);transform:scaleX(0);-webkit-transform-origin:0 50%;transform-origin:0 50%}
-.towns a:hover:before,.towns a:focus:before{-webkit-transform:scaleX(1);transform:scaleX(1)}
-.towns a:hover,.towns a:focus{color:var(--paper)}
+.towns a{display:inline-block;padding:11px 17px;min-height:44px;font-size:15.5px;font-weight:700;line-height:1.4;text-decoration:none;border-radius:999px;background:#f6f7fb;border:1.5px solid var(--line)}
+.towns a:hover,.towns a:focus{background:#fff;border-color:#2b4eff;color:#1f3bd6}
 
-/* ---------- final call: two buttons on the cobalt band ---------- */
-.cta-btns .btn{margin:0 12px 12px 0}
-.btn-pl{background:transparent;color:var(--paper);-webkit-box-shadow:inset 0 0 0 1px var(--paper);box-shadow:inset 0 0 0 1px var(--paper)}
-.call .call-sub{margin-bottom:12px}
+/* ---------- final call: centred words, the green pill + the white outline pill ---------- */
+.call .call-grid{display:block;margin-top:34px;text-align:center}
+.call .call-l,.call .call-r{width:auto;padding:0}
+.call .call-sub{margin:0 auto 26px}
+.cta-btns .btn{margin:0 6px 12px}
 
 /* ---------- responsive ---------- */
 @media (min-width:1640px){
-  .two h2{font-size:64px}
-  .rblock h2{font-size:54px}
+  .two h2{font-size:58px}
+  .rblock h2{font-size:48px}
+}
+@media (max-width:1180px){
+  .tl b{font-size:28px}
+  .steps b{font-size:25px}
 }
 @media (max-width:980px){
+  .incl.four li{width:47%;width:calc(50% - 22px)}
   .two{display:block}
   .two .col{width:100%}
-  .two .col:first-child{padding-right:0;border-right:0}
+  .two .col:first-child{padding-right:0}
   .two .col+.col{padding-left:0;margin-top:56px}
   .two h2{font-size:6.4vw}
   .grid.three li:first-child{width:100%}
-  .grid.three li{padding-bottom:30px}
-  .tl li{width:50%}
-  .tl li:nth-child(3n+1){border-left:1px solid var(--line2)}
-  .tl li:nth-child(2n+1){border-left:0}
-  .rblock{display:block}
-  .rb-l{width:100%;padding:0 0 14px}
+  .grid.three li:first-child .duo{padding-bottom:52%}
+  .tl li{width:47%;width:calc(50% - 22px)}
+  .rblock{display:block;padding:30px 28px 22px}
+  .rb-l{width:100%;padding:0 0 12px}
   .rblock h2{font-size:5.4vw}
-  .rb-r{padding-left:48px}
 }
 @media (max-width:760px){
+  .phead{padding-bottom:52px}
   .phead .hero-row{margin-top:18px}
-  .phead .proof{margin-top:20px}
-  .phead .actions .tlink{display:inline-block;margin:16px 0 0}
-  .incl.four b{font-size:30px}
-  .two h2{font-size:40px;font-size:10.6vw;margin-bottom:22px}
-  .steps .n,.rb-l .n{width:40px}
-  .steps b{font-size:28px}
-  .steps .c{padding-left:40px}
-  .grid.three li{padding-bottom:24px}
-  .tl li,.tl li:nth-child(n){width:100%;border-left:0}
-  .tl a{padding:18px 4px 20px}
-  .tl .n{margin-bottom:10px}
-  .tl b{font-size:30px}
-  .rblock{padding:22px 0 20px}
-  .rblock h2{font-size:34px;font-size:9vw}
-  .rb-r{padding-left:0}
-  .towns a{font-size:15px;padding:11px 12px}
-  .cta-btns .btn{display:block;width:100%;text-align:center;margin-right:0}
+  .phead .proof{margin-top:22px}
+  .phead .proof li:last-child{display:inline-block}
+  .incl.four li{width:100%}
+  .two{margin-top:30px}
+  .two h2{font-size:40px;font-size:10.6vw;margin-bottom:20px}
+  .two .inc{padding:6px 18px 10px}
+  .two .col+.col{margin-top:48px}
+  .steps li{padding:20px 18px}
+  .steps .n{margin-right:14px}
+  .steps b{font-size:23px}
+  .steps .c{padding-left:54px}
+  .grid.three li:first-child .duo{padding-bottom:66%}
+  .tl{margin:0}
+  .tl li,.tl li:nth-child(n){width:100%;margin:0 0 14px}
+  .tl a{padding:28px 22px 20px}
+  .tl b{font-size:28px}
+  .regions{margin-top:28px}
+  .rblock{padding:28px 20px 18px;margin-bottom:14px;border-radius:22px}
+  .rblock h2{font-size:32px;font-size:8.6vw}
+  .towns a{font-size:15px;padding:11px 14px}
+  .cta-btns .btn{display:block;width:100%;margin:0 0 12px;text-align:center}
 }
 
-/* ---------- the press (site.css motif) on the area-only links ---------- */
+/* ---------- motion: hover lifts + the live rise-and-fade reveal for the area-only cards ---------- */
 @media (prefers-reduced-motion:no-preference){
-  .tl a:before,.towns a:before{-webkit-transition:-webkit-transform .5s cubic-bezier(.66,0,.16,1);transition:transform .5s cubic-bezier(.66,0,.16,1)}
-  .tl a,.tl .n,.tl .c,.tl .go,.towns a{-webkit-transition:color .3s;transition:color .3s}
+  .tl a,.towns a,.steps li,.rblock{-webkit-transition:background-color .25s,border-color .25s,color .25s,-webkit-box-shadow .35s var(--exp),-webkit-transform .35s var(--exp);transition:background-color .25s,border-color .25s,color .25s,box-shadow .35s var(--exp),transform .35s var(--exp)}
+  .tl .go .ar{-webkit-transition:-webkit-transform .3s var(--exp);transition:transform .3s var(--exp)}
+  @media (hover:hover){
+    .tl a:hover,.steps li:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+    .tl a:hover .go .ar{-webkit-transform:translateX(4px);transform:translateX(4px)}
+    .towns a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
+  }
+  @supports (animation-timeline:view()){
+    @keyframes arv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
+    .tl li,.rblock,.steps li,.two h2,.two .inc,.more{animation:arv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+    .tl li:nth-child(3n+2),.steps li:nth-child(2){animation-range:entry 6% entry 54%}
+    .tl li:nth-child(3n),.steps li:nth-child(3){animation-range:entry 12% entry 60%}
+  }
 }

@@ -32,24 +32,27 @@ OUT = os.path.join(ROOT, "guides")
 MANIFEST = os.path.join(ROOT, ".build", "manifest.json")
 SITE = "https://bhwebs.com"
 TODAY = date.today().isoformat()
-CSS_VER = "20261029"   # bump when guides/guides.css changes
+CSS_VER = "20261030a"  # bump when guides/guides.css changes
 
 PILLARS = {
     "law": {
         "label": "Law & compliance",
         "title": "What the law actually asks of your website",
+        "accent": "actually",
         "blurb": "Accessibility, privacy, cookies, selling online, and marketing by email and text — "
                  "explained for the person who owns the business, not the person who wrote the statute.",
     },
     "heimish": {
         "label": "Heimish business web",
         "title": "Building for a heimish business",
+        "accent": "heimish",
         "blurb": "Yiddish and Hebrew on the web, kosher delivery zones, closing properly for Shabbos "
                  "and Yom Tov, and photographing what you sell. Things almost nobody has written down.",
     },
     "decisions": {
         "label": "Before you build",
         "title": "The decisions that come before the website",
+        "accent": "before",
         "blurb": "What to build on, what it should cost, and why speed quietly decides whether an "
                  "online store makes money.",
     },
@@ -72,7 +75,7 @@ OG_IMAGE = f"""<meta property="og:image" content="{SITE}/og-image.jpg">
 
 CTA = """<section class="call gcall" aria-labelledby="cta-h">
   <div class="wrap">
-    <div class="rh"><span>Start</span><span>Monsey, NY · and beyond</span></div>
+    <div class="rh"><span>Start</span><span>Brooklyn, NY · and beyond</span></div>
     <h2 id="cta-h">Want this handled <em>properly?</em></h2>
     <div class="call-grid">
       <div class="call-l">
@@ -80,7 +83,7 @@ CTA = """<section class="call gcall" aria-labelledby="cta-h">
           English and Yiddish. Tell us what you're trying to do and we'll tell you straight what it takes.</p>
       </div>
       <div class="call-r">
-        <p class="gcall-go"><a class="btn btn-inv btn-lg" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a></p>
+        <p class="gcall-go"><a class="btn btn-lg" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a></p>
         <ul class="contact">
           <li><small>Call or text</small><a href="tel:8455766607">(845) 576-6607</a></li>
         </ul>
@@ -93,6 +96,13 @@ CTA = """<section class="call gcall" aria-labelledby="cta-h">
 def esc(s):
     return (s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
              .replace('"', "&quot;"))
+
+
+def accent(pil):
+    """The pillar heading with its one accent word in <em> (gradient text); the words are unchanged."""
+    t = esc(pil["title"])
+    w = pil.get("accent")
+    return t.replace(w, f"<em>{w}</em>", 1) if w and w in t else t
 
 
 def wrap_tables(html):
@@ -132,7 +142,7 @@ def glist(items, read_label):
     for i, r in enumerate(items, 1):
         rows.append(
             f'      <li><a href="/guides/{r["slug"]}"><span class="n">{i:02d}</span>'
-            f'<span class="gt"><span class="nm">{esc(r["title"])}</span>'
+            f'<span class="gtx"><span class="nm">{esc(r["title"])}</span>'
             f'<span class="gd">{esc(r["metaDescription"])}</span></span>'
             f'<span class="tr">{read_label}<span class="ar" aria-hidden="true">→</span></span></a></li>')
     return "\n".join(rows)
@@ -198,7 +208,7 @@ def article_page(a, siblings, updated):
 
 <div class="gbody">
   <div class="wrap gcols">
-    <aside class="gside" aria-label="About this guide">
+    <aside class="gside g-{a['pillar']}" aria-label="About this guide">
       <p class="gk">{esc(pil['label'])}</p>
       <p class="gmeta"><span>By BH Web Solutions</span><span class="dot"> · </span><span>Updated {updated}</span></p>
       <p class="gall"><a class="tlink" href="/guides/">All guides<span class="ar" aria-hidden="true">→</span></a></p>
@@ -212,9 +222,12 @@ def article_page(a, siblings, updated):
 
 <section class="sec tight grel" aria-labelledby="rel-h">
   <div class="wrap">
-    <div class="rh sv"><span>Guides</span><a href="/guides/">All guides</a></div>
-    <div class="sec-head"><h2 id="rel-h">Keep <em>reading.</em></h2></div>
-    <ol class="idx one glist">
+    <div class="rh"><span>Guides</span></div>
+    <div class="sec-head">
+      <h2 id="rel-h">Keep <em>reading.</em></h2>
+      <a class="sec-more" href="/guides/">All guides</a>
+    </div>
+    <ol class="gcards">
 {glist(related, "Read")}
     </ol>
   </div>
@@ -242,18 +255,18 @@ def hub_page(articles):
             n += 1
             rows.append(
                 f'      <li><a href="/guides/{a["slug"]}"><span class="n">{n:02d}</span>'
-                f'<span class="gt"><span class="nm">{esc(a["title"])}</span>'
+                f'<span class="gtx"><span class="nm">{esc(a["title"])}</span>'
                 f'<span class="gd">{esc(a["metaDescription"])}</span></span>'
                 f'<span class="tr">Read the guide<span class="ar" aria-hidden="true">→</span></span></a></li>')
         count = f"{len(items)} guide" + ("" if len(items) == 1 else "s")
         sections.append(f"""<section class="sec tight ghub" id="{key}" aria-labelledby="p-{key}">
   <div class="wrap">
-    <div class="rh sv"><span>{i:02d} · {esc(pil['label'])}</span><span>{count}</span></div>
+    <div class="rh"><span>{i:02d} · {esc(pil['label'])}</span><span>{count}</span></div>
     <div class="sec-head">
-      <h2 id="p-{key}">{esc(pil['title'])}</h2>
+      <h2 id="p-{key}">{accent(pil)}</h2>
       <p>{esc(pil['blurb'])}</p>
     </div>
-    <ol class="idx one glist">
+    <ol class="gcards">
 {chr(10).join(rows)}
     </ol>
   </div>
@@ -300,11 +313,11 @@ def hub_page(articles):
 <section class="phead ghead hubhead" aria-labelledby="h1">
   <div class="wrap">
     <p class="crumbs"><a href="/">Home</a> / Guides</p>
-    <h1 id="h1">Guides</h1>
+    <h1 id="h1"><em class="sw">Guides</em></h1>
     <p class="lede">Straight answers to the questions business owners actually ask us — about the law, about
       building for a heimish customer base, and about what any of it should cost. No jargon, no
       sales pitch.</p>
-    <p class="gtopics">{len(articles)} guides · {topics}</p>
+    <p class="gtopics"><span class="gcount">{len(articles)} guides</span> · {topics}</p>
   </div>
 </section>
 

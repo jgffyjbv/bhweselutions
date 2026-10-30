@@ -16,66 +16,77 @@
 <meta property="og:image:height" content="630">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="theme-color" content="#F3EEE4">
+<!-- bh:head -->
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261029">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<!-- /bh:head -->
 <style>
-/* stuck-on-wix only (everything else comes from /css/site.css) */
-.phead .wrap{position:relative}
+/* stuck-on-wix only (the shared look lives in /css/site.css). Safari 10.3 safe: flex with -webkit- prefixes, no grid, no gap. */
 .phead .hero-row .lede{margin-top:0}
-.phead .stamp{top:0}
-.incl h3,.ways h3{font-weight:400;letter-spacing:-.01em;margin:0 0 10px}
-.incl h3{font-size:34px;line-height:1.02}
-.ways h3{font-size:36px;line-height:1}
-/* the trap: four cells, two by two */
-.traps li{width:50%;padding:24px 44px 42px 0}
-.traps li:nth-child(3n+2),.traps li:nth-child(3n){padding-left:0;border-left:0}
-.traps li:nth-child(even){padding-left:40px;padding-right:0;border-left:1px solid var(--line2)}
+/* the trap: the shared numbered cards, two by two */
+.traps{max-width:1062px;margin-left:auto;margin-right:auto}
+.traps li{width:47%;width:calc(50% - 22px);padding:34px 34px 32px}
+.traps h3{font-size:26px}
 .traps span.c{max-width:31em;font-size:17px}
-/* the way out: three steps across the ink band */
-.out .ways{width:100%;border-top:1px solid var(--paper)}
-.out .ways li:first-child{border-left:0;padding-left:0}
-.out .ways span.c{max-width:24em}
-/* true stories: the story in serif, the promises beside it */
-.story{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:44px}
-.story-p{width:58%;margin:0;padding-right:64px;font-family:var(--serif);font-size:38px;font-size:2.8vw;line-height:1.12;letter-spacing:-.012em}
-.story-p b{font-weight:400;font-style:italic;color:var(--cobalt)}
-.story .inc{width:42%;margin:8px 0 0}
-.story .inc b{font-weight:600}
-/* final call: two buttons on the cobalt band */
-.call-row{margin-top:46px;padding-top:34px;border-top:1px solid var(--pline)}
-.call-row .btn{margin:0 14px 14px 0}
-.btn-pl{background:transparent;color:var(--paper);-webkit-box-shadow:inset 0 0 0 1px var(--paper);box-shadow:inset 0 0 0 1px var(--paper)}
-.call-c{margin-top:22px}
-.call-c li{display:inline-block;margin:0 48px 14px 0}
-@media (min-width:1640px){.story-p{font-size:46px}}
+/* true stories: the story and the promises in one white card (gradient top bar, as on the old page) */
+.story{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;max-width:1140px;margin:40px auto 0;padding:52px 52px 46px;background-color:#fff;background-image:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background-size:100% 5px;background-repeat:no-repeat;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
+.story-p{width:57%;margin:0;padding-right:56px;font-family:var(--serif);font-weight:400;font-size:28px;font-size:clamp(1.55rem,2.05vw,1.95rem);line-height:1.24;letter-spacing:-.012em}
+.story-p b{font-weight:500;color:#2b4eff}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .story-p b{background-image:linear-gradient(100deg,#2b4eff 0%,#7438e6 52%,#b3301a 100%);background-image:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+}
+.story .inc{width:43%;margin:0}
+.story .inc li{font-size:17px}
+.story .inc li:last-child{border-bottom:0}
+.story .inc b{font-weight:700}
+/* the Start band: both buttons and the contact boxes, centred under the heading */
+.call-row{margin-top:40px;text-align:center}
+.call-row .btn{margin:0 7px 14px}
+.call-c{margin:20px auto 0;max-width:1000px;text-align:center}
+.call-c li{display:inline-block;vertical-align:top;min-width:250px;margin:0 5px 10px;text-align:left}
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    .story,.call-row,.call-c li{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
+  }
+}
 @media (max-width:980px){
-  .story{display:block}
-  .story-p,.story .inc{width:100%;padding-right:0}
-  .story-p{font-size:34px;font-size:4.2vw}
-  .story .inc{margin-top:34px}
+  .story{display:block;padding:40px 36px 34px}
+  .story-p,.story .inc{width:auto;padding-right:0}
+  .story-p{font-size:30px;font-size:3.7vw}
+  .story .inc{margin-top:28px}
 }
 @media (max-width:760px){
-  .traps li,.traps li:nth-child(even){width:100%;padding:18px 0 22px;border-left:0}
-  .incl h3,.ways h3{font-size:30px}
-  .ways h3{margin:0}
-  .out .ways li:first-child{border-top:0}
-  .story{margin-top:30px}
-  .story-p{font-size:27px;font-size:7vw;line-height:1.14}
-  .call-row{margin-top:34px;padding-top:26px}
+  .traps li{width:100%;padding:26px 22px 24px}
+  .traps h3{font-size:22px}
+  .traps span.c{font-size:16px}
+  .story{margin-top:30px;padding:28px 20px 22px;border-radius:22px}
+  .story-p{font-size:22px;font-size:5.8vw;line-height:1.24}
+  .call-row{margin-top:30px}
   .call-row .btn{display:block;text-align:center;margin:0 0 12px;font-size:17px}
-  .call-c li{display:block;margin:0 0 14px}
+  .call-c li{display:block;min-width:0;margin:0 0 10px}
 }
 </style>
 </head>
 <body id="top">
 <a class="skip" href="#main">Skip to content</a>
+<!-- bh:svg -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient>
+  </defs>
+  <symbol id="bh-c" viewBox="0 0 120 120">
+    <g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
   <symbol id="bh" viewBox="0 0 120 120">
     <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
@@ -85,11 +96,14 @@
   </symbol>
   <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
   <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></symbol>
 </svg>
+<!-- /bh:svg -->
 
+<!-- bh:header -->
 <header class="mast">
-  <div class="wrap mast-in">
-    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+  <div class="mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><span>BH Web Solutions</span></a>
     <nav class="nav" aria-label="Main">
       <a href="/work">Work</a>
       <a href="/#build">What I build</a>
@@ -99,7 +113,7 @@
     <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
     <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
-  <nav class="nav-m wrap" aria-label="Main, small screens">
+  <nav class="nav-m" aria-label="Main, small screens">
     <a href="/work">Work</a>
     <a href="/#build">What I build</a>
     <a href="/about">About</a>
@@ -107,13 +121,14 @@
     <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
   </nav>
 </header>
+<!-- /bh:header -->
 
 <main id="main">
 
 <!-- ============ HERO ============ -->
 <section class="phead" aria-labelledby="h1">
   <div class="wrap">
-    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Website rescue<span class="wide"> · Moving your site</span> · Brooklyn, NY</span></p>
+    <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Website rescue<span class="wide"> · Moving your site</span> · Brooklyn, NY</span></p>
     <h1 id="h1">Stuck on Wix or GoDaddy?<br> There's a <em class="sw">way out.</em></h1>
     <div class="hero-row">
       <p class="lede">No export button. Renewal bills that keep climbing. A domain you apparently can't take anywhere. You're not imagining it — these platforms are built to keep you. We get people out: your site rebuilt properly, your domain freed, and everything finally in your own hands.</p>
@@ -128,33 +143,13 @@
       <li>No downtime</li>
       <li class="price">Out in days, not months</li>
     </ul>
-    <div class="stamp" aria-hidden="true">
-      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <defs>
-          <path id="ring" d="M100,100 m-75,0 a75,75 0 1,1 150,0 a75,75 0 1,1 -150,0"/>
-          <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
-            <feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" seed="7" result="t"/>
-            <feDisplacementMap in="SourceGraphic" in2="t" scale="2.4" result="d"/>
-            <feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75" result="holes"/>
-            <feComposite in="d" in2="holes" operator="in"/>
-          </filter>
-        </defs>
-        <g filter="url(#ink)">
-          <circle cx="100" cy="100" r="97" fill="none" stroke="currentColor" stroke-width="3"/>
-          <circle cx="100" cy="100" r="89" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          <circle cx="100" cy="100" r="58" fill="none" stroke="currentColor" stroke-width="1.2"/>
-          <text font-family="IBM Plex Mono, Menlo, monospace" font-size="11.4" font-weight="500" letter-spacing="1.6" fill="currentColor"><textPath xlink:href="#ring" href="#ring">YOUR DOMAIN STAYS YOURS · NO DOWNTIME · OUT IN DAYS ·</textPath></text>
-          <use xlink:href="#bh" href="#bh" x="66" y="64" width="68" height="68"/>
-        </g>
-      </svg>
-    </div>
   </div>
 </section>
 
 <!-- ============ THE TRAP ============ -->
 <section class="sec" id="trap" aria-labelledby="trap-h">
   <div class="wrap">
-    <div class="rh sv"><span>Sound familiar?</span><span>Four ways they keep you</span></div>
+    <div class="rh"><span>Sound familiar?</span><span>Four ways they keep you</span></div>
     <div class="sec-head"><h2 id="trap-h">How they keep <em>you.</em></h2></div>
     <ol class="incl traps">
       <li><span class="n">01</span><h3>No export button</h3><span class="c">Website builders don't let you take your site with you. The design, the pages, the setup — none of it can be downloaded or moved. Leaving means starting over, and they know most people won't.</span></li>
@@ -168,7 +163,7 @@
 <!-- ============ HOW WE GET YOU OUT (ink band) ============ -->
 <section class="sec dark out" id="out" aria-labelledby="out-h">
   <div class="wrap">
-    <div class="rh sv"><span>The way out</span><span>Three steps</span></div>
+    <div class="rh"><span>The way out</span><span>Three steps</span></div>
     <div class="sec-head"><h2 id="out-h">Three steps to <em>freedom.</em></h2></div>
     <ol class="ways">
       <li><span class="n">01</span><h3>We rebuild your site — properly</h3><span class="c">Your words, your photos, your products and your brand belong to you, no matter what the platform says. We rebuild it all as a fast, custom-coded site — same look if you love it, a better one if you don't. Usually live in days.</span></li>
@@ -181,7 +176,7 @@
 <!-- ============ TRUE STORIES ============ -->
 <section class="sec" id="stories" aria-label="True stories">
   <div class="wrap">
-    <div class="rh sv"><span>True stories</span><span>Recent rescues</span></div>
+    <div class="rh"><span>True stories</span><span>Recent rescues</span></div>
     <div class="story">
       <p class="story-p">A recent client spent years on GoDaddy's builder and was told her site couldn't go anywhere. We rebuilt the whole thing — <b>same site, faster, hers</b> — in days. Another client's brand-new domain was locked inside Wix; it walks out this week for the price of a transfer fee.</p>
       <ul class="inc">
@@ -196,7 +191,7 @@
 <!-- ============ FAQ: open rows, nothing hidden ============ -->
 <section class="sec faqs" id="faq" aria-labelledby="faq-h">
   <div class="wrap">
-    <div class="rh sv"><span>FAQ</span><span>Before you move</span></div>
+    <div class="rh"><span>FAQ</span><span>Before you move</span></div>
     <div class="sec-head"><h2 id="faq-h">Fair <em>questions.</em></h2></div>
     <div class="faq">
       <div class="qa"><h3><span class="n">Q.1</span><span>Will my new site look the same as my old one?</span></h3><p class="a">If you like your current look, we rebuild it faithfully — most clients can't spot the difference except that it loads faster. If you never loved it, this is the perfect moment for a fresh design at no extra project.</p></div>
@@ -214,7 +209,7 @@
     <div class="rh"><span>Start</span><span>Wix · GoDaddy · Squarespace</span></div>
     <h2 id="call-h">Being stuck<br> isn't a <em>plan.</em></h2>
     <div class="call-row">
-      <a class="btn btn-inv btn-lg" href="/order">Rescue my website<span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn-lg" href="/order">Rescue my website<span class="ar" aria-hidden="true">→</span></a>
       <a class="btn btn-pl btn-lg" href="tel:8455766607">Call 845-576-6607</a>
     </div>
     <ul class="contact call-c">
@@ -227,24 +222,27 @@
 
 </main>
 
+<!-- bh:footer -->
 <footer class="foot">
   <div class="wrap">
     <div class="foot-cols">
-      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><svg class="foot-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh-c" href="#bh-c"/></svg><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
       <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
       <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
       <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
     <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
+  <p class="wordmark" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
 <nav class="mbar" aria-label="Quick contact">
   <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
-  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-wa" href="#i-wa"/></svg>WhatsApp</a>
   <a class="go" href="/order">Start my website</a>
 </nav>
+<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="WhatsApp"><svg aria-hidden="true" focusable="false"><use xlink:href="#i-wa" href="#i-wa"/></svg></a>
+<!-- /bh:footer -->
 
 <script type="application/ld+json">
 {
