@@ -6,8 +6,13 @@ Content lives in .build/areas_data.py (one unique intro, local points and questi
 Output: web-design/index.html (all areas), web-design/<region>.html, web-design/<town>.html,
 and the /web-design/ entries in sitemap.xml (other sitemap entries are kept as they are).
 
+The page shell (head icons/fonts/site.css, the svg symbols, header, footer + phone bar) is read from
+.build/partials/ at build time, so every area page carries the same shell as the main pages.
+Page styles: /css/site.css (shared) + /web-design/areas.css (area-page bits only).
+
 Run from the repo root:  python3 .build/build_areas.py
 """
+import hashlib
 import json
 import os
 import re
@@ -30,12 +35,19 @@ STATE_NAME = {"NY": "New York", "NJ": "New Jersey", "OH": "Ohio", "MD": "Marylan
 def e(s):
     return escape(str(s), quote=True)
 
-ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'
-CHECK = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg>'
-LOGO = ('<svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88">'
-        '<stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs>'
-        '<g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>'
-        '<path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>')
+AR = '<span class="ar" aria-hidden="true">→</span>'
+PARTIALS = os.path.join(ROOT, ".build", "partials")
+
+def partial(name):
+    with open(os.path.join(PARTIALS, name), encoding="utf-8") as f:
+        return f.read().strip("\n")
+
+def css_stamp():
+    # version the area stylesheet by its content, so a rebuild without CSS changes keeps the same URL
+    with open(os.path.join(OUT, "areas.css"), "rb") as f:
+        return hashlib.sha1(f.read()).hexdigest()[:10]
+
+CSSV = css_stamp()
 
 def url(slug):
     return f"{SITE}/web-design/{slug}" if slug else f"{SITE}/web-design/"
@@ -51,7 +63,6 @@ def head(title, desc, canon, schema):
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{canon}">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#faf7f0">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta property="og:title" content="{e(title)}">
@@ -59,39 +70,21 @@ def head(title, desc, canon, schema):
 <meta property="og:url" content="{canon}">
 <meta property="og:image" content="{SITE}/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="/web-design/areas.css?v={TODAY}">
+{partial("head-common.html")}
+<link rel="stylesheet" href="/web-design/areas.css?v={CSSV}">
 {ld}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="nav">
-  <div class="in nav__in">
-    <a href="/" class="brand" aria-label="BH Web Solutions home">{LOGO}<span>BH Web Solutions</span></a>
-    <nav class="nav__links" aria-label="Main"><a href="/#how">How it works</a><a href="/#work">Our work</a><a href="/web-design/">Areas we serve</a><a href="/#faq">Questions</a></nav>
-    <a class="btn btn--green btn--sm" href="/order.html">Start a project</a>
-  </div>
-</header>
+{partial("svg.html")}
+
+{partial("header.html")}
+
 """
 
 def foot():
-    regions = "".join(f'<a href="/web-design/{r["slug"]}">{e(r["name"])}</a>' for r in REGIONS)
-    return f"""<footer class="foot">
-  <div class="in foot__grid">
-    <div><a href="/" class="brand">{LOGO}<span>BH Web Solutions</span></a>
-      <p>Custom websites, online stores and web apps for businesses in New York, New Jersey and beyond. English and Yiddish.</p>
-      <p><a href="tel:8455766607">{PHONE}</a> &middot; <a href="mailto:{EMAIL}">{EMAIL}</a></p></div>
-    <div><b>Areas we serve</b>{regions}<a href="/web-design/">All areas</a></div>
-    <div><b>BH Web Solutions</b><a href="/">Home</a><a href="/work.html">Our work</a><a href="/about.html">About</a><a href="/guides/">Guides</a><a href="/order.html">Start a project</a></div>
-  </div>
-  <div class="in foot__bar">&copy; {date.today().year} BH Web Solutions</div>
-</footer>
-<a class="wa" href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp us">WhatsApp</a>
+    return f"""
+{partial("footer.html")}
 </body>
 </html>
 """
@@ -111,23 +104,36 @@ def faq_ld(qas):
     return {"@context": "https://schema.org", "@type": "FAQPage",
             "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qas]}
 
+def rh(left, right):
+    return f'<div class="rh sv"><span>{left}</span>{right if right.startswith("<a") else "<span>" + right + "</span>"}</div>'
+
 def work_cards(keys):
     out = []
-    for k in keys[:3]:
+    for i, k in enumerate(keys[:3]):
         n, label, img = WORK[k]
-        out.append(f'<a class="wcard" href="/work.html"><img src="/images/work/{img}" alt="{e(n)} website by BH Web Solutions" loading="lazy" decoding="async" width="700" height="438"><span><b>{e(n)}</b><i>{e(label)}</i></span></a>')
-    return '<div class="wgrid">' + "".join(out) + "</div>"
+        out.append(f'<li><a href="/work"><figure class="duo sv"><img src="/images/work/{img}" alt="{e(n)} website by BH Web Solutions" loading="lazy" decoding="async" width="700" height="560"></figure>'
+                   f'<span class="cap"><span class="n">{i + 1:02d}</span><span class="nm">{e(n)}</span><span class="tr">{e(label)}</span></span></a></li>')
+    return '<ol class="grid three">' + "".join(out) + "</ol>"
+
+def work_sec(keys):
+    return f"""<section class="sec work" aria-labelledby="work-h">
+  <div class="wrap">
+    {rh("Recent work", '<a href="/work">See our work →</a>')}
+    <div class="sec-head"><h2 id="work-h">Recent <em>work</em></h2><p>Real websites for real businesses. Every picture is the live site.</p></div>
+  </div>
+  {work_cards(keys)}
+</section>"""
 
 def builds(place):
     items = [("01", "Websites", "A site that makes your business look established, with your hours, services and photos."),
              ("02", "Online stores", "Fast checkout, local delivery zones and an admin you run yourself."),
              ("03", "Booking & web apps", "Appointments, rentals, ordering and portals built around how you work."),
              ("04", "Moving your site", "Your WordPress or Wix site, faster and safer, same look.")]
-    return '<div class="b4">' + "".join(f'<div class="b4c"><span>{n}</span><b>{t}</b><p>{d}</p></div>' for n, t, d in items) + "</div>"
+    return '<ol class="incl four">' + "".join(f'<li><span class="n">{n}</span><b>{e(t)}</b><span class="c">{d}</span></li>' for n, t, d in items) + "</ol>"
 
-STEPS = ('<ol class="steps"><li><b>Tell us what you need</b><span>A short form, or just a WhatsApp message.</span></li>'
-         '<li><b>See your design</b><span>Ask for any change before you pay the balance.</span></li>'
-         '<li><b>Go live</b><span>Usually within days. We stay for every change after.</span></li></ol>')
+STEPS = ('<ol class="steps"><li><span class="n">01</span><b>Tell us what you need</b><span class="c">A short form, or just a WhatsApp message.</span></li>'
+         '<li><span class="n">02</span><b>See your design</b><span class="c">Ask for any change before you pay the balance.</span></li>'
+         '<li><span class="n">03</span><b>Go live</b><span class="c">Usually within days. We stay for every change after.</span></li></ol>')
 
 def shared_faq(place):
     return [(f"How much does a website cost in {place}?",
@@ -136,14 +142,37 @@ def shared_faq(place):
              "No. Everything can happen by phone, WhatsApp and email, whichever you prefer. You deal directly with the person building your site.")]
 
 def faq_html(qas):
-    return '<div class="faq">' + "".join(f'<details><summary>{e(q)}</summary><p>{e(a)}</p></details>' for q, a in qas) + "</div>"
+    return '<div class="faq">' + "".join(f'<div class="qa"><h3><span class="n">Q.{i + 1}</span><span>{e(q)}</span></h3><p class="a">{e(a)}</p></div>'
+                                         for i, (q, a) in enumerate(qas)) + "</div>"
 
-def cta(place):
-    return f"""<section class="cta"><div class="in">
-  <h2>Ready for a website in {e(place)}?</h2>
-  <p>Tell us what you need. You see the design before you pay.</p>
-  <p class="row"><a class="btn btn--green" href="/order.html">Start my website {ARROW}</a><a class="btn btn--line" href="{WA}" target="_blank" rel="noopener">WhatsApp us</a></p>
-</div></section>"""
+def keep_state(place_html):
+    # "Kaser, NY": keep the state on the same line as the town in the big heading
+    return re.sub(r", ([A-Z]{2})$", r",&nbsp;\1", place_html)
+
+def phead(trail, h1, lead, trust=True):
+    proof = ('\n    <ul class="proof"><li>Free logo</li><li>Free small edits</li><li>See the design before you pay</li></ul>') if trust else ""
+    return f"""<section class="phead" aria-labelledby="h1">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb">{trail}</nav>
+    <h1 id="h1">{h1}</h1>
+    <div class="hero-row">
+      <p class="lede">{lead}</p>
+      <div class="actions"><a class="btn btn-lg" href="/order">Start my website{AR}</a><a class="tlink" href="/work">See our work{AR}</a></div>
+    </div>{proof}
+  </div>
+</section>"""
+
+def cta(place, label):
+    return f"""<section class="call" aria-labelledby="call-h">
+  <div class="wrap">
+    <div class="rh"><span>Start</span><span>{e(label)}</span></div>
+    <h2 id="call-h">Ready for a website in <em>{e(place)}</em>?</h2>
+    <div class="call-grid">
+      <div class="call-l"><p class="call-sub">Tell us what you need. You see the design before you pay.</p></div>
+      <div class="call-r cta-btns"><a class="btn btn-inv btn-lg" href="/order">Start my website{AR}</a><a class="btn btn-pl btn-lg" href="{WA}" target="_blank" rel="noopener">WhatsApp us</a></div>
+    </div>
+  </div>
+</section>"""
 
 def town_page(t):
     r = REG[t["region"]]
@@ -164,49 +193,57 @@ def town_page(t):
                "name": f"Website design in {place}", "provider": {"@id": f"{SITE}/#business"}, "areaServed": area,
                "url": canon}]
     near = [T[n] for n in t["near"]]
-    near_html = "".join(f'<a href="/web-design/{n["slug"]}">{e(n["name"][0].upper() + n["name"][1:])}</a>' for n in near)
-    near_html += f'<a class="hub" href="/web-design/{r["slug"]}">All of {e(r["name"])}</a>'
-    local = "".join(f"<li>{CHECK} {e(x)}</li>" for x in t["local"])
+    near_html = "".join(f'<li><a href="/web-design/{n["slug"]}"><span class="n">{i + 1:02d}</span><span class="nm">{e(n["name"][0].upper() + n["name"][1:])}</span><span class="go" aria-hidden="true">→</span></a></li>'
+                        for i, n in enumerate(near))
+    near_html += f'<li class="hub"><a href="/web-design/{r["slug"]}"><span class="n" aria-hidden="true">↗</span><span class="nm">All of {e(r["name"])}</span><span class="go" aria-hidden="true">→</span></a></li>'
+    local = "".join(f"<li>{e(x)}</li>" for x in t["local"])
     guide = ('<p class="more">Read more: <a href="/guides/yiddish-hebrew-rtl-websites">Yiddish and Hebrew websites</a> &middot; '
              '<a href="/guides/shabbos-yom-tov-online-orders">Closing online orders for Shabbos and Yom Tov</a></p>') if t["yiddish"] else ""
+    trail = (f'<a href="/">Home</a> › <a href="/web-design/">Areas we serve</a> › '
+             f'<a href="/web-design/{r["slug"]}">{e(r["name"])}</a> › <span aria-current="page">{e(head_name)}</span>')
     body = f"""<main id="main">
-<section class="hero"><div class="in">
-  <p class="crumb"><a href="/">Home</a> › <a href="/web-design/">Areas we serve</a> › <a href="/web-design/{r['slug']}">{e(r['name'])}</a> › {e(head_name)}</p>
-  <h1>Website design in <span class="gt">{e(place)}</span></h1>
-  <p class="lead">{e(t['intro'])}</p>
-  <p class="row"><a class="btn btn--green" href="/order.html">Start my website {ARROW}</a><a class="btn btn--line" href="/work.html">See our work</a></p>
-  <p class="trust"><span>{CHECK} Free logo</span><span>{CHECK} Free small edits</span><span>{CHECK} See the design before you pay</span></p>
-</div></section>
 
-<section class="sec"><div class="in">
-  <h2>What we build for {e(name)} businesses</h2>
-  <p class="sub">Common here: {e(t['types'])}.</p>
-  {builds(place)}
-</div></section>
+{phead(trail, f'Website design in <em>{keep_state(e(place))}</em>', e(t['intro']))}
 
-<section class="sec sec--tint"><div class="in two">
-  <div><h2>Built for how {e(name)} does business</h2>
-  <ul class="checks">{local}<li>{CHECK} Works on older iPads and filtered phones</li><li>{CHECK} You update prices, photos and hours yourself</li></ul>{guide}</div>
-  <div><h2>How it works</h2>{STEPS}</div>
-</div></section>
+<section class="sec" aria-labelledby="build-h">
+  <div class="wrap">
+    {rh("What we build", e(place))}
+    <div class="sec-head"><h2 id="build-h">What we build for <em>{e(name)}</em> businesses</h2><p>Common here: {e(t['types'])}.</p></div>
+    {builds(place)}
+  </div>
+</section>
 
-<section class="sec"><div class="in">
-  <h2>Recent work</h2>
-  <p class="sub">Real websites for real businesses. Every picture is the live site.</p>
-  {work_cards(r['work'])}
-</div></section>
+<section class="sec dark" aria-labelledby="local-h">
+  <div class="wrap">
+    {rh("Built for " + e(head_name), "How it works")}
+    <div class="two">
+      <div class="col"><h2 id="local-h">Built for how <em>{e(name)}</em> does business</h2>
+        <ul class="inc">{local}<li>Works on older iPads and filtered phones</li><li>You update prices, photos and hours yourself</li></ul>{guide}</div>
+      <div class="col"><h2 id="how-h">How it works</h2>{STEPS}</div>
+    </div>
+  </div>
+</section>
 
-<section class="sec sec--tint"><div class="in">
-  <h2>Questions from {e(name)} business owners</h2>
-  {faq_html(qas)}
-</div></section>
+{work_sec(r['work'])}
 
-<section class="sec"><div class="in">
-  <h2>Nearby areas we serve</h2>
-  <p class="chips">{near_html}</p>
-</div></section>
+<section class="sec" aria-labelledby="faq-h">
+  <div class="wrap">
+    {rh("Questions", e(place))}
+    <div class="sec-head"><h2 id="faq-h">Questions from <em>{e(name)}</em> business owners</h2></div>
+    {faq_html(qas)}
+  </div>
+</section>
 
-{cta(name)}
+<section class="sec tight" aria-labelledby="near-h">
+  <div class="wrap">
+    {rh("Nearby", '<a href="/web-design/">Areas we serve →</a>')}
+    <div class="sec-head"><h2 id="near-h">Nearby areas <em>we serve</em></h2></div>
+    <ol class="idx near">{near_html}</ol>
+  </div>
+</section>
+
+{cta(name, place)}
+
 </main>
 """
     return head(title, desc, canon, schema) + body + foot()
@@ -220,38 +257,41 @@ def region_page(r):
     area = {"@type": "State" if r["slug"] in ("new-jersey", "ohio") else "AdministrativeArea", "name": r["full"]}
     qas = shared_faq(place)
     schema = [business(area), crumbs([("Home", SITE + "/"), ("Areas we serve", url("")), (place, canon)]), faq_ld(qas)]
-    cards = "".join(f'<a class="tcard" href="/web-design/{t["slug"]}"><b>{e(t["name"][0].upper() + t["name"][1:])}</b><span>{e(t["intro"].split(". ")[0])}.</span><i>Website design in {e(t["place"])} {ARROW}</i></a>' for t in towns)
+    cards = "".join(f'<li><a href="/web-design/{t["slug"]}"><span class="n">{i + 1:02d}</span><b>{e(t["name"][0].upper() + t["name"][1:])}</b><span class="c">{e(t["intro"].split(". ")[0])}.</span><span class="go">Website design in {e(t["place"])}{AR}</span></a></li>'
+                    for i, t in enumerate(towns))
+    trail = f'<a href="/">Home</a> › <a href="/web-design/">Areas we serve</a> › <span aria-current="page">{e(place)}</span>'
     body = f"""<main id="main">
-<section class="hero"><div class="in">
-  <p class="crumb"><a href="/">Home</a> › <a href="/web-design/">Areas we serve</a> › {e(place)}</p>
-  <h1>Website design in <span class="gt">{e(place)}</span></h1>
-  <p class="lead">{e(r['intro'])}</p>
-  <p class="row"><a class="btn btn--green" href="/order.html">Start my website {ARROW}</a><a class="btn btn--line" href="/work.html">See our work</a></p>
-  <p class="trust"><span>{CHECK} Free logo</span><span>{CHECK} Free small edits</span><span>{CHECK} See the design before you pay</span></p>
-</div></section>
 
-<section class="sec"><div class="in">
-  <h2>Towns we serve in {e(place)}</h2>
-  <div class="tgrid">{cards}</div>
-</div></section>
+{phead(trail, f'Website design in <em>{e(place)}</em>', e(r['intro']))}
 
-<section class="sec sec--tint"><div class="in">
-  <h2>What we build</h2>
-  {builds(place)}
-</div></section>
+<section class="sec" aria-labelledby="towns-h">
+  <div class="wrap">
+    {rh("Towns we serve", e(r["full"]))}
+    <div class="sec-head"><h2 id="towns-h">Towns we serve in <em>{e(place)}</em></h2></div>
+    <ol class="tl">{cards}</ol>
+  </div>
+</section>
 
-<section class="sec"><div class="in">
-  <h2>Recent work</h2>
-  <p class="sub">Real websites for real businesses. Every picture is the live site.</p>
-  {work_cards(r['work'])}
-</div></section>
+<section class="sec dark" aria-labelledby="build-h">
+  <div class="wrap">
+    {rh("What we build", e(place))}
+    <div class="sec-head"><h2 id="build-h">What we <em>build</em></h2></div>
+    {builds(place)}
+  </div>
+</section>
 
-<section class="sec sec--tint"><div class="in">
-  <h2>Questions</h2>
-  {faq_html(qas)}
-</div></section>
+{work_sec(r['work'])}
 
-{cta(place)}
+<section class="sec" aria-labelledby="faq-h">
+  <div class="wrap">
+    {rh("Questions", e(place))}
+    <div class="sec-head"><h2 id="faq-h">Questions</h2></div>
+    {faq_html(qas)}
+  </div>
+</section>
+
+{cta(place, r["full"])}
+
 </main>
 """
     return head(title, desc, canon, schema) + body + foot()
@@ -263,18 +303,26 @@ def hub_page():
     area = [{"@type": "AdministrativeArea", "name": r["full"]} for r in REGIONS]
     schema = [business(area), crumbs([("Home", SITE + "/"), ("Areas we serve", canon)])]
     blocks = []
-    for r in REGIONS:
-        links = "".join(f'<a href="/web-design/{s}">{e(T[s]["name"][0].upper() + T[s]["name"][1:])}</a>' for s in r["towns"])
-        blocks.append(f'<div class="rblock"><h2><a href="/web-design/{r["slug"]}">{e(r["name"])}</a></h2><p>{e(r["intro"].split(". ")[0])}.</p><p class="chips">{links}</p></div>')
+    for i, r in enumerate(REGIONS):
+        links = "".join(f'<li><a href="/web-design/{s}">{e(T[s]["name"][0].upper() + T[s]["name"][1:])}</a></li>' for s in r["towns"])
+        blocks.append(f'<li class="rblock"><div class="rb-l"><span class="n">{i + 1:02d}</span><h2><a href="/web-design/{r["slug"]}">{e(r["name"])}</a></h2></div>'
+                      f'<div class="rb-r"><p>{e(r["intro"].split(". ")[0])}.</p><ul class="towns">{links}</ul></div></li>')
+    lead = ("We build websites, online stores and booking systems for businesses across Rockland and Orange County, the five boroughs, "
+            "Long Island, Westchester and New Jersey, and for communities further away in Baltimore, Chicago, South Florida, Los Angeles and Ohio. "
+            "Find your town below.")
     body = f"""<main id="main">
-<section class="hero"><div class="in">
-  <p class="crumb"><a href="/">Home</a> › Areas we serve</p>
-  <h1>Websites for businesses <span class="gt">near you.</span></h1>
-  <p class="lead">We build websites, online stores and booking systems for businesses across Rockland and Orange County, the five boroughs, Long Island, Westchester and New Jersey, and for communities further away in Baltimore, Chicago, South Florida, Los Angeles and Ohio. Find your town below.</p>
-  <p class="row"><a class="btn btn--green" href="/order.html">Start my website {ARROW}</a><a class="btn btn--line" href="/work.html">See our work</a></p>
-</div></section>
-<section class="sec"><div class="in">{''.join(blocks)}</div></section>
-{cta('your area')}
+
+{phead('<a href="/">Home</a> › <span aria-current="page">Areas we serve</span>', 'Websites for businesses <em>near you.</em>', lead, trust=False)}
+
+<section class="sec" aria-label="Areas we serve">
+  <div class="wrap">
+    {rh("Areas we serve", f"{len(REGIONS)} regions · {len(T)} towns")}
+    <ol class="regions">{''.join(blocks)}</ol>
+  </div>
+</section>
+
+{cta('your area', 'Monsey, NY · and beyond')}
+
 </main>
 """
     return head(title, desc, canon, schema) + body + foot()

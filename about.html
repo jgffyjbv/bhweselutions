@@ -6,7 +6,6 @@
 <title>About BH Web Solutions — Web Designer for Jewish &amp; Kosher Businesses in Brooklyn, NY</title>
 <meta name="description" content="BH Web Solutions is a Brooklyn-based web designer building fast, affordable, modern websites and online stores for heimishe and kosher businesses across Williamsburg, Boro Park, Monsey, Lakewood and beyond. Meet the developer behind the builds.">
 <meta name="keywords" content="web designer Brooklyn, website for Jewish business, kosher business website, heimishe web design, frum web developer, affordable website design, WordPress developer Brooklyn, ecommerce website, online store developer">
-<meta name="theme-color" content="#11161f">
 <link rel="canonical" href="https://bhwebs.com/about">
 <link rel="alternate" hreflang="en" href="https://bhwebs.com/about">
 <link rel="alternate" hreflang="x-default" href="https://bhwebs.com/about">
@@ -20,446 +19,278 @@
 <meta property="og:image:alt" content="BH Web Solutions — Beautiful websites. Fair prices. Live in days.">
 <meta property="og:site_name" content="BH Web Solutions">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#F3EEE4">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261029">
 <style>
-:root{
-  --paper:#faf7f0;--paper2:#f2ecdf;--ink:#11161f;--ink2:#0a0f16;--line:#e6dfd0;--line2:#d9d0bd;
-  --muted:#5c6672;--muted-d:#9aa9ba;
-  --cobalt:#2b4eff;--coral:#ff5c39;--green:#6cb33f;--greend:#4e8f2c;--sun:#ffc53d;--mint:#9fd47a;
-  --r:18px;--r-lg:26px;
-  --shadow:0 2px 6px rgba(17,22,31,.06),0 18px 44px -18px rgba(17,22,31,.25);
-  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --serif:'Fraunces',Georgia,serif;
-  --max:1200px;--exp:cubic-bezier(.19,1,.22,1);
-  --h2:clamp(2.1rem,4.6vw,3.8rem);
+/* about page only (shared components live in /css/site.css) */
+.ab-top{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:stretch;-webkit-align-items:stretch;align-items:stretch}
+.ab-l{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;padding-right:56px}
+.phead h1 em{display:block;white-space:normal}
+.ab-act{margin-top:32px}
+.ab-act .tlink{margin-left:28px}
+/* the person: a cobalt field with his mark */
+.me{position:relative;width:35%;-webkit-flex:none;flex:none;min-height:0;padding:36px 40px 40px}
+.me .fk{padding-bottom:34px}
+.me-mark{position:absolute;top:24px;right:34px;width:62px;height:62px;color:var(--paper)}
+.me .big{font-size:56px;font-size:4.3vw;margin-top:44px}
+.me-r{position:relative;margin:18px 0 26px;font-size:17px;line-height:1.45;max-width:22em}
+.me .contact{position:relative}
+.me .contact li:last-child{margin-bottom:0}
+/* the story on the ink band */
+.ab-story .said{margin-top:48px}
+.letter{font-family:var(--serif);font-weight:400;font-size:40px;font-size:3.9vw;line-height:1.06;letter-spacing:-.018em;margin:0;max-width:21em}
+.letter em{color:var(--cobalt-l)}
+.sig{margin:36px 0 0}
+.sig em{display:block;font-family:var(--serif);font-size:40px;line-height:1;color:var(--cobalt-l)}
+.sig span{display:block;margin-top:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(243,238,228,.78)}
+.ab-story .ways{width:auto;margin-top:76px;border-top:1px solid var(--pline)}
+.ab-story .ways li:first-child{border-left:0;padding-left:0}
+.ab-story .ways .n{margin-bottom:36px}
+/* who: an editorial list, sentence captions */
+.who a{padding:22px 10px 21px}
+.who .nm{width:36%;-webkit-flex:none;flex:none;font-size:40px;line-height:1.02}
+.who .tr{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;margin-left:0;padding-left:24px;text-align:left;font-family:var(--sans);font-size:17px;line-height:1.4;letter-spacing:0;text-transform:none}
+.places .nm{font-size:32px}
+/* closing band */
+.ab-cta{margin-top:46px}
+.ab-cta .btn+.btn{margin-left:14px}
+.ab-ghost{background:transparent;color:var(--paper);-webkit-box-shadow:inset 0 0 0 1px var(--paper);box-shadow:inset 0 0 0 1px var(--paper)}
+.ab-alt{margin:22px 0 0;font-size:17px}
+.ab-alt a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--pline);padding-bottom:1px}
+.ab-alt a:hover{border-bottom-color:var(--paper)}
+@media (min-width:1640px){
+  .me .big{font-size:72px}
+  .letter{font-size:64px}
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img,svg{max-width:100%}
-::selection{background:var(--cobalt);color:#fff}
-.in{max-width:var(--max);margin:0 auto;padding:0 28px}
-.sec{padding:76px 0;padding:clamp(4rem,8vw,6.5rem) 0;position:relative}
-h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
-h2{font-size:var(--h2)}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800;color:var(--ink);margin-bottom:18px}
-.eyebrow i{width:9px;height:9px;border-radius:50%;font-style:normal}
-.lead{font-size:clamp(1.02rem,1.4vw,1.2rem);color:var(--muted);max-width:52ch}
-.rl .ln{overflow:hidden;display:block;padding-bottom:.12em;margin-bottom:-.12em}
-.rl .ln>i{display:block;font-style:inherit;transform:translateY(115%);transition:transform .9s var(--exp)}
-.rl.in .ln>i{transform:none}
-.rl.in .ln:nth-child(2)>i{transition-delay:.07s}
-.rl.in .ln:nth-child(3)>i{transition-delay:.14s}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .6s var(--exp),transform .6s var(--exp);transition-delay:calc(var(--i,0)*70ms)}
-.rv.in{opacity:1;transform:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:-.01em;padding:15px 28px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--exp),background .25s var(--exp),color .25s var(--exp),border-color .25s var(--exp);white-space:nowrap;will-change:transform}
-.btn svg{transition:transform .3s var(--exp)}
-.btn--green{background:var(--green);color:#fff}
-.btn--green:hover{background:var(--greend)}
-.btn--green:hover svg{transform:translateX(3px)}
-.btn--ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn--ghost:hover{border-color:#fff;background:rgba(255,255,255,.07)}
-.btn--sm{padding:10px 20px;font-size:.92rem}
-.mag{will-change:transform}
-/* nav */
-.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(17,22,31,.08);border-radius:999px;padding:7px 8px 7px 16px;box-shadow:0 12px 44px -14px rgba(17,22,31,.22);transition:box-shadow .3s var(--exp),background .3s var(--exp);max-width:calc(100vw - 24px)}
-.nav.scrolled{background:rgba(255,255,255,.92);box-shadow:0 14px 50px -14px rgba(17,22,31,.3)}
-.brand{display:flex;align-items:center;gap:10px;margin-right:10px}
-.brand__mark{width:38px;height:38px;flex:0 0 auto;display:block}
-.brand__txt{font-weight:800;font-size:1.02rem;letter-spacing:-.025em;color:var(--ink);white-space:nowrap}
-.nav__links{display:flex;align-items:center;gap:0;list-style:none}
-.nav__links>li>a{display:block;color:var(--ink);padding:9px 14px;border-radius:999px;font-weight:600;font-size:.94rem;white-space:nowrap;transition:background .2s var(--exp)}
-.nav__links>li>a:hover{background:rgba(17,22,31,.06)}
-.nav__links>li>a[aria-current]{background:rgba(17,22,31,.08)}
-.nav .btn{margin-left:6px}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;border-radius:999px}
-.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--exp)}
-.burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.burger.on span:nth-child(2){opacity:0}
-.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile{position:fixed;inset:0;z-index:999;background:rgba(250,247,240,.98);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;pointer-events:none;transition:opacity .3s var(--exp)}
-.mobile.on{opacity:1;pointer-events:all}
-.mobile a{font-family:var(--serif);font-weight:500;font-size:1.9rem;letter-spacing:-.02em;color:var(--ink);padding:6px 18px}
-.mobile .m-cta{margin-top:12px;font-family:var(--sans)}
-/* hero */
-.hero{position:relative;padding:clamp(120px,15vh,160px) 0 clamp(2.5rem,5vw,4rem);overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
-.blob--1{top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(43,78,255,.32),transparent 65%);animation:drift 16s ease-in-out infinite alternate}
-.blob--2{bottom:-120px;left:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(255,92,57,.26),transparent 65%);animation:drift2 20s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(5%,6%) scale(1.12)}}
-@keyframes drift2{to{transform:translate(-5%,-6%) scale(1.1)}}
-.hero .in{position:relative;z-index:2}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5.2rem);letter-spacing:-.03em;line-height:1}
-.hero h1 .c1{color:var(--cobalt)}
-.hero h1 .c2{font-style:italic;color:var(--coral)}
-.hero .sub{font-size:clamp(1.05rem,1.5vw,1.25rem);color:var(--muted);max-width:56ch;margin:24px 0 0}
-/* colorful stat pills */
-.ipills{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
-.ipill{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:12px 20px;font-weight:700;font-size:.95rem;letter-spacing:-.01em;box-shadow:0 4px 16px -10px rgba(17,22,31,.15)}
-.ipill i{width:10px;height:10px;border-radius:50%;flex:0 0 auto}
-/* story band */
-.story{background:var(--paper2)}
-.story__card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(28px,4vw,46px);box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,4vw,48px);align-items:center}
-.story__card p{font-family:var(--serif);font-size:clamp(1.2rem,1.9vw,1.6rem);line-height:1.35;letter-spacing:-.01em}
-.story__card p b{color:var(--greend);font-weight:600}
-.slist{list-style:none;display:flex;flex-direction:column;gap:0}
-.slist li{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-top:1px solid var(--line);font-size:.98rem}
-.slist li:first-child{border-top:none}
-.slist svg{flex:0 0 auto;color:var(--greend);margin-top:3px}
-.slist b{font-weight:800}
-/* serve grid */
-.serve__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
-.scv{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 26px;transition:transform .4s var(--exp),box-shadow .4s var(--exp)}
-.scv:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.scv i{display:flex;width:40px;height:40px;border-radius:12px;align-items:center;justify-content:center;color:#fff;margin-bottom:16px}
-.scv:nth-child(6n+1) i{background:var(--cobalt)}
-.scv:nth-child(6n+2) i{background:var(--coral)}
-.scv:nth-child(6n+3) i{background:var(--greend)}
-.scv:nth-child(6n+4) i{background:var(--sun);color:var(--ink)}
-.scv:nth-child(6n+5) i{background:var(--ink)}
-.scv:nth-child(6n+6) i{background:var(--coral)}
-.scv h3{font-family:var(--serif);font-weight:500;font-size:1.3rem;letter-spacing:-.01em;margin-bottom:6px}
-.scv p{color:var(--muted);font-size:.95rem}
-/* why rows */
-.why{background:var(--paper2)}
-.wlist{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 48px;max-width:1020px;margin:44px auto 0}
-.wlist li{display:flex;gap:14px;align-items:flex-start;padding:18px 2px;border-top:1px solid var(--line2)}
-.wlist li:nth-last-child(-n+2){border-bottom:1px solid var(--line2)}
-.wlist svg{flex:0 0 auto;color:var(--greend);margin-top:3px}
-.wlist b{font-weight:800;font-size:1.02rem;letter-spacing:-.01em}
-.wlist p{color:var(--muted);font-size:.93rem;margin-top:2px}
-/* areas */
-.areas .ipills{justify-content:center;margin-top:38px}
-/* faq */
-.faq{background:var(--paper2)}
-.faq__list{max-width:840px;margin:44px auto 0;display:flex;flex-direction:column;gap:12px}
-.qa{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;transition:box-shadow .3s var(--exp)}
-.qa[open]{box-shadow:var(--shadow)}
-.qa summary{display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;list-style:none;padding:20px 24px;font-weight:700;font-size:1.02rem;letter-spacing:-.01em}
-.qa summary::-webkit-details-marker{display:none}
-.qa__mark{flex:0 0 auto;width:30px;height:30px;border-radius:50%;background:var(--paper);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--greend);transition:transform .3s var(--exp),background .3s var(--exp),color .3s var(--exp)}
-.qa[open] .qa__mark{transform:rotate(45deg);background:var(--green);border-color:var(--green);color:#fff}
-.qa__a{padding:0 24px 22px;color:var(--muted);font-size:.98rem;max-width:64ch}
-.qa__a a{color:var(--greend);font-weight:700}
-/* statement */
-.statement{background:linear-gradient(135deg,#0c1120,#161e33 48%,#241d4a);color:#fff;text-align:center;overflow:hidden}
-.statement .glow1{position:absolute;top:-140px;left:-100px;width:480px;height:480px;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(43,78,255,.4),transparent 65%)}
-.statement .glow2{position:absolute;bottom:-140px;right:-100px;width:480px;height:480px;border-radius:50%;filter:blur(80px);background:radial-gradient(circle,rgba(255,92,57,.32),transparent 65%)}
-.statement .in{position:relative;z-index:2;max-width:960px}
-.statement h2{font-size:clamp(2rem,4.6vw,3.8rem);line-height:1.08}
-.statement h2 em{font-style:italic;color:var(--mint)}
-.statement .cta-row{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:40px}
-/* footer */
-.foot{background:var(--ink);color:rgba(216,226,236,.62);padding:44px 0}
-.foot .in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.foot .brand__txt{color:#fff}
-.foot__links{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.94rem;font-weight:600}
-.foot__links a:hover{color:var(--mint)}
-.foot__meta{display:flex;flex-direction:column;gap:2px;font-size:.86rem;text-align:right}
-.foot__meta a{font-weight:700;color:#fff}
-.foot__meta a:hover{color:var(--mint)}
-.foot__bar{max-width:var(--max);margin:30px auto 0;padding:20px 28px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(216,226,236,.4)}
-.foot__badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.78rem;color:var(--mint)}
-/* totop */
-.totop{position:fixed;bottom:24px;right:24px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--exp)}
-.totop.show{opacity:1;pointer-events:all;transform:none}
-.totop:hover{background:var(--cobalt)}
-.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px -10px rgba(37,211,102,.6);transition:transform .25s var(--exp),box-shadow .25s var(--exp)}
-.wa:hover{transform:scale(1.1);box-shadow:0 18px 40px -10px rgba(37,211,102,.7)}
-@media(max-width:640px){.wa{bottom:18px;left:18px;width:52px;height:52px}}
-
-/* waved two-tone band (house doctrine) */
-.band{position:relative}
-.band__wave{position:absolute;left:0;right:0;width:100%;height:40px;height:clamp(28px,4.5vw,64px);display:block;z-index:1;pointer-events:none}
-.band__wave--top{top:-1px}.band__wave--bot{bottom:-1px;transform:scaleY(-1)}
-.band__shine{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;
-  background:radial-gradient(ellipse at 72% 18%,rgba(255,255,255,.16),transparent 52%),radial-gradient(ellipse at 12% 90%,rgba(255,255,255,.08),transparent 46%)}
-.band>.in{position:relative;z-index:2}
-/* ground: flat parchment + faint fixed grain */
-.ground{position:fixed;top:0;left:0;right:0;bottom:0;z-index:900;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
-
-/* responsive */
-@media(max-width:1024px){
-  .story__card{grid-template-columns:1fr}
-  .serve__grid{grid-template-columns:1fr 1fr}
+@media (max-width:980px){
+  .ab-top{display:block}
+  .ab-l{padding-right:0}
+  .me{width:auto;margin-top:40px}
+  .me .big{font-size:8vw}
+  .letter{font-size:5.4vw}
+  .who .nm{width:42%;font-size:34px}
+  .me .contact li{display:inline-block;vertical-align:top;margin:0 36px 10px 0}
 }
-@media(max-width:820px){
-  .nav__links{display:none}
-  .nav{left:12px;right:12px;transform:none;width:auto;justify-content:space-between;max-width:none}
-  .nav .btn{display:none}
-  .burger{display:flex}
-  .wlist{grid-template-columns:1fr;max-width:560px}
-  .wlist li:nth-last-child(2){border-bottom:none}
+@media (max-width:760px){
+  .ab-act{margin-top:24px}
+  .ab-act .btn{display:block;text-align:center;font-size:17px;padding:17px 18px 18px}
+  .ab-act .tlink{margin:16px 0 0}
+  .me{margin:32px -16px 0;padding:22px 16px 28px}
+  .me .fk{padding-bottom:26px}
+  .me-mark{top:14px;right:16px;width:46px;height:46px}
+  .me .big{font-size:12vw;margin-top:30px}
+  .me .contact li{display:block;margin:0 0 14px}
+  .ab-story .said{margin-top:36px}
+  .letter{font-size:8.4vw;line-height:1.08}
+  .sig em{font-size:32px}
+  .ab-story .ways{margin-top:46px;border-top:0}
+  .ab-story .ways .n{margin-bottom:0}
+  .ab-story .ways b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-size:28px;line-height:1.05}
+  .who a{padding:15px 4px 14px}
+  .who .nm{width:auto;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;font-size:28px}
+  .who .tr{width:100%;-webkit-box-flex:0;-webkit-flex:none;flex:none;margin:6px 0 0;padding-left:36px;font-size:16px}
+  .places .nm{font-size:25px}
+  .ab-cta{margin-top:34px}
+  .ab-cta .btn{display:block;text-align:center}
+  .ab-cta .btn+.btn{margin:12px 0 0}
 }
-@media(max-width:640px){
-  .sec{padding:56px 0}
-  .serve__grid{grid-template-columns:1fr}
-  .statement .cta-row .btn{width:100%}
-  .foot .in,.foot__meta{flex-direction:column;text-align:center;align-items:center}
-  .foot__bar{flex-direction:column;text-align:center}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rv,.rl .ln>i{opacity:1!important;transform:none!important}
-}
-:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
 </style>
 </head>
 <body id="top">
-<span class="ground" aria-hidden="true"></span>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="bh" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+</svg>
 
-<!-- ===== NAV ===== -->
-<nav class="nav" id="nav">
-  <a href="index.html" class="brand" aria-label="BH Web Solutions home">
-    <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs><g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/><path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>
-    <span class="brand__txt">BH Web Solutions</span>
-  </a>
-  <ul class="nav__links">
-    <li><a href="index.html#services">What we do</a></li>
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="website-transfers.html">Transfers</a></li>
-    <li><a href="guides/">Guides</a></li>
-    <li><a href="about.html" aria-current="page">About</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-  <a href="order.html" class="btn btn--green btn--sm mag">Start a project</a>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-<div class="mobile" id="mobile">
-  <a href="index.html#services">What we do</a>
-  <a href="index.html#work">Work</a>
-  <a href="website-transfers.html">Transfers</a>
-  <a href="guides/">Guides</a>
-  <a href="about.html">About</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="order.html" class="m-cta btn btn--green">Start a project</a>
-</div>
-
-<!-- ===== HERO ===== -->
-<header class="hero">
-  <span class="blob blob--1" aria-hidden="true"></span>
-  <span class="blob blob--2" aria-hidden="true"></span>
-  <div class="in">
-    <span class="eyebrow rv"><i style="background:var(--green)"></i>About BH Web Solutions</span>
-    <h1 class="rl">
-      <span class="ln"><i>Not an <span class="c1">agency.</span></i></span>
-      <span class="ln"><i>Not a <span class="c2">template shop.</span></i></span>
-    </h1>
-    <p class="sub rv" style="--i:2">One hands-on developer in Brooklyn, building premium websites at prices that make sense — in English and Yiddish. You talk directly to the person designing and coding your site.</p>
-    <div class="ipills">
-      <span class="ipill rv"><i style="background:var(--cobalt)"></i>Based in Brooklyn, NY</span>
-      <span class="ipill rv" style="--i:1"><i style="background:var(--coral)"></i>Stores, apps &amp; WordPress</span>
-      <span class="ipill rv" style="--i:2"><i style="background:var(--green)"></i>English &amp; Yiddish</span>
-      <span class="ipill rv" style="--i:3"><i style="background:var(--sun)"></i>Direct with the builder</span>
-    </div>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/work">Work</a>
+      <a href="/#build">What I build</a>
+      <a href="/about" aria-current="page">About</a>
+      <a href="/#questions">Questions</a>
+    </nav>
+    <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
+    <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
+  <nav class="nav-m wrap" aria-label="Main, small screens">
+    <a href="/work">Work</a>
+    <a href="/#build">What I build</a>
+    <a href="/about" aria-current="page">About</a>
+    <a href="/#questions">Questions</a>
+    <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
+  </nav>
 </header>
 
-<!-- ===== STORY ===== -->
-<section class="story sec" id="story">
-  <div class="in">
-    <div class="story__card rv">
-      <p>A frum business owner shouldn't have to choose between a website that looks cheap and one that costs a fortune. We build the in-between that should have existed all along — <b>genuinely premium work, priced fairly, delivered fast.</b></p>
-      <ul class="slist">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Every project handled personally</b> — no sales reps, no queues.</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Stores, platforms &amp; portals</b> — not just brochure pages.</span></li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span><b>Distance is never a problem</b> — everything is done online.</span></li>
+<main id="main">
+
+<!-- ============ PAGE HEAD: who this is ============ -->
+<section class="phead" aria-labelledby="h1">
+  <div class="wrap ab-top">
+    <div class="ab-l">
+      <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>About BH Web Solutions<span class="wide"> · Avrumy Neumann</span> · Brooklyn, NY</span></p>
+      <h1 id="h1">Not an agency. <em>Not a template shop.</em></h1>
+      <p class="lede">One hands-on developer in Brooklyn, building premium websites at prices that make sense — in English and Yiddish. You talk directly to the person designing and coding your site.</p>
+      <div class="ab-act">
+        <a class="btn btn-lg" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
+        <a class="tlink" href="/work">See my work<span class="ar" aria-hidden="true">→</span></a>
+      </div>
+      <ul class="proof">
+        <li>Based in Brooklyn, NY</li>
+        <li>Stores, apps &amp; WordPress</li>
+        <li>English &amp; Yiddish</li>
+        <li>Direct with the builder</li>
       </ul>
     </div>
+    <aside class="field me press" aria-label="Who you talk to">
+      <p class="fk">Who you talk to</p>
+      <svg class="me-mark" aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg>
+      <p class="big">Avrumy <em>Neumann</em></p>
+      <p class="me-r">Owner, designer and developer of BH Web Solutions. Every project, start to finish.</p>
+      <ul class="contact">
+        <li><small>Call or text</small><a href="tel:8455766607">(845) 576-6607</a></li>
+        <li><small>WhatsApp</small><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">Message me on WhatsApp</a></li>
+        <li><small>Email</small><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li>
+      </ul>
+    </aside>
   </div>
 </section>
 
-<!-- ===== WHO WE BUILD FOR ===== -->
-<section class="sec" id="serve">
-  <div class="in">
-    <div class="head">
-      <span class="eyebrow rv"><i style="background:var(--coral)"></i>Who we build for</span>
-      <h2 class="rl"><span class="ln"><i>Businesses like yours.</i></span></h2>
+<!-- ============ 01 THE STORY (ink band) ============ -->
+<section class="sec dark ab-story" id="story" aria-labelledby="story-h">
+  <div class="wrap">
+    <div class="rh sv"><span>The story</span><span>Avrumy Neumann · owner</span></div>
+    <h2 class="said" id="story-h">Why BH Web Solutions exists</h2>
+    <p class="letter sv-big">A frum business owner shouldn't have to choose between a website that looks cheap and one that costs a fortune. We build the in-between that should have existed all along — <em>genuinely premium work, priced fairly, delivered fast.</em></p>
+    <p class="sig"><em>Avrumy Neumann</em><span>Owner · BH Web Solutions · Brooklyn, NY</span></p>
+    <ol class="ways">
+      <li><span class="n">01</span><b>Every project handled personally</b><span class="c">No sales reps, no queues.</span></li>
+      <li><span class="n">02</span><b>Stores, platforms &amp; portals</b><span class="c">Not just brochure pages.</span></li>
+      <li><span class="n">03</span><b>Distance is never a problem</b><span class="c">Everything is done online.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 02 WHO WE BUILD FOR (editorial list) ============ -->
+<section class="sec" id="serve" aria-labelledby="serve-h">
+  <div class="wrap">
+    <div class="rh sv"><span>Who we build for</span><a href="/work">Work by topic →</a></div>
+    <div class="sec-head"><h2 id="serve-h">Businesses <em>like yours.</em></h2></div>
+    <ol class="idx one who">
+      <li><a href="/work#stores"><span class="n">01</span><span class="nm">Kosher stores</span><span class="tr">Groceries, vitamins, sefarim, Judaica — with search and secure checkout.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/work#food"><span class="n">02</span><span class="nm">Catering &amp; food</span><span class="tr">Menu sites and online ordering that turn browsers into bookings.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/work#community"><span class="n">03</span><span class="nm">Mosdos &amp; nonprofits</span><span class="tr">Trustworthy sites with donations, events and programs.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/work#services"><span class="n">04</span><span class="nm">Local services</span><span class="tr">Plumbers, contractors, tradesmen — sites that capture calls.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/#build"><span class="n">05</span><span class="nm">Custom platforms</span><span class="tr">Ordering systems, member portals, wallets and dashboards.</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/website-transfers"><span class="n">06</span><span class="nm">WordPress migrations</span><span class="tr">Slow, expensive WordPress → fast static. Usually much cheaper to run.</span><span class="go" aria-hidden="true">→</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 03 WHY US (numbered cells) ============ -->
+<section class="sec" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <div class="rh sv"><span>Why us</span><span>Six reasons</span></div>
+    <div class="sec-head">
+      <h2 id="why-h">The sweet <em>spot.</em></h2>
+      <p>Not a clip-art template shop. Not a bloated agency. Real custom work — personal, fair, fast.</p>
     </div>
-    <div class="serve__grid">
-      <div class="scv rv"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="18" cy="20" r="1.6"/><path d="M2 3h3l2.2 12.4a2 2 0 0 0 2 1.6h8.5a2 2 0 0 0 2-1.6L23 7H6"/></svg></i><h3>Kosher stores</h3><p>Groceries, vitamins, sefarim, Judaica — with search and secure checkout.</p></div>
-      <div class="scv rv" style="--i:1"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 15l2 2 3-4"/></svg></i><h3>Catering &amp; food</h3><p>Menu sites and online ordering that turn browsers into bookings.</p></div>
-      <div class="scv rv" style="--i:2"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></i><h3>Mosdos &amp; nonprofits</h3><p>Trustworthy sites with donations, events and programs.</p></div>
-      <div class="scv rv"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></i><h3>Local services</h3><p>Plumbers, contractors, tradesmen — sites that capture calls.</p></div>
-      <div class="scv rv" style="--i:1"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="17" cy="17" r="1.3"/></svg></i><h3>Custom platforms</h3><p>Ordering systems, member portals, wallets and dashboards.</p></div>
-      <div class="scv rv" style="--i:2"><i><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-9-9"/><path d="M16 4h5v5M21 4l-9 9"/></svg></i><h3>WordPress migrations</h3><p>Slow, expensive WordPress → fast static. Usually much cheaper to run.</p></div>
+    <ol class="incl">
+      <li><span class="n">01</span><b>Truly personal</b><span class="c">You work directly with the person building your site.</span></li>
+      <li><span class="n">02</span><b>Built fast, built properly</b><span class="c">Fast load times, SEO-ready, mobile-perfect.</span></li>
+      <li><span class="n">03</span><b>Free logo design</b><span class="c">Need a logo? Included with your site, no extra charge.</span></li>
+      <li><span class="n">04</span><b>Free edits — forever</b><span class="c">Update text, prices and photos yourself through a simple AI assistant.</span></li>
+      <li><span class="n">05</span><b>Low hosting costs</b><span class="c">Static sites are cheap to run — some can even be hosted free, depending on setup.</span></li>
+      <li class="own"><span class="n">06</span><b>Honest, fair pricing</b><span class="c">Straightforward quotes up front. No surprise costs, ever.</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 04 WHERE WE WORK ============ -->
+<section class="sec" id="areas" aria-labelledby="areas-h">
+  <div class="wrap">
+    <div class="rh sv"><span>Where we work</span><a href="/web-design/">All areas →</a></div>
+    <div class="sec-head">
+      <h2 id="areas-h">Brooklyn &amp; <em>everywhere.</em></h2>
+      <p>Everything is done online, so distance is never a problem.</p>
+    </div>
+    <ol class="idx places">
+      <li><a href="/web-design/monsey-ny"><span class="n">01</span><span class="nm">Monsey</span><span class="tr">Rockland County</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/williamsburg-brooklyn"><span class="n">02</span><span class="nm">Williamsburg</span><span class="tr">Brooklyn</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/borough-park-brooklyn"><span class="n">03</span><span class="nm">Boro Park</span><span class="tr">Brooklyn</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/flatbush-brooklyn"><span class="n">04</span><span class="nm">Flatbush</span><span class="tr">Brooklyn</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/crown-heights-brooklyn"><span class="n">05</span><span class="nm">Crown Heights</span><span class="tr">Brooklyn</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/lakewood-nj"><span class="n">06</span><span class="nm">Lakewood</span><span class="tr">New Jersey</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/monroe-ny"><span class="n">07</span><span class="nm">Monroe / KJ</span><span class="tr">Orange County</span><span class="go" aria-hidden="true">→</span></a></li>
+      <li><a href="/web-design/"><span class="n">08</span><span class="nm">&amp; remote, nationwide</span><span class="tr">All areas</span><span class="go" aria-hidden="true">→</span></a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ 05 FAQ (open rows, nothing hidden) ============ -->
+<section class="sec faqs" id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="rh sv"><span>FAQ</span><span>Six questions</span></div>
+    <div class="sec-head"><h2 id="faq-h">Quick <em>answers.</em></h2></div>
+    <div class="faq">
+      <div class="qa"><h3><span class="n">Q.1</span><span>Do you build websites for kosher and Jewish businesses?</span></h3><p class="a">Yes — it's our specialty. We build websites and online stores for kosher stores, caterers, bakeries, sefarim and Judaica shops, mosdos and frum-owned businesses, and we understand the community you're serving.</p></div>
+      <div class="qa"><h3><span class="n">Q.2</span><span>How much does a website cost?</span></h3><p class="a">Less than you'd expect for this quality. Pricing depends on the size of the project — a simple landing page costs far less than a full online store. We give honest, fair quotes up front with no surprises. <a href="/order">Order now</a> and we'll get back to you quickly.</p></div>
+      <div class="qa"><h3><span class="n">Q.3</span><span>How long does it take to build a site?</span></h3><p class="a">Most sites go live in days, not months. Larger online stores and custom platforms take a bit longer, and we'll always tell you the timeline up front.</p></div>
+      <div class="qa"><h3><span class="n">Q.4</span><span>Can you build an online store with checkout?</span></h3><p class="a">Absolutely. We've built online stores with large catalogs, wholesale ordering portals, PayPal and card checkout, and custom platforms with prepaid wallets and member accounts. <a href="/work">See examples in our work</a>.</p></div>
+      <div class="qa"><h3><span class="n">Q.5</span><span>Can you move my existing WordPress site so I stop paying for hosting?</span></h3><p class="a">Yes. We migrate WordPress sites to fast static hosting that's faster, more secure, and usually <b>much cheaper to run</b> — sometimes even free, depending on the site. <a href="/website-transfers">How a move works</a> · <a href="/stuck-on-wix">Stuck on Wix?</a></p></div>
+      <div class="qa"><h3><span class="n">Q.6</span><span>Where are you located, and do you work remotely?</span></h3><p class="a">We're based in Brooklyn, NY and serve businesses across Williamsburg, Boro Park, Monsey, Lakewood and beyond. Since everything is done online, we happily work with clients anywhere in the country.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ===== WHY US ===== -->
-<section class="why sec" id="why">
-  <div class="in">
-    <div class="head head--center" style="margin:0 auto;text-align:center">
-      <span class="eyebrow rv"><i style="background:var(--sun)"></i>Why us</span>
-      <h2 class="rl"><span class="ln"><i>The sweet spot.</i></span></h2>
-      <p class="lead rv" style="--i:1;margin:14px auto 0">Not a clip-art template shop. Not a bloated agency. Real custom work — personal, fair, fast.</p>
+<!-- ============ CLOSING (cobalt band) ============ -->
+<section class="call" id="start" aria-labelledby="call-h">
+  <div class="wrap">
+    <div class="rh"><span>Start</span><span>Brooklyn, NY · and beyond</span></div>
+    <h2 id="call-h">Ready for a website you'll actually be <em>proud of?</em></h2>
+    <div class="ab-cta">
+      <a class="btn btn-lg btn-inv" href="/order">Start a project<span class="ar" aria-hidden="true">→</span></a>
+      <a class="btn btn-lg ab-ghost" href="tel:8455766607">Call 845-576-6607</a>
     </div>
-    <ul class="wlist">
-      <li class="rv"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Truly personal</b><p>You work directly with the person building your site.</p></div></li>
-      <li class="rv" style="--i:1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Built fast, built properly</b><p>Fast load times, SEO-ready, mobile-perfect.</p></div></li>
-      <li class="rv" style="--i:2"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Free logo design</b><p>Need a logo? Included with your site, no extra charge.</p></div></li>
-      <li class="rv" style="--i:3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Free edits — forever</b><p>Update text, prices and photos yourself through a simple AI assistant.</p></div></li>
-      <li class="rv" style="--i:4"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Low hosting costs</b><p>Static sites are cheap to run — some can even be hosted free, depending on setup.</p></div></li>
-      <li class="rv" style="--i:5"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Honest, fair pricing</b><p>Straightforward quotes up front. No surprise costs, ever.</p></div></li>
-    </ul>
+    <p class="ab-alt">Prefer to write? <a href="/#contact">Send me a message</a> or <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp me</a>.</p>
   </div>
 </section>
 
-<!-- ===== AREAS ===== -->
-<section class="areas sec" id="areas">
-  <div class="in">
-    <div class="head" style="margin:0 auto;text-align:center">
-      <span class="eyebrow rv"><i style="background:var(--cobalt)"></i>Where we work</span>
-      <h2 class="rl"><span class="ln"><i>Brooklyn &amp; everywhere.</i></span></h2>
-    </div>
-    <div class="ipills">
-      <span class="ipill rv"><i style="background:var(--cobalt)"></i>Williamsburg</span>
-      <span class="ipill rv" style="--i:1"><i style="background:var(--coral)"></i>Boro Park</span>
-      <span class="ipill rv" style="--i:2"><i style="background:var(--green)"></i>Flatbush</span>
-      <span class="ipill rv" style="--i:3"><i style="background:var(--sun)"></i>Crown Heights</span>
-      <span class="ipill rv" style="--i:4"><i style="background:var(--cobalt)"></i>Monsey</span>
-      <span class="ipill rv" style="--i:5"><i style="background:var(--coral)"></i>Lakewood</span>
-      <span class="ipill rv" style="--i:6"><i style="background:var(--green)"></i>Monroe / KJ</span>
-      <span class="ipill rv" style="--i:7"><i style="background:var(--ink)"></i>&amp; remote, nationwide</span>
-    </div>
-  </div>
-</section>
+</main>
 
-<!-- ===== FAQ ===== -->
-<section class="faq sec" id="faq">
-  <div class="in">
-    <div class="head" style="margin:0 auto;text-align:center">
-      <span class="eyebrow rv"><i style="background:var(--coral)"></i>FAQ</span>
-      <h2 class="rl"><span class="ln"><i>Quick answers.</i></span></h2>
-    </div>
-    <div class="faq__list rv">
-      <details class="qa">
-        <summary>Do you build websites for kosher and Jewish businesses?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">Yes — it's our specialty. We build websites and online stores for kosher stores, caterers, bakeries, sefarim and Judaica shops, mosdos and frum-owned businesses, and we understand the community you're serving.</p>
-      </details>
-      <details class="qa">
-        <summary>How much does a website cost?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">Less than you'd expect for this quality. Pricing depends on the size of the project — a simple landing page costs far less than a full online store. We give honest, fair quotes up front with no surprises. <a href="order.html">Order now</a> and we'll get back to you quickly.</p>
-      </details>
-      <details class="qa">
-        <summary>How long does it take to build a site?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">Most sites go live in days, not months. Larger online stores and custom platforms take a bit longer, and we'll always tell you the timeline up front.</p>
-      </details>
-      <details class="qa">
-        <summary>Can you build an online store with checkout?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">Absolutely. We've built online stores with large catalogs, wholesale ordering portals, PayPal and card checkout, and custom platforms with prepaid wallets and member accounts. <a href="index.html#work">See examples in our work</a>.</p>
-      </details>
-      <details class="qa">
-        <summary>Can you move my existing WordPress site so I stop paying for hosting?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">Yes. We migrate WordPress sites to fast static hosting that's faster, more secure, and usually <b>much cheaper to run</b> — sometimes even free, depending on the site.</p>
-      </details>
-      <details class="qa">
-        <summary>Where are you located, and do you work remotely?<span class="qa__mark" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <p class="qa__a">We're based in Brooklyn, NY and serve businesses across Williamsburg, Boro Park, Monsey, Lakewood and beyond. Since everything is done online, we happily work with clients anywhere in the country.</p>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ===== STATEMENT ===== -->
-<section class="statement sec band">
-  <svg class="band__wave band__wave--top" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#f2ecdf"/></svg>
-  <span class="band__shine" aria-hidden="true"></span>
-  <span class="glow1" aria-hidden="true"></span>
-  <span class="glow2" aria-hidden="true"></span>
-  <div class="in">
-    <h2 class="rl"><span class="ln"><i>Ready for a website</i></span><span class="ln"><i>you'll actually be <em>proud of?</em></i></span></h2>
-    <div class="cta-row rv" style="--i:2">
-      <a href="order.html" class="btn btn--green mag">Start a project
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a href="tel:8455766607" class="btn btn--ghost">Call 845-576-6607</a>
-    </div>
-  </div>
-  <svg class="band__wave band__wave--bot" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0,0 L1440,0 L1440,18 C1150,54 900,6 620,30 C400,50 190,44 0,14 Z" fill="#11161f"/></svg>
-</section>
-
-<!-- ===== FOOTER ===== -->
 <footer class="foot">
-  <div class="in">
-    <a href="index.html" class="brand">
-      <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs><g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/><path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>
-      <span class="brand__txt">BH Web Solutions</span>
-    </a>
-    <div class="foot__links">
-      <a href="index.html#services">What we do</a>
-      <a href="index.html#work">Work</a>
-      <a href="website-transfers.html">Transfers</a>
-      <a href="stuck-on-wix.html">Stuck on Wix?</a>
-      <a href="guides/">Guides</a>
-      <a href="about.html">About</a>
-      <a href="order.html">Order now</a>
-      <a href="index.html#contact">Contact</a>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
+      <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
-    <div class="foot__meta">
-      <a href="tel:8455766607">845-576-6607</a>
-      <a href="mailto:info@bhwebs.com">info@bhwebs.com</a>
-    </div>
+    <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <div class="foot__bar">
-    <span>© 2026 BH Web Solutions. All rights reserved.</span>
-    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> Designed &amp; built by BH Web Solutions</span>
-  </div>
+  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
-<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
-
-<button class="totop" id="totop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-
-<noscript><style>.rv,.rl .ln>i{opacity:1!important;transform:none!important}</style></noscript>
-<script>
-(function(){
-  var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>16);totop.classList.toggle('show',y>640);}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
-
-  function toggle(){var a=mobile.classList.toggle('on');burger.classList.toggle('on',a);burger.setAttribute('aria-expanded',a);document.body.style.overflow=a?'hidden':'';}
-  burger.addEventListener('click',toggle);
-  mobile.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(mobile.classList.contains('on'))toggle();});});
-  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
-
-  // rAF sweep reveal (also catches elements skipped past in one jump)
-  var pend=[].slice.call(document.querySelectorAll('.rv,.rl'));
-  function reveal(){
-    for(var i=pend.length-1;i>=0;i--){
-      var r=pend[i].getBoundingClientRect();
-      if(r.top<window.innerHeight*.92||r.bottom<window.innerHeight){pend[i].classList.add('in');pend.splice(i,1);}
-    }
-  }
-  if(reduce){pend.forEach(function(el){el.classList.add('in');});pend=[];}
-  else{
-    var ticking=false;
-    window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;reveal();});}},{passive:true});
-    reveal();setTimeout(reveal,350);window.addEventListener('load',reveal);
-  }
-
-  // magnetic buttons
-  if(window.matchMedia('(pointer:fine)').matches && !reduce){
-    document.querySelectorAll('.mag').forEach(function(b){
-      b.addEventListener('pointermove',function(e){
-        var r=b.getBoundingClientRect();
-        b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.28)+'px,'+((e.clientY-r.top-r.height/2)*.42)+'px)';
-      });
-      b.addEventListener('pointerleave',function(){b.style.transform='';});
-    });
-  }
-})();
-</script>
+<nav class="mbar" aria-label="Quick contact">
+  <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a class="go" href="/order">Start my website</a>
+</nav>
 
 <!-- ===== STRUCTURED DATA (SEO) ===== -->
 <script type="application/ld+json">
@@ -481,6 +312,7 @@ h2{font-size:var(--h2)}
   "areaServed": ["Brooklyn", "Williamsburg", "Boro Park", "Monsey", "Lakewood", "New York", "United States"],
   "knowsAbout": ["Web design", "WordPress development", "E-commerce", "Online stores", "Custom web platforms", "Website migration"],
   "knowsLanguage": ["English", "Yiddish"],
+  "founder": {"@type": "Person", "name": "Avrumy Neumann"},
   "makesOffer": {
     "@type": "Offer",
     "itemOffered": {

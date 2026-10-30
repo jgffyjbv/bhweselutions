@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Leave a Review — BH Web Solutions</title>
 <meta name="description" content="Tell us how your project went — it takes about a minute and it helps other business owners know what to expect.">
-<meta name="theme-color" content="#11161f">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://bhwebs.com/review">
 <meta property="og:type" content="website">
@@ -15,262 +14,285 @@
 <meta property="og:image" content="https://bhwebs.com/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta name="theme-color" content="#F3EEE4">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261029">
 <style>
-:root{
-  --paper:#faf7f0;--paper2:#f2ecdf;--ink:#11161f;--line:#e6dfd0;--line2:#d9d0bd;
-  --muted:#5c6672;--cobalt:#2b4eff;--coral:#ff5c39;--green:#6cb33f;--greend:#4e8f2c;--sun:#ffc53d;
-  --r:18px;--r-lg:26px;
-  --shadow:0 2px 6px rgba(17,22,31,.06),0 18px 44px -18px rgba(17,22,31,.25);
-  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --serif:'Fraunces',Georgia,serif;
-  --max:1200px;--exp:cubic-bezier(.19,1,.22,1);
+/* review page only: question rows (question left, answer right, like the FAQ), stars, publish chips, thank-you */
+.rform{margin-top:40px}
+.rrow{display:-webkit-box;display:-webkit-flex;display:flex;border-top:1px solid var(--line2);padding:30px 0 34px}
+.rrow:last-child{border-bottom:1px solid var(--line2)}
+.rq{display:-webkit-box;display:-webkit-flex;display:flex;width:44%;-webkit-flex:none;flex:none;padding-right:48px}
+.rq .n{width:64px;-webkit-flex:none;flex:none;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--cobalt);padding-top:12px}
+.rq .qt{min-width:0;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px}
+.form .ql{display:block;font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;letter-spacing:-.012em;text-transform:none;color:var(--ink);margin:0;max-width:13em}
+.form .ql b{font-weight:400;color:var(--cobalt)}
+.form .rq .hint{margin:12px 0 0;font-size:16px;line-height:1.45;max-width:24em}
+.ra{min-width:0;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px}
+.ra>.fgroup:last-child{margin-bottom:0}
+/* stars: inputs first (5 to 1) and a reversed row, so a checked or hovered star fills the ones to its left; no script */
+.stars{position:relative;display:-webkit-flex;display:flex;-webkit-flex-direction:row-reverse;flex-direction:row-reverse;-webkit-justify-content:flex-end;justify-content:flex-end}
+.stars input{position:absolute;top:0;left:0;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.form .stars label{display:block;margin:0 8px 0 0;padding:3px;line-height:0;cursor:pointer}
+.stars svg{display:block;width:48px;height:48px}
+.stars path{fill:transparent;stroke:#57534B;stroke-width:1.3;stroke-linejoin:round}
+.stars input:checked~label path,.stars label:hover path,.stars label:hover~label path{fill:#2A49F2;stroke:#2A49F2}
+.stars input:focus+label{outline:2px solid #2A49F2;outline-offset:0}
+.rate-out{min-height:1.25em;margin:14px 0 0;font-family:var(--serif);font-style:italic;font-size:28px;line-height:1.2;color:var(--cobalt)}
+/* how the review is shown: the shared chips, freed from the mono label style */
+.pub{border:0;margin:0;padding:0;min-width:0}
+.form .chip{display:inline-block;margin:0;font-family:var(--sans);font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.chip span:hover{-webkit-box-shadow:inset 0 0 0 1px var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.pub__note{margin:6px 0 0;font-size:15px;color:var(--ink2)}
+.form .rthanks{margin:0;font-family:var(--serif);font-style:italic;font-size:26px;line-height:1.2;color:var(--ink);max-width:14em}
+.rsend .cstatus a{color:var(--cobalt)}
+/* thank-you */
+.rdone{padding:44px 0 10px}
+.rdone .cic{display:-webkit-flex;display:flex;-webkit-align-items:center;align-items:center;-webkit-justify-content:center;justify-content:center;width:66px;height:66px;border-radius:50%;background:var(--cobalt);color:var(--paper)}
+.rdone h2{margin:26px 0 18px}
+.rdone p{font-size:19px;max-width:30em;color:var(--ink2);margin:0 0 30px}
+@media (max-width:980px){
+  .rq{width:46%;padding-right:32px}
+  .form .ql{font-size:30px}
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img,svg{max-width:100%}
-::selection{background:var(--cobalt);color:#fff}
-.in{max-width:var(--max);margin:0 auto;padding:0 28px}
-h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800;margin-bottom:18px}
-.eyebrow i{width:9px;height:9px;border-radius:50%;font-style:normal;background:var(--sun)}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .6s var(--exp),transform .6s var(--exp);transition-delay:calc(var(--i,0)*70ms)}
-.rv.in{opacity:1;transform:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:700;font-size:1rem;padding:15px 28px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--exp),background .25s var(--exp);white-space:nowrap}
-.btn--green{background:var(--green);color:#fff}
-.btn--green:hover{background:var(--greend)}
-.btn--sm{padding:10px 20px;font-size:.92rem}
-/* nav */
-.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(17,22,31,.08);border-radius:999px;padding:7px 8px 7px 16px;box-shadow:0 12px 44px -14px rgba(17,22,31,.22);max-width:calc(100vw - 24px)}
-.brand{display:flex;align-items:center;gap:10px;margin-right:10px}
-.brand__mark{width:38px;height:38px;flex:0 0 auto;display:block}
-.brand__txt{font-weight:800;font-size:1.02rem;letter-spacing:-.025em;white-space:nowrap}
-.nav__links{display:flex;align-items:center;gap:0;list-style:none}
-.nav__links>li>a{display:block;padding:9px 14px;border-radius:999px;font-weight:600;font-size:.94rem;white-space:nowrap}
-.nav__links>li>a:hover{background:rgba(17,22,31,.06)}
-@media(max-width:820px){.nav__links{display:none}.nav{left:12px;right:12px;transform:none;max-width:none;justify-content:space-between}}
-/* hero */
-.hero{position:relative;padding:clamp(120px,15vh,160px) 0 clamp(1.5rem,3vw,2.5rem);overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
-.blob--1{top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(255,197,61,.4),transparent 65%)}
-.blob--2{bottom:-120px;left:-140px;width:460px;height:460px;background:radial-gradient(circle,rgba(43,78,255,.24),transparent 65%)}
-.hero .in{position:relative;z-index:2}
-.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);letter-spacing:-.03em}
-.hero h1 em{font-style:italic;color:var(--coral)}
-.hero .sub{font-size:clamp(1.02rem,1.4vw,1.2rem);color:var(--muted);max-width:56ch;margin:20px 0 0}
-/* form */
-.wrap{max-width:780px;margin:0 auto;padding:0 28px clamp(4rem,8vw,6rem)}
-.form{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.4vw,42px);box-shadow:var(--shadow)}
-.qnum{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:.86rem;font-weight:800;color:#fff;margin-right:10px;flex:0 0 auto}
-.q1 .qnum{background:var(--cobalt)}.q2 .qnum{background:var(--coral)}.q3 .qnum{background:var(--greend)}
-.q4 .qnum{background:#7c3aed}.q5 .qnum{background:var(--ink)}
-.fgroup{margin-bottom:26px}
-.fgroup>label,.qlabel{display:flex;align-items:center;font-size:1.06rem;font-weight:700;margin-bottom:4px;letter-spacing:-.01em}
-.hint{font-size:.9rem;color:var(--muted);margin:0 0 10px 40px}
-.fgroup input[type=text],.fgroup input[type=email],.fgroup textarea{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;transition:border-color .2s,background .2s}
-.fgroup textarea{min-height:110px;resize:vertical}
-.fgroup input:focus,.fgroup textarea:focus{outline:none;background:#fff;border-color:var(--cobalt)}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-@media(max-width:640px){.two{grid-template-columns:1fr}}
-/* stars */
-.stars{position:relative;display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:4px;margin-top:6px}
-.stars input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.stars label{cursor:pointer;color:var(--line2);transition:color .15s,transform .15s;line-height:1}
-.stars label svg{display:block;width:38px;height:38px}
-.stars input:checked ~ label,.stars label:hover,.stars label:hover ~ label{color:var(--sun)}
-.stars label:hover{transform:scale(1.12)}
-.stars input:focus-visible + label{outline:3px solid var(--cobalt);outline-offset:2px;border-radius:6px}
-.rate-out{font-size:.92rem;font-weight:700;color:var(--muted);margin-top:8px;min-height:1.2em}
-/* publish-as options */
-.pub{position:relative;border:1.5px solid var(--line);border-radius:14px;padding:16px 18px 10px;margin-bottom:22px;background:var(--paper)}
-.pub legend{font-size:.95rem;font-weight:800;letter-spacing:-.01em;padding:0 6px}
-.pub legend b{color:var(--coral)}
-.pub__opt{display:flex;gap:11px;align-items:center;padding:9px 6px;border-radius:10px;cursor:pointer;font-weight:500;margin:0}
-.pub__opt:hover{background:#fff}
-.pub__opt input{width:18px;height:18px;flex:0 0 auto;accent-color:var(--green);margin:0}
-.pub__opt span b{font-weight:600;color:var(--ink)}
-.pub__note{font-size:.84rem;color:var(--muted);margin:6px 6px 4px}
-/* consent */
-.consent{position:relative;display:flex;gap:12px;align-items:flex-start;background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:22px}
-.consent input{margin-top:3px;width:18px;height:18px;flex:0 0 auto;accent-color:var(--green)}
-.consent span{font-size:.95rem;color:var(--muted)}
-.consent b{color:var(--ink)}
-.hp{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
-.cnote{font-size:.85rem;color:var(--muted);text-align:center;margin-top:14px}
-.cstatus{margin-top:12px;font-size:.94rem;font-weight:600;color:#b23b2c;display:none}
-.cstatus.show{display:block}
-.form .btn{width:100%}
-.done{display:none;text-align:center;padding:30px 10px}
-.done.show{display:block}
-.done .cic{width:66px;height:66px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.done h2{font-size:1.9rem;margin-bottom:10px}
-.done p{color:var(--muted);max-width:420px;margin:0 auto 20px}
-/* footer */
-.foot{background:var(--ink);color:rgba(216,226,236,.62);padding:36px 0;text-align:center;font-size:.9rem}
-.foot a{font-weight:700;color:#fff}
-.foot a:hover{color:#9fd47a}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1!important;transform:none!important}}
-:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+@media (max-width:760px){
+  .rform{margin-top:26px}
+  .rrow{display:block;padding:22px 0 26px}
+  .rq{display:block;width:100%;padding-right:0}
+  .rq .n{display:block;width:auto;padding:0;margin:0 0 8px}
+  .rq .n:empty{display:none}
+  .form .ql{font-size:27px}
+  .form .rq .hint{font-size:15.5px;margin-top:8px}
+  .ra{margin-top:16px}
+  .stars svg{width:44px;height:44px}
+  .form .stars label{margin-right:6px}
+  .rate-out{font-size:23px;min-height:0;margin-top:10px}
+  .rate-out:empty{margin:0}
+  .form .rthanks{font-size:23px}
+  .rsend .btn,.rdone .btn{display:block;width:100%;text-align:center;font-size:17px}
+  .rdone{padding-top:30px}
+  .rdone p{font-size:17px}
+}
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="bh" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+</svg>
 
-<nav class="nav">
-  <a href="index.html" class="brand" aria-label="BH Web Solutions home">
-    <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs><g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/><path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>
-    <span class="brand__txt">BH Web Solutions</span>
-  </a>
-  <ul class="nav__links">
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="index.html#services">What we do</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-  <a href="index.html#contact" class="btn btn--green btn--sm">Get in touch</a>
-</nav>
-
-<header class="hero">
-  <span class="blob blob--1" aria-hidden="true"></span>
-  <span class="blob blob--2" aria-hidden="true"></span>
-  <div class="in">
-    <span class="eyebrow rv"><i></i>Your feedback</span>
-    <h1 class="rv" style="--i:1">How did we <em>do?</em></h1>
-    <p class="sub rv" style="--i:2">Four short questions — about a minute. Your words help other business owners know what to expect before they reach out.</p>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/work">Work</a>
+      <a href="/#build">What I build</a>
+      <a href="/about">About</a>
+      <a href="/#questions">Questions</a>
+    </nav>
+    <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
+    <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
+  <nav class="nav-m wrap" aria-label="Main, small screens">
+    <a href="/work">Work</a>
+    <a href="/#build">What I build</a>
+    <a href="/about">About</a>
+    <a href="/#questions">Questions</a>
+    <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
+  </nav>
 </header>
 
-<div class="wrap">
-  <div class="form rv" style="--i:3">
-    <form id="revform" action="https://reviews.bhwebs.com/submit" method="POST" novalidate>
+<main id="main">
 
-      <div class="fgroup">
-        <span class="qlabel">Overall, how satisfied were you?</span>
-        <div class="stars" id="stars">
-          <input type="radio" id="r5" name="rating" value="5 out of 5"><label for="r5" title="5 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="hp">5 stars</span></label>
-          <input type="radio" id="r4" name="rating" value="4 out of 5"><label for="r4" title="4 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="hp">4 stars</span></label>
-          <input type="radio" id="r3" name="rating" value="3 out of 5"><label for="r3" title="3 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="hp">3 stars</span></label>
-          <input type="radio" id="r2" name="rating" value="2 out of 5"><label for="r2" title="2 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="hp">2 stars</span></label>
-          <input type="radio" id="r1" name="rating" value="1 out of 5"><label for="r1" title="1 star"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="hp">1 star</span></label>
+<!-- ============ PAGE HEAD ============ -->
+<section class="phead" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Your feedback</span></p>
+    <h1 id="h1">How did we <em class="sw">do?</em></h1>
+    <p class="lede">Four short questions — about a minute. Your words help other business owners know what to expect before they reach out.</p>
+  </div>
+</section>
+
+<!-- ============ THE REVIEW FORM (posts to reviews.bhwebs.com; a plain POST still works without script) ============ -->
+<section class="sec" aria-label="Your review">
+  <div class="wrap">
+    <div class="rh sv"><span>Your review</span><span>Stars + four questions</span></div>
+
+    <form id="revform" class="form rform" action="https://reviews.bhwebs.com/submit" method="POST" novalidate>
+
+      <div class="rrow">
+        <div class="rq"><span class="n" aria-hidden="true"></span><div class="qt"><span class="ql" id="rate-l">Overall, how satisfied were you?</span></div></div>
+        <div class="ra">
+          <div class="stars" id="stars" role="radiogroup" aria-labelledby="rate-l">
+            <input type="radio" id="r5" name="rating" value="5 out of 5"><label for="r5" title="5 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="vh">5 stars</span></label>
+            <input type="radio" id="r4" name="rating" value="4 out of 5"><label for="r4" title="4 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="vh">4 stars</span></label>
+            <input type="radio" id="r3" name="rating" value="3 out of 5"><label for="r3" title="3 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="vh">3 stars</span></label>
+            <input type="radio" id="r2" name="rating" value="2 out of 5"><label for="r2" title="2 stars"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="vh">2 stars</span></label>
+            <input type="radio" id="r1" name="rating" value="1 out of 5"><label for="r1" title="1 star"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8L12 2Z"/></svg><span class="vh">1 star</span></label>
+          </div>
+          <p class="rate-out" id="rateOut" aria-live="polite"></p>
         </div>
-        <div class="rate-out" id="rateOut"></div>
       </div>
 
-      <div class="fgroup q1">
-        <span class="qlabel"><span class="qnum">1</span> How satisfied were you with the website you got?</span>
-        <p class="hint">The finished site &mdash; the look, how it works, and whether it&rsquo;s what you pictured.</p>
-        <textarea name="q1_satisfaction" id="q1" placeholder="The website I got was…"></textarea>
+      <div class="rrow q1">
+        <div class="rq"><span class="n" aria-hidden="true">Q.1</span><div class="qt"><label class="ql" for="q1">How satisfied were you with the website you got?</label><p class="hint" id="q1-h">The finished site &mdash; the look, how it works, and whether it&rsquo;s what you pictured.</p></div></div>
+        <div class="ra"><textarea name="q1_satisfaction" id="q1" aria-describedby="q1-h" placeholder="The website I got was…"></textarea></div>
       </div>
 
-      <div class="fgroup q2">
-        <span class="qlabel"><span class="qnum">2</span> What was it like working with us?</span>
-        <p class="hint">The design, the process, how easy we were to reach — anything that stood out.</p>
-        <textarea name="q2_working_with_us" id="q2" placeholder="Working with BH Web Solutions was…"></textarea>
+      <div class="rrow q2">
+        <div class="rq"><span class="n" aria-hidden="true">Q.2</span><div class="qt"><label class="ql" for="q2">What was it like working with us?</label><p class="hint" id="q2-h">The design, the process, how easy we were to reach — anything that stood out.</p></div></div>
+        <div class="ra"><textarea name="q2_working_with_us" id="q2" aria-describedby="q2-h" placeholder="Working with BH Web Solutions was…"></textarea></div>
       </div>
 
-      <div class="fgroup q3">
-        <span class="qlabel"><span class="qnum">3</span> And after your site went live?</span>
-        <p class="hint">Did you need help after the site was finished? How quickly did we respond, and how was the support experience?</p>
-        <textarea name="q3_after_launch_support" id="q3" placeholder="When I needed something changed later…"></textarea>
+      <div class="rrow q3">
+        <div class="rq"><span class="n" aria-hidden="true">Q.3</span><div class="qt"><label class="ql" for="q3">And after your site went live?</label><p class="hint" id="q3-h">Did you need help after the site was finished? How quickly did we respond, and how was the support experience?</p></div></div>
+        <div class="ra"><textarea name="q3_after_launch_support" id="q3" aria-describedby="q3-h" placeholder="When I needed something changed later…"></textarea></div>
       </div>
 
-      <div class="fgroup q4">
-        <span class="qlabel"><span class="qnum">4</span> What surprised you the most about doing your website with us?</span>
-        <p class="hint">The speed? How hassle-free it was? The price? Whatever caught you off guard.</p>
-        <textarea name="q4_surprise" id="q4" placeholder="What surprised me most was…"></textarea>
+      <div class="rrow q4">
+        <div class="rq"><span class="n" aria-hidden="true">Q.4</span><div class="qt"><label class="ql" for="q4">What surprised you the most about doing your website with us?</label><p class="hint" id="q4-h">The speed? How hassle-free it was? The price? Whatever caught you off guard.</p></div></div>
+        <div class="ra"><textarea name="q4_surprise" id="q4" aria-describedby="q4-h" placeholder="What surprised me most was…"></textarea></div>
       </div>
 
-      <div class="two">
-        <div class="fgroup"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
-        <div class="fgroup"><label for="f-biz">Business name</label><input id="f-biz" name="business" type="text" autocomplete="organization"></div>
+      <div class="rrow">
+        <div class="rq"><span class="n" aria-hidden="true"></span><div class="qt"><span class="ql">About you</span></div></div>
+        <div class="ra">
+          <div class="row2">
+            <div class="fgroup"><label for="f-name">Your name *</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="fgroup"><label for="f-biz">Business name</label><input id="f-biz" name="business" type="text" autocomplete="organization"></div>
+          </div>
+          <div class="fgroup"><label for="f-email">Email (so we can thank you — never published)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
+        </div>
       </div>
-      <div class="fgroup"><label for="f-email">Email (so we can thank you — never published)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
 
-      <fieldset class="pub">
-        <legend>Show this review on bhwebs.com as: <b>*</b></legend>
-        <label class="pub__opt"><input type="radio" name="publish_as" value="name_and_business" required><span><b>My name and my business name</b></span></label>
-        <label class="pub__opt"><input type="radio" name="publish_as" value="name_only"><span><b>Just my name</b></span></label>
-        <label class="pub__opt"><input type="radio" name="publish_as" value="business_only"><span><b>Just my business name</b></span></label>
-        <label class="pub__opt"><input type="radio" name="publish_as" value="anonymous"><span><b>Without my name or business name</b></span></label>
-        <p class="pub__note">We never show your email or phone number.</p>
-      </fieldset>
+      <div class="rrow">
+        <div class="rq"><span class="n" aria-hidden="true"></span><div class="qt"><span class="ql" aria-hidden="true">Show this review on bhwebs.com as: <b>*</b></span></div></div>
+        <div class="ra">
+          <fieldset class="pub">
+            <legend class="vh">Show this review on bhwebs.com as: *</legend>
+            <ul class="chips">
+              <li><label class="chip"><input type="radio" name="publish_as" value="name_and_business" required><span>My name and my business name</span></label></li>
+              <li><label class="chip"><input type="radio" name="publish_as" value="name_only"><span>Just my name</span></label></li>
+              <li><label class="chip"><input type="radio" name="publish_as" value="business_only"><span>Just my business name</span></label></li>
+              <li><label class="chip"><input type="radio" name="publish_as" value="anonymous"><span>Without my name or business name</span></label></li>
+            </ul>
+            <p class="pub__note">We never show your email or phone number.</p>
+          </fieldset>
+        </div>
+      </div>
 
       <input type="hidden" name="loaded_at" id="c_loaded">
       <input type="hidden" name="submitted_at" id="c_submitted">
       <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-      <button type="submit" class="btn btn--green" id="revBtn">Send my review
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-      </button>
-      <p class="cnote">Thank you — it really does make a difference.</p>
-      <div class="cstatus" id="revStatus" role="status" aria-live="polite"></div>
+      <div class="rrow rsend">
+        <div class="rq"><span class="n" aria-hidden="true"></span><div class="qt"><p class="cnote rthanks">Thank you — it really does make a difference.</p></div></div>
+        <div class="ra">
+          <button type="submit" class="btn btn-lg" id="revBtn">Send my review<span class="ar" aria-hidden="true">→</span></button>
+          <div class="cstatus" id="revStatus" role="status" aria-live="polite"></div>
+        </div>
+      </div>
     </form>
 
-    <div class="done" id="revDone" role="status" aria-live="polite">
+    <div class="csuccess rdone" id="revDone" role="status" aria-live="polite">
       <div class="cic"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
-      <h2>Thank you!</h2>
+      <h2>Thank <em>you!</em></h2>
       <p>That means a lot. If we publish it on the site, it'll appear with your name and business.</p>
-      <a href="index.html" class="btn btn--green">Back to the site</a>
+      <a href="/" class="btn btn-lg">Back to the site<span class="ar" aria-hidden="true">→</span></a>
     </div>
   </div>
-</div>
+</section>
+
+</main>
 
 <footer class="foot">
-  <div class="in">Questions? <a href="tel:8455766607">845-576-6607</a> &nbsp;·&nbsp; <a href="https://wa.me/18455870531" target="_blank" rel="noopener">WhatsApp</a> &nbsp;·&nbsp; <a href="mailto:info@bhwebs.com">info@bhwebs.com</a></div>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
+      <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
+    </div>
+    <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
+  </div>
+  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
-<noscript><style>.rv{opacity:1!important;transform:none!important}</style></noscript>
+<nav class="mbar" aria-label="Quick contact">
+  <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a class="go" href="/order">Start my website</a>
+</nav>
+
 <script>
+/* ES5 only (old iPads, filtered browsers). Without script the form is a plain POST to reviews.bhwebs.com;
+   script adds the star words, the checks, and the in-page thank-you. */
 (function(){
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var rv=[].slice.call(document.querySelectorAll('.rv'));
-  function reveal(){for(var i=rv.length-1;i>=0;i--){var r=rv[i].getBoundingClientRect();if(r.top<window.innerHeight*.94||r.bottom<window.innerHeight){rv[i].classList.add('in');rv.splice(i,1);}}}
-  if(reduce){rv.forEach(function(e){e.classList.add('in');});rv=[];}
-  else{var t=false;window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(function(){t=false;reveal();});}},{passive:true});reveal();setTimeout(reveal,300);window.addEventListener('load',reveal);}
+  var d=document;
+  function trim(s){return String(s==null?'':s).replace(/^\s+|\s+$/g,'');}
+  function addShow(el){if((' '+el.className+' ').indexOf(' show ')<0)el.className+=' show';}
+  function dropShow(el){el.className=el.className.replace(/\s*\bshow\b/g,'');}
 
+  /* ---- a few words under the stars ---- */
   var words={'5':'Excellent — thank you!','4':'Great to hear.','3':'Thanks for being honest.','2':'Sorry to hear that — we want to fix it.','1':'We let you down. Please tell us how.'};
-  var out=document.getElementById('rateOut');
-  document.querySelectorAll('.stars input').forEach(function(inp){
-    inp.addEventListener('change',function(){out.textContent=words[inp.value.charAt(0)]||'';});
-  });
+  var out=d.getElementById('rateOut'),stars=d.getElementById('stars').getElementsByTagName('input');
+  function onRate(){out.textContent=words[this.value.charAt(0)]||'';}
+  for(var i=0;i<stars.length;i++)stars[i].addEventListener('change',onRate,false);
 
-  var f=document.getElementById('revform'),btn=document.getElementById('revBtn'),
-      st=document.getElementById('revStatus'),done=document.getElementById('revDone');
-  var icon=' <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>';
-  try{document.getElementById('c_loaded').value=new Date().toISOString();}catch(e){}
-  if(/[?&]sent=1/.test(location.search)){f.style.display='none';done.classList.add('show');}
+  /* ---- the review form -> reviews.bhwebs.com/submit ---- */
+  var f=d.getElementById('revform'),btn=d.getElementById('revBtn'),
+      st=d.getElementById('revStatus'),done=d.getElementById('revDone');
+  var label='Send my review<span class="ar" aria-hidden="true">→</span>';
+  function finish(){f.style.display='none';addShow(done);}
+  function err(m){st.innerHTML=m;addShow(st);}
+  try{d.getElementById('c_loaded').value=new Date().toISOString();}catch(e){}
+  if(/[?&]sent=1/.test(location.search))finish();
   f.addEventListener('submit',function(e){
-    if(!window.fetch){document.getElementById('c_submitted').value=new Date().toISOString();return;}
+    try{d.getElementById('c_submitted').value=new Date().toISOString();}catch(x){}
+    if(!window.XMLHttpRequest||!window.FormData)return;            /* old browser: the plain POST goes through */
     e.preventDefault();
-    var nm=document.getElementById('f-name').value.trim();
-    var any=['q1','q2','q3','q4'].some(function(id){return document.getElementById(id).value.trim();});
+    var nm=trim(d.getElementById('f-name').value),any=false,ids=['q1','q2','q3','q4'];
+    for(var k=0;k<ids.length;k++){if(trim(d.getElementById(ids[k]).value))any=true;}
     var rated=!!f.querySelector('.stars input:checked');
-    st.classList.remove('show');
-    if(!nm){st.textContent='Please add your name so we know who to thank.';st.classList.add('show');return;}
-    if(!any&&!rated){st.textContent='Please answer at least one question or leave a star rating.';st.classList.add('show');return;}
-    if(!f.querySelector('input[name="publish_as"]:checked')){st.textContent='Please choose how we may show your review.';st.classList.add('show');return;}
+    dropShow(st);
+    if(!nm){err('Please add your name so we know who to thank.');return;}
+    if(!any&&!rated){err('Please answer at least one question or leave a star rating.');return;}
+    if(!f.querySelector('input[name="publish_as"]:checked')){err('Please choose how we may show your review.');return;}
     var hp=f.querySelector('input[name="_honey"]');
-    if(hp&&hp.value){f.style.display='none';done.classList.add('show');return;}
-    document.getElementById('c_submitted').value=new Date().toISOString();
-    btn.disabled=true;btn.textContent='Sending…';
-    var fd=new FormData(f);fd.delete('_honey');fd.delete('_next');
-    fetch('https://reviews.bhwebs.com/submit',{method:'POST',body:fd,headers:{'Accept':'application/json'}})
-      .then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
-      .then(function(res){
-        if(!res.ok||!(res.d&&res.d.ok===true))throw new Error('failed');
-        f.style.display='none';done.classList.add('show');
-        done.scrollIntoView({behavior:'smooth',block:'center'});
-      })
-      .catch(function(){
-        btn.disabled=false;btn.innerHTML='Send my review'+icon;
-        st.textContent='Something went wrong sending it. Please try again, or WhatsApp it to 845-587-0531.';
-        st.classList.add('show');
-      });
+    if(hp&&hp.value){finish();return;}
+    btn.disabled=true;btn.innerHTML='Sending…';
+    if(hp)hp.disabled=true;                                         /* leave the trap field out of the request */
+    var fd=new FormData(f);
+    if(hp)hp.disabled=false;
+    var xhr=new XMLHttpRequest(),over=false;
+    xhr.open('POST','https://reviews.bhwebs.com/submit',true);
+    xhr.setRequestHeader('Accept','application/json');
+    xhr.timeout=25000;
+    function fail(){if(over)return;over=true;btn.disabled=false;btn.innerHTML=label;
+      err('Something went wrong sending it. Please try again, or WhatsApp it to <a href="https://wa.me/18455870531" target="_blank" rel="noopener">845-587-0531</a>.');}
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState!==4||over)return;
+      var r=null;try{r=JSON.parse(xhr.responseText);}catch(x){r=null;}
+      if(xhr.status>=200&&xhr.status<300&&r&&r.ok===true){
+        over=true;finish();
+        try{done.scrollIntoView({behavior:'smooth',block:'center'});}catch(x){}
+      }else fail();
+    };
+    xhr.ontimeout=fail;xhr.onerror=fail;
+    xhr.send(fd);
   });
 })();
 </script>

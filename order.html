@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Start Your Project — BH Web Solutions</title>
 <meta name="description" content="Three quick questions and we'll start building your website — no back-and-forth needed. Fast, beautiful, budget-friendly websites by BH Web Solutions.">
-<meta name="theme-color" content="#11161f">
 <meta name="robots" content="noindex">
 <link rel="canonical" href="https://bhwebs.com/order">
 <link rel="alternate" hreflang="en" href="https://bhwebs.com/order">
@@ -18,397 +17,278 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="BH Web Solutions — Beautiful websites. Fair prices. Live in days.">
+<meta name="theme-color" content="#F3EEE4">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Serif:ital@0;1&amp;display=swap">
+<link rel="stylesheet" href="/css/site.css?v=20261029">
 <style>
-:root{
-  --paper:#faf7f0;--paper2:#f2ecdf;--ink:#11161f;--ink2:#0a0f16;--line:#e6dfd0;--line2:#d9d0bd;
-  --muted:#5c6672;--muted-d:#9aa9ba;
-  --cobalt:#2b4eff;--coral:#ff5c39;--green:#6cb33f;--greend:#4e8f2c;--sun:#ffc53d;--mint:#9fd47a;
-  --r:18px;--r-lg:26px;
-  --shadow:0 2px 6px rgba(17,22,31,.06),0 18px 44px -18px rgba(17,22,31,.25);
-  --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --serif:'Fraunces',Georgia,serif;
-  --max:1200px;--exp:cubic-bezier(.19,1,.22,1);
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:96px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
-body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-img,svg{max-width:100%}
-::selection{background:var(--cobalt);color:#fff}
-.in{max-width:var(--max);margin:0 auto;padding:0 28px}
-.sec{padding:clamp(3rem,6vw,5rem) 0;position:relative}
-h1,h2{font-family:var(--serif);font-weight:500;letter-spacing:-.02em;line-height:1.02;text-wrap:balance}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:800;color:var(--ink);margin-bottom:18px}
-.eyebrow i{width:9px;height:9px;border-radius:50%;font-style:normal}
-.rl .ln{overflow:hidden;display:block;padding-bottom:.12em;margin-bottom:-.12em}
-.rl .ln>i{display:block;font-style:inherit;transform:translateY(115%);transition:transform .9s var(--exp)}
-.rl.in .ln>i{transform:none}
-.rl.in .ln:nth-child(2)>i{transition-delay:.07s}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .6s var(--exp),transform .6s var(--exp);transition-delay:calc(var(--i,0)*70ms)}
-.rv.in{opacity:1;transform:none}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:-.01em;padding:15px 28px;border-radius:999px;cursor:pointer;border:1.5px solid transparent;transition:transform .25s var(--exp),background .25s var(--exp);white-space:nowrap;will-change:transform}
-.btn svg{transition:transform .3s var(--exp)}
-.btn--green{background:var(--green);color:#fff}
-.btn--green:hover{background:var(--greend)}
-.btn--green:hover svg{transform:translateX(3px)}
-.btn--sm{padding:10px 20px;font-size:.92rem}
-.mag{will-change:transform}
-/* nav */
-.nav{position:fixed;top:16px;left:50%;transform:translateX(-50%);z-index:1000;display:flex;align-items:center;gap:2px;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(17,22,31,.08);border-radius:999px;padding:7px 8px 7px 16px;box-shadow:0 12px 44px -14px rgba(17,22,31,.22);transition:box-shadow .3s var(--exp),background .3s var(--exp);max-width:calc(100vw - 24px)}
-.nav.scrolled{background:rgba(255,255,255,.92);box-shadow:0 14px 50px -14px rgba(17,22,31,.3)}
-.brand{display:flex;align-items:center;gap:10px;margin-right:10px}
-.brand__mark{width:38px;height:38px;flex:0 0 auto;display:block}
-.brand__txt{font-weight:800;font-size:1.02rem;letter-spacing:-.025em;color:var(--ink);white-space:nowrap}
-.nav__links{display:flex;align-items:center;gap:0;list-style:none}
-.nav__links>li>a{display:block;color:var(--ink);padding:9px 14px;border-radius:999px;font-weight:600;font-size:.94rem;white-space:nowrap;transition:background .2s var(--exp)}
-.nav__links>li>a:hover{background:rgba(17,22,31,.06)}
-.nav .btn{margin-left:6px}
-.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:10px;border-radius:999px}
-.burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.25s var(--exp)}
-.burger.on span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.burger.on span:nth-child(2){opacity:0}
-.burger.on span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
-.mobile{position:fixed;inset:0;z-index:999;background:rgba(250,247,240,.98);backdrop-filter:blur(16px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;pointer-events:none;transition:opacity .3s var(--exp)}
-.mobile.on{opacity:1;pointer-events:all}
-.mobile a{font-family:var(--serif);font-weight:500;font-size:1.9rem;letter-spacing:-.02em;color:var(--ink);padding:6px 18px}
-.mobile .m-cta{margin-top:12px;font-family:var(--sans)}
-/* hero */
-.hero{position:relative;padding:clamp(115px,14vh,150px) 0 clamp(2rem,4vw,3rem);overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none}
-.blob--1{top:-160px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(43,78,255,.3),transparent 65%);animation:drift 16s ease-in-out infinite alternate}
-.blob--2{bottom:-120px;left:-140px;width:420px;height:420px;background:radial-gradient(circle,rgba(108,179,63,.24),transparent 65%);animation:drift2 20s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(5%,6%) scale(1.12)}}
-@keyframes drift2{to{transform:translate(-5%,-6%) scale(1.1)}}
-.hero .in{position:relative;z-index:2}
-.hero h1{font-size:clamp(2.6rem,6.4vw,5rem);letter-spacing:-.03em}
-.hero h1 em{font-style:italic;color:var(--coral)}
-.hero .sub{font-size:clamp(1.02rem,1.4vw,1.2rem);color:var(--muted);max-width:56ch;margin:20px 0 0}
-.hero__meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 24px;font-size:.9rem;font-weight:600;color:var(--muted)}
-.hero__meta span{display:inline-flex;align-items:center;gap:7px}
-.hero__meta svg{color:var(--greend)}
-/* layout */
-.order__wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start;max-width:none}
-@media(min-width:1025px){.order__wrap{grid-template-columns:1.6fr 1fr}}
-.note{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1.5px solid var(--line);border-left:5px solid var(--green);border-radius:var(--r);padding:16px 18px;font-size:.95rem;color:var(--muted);margin-bottom:20px;box-shadow:0 4px 16px -10px rgba(17,22,31,.12)}
-.note svg{flex:0 0 auto;color:var(--greend);margin-top:2px}
-/* form */
-.form{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(24px,3.4vw,40px);box-shadow:var(--shadow)}
-.form .req{font-size:.85rem;color:var(--muted);margin-bottom:14px}
-.form .req b{color:var(--coral)}
-fieldset{border:none;padding:26px 0 8px;border-top:1px solid var(--line)}
-fieldset:first-of-type{border-top:none;padding-top:6px}
-.legend{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
-.legend .n{flex:0 0 auto;width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:#fff}
-fieldset:nth-of-type(1) .legend .n{background:var(--cobalt)}
-fieldset:nth-of-type(2) .legend .n{background:var(--coral)}
-fieldset:nth-of-type(3) .legend .n{background:var(--sun);color:var(--ink)}
-fieldset:nth-of-type(4) .legend .n{background:var(--greend)}
-fieldset:nth-of-type(5) .legend .n{background:var(--ink)}
-fieldset:nth-of-type(6) .legend .n{background:var(--cobalt)}
-.legend h2{font-family:var(--sans);font-weight:800;font-size:1.18rem;letter-spacing:-.02em}
-.legend p{font-size:.9rem;color:var(--muted);margin-top:2px}
-.frow2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
-.fgroup{margin-bottom:15px}
-.fgroup label{display:block;font-size:.87rem;font-weight:700;margin-bottom:6px;color:#39424e}
-.fgroup .hint{font-weight:500;color:var(--muted)}
-.rq{color:var(--coral)}
-.fgroup input,.fgroup textarea,.fgroup select{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;transition:border-color .2s,background .2s}
-.fgroup textarea{min-height:110px;resize:vertical}
-.fgroup select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235c6672' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.fgroup input:focus,.fgroup textarea:focus,.fgroup select:focus{outline:none;background:#fff;border-color:var(--cobalt)}
-/* checkbox pills */
-.opts{display:flex;flex-wrap:wrap;gap:9px}
-.opt{position:relative;display:inline-flex;align-items:center;gap:9px;background:var(--paper);border:1.5px solid var(--line);border-radius:999px;padding:9px 16px 9px 11px;cursor:pointer;font-size:.9rem;font-weight:600;transition:border-color .2s var(--exp),background .2s var(--exp),transform .2s var(--exp);user-select:none}
-.opt:hover{border-color:var(--line2);transform:translateY(-1px)}
-.opt input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
-.opt .box{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line2);background:#fff;display:flex;align-items:center;justify-content:center;color:#fff;transition:background .2s,border-color .2s}
-.opt.on{background:var(--ink);border-color:var(--ink);color:#fff}
-.opt.on .box{background:var(--green);border-color:var(--green)}
-.reveal-box{max-height:0;overflow:hidden;transition:max-height .35s var(--exp),margin .35s var(--exp)}
-.reveal-box.show{max-height:80px;margin-top:12px}
-.reveal-box input{width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px}
-.reveal-box input:focus{outline:none;background:#fff;border-color:var(--cobalt)}
-/* dropzone + files */
-.dz{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:var(--paper);border:2px dashed var(--line2);border-radius:var(--r);padding:26px 18px;cursor:pointer;transition:border-color .2s,background .2s}
-.dz:hover,.dz.drag{border-color:var(--green);background:#fff}
-.dz__ic{color:var(--greend)}
-.dz__t{font-size:.95rem}
-.dz__t b{color:var(--greend)}
-.dz__s{font-size:.8rem;color:var(--muted)}
-.dz input{display:none}
-.filelist{display:flex;flex-direction:column;gap:8px;margin-top:10px}
-.fileitem{display:flex;align-items:center;gap:11px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:9px 12px}
-.fic{flex:0 0 auto;color:var(--muted)}
-.fmeta{flex:1;min-width:0}
-.fname{font-size:.88rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.fsize{font-size:.76rem;color:var(--muted)}
-.frm{flex:0 0 auto;background:none;border:none;cursor:pointer;color:var(--muted);padding:6px;border-radius:8px}
-.frm:hover{color:var(--coral);background:rgba(255,92,57,.08)}
-.fileerr{display:none;font-size:.86rem;font-weight:600;color:#b23b2c;margin-top:8px}
+/* order page only: the form on the cobalt band, the sidebar beside it */
+.phead .proof{margin-top:24px}
+.order{padding-bottom:96px}
+.ogrid{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;margin-top:34px}
+.ofm{width:62%;min-width:0}
+.oside{width:38%;min-width:0;padding-left:56px}
+/* the card sits inside .call: undo the band's big paper headings for the questions */
+.call .card h2{color:var(--ink);font-size:34px;line-height:1.04;letter-spacing:-.012em;margin:0;max-width:none}
+.call .card h2 em{color:var(--cobalt)}
+.call .card a:focus{outline-color:var(--cobalt)}
+.intro{font-size:17px;margin:0 0 6px}
+.req{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--ink2);margin:0 0 22px}
+.req b,.rq{color:var(--cobalt);font-weight:500}
+/* one question = one numbered row */
+.step{position:relative;min-width:0;margin:0;border:0;border-top:1px solid var(--line2);padding:26px 0 12px 58px}
+.step.s1{border-top-color:var(--ink)}
+.qhead{margin:0 0 18px}
+.qhead .n{position:absolute;left:0;top:34px;font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--cobalt)}
+.qhead p{margin:6px 0 0;font-size:16px;color:var(--ink2)}
+.qhead .n.plus{font-size:22px;line-height:1;top:29px}
+.form label .hint{display:inline;margin:0;font-family:var(--mono);font-size:12.5px;letter-spacing:.02em;text-transform:none;color:var(--ink2)}
+/* chips: site.css .form label would make them mono blocks */
+.form .chip{display:inline-block;margin:0;font-family:var(--sans);font-size:16px;letter-spacing:0;text-transform:none;color:var(--ink)}
+.chip span:before{content:"+";display:inline-block;width:14px;margin-right:8px;font-family:var(--mono);color:var(--cobalt)}
+.chip input:checked+span:before{content:"✓";color:var(--paper)}
+.chip span:hover{-webkit-box-shadow:inset 0 0 0 1px var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.chip input:checked+span:hover{-webkit-box-shadow:none;box-shadow:none}
+/* boxes show by default; once the script runs they open with their chip */
+.reveal{margin:8px 0 10px}
+.js .reveal{display:none}
+.js .reveal.show{display:block}
+/* files: a plain file picker without script, the drop box with it */
+.dz{display:block;text-align:center;background:#FBF8F2;border:1px dashed var(--cobalt);padding:24px 18px 22px}
+.dz-js{cursor:pointer}
+.dz-js:hover,.dz.drag{border-style:solid;background:var(--paper)}
+.dz__ic{display:block;width:22px;height:22px;margin:0 auto 8px;color:var(--cobalt)}
+.dz__t{display:block;font-size:16px}
+.dz__t b{font-weight:600;color:var(--cobalt)}
+.dz__s{display:block;margin-top:4px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--ink2)}
+.dz input{display:block;max-width:100%;margin:14px auto 0;font-size:15px}
+.dz-js input{display:none}
+.filelist{margin-top:8px}
+.fileitem{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;border-bottom:1px solid var(--line2);padding:4px 0 4px 2px}
+.fic{-webkit-flex:none;flex:none;margin-right:12px;line-height:0;color:var(--cobalt)}
+.fmeta{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0}
+.fname{font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fsize{font-family:var(--mono);font-size:12px;color:var(--ink2)}
+.frm{-webkit-flex:none;flex:none;width:44px;height:44px;padding:0;background:none;border:0;cursor:pointer;color:var(--ink2);line-height:0}
+.frm:hover{color:var(--cobalt)}
+.fileerr{display:none;margin-top:10px;font-size:15px;color:#8C1D18}
 .fileerr.show{display:block}
-.filetotal{font-size:.8rem;color:var(--muted);margin-top:8px}
-.filetotal.over{color:#b23b2c;font-weight:700}
-.hp{position:absolute!important;inset-inline-start:-9999px!important;width:1px!important;height:1px!important;opacity:0!important}
-.form>.btn,#submitBtn{width:100%;margin-top:18px}
-.cnote{font-size:.82rem;color:var(--muted);text-align:center;margin-top:12px}
-.status{margin-top:12px;font-size:.92rem;font-weight:600;display:none}
-.status.err{display:block;color:#b23b2c}
-.success{display:none;background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:44px 34px;box-shadow:var(--shadow);text-align:center}
-.success.show{display:block}
-.success .ic{width:62px;height:62px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
-.success h2{font-family:var(--serif);font-weight:500;font-size:1.7rem;margin-bottom:10px}
-.success p{color:var(--muted);max-width:440px;margin:0 auto 6px}
-.success a{color:var(--greend);font-weight:800}
-/* sidebar */
-.order__side{position:sticky;top:96px;display:flex;flex-direction:column;gap:18px}
-.side-card{border-radius:var(--r-lg);padding:26px 24px}
-.side-card h3{font-family:var(--serif);font-weight:500;font-size:1.35rem;letter-spacing:-.01em;margin-bottom:16px}
-.side-card--blue{background:var(--cobalt);color:#fff;box-shadow:var(--shadow)}
-.side-card--paper{background:#fff;border:1px solid var(--line);box-shadow:0 4px 16px -10px rgba(17,22,31,.12)}
-.side-card--ink{background:var(--ink);color:#fff}
-.perk{display:flex;gap:11px;align-items:flex-start;font-size:.92rem;line-height:1.5;padding:8px 0}
-.side-card--blue .perk svg{color:var(--sun)}
-.perk svg{flex:0 0 auto;margin-top:3px}
-.perk b{font-weight:800}
-.sitem{display:flex;gap:12px;align-items:flex-start;padding:9px 0}
-.sk{flex:0 0 auto;font-family:var(--serif);font-style:italic;font-size:.98rem;color:var(--greend);min-width:44px}
-.sitem h4{font-size:.98rem;font-weight:800;letter-spacing:-.01em}
-.sitem p{font-size:.86rem;color:var(--muted)}
-.side-card--ink a{display:flex;align-items:center;gap:11px;font-weight:700;font-size:.98rem;padding:8px 0;transition:color .2s}
-.side-card--ink a:hover{color:var(--mint)}
-.side-card--ink .ci{display:flex;width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.1);align-items:center;justify-content:center;color:var(--mint)}
-/* footer */
-.foot{background:var(--ink);color:rgba(216,226,236,.62);padding:44px 0;margin-top:clamp(2rem,5vw,4rem)}
-.foot .in{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
-.foot .brand__txt{color:#fff}
-.foot__links{display:flex;flex-wrap:wrap;gap:4px 22px;font-size:.94rem;font-weight:600}
-.foot__links a:hover{color:var(--mint)}
-.foot__meta{display:flex;flex-direction:column;gap:2px;font-size:.86rem;text-align:right}
-.foot__meta a{font-weight:700;color:#fff}
-.foot__meta a:hover{color:var(--mint)}
-.foot__bar{max-width:var(--max);margin:30px auto 0;padding:20px 28px 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.82rem;color:rgba(216,226,236,.4)}
-.foot__badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.78rem;color:var(--mint)}
-/* totop */
-.totop{position:fixed;bottom:24px;right:24px;z-index:998;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;cursor:pointer;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s var(--exp)}
-.totop.show{opacity:1;pointer-events:all;transform:none}
-.totop:hover{background:var(--cobalt)}
-.wa{position:fixed;bottom:24px;left:24px;z-index:998;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 14px 34px -10px rgba(37,211,102,.6);transition:transform .25s var(--exp),box-shadow .25s var(--exp)}
-.wa:hover{transform:scale(1.1);box-shadow:0 18px 40px -10px rgba(37,211,102,.7)}
-@media(max-width:640px){.wa{bottom:18px;left:18px;width:52px;height:52px}}
-
-/* waved two-tone band (house doctrine) */
-.band{position:relative}
-.band__wave{position:absolute;left:0;right:0;width:100%;height:clamp(28px,4.5vw,64px);display:block;z-index:3;pointer-events:none}
-.band__wave--top{top:-1px}.band__wave--bot{bottom:-1px;transform:scaleY(-1)}
-.band__shine{position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:1;
-  background:radial-gradient(ellipse at 72% 18%,rgba(255,255,255,.16),transparent 52%),radial-gradient(ellipse at 12% 90%,rgba(255,255,255,.08),transparent 46%)}
-.band>.in{position:relative;z-index:2}
-/* ground: flat parchment + faint fixed grain */
-.ground{position:fixed;top:0;left:0;right:0;bottom:0;z-index:900;pointer-events:none;opacity:.045;mix-blend-mode:multiply;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23g)'/%3E%3C/svg%3E")}
-
-/* responsive */
-@media(max-width:1024px){
-  .order__wrap{grid-template-columns:1fr}
-  .order__side{position:static}
+.filetotal{margin-top:10px;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--ink2)}
+.filetotal.over{color:#8C1D18}
+#submitBtn{display:block;width:100%;text-align:center;margin-top:26px}
+.call .card .csuccess h2{font-size:46px;line-height:.98;margin:0 0 16px}
+.csuccess p{font-size:17px;max-width:32em}
+/* the sidebar, paper on cobalt */
+.sbox{border-top:1px solid var(--pline);padding-top:20px;margin:0 0 46px}
+.sbox:last-child{margin-bottom:0}
+.oside h3{font-size:34px;line-height:1.02;margin:0 0 14px;color:var(--paper)}
+.perks,.steps{list-style:none;margin:0;padding:0}
+.perks li{position:relative;padding:12px 0 13px 26px;border-bottom:1px solid var(--pline);font-size:16px;line-height:1.5}
+.perks li:before{content:"";position:absolute;left:0;top:24px;width:14px;height:1px;background:var(--paper)}
+.perks b{font-weight:600}
+.steps li{display:-webkit-box;display:-webkit-flex;display:flex;padding:13px 0 14px;border-bottom:1px solid var(--pline)}
+.steps .sk{width:64px;-webkit-flex:none;flex:none;padding-top:7px;font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase}
+.steps h4{margin:0;font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.08;letter-spacing:-.01em}
+.steps p{margin:4px 0 0;font-size:15.5px}
+.oside .contact{margin-top:6px}
+@media (min-width:1640px){.call .card h2{font-size:40px}.oside h3{font-size:40px}}
+@media (max-width:980px){
+  .ogrid{display:block}
+  .ofm,.oside{width:100%;padding-left:0}
+  .oside{margin-top:56px}
 }
-@media(max-width:820px){
-  .nav__links{display:none}
-  .nav{left:12px;right:12px;transform:none;width:auto;justify-content:space-between;max-width:none}
-  .nav .btn{display:none}
-  .burger{display:flex}
-  .frow2{grid-template-columns:1fr}
+@media (max-width:760px){
+  .order{padding-bottom:64px}
+  .ogrid{margin-top:24px}
+  .call .card h2{font-size:30px}
+  .step{padding:22px 0 8px}
+  .qhead .n{position:static;display:block;margin-bottom:8px}
+  .call .card .csuccess h2{font-size:38px}
+  .oside h3{font-size:30px}
+  .chips li{margin-right:6px}
 }
-@media(max-width:640px){
-  .sec{padding:40px 0}
-  .foot .in,.foot__meta{flex-direction:column;text-align:center;align-items:center}
-  .foot__bar{flex-direction:column;text-align:center}
-}
-@media(prefers-reduced-motion:reduce){
-  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .rv,.rl .ln>i{opacity:1!important;transform:none!important}
-}
-:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
 </style>
 </head>
-<body id="top">
-<span class="ground" aria-hidden="true"></span>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <symbol id="bh" viewBox="0 0 120 120">
+    <g fill="none" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/>
+      <path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/>
+    </g>
+    <path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H9l-5 4V5z"/></symbol>
+</svg>
 
-<!-- ===== NAV ===== -->
-<nav class="nav" id="nav">
-  <a href="index.html" class="brand" aria-label="BH Web Solutions home">
-    <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs><g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/><path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>
-    <span class="brand__txt">BH Web Solutions</span>
-  </a>
-  <ul class="nav__links">
-    <li><a href="index.html#services">What we do</a></li>
-    <li><a href="index.html#work">Work</a></li>
-    <li><a href="website-transfers.html">Transfers</a></li>
-    <li><a href="guides/">Guides</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-  </ul>
-  <a href="#start" class="btn btn--green btn--sm mag">Start below</a>
-  <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-</nav>
-<div class="mobile" id="mobile">
-  <a href="index.html#services">What we do</a>
-  <a href="index.html#work">Work</a>
-  <a href="website-transfers.html">Transfers</a>
-  <a href="guides/">Guides</a>
-  <a href="about.html">About</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="#start" class="m-cta btn btn--green">Start below</a>
-</div>
-
-<!-- ===== HERO ===== -->
-<header class="hero">
-  <span class="blob blob--1" aria-hidden="true"></span>
-  <span class="blob blob--2" aria-hidden="true"></span>
-  <div class="in">
-    <span class="eyebrow rv"><i style="background:var(--green)"></i>Start your project</span>
-    <h1 class="rl">
-      <span class="ln"><i>Let's build</i></span>
-      <span class="ln"><i>your <em>website.</em></i></span>
-    </h1>
-    <p class="sub rv" style="--i:2">Three quick questions and you're done. Upload your logo if you have one, and we'll take it from there.</p>
-    <div class="hero__meta rv" style="--i:3">
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Free logo included</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> Edit it yourself, anytime</span>
-      <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg> You see a design before you pay</span>
-    </div>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="/" aria-label="BH Web Solutions, home"><svg aria-hidden="true" focusable="false"><use xlink:href="#bh" href="#bh"/></svg><span>BH Web Solutions</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="/work">Work</a>
+      <a href="/#build">What I build</a>
+      <a href="/about">About</a>
+      <a href="/#questions">Questions</a>
+    </nav>
+    <a class="tel" href="tel:8455766607"><small>Call or text</small>(845) 576-6607</a>
+    <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
   </div>
+  <nav class="nav-m wrap" aria-label="Main, small screens">
+    <a href="/work">Work</a>
+    <a href="/#build">What I build</a>
+    <a href="/about">About</a>
+    <a href="/#questions">Questions</a>
+    <a class="tel-m" href="tel:8455766607">(845) 576-6607</a>
+  </nav>
 </header>
 
-<!-- ===== ORDER FORM ===== -->
-<section class="sec" id="start" style="padding-top:1rem">
-  <div class="in">
-    <div class="order__wrap">
+<main id="main">
 
-      <div>
-        <div class="note rv">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
-          <span>Just answer what you can. We read every request and get back to you by email.</span>
-        </div>
+<!-- ============ PAGE HEAD ============ -->
+<section class="phead" aria-labelledby="h1">
+  <div class="wrap">
+    <p class="eyebrow"><span class="rule press" aria-hidden="true"></span><span>Start your project</span></p>
+    <h1 id="h1">Let’s build your <em class="sw">website.</em></h1>
+    <p class="lede">Three quick questions and you're done. Upload your logo if you have one, and we'll take it from there.</p>
+    <ul class="proof">
+      <li>Free logo included</li>
+      <li>Edit it yourself, anytime</li>
+      <li>You see a design before you pay</li>
+    </ul>
+  </div>
+</section>
 
-        <form class="form rv" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
-          <p class="req"><b>*</b> denotes required fields.</p>
+<!-- ============ ORDER FORM (cobalt band, paper card) ============ -->
+<section class="call order" id="start" aria-label="Start your project">
+  <div class="wrap">
+    <div class="rh sv"><span>Your project</span><span>Three quick questions</span></div>
+    <div class="ogrid">
 
-          <!-- 2. Which website -->
-          <fieldset>
-            <div class="legend"><span class="n">1</span><div><h2>Which website do you want?</h2><p>Pick one or more.</p></div></div>
-            <div class="opts">
-              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="A business website"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">A business website</span></label>
-              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="An online store"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">An online store</span></label>
-              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Booking / appointments"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Booking / appointments</span></label>
-              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="A web app or portal"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">A web app or portal</span></label>
-              <label class="opt js-other" data-target="existingBox"><input type="checkbox" name="fi-checkbox-site_goals" value="Move my existing website"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Move my existing website</span></label>
-              <label class="opt"><input type="checkbox" name="fi-checkbox-site_goals" value="Not sure yet"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Not sure yet</span></label>
-            </div>
-            <div class="reveal-box" id="existingBox"><input type="url" id="existing" name="fi-text-existing_site" placeholder="Your current website, e.g. https://yoursite.com"></div>
-          </fieldset>
+      <div class="ofm">
+        <div class="card">
+          <form class="form" id="orderForm" action="https://forminit.com/f/nsf8hkp98fw" method="POST" enctype="multipart/form-data" novalidate>
+            <p class="intro">Just answer what you can. We read every request and get back to you by email.</p>
+            <p class="req"><b>*</b> denotes required fields.</p>
 
-          <!-- 3. What on it -->
-          <fieldset>
-            <div class="legend"><span class="n">2</span><div><h2>What do you want on your website?</h2><p>In your own words. Short is fine.</p></div></div>
-            <div class="fgroup">
-              <label for="services">Tell us about it <span class="rq">*</span></label>
-              <textarea id="services" name="fi-text-services_details" placeholder="What you sell or do, the pages you want, anything the site should do (orders, bookings, a price list…)"></textarea>
-            </div>
-          </fieldset>
+            <!-- 1. Which website -->
+            <fieldset class="step s1" aria-labelledby="q1">
+              <div class="qhead"><span class="n" aria-hidden="true">01</span><h2 id="q1">Which website do you want?</h2><p>Pick one or more.</p></div>
+              <ul class="chips">
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-site_goals" value="A business website"><span>A business website</span></label></li>
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-site_goals" value="An online store"><span>An online store</span></label></li>
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-site_goals" value="Booking / appointments"><span>Booking / appointments</span></label></li>
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-site_goals" value="A web app or portal"><span>A web app or portal</span></label></li>
+                <li><label class="chip js-other" data-target="existingBox"><input type="checkbox" name="fi-checkbox-site_goals" value="Move my existing website"><span>Move my existing website</span></label></li>
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-site_goals" value="Not sure yet"><span>Not sure yet</span></label></li>
+              </ul>
+              <div class="fgroup reveal" id="existingBox"><label for="existing">Your current website</label><input type="url" id="existing" name="fi-text-existing_site" placeholder="Your current website, e.g. https://yoursite.com"></div>
+            </fieldset>
 
-          <!-- 4. Design -->
-          <fieldset>
-            <div class="legend"><span class="n">3</span><div><h2>Any design or theme in mind?</h2><p>Or leave it to us. Either is fine.</p></div></div>
-            <div class="opts">
-              <label class="opt js-other" data-target="designBox"><input type="checkbox" name="fi-checkbox-design_style" value="I have a design idea"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Yes, I have an idea</span></label>
-              <label class="opt"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span class="box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span class="lab">Anything nice, you choose</span></label>
-            </div>
-            <div class="reveal-box" id="designBox"><textarea id="design_notes" name="fi-text-design_notes" placeholder="Colors, style, or links to websites you like"></textarea></div>
-          </fieldset>
-
-          <!-- 5. Files -->
-          <fieldset>
-            <div class="legend"><span class="n">+</span><div><h2>Your logo or files</h2><p>Optional. Logo, photos, menus, documents.</p></div></div>
-            <div class="fgroup">
-              <label>Upload your logo, photos or documents <span class="hint">(optional · up to 25 MB total)</span></label>
-              <div class="dz" id="dropzone" role="button" tabindex="0" aria-label="Upload files">
-                <span class="dz__ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg></span>
-                <span class="dz__t"><b>Click to upload</b> or drag &amp; drop</span>
-                <span class="dz__s">Images or documents · up to 25 MB total</span>
-                <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
+            <!-- 2. What on it -->
+            <fieldset class="step" aria-labelledby="q2">
+              <div class="qhead"><span class="n" aria-hidden="true">02</span><h2 id="q2">What do you want on your website?</h2><p>In your own words. Short is fine.</p></div>
+              <div class="fgroup">
+                <label for="services">Tell us about it <span class="rq">*</span></label>
+                <textarea id="services" name="fi-text-services_details" placeholder="What you sell or do, the pages you want, anything the site should do (orders, bookings, a price list…)"></textarea>
               </div>
-              <div class="filelist" id="fileList"></div>
-              <div class="fileerr" id="fileErr"></div>
-              <div class="filetotal" id="fileTotal" style="display:none"></div>
-            </div>
-          </fieldset>
+            </fieldset>
 
-          <!-- 4. Details -->
-          <fieldset>
-            <div class="legend"><span class="n">4</span><div><h2>Where do we reach you?</h2><p>We answer by email, usually within a few hours.</p></div></div>
-            <div class="frow2">
-              <div class="fgroup"><label for="name">Full name <span class="rq">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="John Doe" autocomplete="name" required></div>
-              <div class="fgroup"><label for="email">Email <span class="rq">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="john@example.com" autocomplete="email" required></div>
-            </div>
-            <div class="frow2">
-              <div class="fgroup"><label for="phone">Phone <span class="hint">(optional)</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel"></div>
-              <div class="fgroup"><label for="business">Business / project name</label><input type="text" id="business" name="fi-text-business" placeholder="Your business name"></div>
-            </div>
-          </fieldset>
+            <!-- 3. Design -->
+            <fieldset class="step" aria-labelledby="q3">
+              <div class="qhead"><span class="n" aria-hidden="true">03</span><h2 id="q3">Any design or theme in mind?</h2><p>Or leave it to us. Either is fine.</p></div>
+              <ul class="chips">
+                <li><label class="chip js-other" data-target="designBox"><input type="checkbox" name="fi-checkbox-design_style" value="I have a design idea"><span>Yes, I have an idea</span></label></li>
+                <li><label class="chip"><input type="checkbox" name="fi-checkbox-design_style" value="Let BH decide"><span>Anything nice, you choose</span></label></li>
+              </ul>
+              <div class="fgroup reveal" id="designBox"><label for="design_notes">Your design idea</label><textarea id="design_notes" name="fi-text-design_notes" placeholder="Colors, style, or links to websites you like"></textarea></div>
+            </fieldset>
 
-          <!-- referral code: filled in automatically from a ?ref= link (no box to fill in) -->
-          <input type="hidden" id="ref_code" name="fi-text-referral_code">
+            <!-- +. Files -->
+            <fieldset class="step" aria-labelledby="q4">
+              <div class="qhead"><span class="n plus" aria-hidden="true">+</span><h2 id="q4">Your logo or files</h2><p>Optional. Logo, photos, menus, documents.</p></div>
+              <div class="fgroup">
+                <label for="fileInput">Upload your logo, photos or documents <span class="hint">(optional · up to 25 MB total)</span></label>
+                <div class="dz" id="dropzone">
+                  <svg class="dz__ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M5 16v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2"/></svg>
+                  <span class="dz__t"><b>Click to upload</b> or drag &amp; drop</span>
+                  <span class="dz__s">Images or documents · up to 25 MB total</span>
+                  <input type="file" id="fileInput" name="fi-file-attachments" multiple accept="image/*,.pdf,.doc,.docx,.txt,.rtf,.svg,.zip,.ai,.psd,.heic">
+                </div>
+                <div class="filelist" id="fileList"></div>
+                <div class="fileerr" id="fileErr"></div>
+                <div class="filetotal" id="fileTotal" style="display:none"></div>
+              </div>
+            </fieldset>
 
-          <!-- hidden tracking (sent as plain text blocks so they never clash with the SDK's auto tracking) -->
-          <input type="hidden" name="fi-text-utm_source" id="utm_source">
-          <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
-          <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
-          <input type="hidden" name="fi-text-landing_page" id="landing_page">
-          <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
-          <!-- honeypot (checked + stripped client-side before sending) -->
-          <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <!-- 4. Details -->
+            <fieldset class="step" aria-labelledby="q5">
+              <div class="qhead"><span class="n" aria-hidden="true">04</span><h2 id="q5">Where do we reach you?</h2><p>We answer by email, usually within a few hours.</p></div>
+              <div class="row2">
+                <div class="fgroup"><label for="name">Full name <span class="rq">*</span></label><input type="text" id="name" name="fi-sender-fullName" placeholder="John Doe" autocomplete="name" required></div>
+                <div class="fgroup"><label for="email">Email <span class="rq">*</span></label><input type="email" id="email" name="fi-sender-email" placeholder="john@example.com" autocomplete="email" required></div>
+              </div>
+              <div class="row2">
+                <div class="fgroup"><label for="phone">Phone <span class="hint">(optional)</span></label><input type="tel" id="phone" name="fi-text-phone" placeholder="(845) 000-0000" autocomplete="tel"></div>
+                <div class="fgroup"><label for="business">Business / project name</label><input type="text" id="business" name="fi-text-business" placeholder="Your business name" autocomplete="organization"></div>
+              </div>
+            </fieldset>
 
-          <button type="submit" class="btn btn--green" id="submitBtn">
-            Submit my project
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
-          </button>
-          <p class="cnote">We'll answer by email, usually within a few hours.</p>
-          <div class="status" id="status" role="status" aria-live="polite"></div>
-        </form>
+            <!-- referral code: filled in automatically from a ?ref= link (no box to fill in) -->
+            <input type="hidden" id="ref_code" name="fi-text-referral_code">
 
-        <div class="success" id="success" role="status" aria-live="polite">
-          <div class="ic"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
-          <h2>Got it — thank you!</h2>
-          <p>Your request has been received. We'll get back to you by email, usually within a few hours.</p>
-          <p>Need to add something? Call <a href="tel:8455766607">845-576-6607</a> or email <a href="mailto:info@bhwebs.com">info@bhwebs.com</a>.</p>
+            <!-- hidden tracking (sent as plain text blocks so they never clash with the SDK's auto tracking) -->
+            <input type="hidden" name="fi-text-utm_source" id="utm_source">
+            <input type="hidden" name="fi-text-utm_medium" id="utm_medium">
+            <input type="hidden" name="fi-text-utm_campaign" id="utm_campaign">
+            <input type="hidden" name="fi-text-landing_page" id="landing_page">
+            <input type="hidden" name="fi-text-submitted_at" id="submitted_at">
+            <!-- honeypot (checked + left out client-side before sending) -->
+            <input type="text" class="hp" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+            <button type="submit" class="btn btn-lg" id="submitBtn">Submit my project<span class="ar" aria-hidden="true">→</span></button>
+            <p class="cnote">We'll answer by email, usually within a few hours.</p>
+            <div class="cstatus" id="status" role="status" aria-live="polite"></div>
+          </form>
+
+          <div class="csuccess" id="success" role="status" aria-live="polite">
+            <h2>Got it — <em>thank you!</em></h2>
+            <p>Your request has been received. We'll get back to you by email, usually within a few hours.</p>
+            <p>Need to add something? Call <a href="tel:8455766607">845-576-6607</a> or email <a href="mailto:info@bhwebs.com">info@bhwebs.com</a>.</p>
+          </div>
         </div>
       </div>
 
       <!-- sidebar -->
-      <aside class="order__side">
-        <div class="side-card side-card--blue rv">
+      <aside class="oside" aria-label="What you get and what happens next">
+        <div class="sbox">
           <h3>Included free with every website</h3>
-          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Free logo design</b> — if you need one, we design a clean, professional logo and include it with your site.</span></div>
-          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Free editing — do it yourself</b> — after launch, update text, prices and photos anytime through a simple AI assistant. No coding, no extra fees.</span></div>
-          <div class="perk"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m20 6-11 11-5-5"/></svg><span><b>Low-cost hosting</b> on static sites — some can even run free, depending on setup.</span></div>
+          <ul class="perks">
+            <li><b>Free logo design</b> — if you need one, we design a clean, professional logo and include it with your site.</li>
+            <li><b>Free editing — do it yourself</b> — after launch, update text, prices and photos anytime through a simple AI assistant. No coding, no extra fees.</li>
+            <li><b>Low-cost hosting</b> on static sites — some can even run free, depending on setup.</li>
+          </ul>
         </div>
-        <div class="side-card side-card--paper rv" style="--i:1">
+        <div class="sbox">
           <h3>What happens next</h3>
-          <div class="sitem"><span class="sk">First</span><div><h4>You send this form</h4><p>Three quick questions, plus your logo if you have one.</p></div></div>
-          <div class="sitem"><span class="sk">Then</span><div><h4>We answer by email</h4><p>Usually within a few hours, with the next steps.</p></div></div>
-          <div class="sitem"><span class="sk">Live</span><div><h4>Your site goes live</h4><p>Fast, done properly — and it's yours.</p></div></div>
+          <ol class="steps">
+            <li><span class="sk">First</span><div><h4>You send this form</h4><p>Three quick questions, plus your logo if you have one.</p></div></li>
+            <li><span class="sk">Then</span><div><h4>We answer by email</h4><p>Usually within a few hours, with the next steps.</p></div></li>
+            <li><span class="sk">Live</span><div><h4>Your site goes live</h4><p>Fast, done properly — and it's yours.</p></div></li>
+          </ol>
         </div>
-        <div class="side-card side-card--ink rv" style="--i:2">
+        <div class="sbox">
           <h3>Prefer to talk first?</h3>
-          <a href="tel:8455766607"><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7A2 2 0 0 1 22 16.9Z"/></svg></span>845-576-6607</a>
-          <a href="mailto:info@bhwebs.com"><span class="ci"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>info@bhwebs.com</a>
+          <ul class="contact">
+            <li><small>Call or text</small><a href="tel:8455766607">845-576-6607</a></li>
+            <li><small>Email</small><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li>
+            <li><small>WhatsApp</small><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">Message on WhatsApp</a></li>
+          </ul>
         </div>
       </aside>
 
@@ -416,119 +296,76 @@ fieldset:nth-of-type(6) .legend .n{background:var(--cobalt)}
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+</main>
+
 <footer class="foot">
-  <div class="in">
-    <a href="index.html" class="brand">
-      <svg class="brand__mark" viewBox="0 0 120 120" aria-hidden="true"><defs><linearGradient id="bhg" gradientUnits="userSpaceOnUse" x1="18" y1="24" x2="110" y2="88"><stop offset="0" stop-color="#2b4eff"/><stop offset=".42" stop-color="#7c3aed"/><stop offset=".72" stop-color="#ff5c39"/><stop offset="1" stop-color="#ffc53d"/></linearGradient></defs><g fill="none" stroke="url(#bhg)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"><path d="M22 18 V88"/><path d="M22 18 H40 a17 17 0 0 1 0 34 H22"/><path d="M22 52 H44 a18 18 0 0 1 0 36 H22"/><path d="M74 18 V88"/><path d="M106 18 V88"/><path d="M74 53 H106"/></g><path d="M20 106 Q 50 96 78 103 T 108 100" fill="none" stroke="#6cb33f" stroke-width="9" stroke-linecap="round"/></svg>
-      <span class="brand__txt">BH Web Solutions</span>
-    </a>
-    <div class="foot__links">
-      <a href="index.html#services">What we do</a>
-      <a href="index.html#work">Work</a>
-      <a href="website-transfers.html">Transfers</a>
-      <a href="stuck-on-wix.html">Stuck on Wix?</a>
-      <a href="guides/">Guides</a>
-      <a href="about.html">About</a>
-      <a href="index.html#contact">Contact</a>
+  <div class="wrap">
+    <div class="foot-cols">
+      <div><p class="about">Websites, online stores and web apps, made in Brooklyn.</p><small>By Avrumy Neumann · Brooklyn, NY</small></div>
+      <div><h4>Site</h4><ul><li><a href="/work">Work</a></li><li><a href="/#build">What I build</a></li><li><a href="/about">About</a></li><li><a href="/guides/">Guides</a></li><li><a href="/web-design/">Areas we serve</a></li><li><a href="/website-transfers">Website transfers</a></li></ul></div>
+      <div><h4>Clients</h4><ul><li><a href="/support">Client support</a></li><li><a href="/order">Start my website</a></li><li><a href="/review">Leave a review</a></li><li><a href="/privacy">Privacy</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:8455766607">(845) 576-6607</a></li><li><a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@bhwebs.com">info@bhwebs.com</a></li></ul><small>© 2026 BH Web Solutions</small></div>
     </div>
-    <div class="foot__meta">
-      <a href="tel:8455766607">845-576-6607</a>
-      <a href="mailto:info@bhwebs.com">info@bhwebs.com</a>
-    </div>
+    <p class="foot-areas">Websites for businesses in <a href="/web-design/rockland-county-ny">Rockland County</a> · <a href="/web-design/orange-county-ny">Orange County</a> · <a href="/web-design/sullivan-county-ny">Sullivan County</a> · <a href="/web-design/brooklyn-ny">Brooklyn</a> · <a href="/web-design/queens-ny">Queens</a> · <a href="/web-design/long-island-ny">Long Island and the Five Towns</a> · <a href="/web-design/westchester-ny">Westchester County</a> · <a href="/web-design/staten-island-ny">Staten Island</a> · <a href="/web-design/new-jersey">New Jersey</a> · <a href="/web-design/ohio">Ohio</a> · <a href="/web-design/baltimore-md">Baltimore</a> · <a href="/web-design/chicago-il">Chicago</a> · <a href="/web-design/south-florida">Miami and South Florida</a> · <a href="/web-design/los-angeles-ca">Los Angeles</a> · <a href="/web-design/">All areas</a></p>
   </div>
-  <div class="foot__bar">
-    <span>© 2026 BH Web Solutions. All rights reserved.</span>
-    <span class="foot__badge"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></svg> Designed &amp; built by BH Web Solutions</span>
-  </div>
+  <p class="wordmark sv-big" aria-hidden="true">BH Web <em>Solutions</em></p>
 </footer>
 
-<a class="wa" href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></a>
-
-<button class="totop" id="totop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<nav class="mbar" aria-label="Quick contact">
+  <a href="tel:8455766607"><svg class="ic" aria-hidden="true"><use xlink:href="#i-phone" href="#i-phone"/></svg>Call</a>
+  <a href="https://wa.me/18455870531?text=Hi!%20I%27m%20interested%20in%20a%20website." target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use xlink:href="#i-chat" href="#i-chat"/></svg>WhatsApp</a>
+  <a class="go" href="/order">Start my website</a>
+</nav>
 
 <!-- Forminit SDK (handles submission + file uploads to your endpoint) -->
 <script src="https://forminit.com/sdk/v1/forminit.js" defer></script>
-<noscript><style>.rv,.rl .ln>i{opacity:1!important;transform:none!important}</style></noscript>
 <script>
+/* ES5 only (old iPads, filtered browsers). Without this script the form still posts straight to Forminit,
+   every box shows and the plain file picker works; with it: reveal boxes, the drop box, tracking, SDK submit. */
 (function(){
-  var nav=document.getElementById('nav'),burger=document.getElementById('burger'),mobile=document.getElementById('mobile'),totop=document.getElementById('totop');
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var d=document;
+  function hasC(el,c){return (' '+el.className+' ').indexOf(' '+c+' ')>-1;}
+  function addC(el,c){if(!hasC(el,c))el.className=(el.className?el.className+' ':'')+c;}
+  function rmC(el,c){el.className=(' '+el.className+' ').split(' '+c+' ').join(' ').replace(/^\s+|\s+$/g,'');}
+  function togC(el,c,on){if(on)addC(el,c);else rmC(el,c);}
+  function on(el,ev,fn){el.addEventListener(ev,fn,false);}
+  function each(list,fn){for(var i=0;i<list.length;i++)fn(list[i],i);}
 
-  function onScroll(){var y=window.scrollY||0;nav.classList.toggle('scrolled',y>16);totop.classList.toggle('show',y>640);}
-  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var form=d.getElementById('orderForm');
+  if(!form)return;
 
-  function toggle(){var a=mobile.classList.toggle('on');burger.classList.toggle('on',a);burger.setAttribute('aria-expanded',a);document.body.style.overflow=a?'hidden':'';}
-  burger.addEventListener('click',toggle);
-  mobile.querySelectorAll('a').forEach(function(l){l.addEventListener('click',function(){if(mobile.classList.contains('on'))toggle();});});
-  totop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mobile.classList.contains('on'))toggle();});
-
-  // rAF sweep reveal (also catches elements skipped past in one jump)
-  var pend=[].slice.call(document.querySelectorAll('.rv,.rl'));
-  function reveal(){
-    for(var i=pend.length-1;i>=0;i--){
-      var r=pend[i].getBoundingClientRect();
-      if(r.top<window.innerHeight*.92||r.bottom<window.innerHeight){pend[i].classList.add('in');pend.splice(i,1);}
-    }
-  }
-  if(reduce){pend.forEach(function(el){el.classList.add('in');});pend=[];}
-  else{
-    var ticking=false;
-    window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;reveal();});}},{passive:true});
-    reveal();setTimeout(reveal,350);window.addEventListener('load',reveal);
-  }
-
-  // magnetic buttons
-  if(window.matchMedia('(pointer:fine)').matches && !reduce){
-    document.querySelectorAll('.mag').forEach(function(b){
-      b.addEventListener('pointermove',function(e){
-        var r=b.getBoundingClientRect();
-        b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.28)+'px,'+((e.clientY-r.top-r.height/2)*.42)+'px)';
-      });
-      b.addEventListener('pointerleave',function(){b.style.transform='';});
-    });
-  }
-})();
-</script>
-<script>
-(function(){
-  // chip multi-select toggle
-  document.querySelectorAll('.opt').forEach(function(opt){
-    var input=opt.querySelector('input');
+  /* "Move my existing website" / "Yes, I have an idea" open their box (shown to everyone without script) */
+  addC(form,'js');
+  each(form.querySelectorAll('.js-other'),function(opt){
+    var input=opt.querySelector('input'),box=d.getElementById(opt.getAttribute('data-target'));
     if(!input)return;
-    function sync(){opt.classList.toggle('on',input.checked);}
-    input.addEventListener('change',sync);
-    opt.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();input.checked=!input.checked;input.dispatchEvent(new Event('change'));}});
-    opt.setAttribute('tabindex','0');
-    sync();
-  });
-  // "Other" reveals a text box
-  document.querySelectorAll('.js-other').forEach(function(opt){
-    var input=opt.querySelector('input'),box=document.getElementById(opt.dataset.target);
-    function sync(){if(box)box.classList.toggle('show',input.checked); if(box&&!input.checked){var t=box.querySelector('input');if(t)t.value='';}}
-    input.addEventListener('change',sync);sync();
+    function sync(){if(box)togC(box,'show',input.checked);if(box&&!input.checked){var t=box.querySelector('input');if(t)t.value='';}}
+    on(input,'change',sync);sync();
   });
 
-  // file uploads — up to 25 MB total, up to 10 files
+  /* file uploads: up to 25 MB total, up to 10 files (needs a DataTransfer constructor; otherwise the plain picker stays) */
   (function(){
-    var input=document.getElementById('fileInput'),dz=document.getElementById('dropzone'),list=document.getElementById('fileList'),err=document.getElementById('fileErr'),totalEl=document.getElementById('fileTotal');
-    if(!input||typeof DataTransfer==='undefined')return;
-    var MAX=25*1024*1024,MAXN=10,dt=new DataTransfer();
+    var input=d.getElementById('fileInput'),dz=d.getElementById('dropzone'),list=d.getElementById('fileList'),err=d.getElementById('fileErr'),totalEl=d.getElementById('fileTotal');
+    if(!input||!dz||typeof DataTransfer==='undefined')return;
+    var dt;try{dt=new DataTransfer();}catch(e){return;}
+    var MAX=25*1024*1024,MAXN=10,errT=0;
+    addC(dz,'dz-js');dz.setAttribute('role','button');dz.setAttribute('tabindex','0');dz.setAttribute('aria-label','Upload files');
     function fmt(b){if(b<1024)return b+' B';if(b<1048576)return Math.round(b/1024)+' KB';return (b/1048576).toFixed(1)+' MB';}
     function total(){var t=0;for(var i=0;i<dt.files.length;i++)t+=dt.files[i].size;return t;}
-    function showErr(m){err.textContent=m;err.classList.add('show');clearTimeout(showErr._t);showErr._t=setTimeout(function(){err.classList.remove('show');},5000);}
+    function showErr(m){err.textContent=m;addC(err,'show');clearTimeout(errT);errT=setTimeout(function(){rmC(err,'show');},5000);}
+    function row(f,idx){
+      var r=d.createElement('div');r.className='fileitem';
+      r.innerHTML='<span class="fic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="fmeta"><div class="fname"></div><div class="fsize"></div></div><button type="button" class="frm"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>';
+      r.querySelector('.fname').textContent=f.name;
+      r.querySelector('.fsize').textContent=fmt(f.size);
+      var rm=r.querySelector('.frm');rm.setAttribute('aria-label','Remove file '+f.name);
+      on(rm,'click',function(){var ndt=new DataTransfer();for(var j=0;j<dt.files.length;j++){if(j!==idx)ndt.items.add(dt.files[j]);}dt=ndt;input.files=dt.files;render();});
+      list.appendChild(r);
+    }
     function render(){
       list.innerHTML='';
-      for(var i=0;i<dt.files.length;i++){(function(f,idx){
-        var row=document.createElement('div');row.className='fileitem';
-        row.innerHTML='<span class="fic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><div class="fmeta"><div class="fname"></div><div class="fsize"></div></div><button type="button" class="frm" aria-label="Remove file"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>';
-        row.querySelector('.fname').textContent=f.name;
-        row.querySelector('.fsize').textContent=fmt(f.size);
-        row.querySelector('.frm').addEventListener('click',function(){var ndt=new DataTransfer();for(var j=0;j<dt.files.length;j++){if(j!==idx)ndt.items.add(dt.files[j]);}dt=ndt;input.files=dt.files;render();});
-        list.appendChild(row);
-      })(dt.files[i],i);}
-      if(dt.files.length){totalEl.style.display='block';var t=total();totalEl.textContent=dt.files.length+' file'+(dt.files.length>1?'s':'')+' · '+fmt(t)+' of 25 MB';totalEl.classList.toggle('over',t>MAX);}
+      for(var i=0;i<dt.files.length;i++)row(dt.files[i],i);
+      if(dt.files.length){var t=total();totalEl.style.display='block';totalEl.textContent=dt.files.length+' file'+(dt.files.length>1?'s':'')+' · '+fmt(t)+' of 25 MB';togC(totalEl,'over',t>MAX);}
       else{totalEl.style.display='none';}
     }
     function add(files){
@@ -542,67 +379,66 @@ fieldset:nth-of-type(6) .legend .n{background:var(--cobalt)}
       }
       input.files=dt.files;render();
     }
-    input.addEventListener('change',function(){if(input.files&&input.files.length){var picked=[];for(var i=0;i<input.files.length;i++)picked.push(input.files[i]);add(picked);}});
-    dz.addEventListener('click',function(e){if(e.target.tagName!=='INPUT')input.click();});
-    dz.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();input.click();}});
-    ['dragenter','dragover'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();dz.classList.add('drag');});});
-    ['dragleave','dragend','drop'].forEach(function(ev){dz.addEventListener(ev,function(e){e.preventDefault();e.stopPropagation();dz.classList.remove('drag');});});
-    dz.addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files)add(e.dataTransfer.files);});
+    on(input,'change',function(){if(input.files&&input.files.length){var picked=[];for(var i=0;i<input.files.length;i++)picked.push(input.files[i]);add(picked);}});
+    on(dz,'click',function(e){if(e.target.tagName!=='INPUT')input.click();});
+    on(dz,'keydown',function(e){var k=e.key||e.keyCode;if(k==='Enter'||k===' '||k===13||k===32){e.preventDefault();input.click();}});
+    each(['dragenter','dragover'],function(ev){on(dz,ev,function(e){e.preventDefault();e.stopPropagation();addC(dz,'drag');});});
+    each(['dragleave','dragend','drop'],function(ev){on(dz,ev,function(e){e.preventDefault();e.stopPropagation();rmC(dz,'drag');});});
+    on(dz,'drop',function(e){if(e.dataTransfer&&e.dataTransfer.files)add(e.dataTransfer.files);});
   })();
 
-  // referral / tracking capture
-  function param(n){try{return new URLSearchParams(location.search).get(n)||'';}catch(e){return '';}}
+  /* referral / tracking capture */
+  function param(n){var m=new RegExp('[?&]'+n+'=([^&#]*)').exec(location.search);if(!m)return '';try{return decodeURIComponent(m[1].replace(/\+/g,' '));}catch(e){return m[1];}}
   function set(k,v){try{if(v)localStorage.setItem(k,v);}catch(e){}}
   function get(k){try{return localStorage.getItem(k)||'';}catch(e){return '';}}
   var ref=param('ref')||param('code')||param('promo')||param('r')||get('bh_ref');
   var uS=param('utm_source')||get('bh_utm_source'),uM=param('utm_medium')||get('bh_utm_medium'),uC=param('utm_campaign')||get('bh_utm_campaign');
   set('bh_ref',ref);set('bh_utm_source',uS);set('bh_utm_medium',uM);set('bh_utm_campaign',uC);
-  var refField=document.getElementById('ref_code'),refAuto=document.getElementById('refAuto');
+  var refField=d.getElementById('ref_code'),refAuto=d.getElementById('refAuto');
   if(ref){if(refField&&!refField.value)refField.value=ref;if(refAuto){refAuto.style.display='block';refAuto.textContent='✓ Referral code “'+ref+'” applied automatically.';}}
-  document.getElementById('utm_source').value=uS;document.getElementById('utm_medium').value=uM;document.getElementById('utm_campaign').value=uC;
-  document.getElementById('landing_page').value=(get('bh_landing')||(function(){var l=document.referrer||location.href;set('bh_landing',l);return l;})());
+  d.getElementById('utm_source').value=uS;d.getElementById('utm_medium').value=uM;d.getElementById('utm_campaign').value=uC;
+  d.getElementById('landing_page').value=(get('bh_landing')||(function(){var l=d.referrer||location.href;set('bh_landing',l);return l;})());
 
-  // submit -> Forminit (client-side SDK; keeps file uploads working)
+  /* submit -> Forminit (client-side SDK; keeps file uploads working) */
   var FORM_ID='nsf8hkp98fw';
-  var form=document.getElementById('orderForm'),btn=document.getElementById('submitBtn'),status=document.getElementById('status'),success=document.getElementById('success');
-  function showErr(m){status.textContent=m;status.className='status err';status.scrollIntoView({behavior:'smooth',block:'center'});}
-  function showSuccess(){form.style.display='none';success.classList.add('show');success.scrollIntoView({block:'center'});try{history.replaceState(null,'',location.pathname+'?sent=1');}catch(e){}}
+  var btn=d.getElementById('submitBtn'),status=d.getElementById('status'),success=d.getElementById('success'),btnHTML=btn.innerHTML;
+  function val(id){var el=d.getElementById(id);return el?String(el.value).replace(/^\s+|\s+$/g,''):'';}
+  function showErr(m){status.textContent=m;addC(status,'show');try{status.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}}
+  function showSuccess(){form.style.display='none';addC(success,'show');try{success.scrollIntoView({block:'center'});}catch(e){}try{history.replaceState(null,'',location.pathname+'?sent=1');}catch(e){}}
 
-  form.addEventListener('submit',async function(e){
+  on(form,'submit',function(e){
     e.preventDefault();
-    var name=document.getElementById('name').value.trim(),
-        email=document.getElementById('email').value.trim(),
-        phone=document.getElementById('phone').value.trim(),
-        services=document.getElementById('services').value.trim();
+    var name=val('name'),email=val('email'),services=val('services');
     var goals=form.querySelectorAll('input[name="fi-checkbox-site_goals"]:checked').length;
     if(!name||!email){showErr('Please add your name and email so we can reach you.');return;}
     if(!goals){showErr('Please choose which website you want (or "Not sure yet").');return;}
     if(!services){showErr('Please tell us in a few words what you want on your website.');return;}
 
-    // honeypot: if filled, it's almost certainly a bot — quietly pretend success, send nothing
+    /* honeypot: if filled, it's almost certainly a bot; quietly pretend success, send nothing */
     var hp=form.querySelector('input[name="_honey"]');
     if(hp&&hp.value){showSuccess();return;}
 
-    document.getElementById('submitted_at').value=new Date().toISOString();
-    status.className='status';status.textContent='';
-    btn.disabled=true;btn.textContent='Sending…';
+    d.getElementById('submitted_at').value=new Date().toISOString();
+    rmC(status,'show');status.textContent='';
+    btn.disabled=true;btn.innerHTML='Sending…';
 
+    var done=false;
+    function fail(){if(done)return;done=true;btn.disabled=false;btn.innerHTML=btnHTML;
+      showErr('Sorry — something went wrong sending your brief. Please try again, or call 845-576-6607 or email info@bhwebs.com.');}
+    function handle(res){if(done)return;if(res&&res.error){fail();return;}done=true;showSuccess();}
     try{
-      if(typeof Forminit==='undefined') throw new Error('SDK not loaded');
+      if(typeof Forminit==='undefined')throw new Error('SDK not loaded');
+      if(hp)hp.disabled=true;                  /* never send the honeypot to Forminit */
       var fd=new FormData(form);
-      fd.delete('_honey'); // never send the honeypot to Forminit
+      if(hp)hp.disabled=false;
       var fi=new Forminit();
-      var res=await fi.submit(FORM_ID,fd);
-      if(res&&res.error){throw new Error((res.error&&res.error.message)||'Submission failed');}
-      showSuccess();
-    }catch(ex){
-      btn.disabled=false;btn.textContent='Submit my project';
-      showErr('Sorry — something went wrong sending your brief. Please try again, or call 845-576-6607 or email info@bhwebs.com.');
-    }
+      var p=fi.submit(FORM_ID,fd);
+      if(p&&typeof p.then==='function')p.then(handle,fail);else handle(p);
+    }catch(ex){if(hp)hp.disabled=false;fail();}
   });
 
-  // if someone lands back on ?sent=1 (e.g. bookmarked), show the thank-you panel
-  try{if(new URLSearchParams(location.search).get('sent')==='1'){form.style.display='none';success.classList.add('show');}}catch(e){}
+  /* if someone lands back on ?sent=1 (e.g. bookmarked), show the thank-you panel */
+  if(/[?&]sent=1(?:[&#]|$)/.test(location.search)){form.style.display='none';addC(success,'show');}
 })();
 </script>
 
