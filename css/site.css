@@ -85,16 +85,14 @@ h1 em.sw:after{content:"";position:absolute;left:.02em;right:.06em;bottom:.02em;
 .proof li{display:inline-block;margin:0 18px 8px 0;padding-left:18px;position:relative}
 .proof li:before{content:"";position:absolute;left:0;top:.62em;width:10px;height:1px;background:var(--cobalt)}
 .proof .price{color:var(--cobalt)}
-.strip{position:relative;display:-webkit-box;display:-webkit-flex;display:flex;margin-top:36px}
-.strip figure{margin:0;min-width:0;-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px}
-.strip .s1{-webkit-box-flex:1.5;-webkit-flex-grow:1.5;flex-grow:1.5}
-.strip .s4{-webkit-box-flex:1.15;-webkit-flex-grow:1.15;flex-grow:1.15}
-.strip figure+figure{margin-left:3px}
-.strip a{display:block;color:inherit;text-decoration:none}
-.strip img{display:block;width:100%;height:216px;height:15vw;object-fit:cover;object-position:50% 0}
-.strip figcaption{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink2);padding:11px 14px 0;line-height:1.4}
-.strip figcaption b{font-weight:500;color:var(--cobalt);margin-right:8px}
-.strip .s1 figcaption{padding-left:40px}
+.reel{position:relative;margin-top:36px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+.reel-track{list-style:none;margin:0;padding:0;white-space:nowrap;font-size:0}
+.reel li{display:inline-block;vertical-align:top;width:430px;width:30vw;margin-right:3px;white-space:normal;font-size:16px}
+.reel .dup{display:none}
+.reel a{display:block;color:inherit;text-decoration:none}
+.reel img{display:block;width:100%;height:auto;background:#E6DFD2}
+.reel .rc{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink2);padding:11px 14px 0;line-height:1.4}
+.reel .rc b{font-weight:500;color:var(--cobalt);margin-right:8px}
 /* rubber stamp: texture, static, on the paper (never on the client work) */
 .stamp{position:absolute;right:3.6vw;top:130px;top:calc(13.6vw - 66px);width:172px;height:172px;color:var(--cobalt);-webkit-transform:rotate(-11deg);transform:rotate(-11deg);pointer-events:none;z-index:2}
 .stamp svg{display:block;width:100%;height:100%;overflow:visible}
@@ -368,7 +366,6 @@ h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
   .dial .num{font-size:154px}
   .field .big{font-size:104px}
   .h24 .big{font-size:246px}
-  .strip img{height:246px}
 }
 @media (max-width:1180px){
   .nav a{margin-left:20px}
@@ -445,13 +442,12 @@ h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
   .actions .btn{display:block;text-align:center;font-size:17px;padding:17px 18px 18px}
   .actions .tlink{display:none}
   .proof{font-size:12px;letter-spacing:.06em;margin-top:18px}
-  .strip{margin-top:24px}
-  .strip .s3,.strip .s4{display:none}
-  .strip .s1{-webkit-box-flex:1;-webkit-flex-grow:1;flex-grow:1}
-  .strip img{height:120px;height:34vw}
-  .strip figcaption{font-size:12px;padding:8px 8px 0}
-  .strip figcaption .t{display:none}
-  .strip .s1 figcaption{padding-left:16px}
+  .hero{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;flex-direction:column}
+  .hero .wrap{width:100%}
+  .hero .reel{-webkit-box-ordinal-group:0;-webkit-order:-1;order:-1;margin:0 0 22px}
+  .reel li{width:66vw}
+  .reel .rc{padding:8px 8px 0}
+  .reel .rc .t{display:none}
   .sec{padding:22px 0 84px}
   .rh{font-size:12px;letter-spacing:.1em}
   .sec-head{margin:28px 0 36px}
@@ -571,14 +567,21 @@ h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em}
     .press{animation:press 1.05s cubic-bezier(.66,0,.16,1) both}
     .eyebrow .rule{animation-delay:.05s}
     h1 em.sw:after{animation:press .9s cubic-bezier(.66,0,.16,1) .55s both}
-    .strip .s1{animation-delay:.25s}
-    .strip .s2{animation-delay:.37s}
-    .strip .s3{animation-delay:.49s}
-    .strip .s4{animation-delay:.61s}
     .panel .pm{animation:press .8s cubic-bezier(.66,0,.16,1) both}
     @supports (animation-timeline:view()){
       .sv{animation:press linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
       .sv-big{animation:press linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
     }
   }
+}
+
+/* the reel: a slow ticker of client sites (Doctrine B allows one ticker strip). Static, swipeable row without motion. */
+@media (prefers-reduced-motion:no-preference){
+  .reel{overflow:hidden}
+  .reel-track{display:inline-block;-webkit-animation:reel 110s linear infinite;animation:reel 110s linear infinite}
+  .reel .dup{display:inline-block}
+  .reel:hover .reel-track{-webkit-animation-play-state:paused;animation-play-state:paused}
+  .reel:focus-within .reel-track{animation-play-state:paused}
+  @-webkit-keyframes reel{from{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-50%);transform:translateX(-50%)}}
+  @keyframes reel{from{-webkit-transform:translateX(0);transform:translateX(0)}to{-webkit-transform:translateX(-50%);transform:translateX(-50%)}}
 }
