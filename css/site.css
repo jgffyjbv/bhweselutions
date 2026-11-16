@@ -167,6 +167,12 @@ section:nth-of-type(5n) .rh>:first-child:before{background:var(--violet)}
 .actions{-webkit-flex:none;flex:none;margin-left:48px}
 .actions .tlink{margin-left:24px}
 /* proof: a check-list (live hero meta); the PRICE SLOT is the highlighted pill */
+.hero-rating{display:inline-block;margin:22px 0 0;padding:9px 16px;border-radius:999px;background:#fff;border:1px solid #e3e7f0;border:1px solid var(--line);color:#11161f;color:var(--ink);font-size:15px;font-weight:600;text-decoration:none;-webkit-box-shadow:0 8px 24px -14px rgba(17,22,31,.35);box-shadow:0 8px 24px -14px rgba(17,22,31,.35)}
+.hero-rating[hidden]{display:none}
+.hero-rating b{font-weight:800}
+.hero-rating .hr-stars{color:#ffc53d;letter-spacing:2px;font-size:16px;margin-right:4px}
+.hero-rating .hr-sep{color:#5c6672;margin:0 5px}
+.hero-rating:hover{border-color:#6cb33f}
 .proof{list-style:none;margin:24px 0 0;padding:0;font-size:15px;font-weight:600;line-height:1.35;color:var(--ink2)}
 .proof li{display:inline-block;vertical-align:middle;position:relative;margin:0 20px 10px 0;padding-left:24px}
 .proof li:before{content:"";position:absolute;left:3px;top:.28em;width:10px;height:6px;border-left:2.5px solid #4e8f2c;border-bottom:2.5px solid #4e8f2c;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}

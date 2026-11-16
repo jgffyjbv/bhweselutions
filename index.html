@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<link rel="stylesheet" href="/css/site.css?v=20261116r">
 <!-- /bh:head -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"BH Web Solutions","url":"https://bhwebs.com/","description":"Custom websites, online stores, web apps, website migrations, SEO & Google Ads and business phone lines, in English and Yiddish.","telephone":"+1-845-576-6607","email":"info@bhwebs.com","areaServed":[{"@type":"AdministrativeArea","name":"Rockland County, New York"},{"@type":"AdministrativeArea","name":"Orange County, New York"},{"@type":"AdministrativeArea","name":"Sullivan County, New York"},{"@type":"AdministrativeArea","name":"Brooklyn, New York"},{"@type":"AdministrativeArea","name":"Queens, New York"},{"@type":"AdministrativeArea","name":"Nassau County, New York"},{"@type":"AdministrativeArea","name":"Westchester County, New York"},{"@type":"AdministrativeArea","name":"Staten Island, New York"},{"@type":"AdministrativeArea","name":"New Jersey"},{"@type":"AdministrativeArea","name":"Ohio"},{"@type":"AdministrativeArea","name":"Baltimore, Maryland"},{"@type":"AdministrativeArea","name":"Chicago, Illinois"},{"@type":"AdministrativeArea","name":"South Florida"},{"@type":"AdministrativeArea","name":"Los Angeles, California"}],"knowsLanguage":["English","Yiddish"],"serviceType":["Web design","E-commerce development","Custom web applications","Website migration","Search engine optimization","Business phone lines"],"founder":{"@type":"Person","name":"Avrumy Neumann"}}</script>
 </head>
@@ -103,6 +103,7 @@
           <a class="tlink" href="#work">See 27 live client sites<span class="ar" aria-hidden="true">↓</span></a>
         </div>
       </div>
+      <a class="hero-rating" id="heroRating" href="#reviews" hidden><span class="hr-stars" aria-hidden="true">★★★★★</span> <b id="hrAvg">5.0</b> <span class="hr-sep">·</span> <span id="hrN"></span> client reviews <span aria-hidden="true">→</span></a>
       <ul class="proof">
         <li>Best service</li>
         <li>English &amp; Yiddish</li>
@@ -112,6 +113,16 @@
         <li class="price"><!-- PRICE SLOT: the owner can put "Websites from $X" here --><span class="slot">Fair price in writing before we start</span></li>
       </ul>
     </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS (shown only when approved reviews load from reviews.bhwebs.com) ============ -->
+<section class="sec tight" id="reviews" aria-labelledby="rev-h" hidden>
+  <div class="wrap">
+    <div class="rh"><span>Reviews</span></div>
+    <div class="sec-head"><h2 id="rev-h">What clients <em>say.</em></h2><a class="sec-more" href="/review">Leave a review →</a></div>
+    <ol class="revs" id="rgrid"></ol>
+    <p class="rdisc" id="rdisc" style="margin:18px 0 0;font-size:12.5px;line-height:1.4;color:#8a8a8a;text-align:center" hidden>Some reviewers were offered a $50 credit for an honest review.</p>
   </div>
 </section>
 
@@ -360,16 +371,6 @@
   </div>
 </section>
 
-<!-- ============ REVIEWS (shown only when approved reviews load from reviews.bhwebs.com) ============ -->
-<section class="sec tight" id="reviews" aria-labelledby="rev-h" hidden>
-  <div class="wrap">
-    <div class="rh"><span>Reviews</span></div>
-    <div class="sec-head"><h2 id="rev-h">What clients <em>say.</em></h2><a class="sec-more" href="/review">Leave a review →</a></div>
-    <ol class="revs" id="rgrid"></ol>
-    <p class="rdisc" id="rdisc" style="margin:18px 0 0;font-size:12.5px;line-height:1.4;color:#8a8a8a;text-align:center" hidden>Some reviewers were offered a $50 credit for an honest review.</p>
-  </div>
-</section>
-
 <!-- ============ INCLUDED ============ -->
 <section class="sec included" id="included" aria-labelledby="inc-h">
   <div class="wrap">
@@ -501,7 +502,7 @@
       for(var i=0;i<data.length;i++){
         var r=data[i];if(r.note)credit=true;var n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
         for(var j=0;j<n;j++)st+='★';
-        h+='<li class="rev"><p class="rq">'+esc(r.quote)+'</p><div class="rm">'
+        h+='<li class="rev"><p class="rq" dir="auto">'+esc(r.quote)+'</p><div class="rm">'
           +(st?'<span class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</span>':'')
           +'<b>'+esc(r.name)+'</b>'+(r.business?esc(r.business):'')
           +(r.surprise?'<p class="rafter"><i>What surprised them</i>'+esc(r.surprise)+'</p>':'')
@@ -509,6 +510,9 @@
           +'</div></li>';
       }
       list.innerHTML=h;sec.removeAttribute('hidden');
+      /* the star line in the hero (his Nov 16 2026 ask: reviews more prominent): average of the rated reviews, all reviews counted */
+      var hr=d.getElementById('heroRating'),sum=0,rated=0;for(var k=0;k<data.length;k++){var sk=parseInt(data[k].stars,10)||0;if(sk>0){sum+=sk;rated++;}}
+      if(hr&&data.length>=3&&rated&&sum/rated>=4.5){d.getElementById('hrAvg').innerHTML=(sum/rated).toFixed(1);d.getElementById('hrN').innerHTML=data.length;hr.removeAttribute('hidden');}
       var dl=d.getElementById('rdisc');if(credit&&dl)dl.removeAttribute('hidden');   /* one line under all reviews, never per review (his Nov 16 call) */
     };
     try{x.send();}catch(e){}
