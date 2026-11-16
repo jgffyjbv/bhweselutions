@@ -503,6 +503,7 @@
         h+='<li class="rev"><p class="rq">'+esc(r.quote)+'</p><div class="rm">'
           +(st?'<span class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</span>':'')
           +'<b>'+esc(r.name)+'</b>'+(r.business?esc(r.business):'')
+          +(r.note?'<small class="rnote" style="display:block;margin-top:6px;font-size:12.5px;line-height:1.4">'+esc(r.note)+'</small>':'')
           +(r.surprise?'<p class="rafter"><i>What surprised them</i>'+esc(r.surprise)+'</p>':'')
           +(r.after?'<p class="rafter"><i>After launch</i>'+esc(r.after)+'</p>':'')
           +'</div></li>';
