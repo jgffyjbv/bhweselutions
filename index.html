@@ -366,6 +366,7 @@
     <div class="rh"><span>Reviews</span></div>
     <div class="sec-head"><h2 id="rev-h">What clients <em>say.</em></h2><a class="sec-more" href="/review">Leave a review →</a></div>
     <ol class="revs" id="rgrid"></ol>
+    <p class="rdisc" id="rdisc" style="margin:18px 0 0;font-size:12.5px;line-height:1.4;color:#8a8a8a;text-align:center" hidden>Some reviewers were offered a $50 credit for an honest review.</p>
   </div>
 </section>
 
@@ -496,19 +497,19 @@
       if(x.readyState!==4||x.status!==200)return;
       var data;try{data=JSON.parse(x.responseText);}catch(e){return;}
       if(!data||!data.length)return;
-      var h='';
+      var h='',credit=false;
       for(var i=0;i<data.length;i++){
-        var r=data[i],n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
+        var r=data[i];if(r.note)credit=true;var n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
         for(var j=0;j<n;j++)st+='★';
         h+='<li class="rev"><p class="rq">'+esc(r.quote)+'</p><div class="rm">'
           +(st?'<span class="rstars" role="img" aria-label="'+n+' out of 5 stars">'+st+'</span>':'')
           +'<b>'+esc(r.name)+'</b>'+(r.business?esc(r.business):'')
-          +(r.note?'<small class="rnote" style="display:block;margin-top:6px;font-size:12.5px;line-height:1.4">'+esc(r.note)+'</small>':'')
           +(r.surprise?'<p class="rafter"><i>What surprised them</i>'+esc(r.surprise)+'</p>':'')
           +(r.after?'<p class="rafter"><i>After launch</i>'+esc(r.after)+'</p>':'')
           +'</div></li>';
       }
       list.innerHTML=h;sec.removeAttribute('hidden');
+      var dl=d.getElementById('rdisc');if(credit&&dl)dl.removeAttribute('hidden');   /* one line under all reviews, never per review (his Nov 16 call) */
     };
     try{x.send();}catch(e){}
   }
