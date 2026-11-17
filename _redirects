@@ -1,0 +1,5 @@
+# Nov 17 2026, his ask: "Leave a review" goes to the new quick review popup (the same one the review round used),
+# not the old 4-question review.html page. 302 (not 301) so it can be switched back without browsers remembering it.
+/review        https://reviews.bhwebs.com/r  302
+/review/       https://reviews.bhwebs.com/r  302
+/review.html   https://reviews.bhwebs.com/r  302
