@@ -721,23 +721,243 @@ h3{font-family:var(--serif);font-weight:500}
 }
 
 /* ==========================================================================
-   MOTION (live): the reveal (rise + fade, staggered by position), hover lifts, the hero cross-fade with a
-   slow Ken Burns zoom, the swoosh drawing itself. Outside this block nothing moves and nothing starts hidden.
+   FIVE PATTERNS (Nov 16 2026, his "implement it on bhwebs.com, do it now")
+   1 mirror test: the hero copy answers who / what you get / one button (index.html).
+   2 highlighter rule + 60-30-10: 60% ground = white and #f6f7fb; 30% structure = ink #11161f, muted #5c6672 and
+     navy #0f1640 for the bands and the footer; 10% accent = ONE green, only on things you can click: the main
+     button #43822a (white on it 4.7:1), links #376d22 (6.2:1 on white) and #9fd47a on navy (10:1), the chosen
+     answer, hover and focus. Headlines, icons, borders, numbers, badges and backgrounds carry no accent.
+     The logo keeps its own colours: it is the brand mark, not the accent.
+   3 layers: back = real client screenshots (hero, work) or a soft shape; middle = the content; front = the main
+     button with a soft shadow, plus the header, the hero panel, the answer card that hangs over its band and
+     the contact card. Nothing else is lifted.
+   4 motion with a job: see the MOTION block below (only the hero's client sites move; a Pause switch).
+   5 free sample: the "what do you need?" card (#fit, index.html), pure CSS.
+   This layer sits after the old look on purpose: the old logo-colour rules above are untouched.
+   ========================================================================== */
+body{background-image:linear-gradient(180deg,#f3f4f8 0%,#ffffff 100%)}
+::-moz-selection{background:#11161f;color:#fff}
+::selection{background:#11161f;color:#fff}
+a:focus,button:focus,input:focus,select:focus,textarea:focus,label:focus{outline-color:#376d22}
+.dark a:focus,.call a:focus,.field a:focus,.fit-band a:focus,.foot a:focus{outline-color:#9fd47a}
+
+/* headlines: emphasis by italic, never by colour; no swoosh */
+h1 em,h2 em{color:inherit;font-style:italic;font-weight:400;background-image:none;-webkit-text-fill-color:currentColor}
+em.sw:after{content:none}
+.dark h2 em,.dark .pull em,.fit-band h2 em{color:#fff;font-style:italic;font-weight:400;background-image:none;-webkit-text-fill-color:currentColor}
+.call .wrap>h2 em{background:none;padding-bottom:0;font-style:italic;font-weight:400}
+.call .card h2 em{color:#11161f;background-image:none;-webkit-text-fill-color:currentColor}
+.pull em{display:block;color:#11161f;font-style:italic;font-weight:400;background-image:none;-webkit-text-fill-color:currentColor}
+
+/* labels and icons: ink dots, ink checks */
+.eyebrow .rule,.hero .eyebrow .rule{background:#11161f}
+section:nth-of-type(n) .rh>:first-child:before{background:#11161f}
+.dark .wrap>.rh>:first-child:before,.call .wrap>.rh>:first-child:before,.fit-band .wrap>.rh>:first-child:before{background:#fff}
+.rh>a{color:#376d22;border-bottom-color:rgba(55,109,34,.35)}
+.rh>a:hover{border-bottom-color:#376d22}
+.proof li:before{border-left-color:#11161f;border-bottom-color:#11161f}
+.proof .price,.proof .hl{background:#fff;border:1.5px solid #ccd3e1;-webkit-box-shadow:none;box-shadow:none}
+.slot{background:#f1f3f7;color:#11161f}
+.hero-rating{-webkit-box-shadow:none;box-shadow:none}
+.hero-rating .hr-stars{color:#11161f}
+.hero-rating:hover{border-color:#43822a}
+.inc li:before{background:#eef0f4}
+.inc li:after{border-left-color:#11161f;border-bottom-color:#11161f}
+
+/* the one accent: buttons and links */
+.btn:not(.btn-line):not(.btn-pl):not(.btn-inv){-webkit-box-shadow:0 14px 30px -12px rgba(17,22,31,.45),0 2px 5px rgba(17,22,31,.12);box-shadow:0 14px 30px -12px rgba(17,22,31,.45),0 2px 5px rgba(17,22,31,.12)}
+.btn:not(.btn-line):not(.btn-pl):not(.btn-inv):hover,.btn:not(.btn-line):not(.btn-pl):not(.btn-inv):focus{-webkit-box-shadow:0 20px 36px -12px rgba(17,22,31,.5),0 3px 7px rgba(17,22,31,.14);box-shadow:0 20px 36px -12px rgba(17,22,31,.5),0 3px 7px rgba(17,22,31,.14)}
+.mast .btn:not(.btn-line){-webkit-box-shadow:0 6px 16px -8px rgba(17,22,31,.45);box-shadow:0 6px 16px -8px rgba(17,22,31,.45)}
+.tlink:hover,.tlink:focus{color:#376d22;border-bottom-color:#376d22}
+.sec-more:hover,.sec-more:focus{color:#376d22;-webkit-box-shadow:inset 0 0 0 1.5px #43822a;box-shadow:inset 0 0 0 1.5px #43822a}
+.tel:hover{color:#376d22}
+.nav a[aria-current],.nav-m a[aria-current]{background:#f1f3f7;color:#11161f}
+.facts dd a,.card a,.ways a,.faq .a a,.prose a,.fr-n a{color:#376d22}
+.facts dd a{border-bottom-color:rgba(55,109,34,.35)}
+.facts dd a:hover{color:#2a5419;border-bottom-color:#376d22}
+.prose blockquote{border-left-color:#ccd3e1}
+.chip span:hover{border-color:#43822a}
+.chip input:checked+span{background:#43822a;border-color:#43822a}
+.chip input:focus+span{outline-color:#376d22}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:#43822a;-webkit-box-shadow:0 0 0 4px rgba(67,130,42,.16);box-shadow:0 0 0 4px rgba(67,130,42,.16)}
+.call .card a:focus{outline-color:#376d22}
+
+/* what I build: ink numbers, the chosen service marked by the accent border (it is a control) */
+.build{background:none}
+.dial label{-webkit-box-shadow:none;box-shadow:none}
+.dial .num,.dial label:nth-child(n) .num{color:#11161f}
+.dial .new{color:#5c6672}
+#v1:checked~.dial [for=v1],#v2:checked~.dial [for=v2],#v3:checked~.dial [for=v3],
+#v4:checked~.dial [for=v4],#v5:checked~.dial [for=v5],#v6:checked~.dial [for=v6]{background:#fff;border-color:#43822a;-webkit-box-shadow:inset 0 0 0 1px #43822a;box-shadow:inset 0 0 0 1px #43822a}
+#v1:checked~.dial [for=v1] .num,#v2:checked~.dial [for=v2] .num,#v3:checked~.dial [for=v3] .num,
+#v4:checked~.dial [for=v4] .num,#v5:checked~.dial [for=v5] .num,#v6:checked~.dial [for=v6] .num{background-image:none;-webkit-text-fill-color:currentColor;color:#11161f}
+#v1:focus~.dial [for=v1],#v2:focus~.dial [for=v2],#v3:focus~.dial [for=v3],
+#v4:focus~.dial [for=v4],#v5:focus~.dial [for=v5],#v6:focus~.dial [for=v6]{outline-color:#376d22}
+.panel{-webkit-box-shadow:none;box-shadow:none}
+.panel:before{content:none}
+.kicker b{background:#11161f}
+.promise{color:#11161f}
+.pm figcaption b{color:#5c6672}
+.field,.p5 .field,.p6 .field{background-color:#0f1640;background-image:radial-gradient(ellipse at 82% 8%,rgba(255,255,255,.1),rgba(255,255,255,0) 50%)}
+.field .big em{display:block;color:#fff;font-style:italic;font-weight:400;background-image:none;-webkit-text-fill-color:currentColor}
+
+/* work */
+.work,.faqs{background-image:none}
+.grid a{-webkit-box-shadow:none;box-shadow:none}
+.idx .n,.idx li:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.idx a:hover,.idx a:focus{border-color:#43822a;-webkit-box-shadow:none;box-shadow:none}
+.topics a:hover,.topics a:focus{border-color:#43822a}
+
+/* the bands: navy structure with one soft shape, no logo gradients */
+.dark{background-color:#0f1640;background-image:radial-gradient(ellipse at 85% 10%,rgba(255,255,255,.07),rgba(255,255,255,0) 50%)}
+.call{background-color:#0f1640;background-image:radial-gradient(ellipse at 90% 80%,rgba(255,255,255,.07),rgba(255,255,255,0) 46%)}
+.h24 .big{color:#11161f}
+.dark .h24 .big{color:#fff;background-image:none;-webkit-text-fill-color:currentColor}
+.ways .n{background:#f1f3f7;color:#11161f}
+.dark .ways .n,.dark .ways li:nth-child(n) .n{background:rgba(255,255,255,.14);color:#fff}
+.dark .ways a,.dark .faq .a a{color:#9fd47a}
+.contact li{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+.contact a{border-bottom-color:#9fd47a}
+.contact a:hover{color:#9fd47a}
+.areas a{background:rgba(255,255,255,.06)}
+.areas a:hover{background:rgba(255,255,255,.12);border-color:#9fd47a}
+
+/* cards: flat (a hairline, no gradient bar, no shadow); ink stars */
+.rev:before,.incl li:before,.faq .qa:before,.card:before{content:none}
+.rev,.incl li,.faq .qa,.ways li{-webkit-box-shadow:none;box-shadow:none}
+.rev .rstars{color:#11161f}
+.rev .rafter i{color:#5c6672}
+.incl .n,.incl li:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.incl .own{background:#fff;border:2px solid #11161f}
+.incl .own b,.incl .own h3{color:#11161f}
+.slotbox{background:#fff;border:1.5px solid #ccd3e1;-webkit-box-shadow:none;box-shadow:none}
+.slotbox b{background:#11161f}
+.faq h3 .n,.faq .qa:nth-child(n) h3 .n{background:#f1f3f7;color:#11161f}
+
+/* footer, floating WhatsApp, phone bar */
+.foot{background-color:#0a0e24;background-image:none}
+.foot h4:before{content:none}
+.wordmark em{color:rgba(255,255,255,.55);font-style:italic;font-weight:400;background-image:none;-webkit-text-fill-color:currentColor}
+.wa{background:#fff;color:#11161f;border:1px solid rgba(17,22,31,.1);-webkit-box-shadow:0 12px 30px -12px rgba(17,22,31,.45);box-shadow:0 12px 30px -12px rgba(17,22,31,.45)}
+.mbar .ic,.mbar a:nth-child(2) .ic{color:#11161f}
+.mbar .go{-webkit-box-shadow:0 10px 24px -10px rgba(17,22,31,.5);box-shadow:0 10px 24px -10px rgba(17,22,31,.5)}
+
+/* back layer: a soft shape behind the reviews (the hero and the work tiles already have real client sites) */
+#reviews{overflow:hidden}
+#reviews:before{content:"";position:absolute;left:50%;top:90px;width:1200px;height:640px;margin-left:-600px;border-radius:50%;pointer-events:none;background:radial-gradient(ellipse at center,#eceef3 0%,rgba(236,238,243,0) 68%)}
+#reviews>.wrap{position:relative}
+
+/* hero: the Pause / Play switch for the one moving thing (WCAG 2.2.2) */
+label.hs-cap{cursor:pointer;top:100px;bottom:auto;min-height:34px;padding:7px 14px}
+.hs-cap b{display:inline-block;vertical-align:-1px;margin-right:7px}
+.hs-on b{width:9px;height:10px;border-left:3px solid #11161f;border-right:3px solid #11161f}
+.hs-off b{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:8px solid #11161f}
+.hs-sep{margin:0 7px}
+.hs-off{display:none}
+#hsPause:checked~.hs-cap .hs-on{display:none}
+#hsPause:checked~.hs-cap .hs-off{display:inline}
+#hsPause:focus~.hs-cap{outline:3px solid #376d22;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){
+  #hsPause{display:none}
+  .hs-on,.hs-off,.hs-sep,#hsPause:checked~.hs-cap .hs-off{display:none}
+  label.hs-cap{cursor:default}
+}
+
+/* ---------- 5 · the free sample: "what do you need?" (pure CSS: the radios sit first, :checked ~ shows the answer) ---------- */
+.fit{position:relative;padding:0 0 88px}
+.fit-band{position:relative;overflow:hidden;color:#fff;padding:96px 0 178px;background-color:#0f1640;
+  background-image:radial-gradient(circle at 10% 20%,rgba(255,255,255,.08),rgba(255,255,255,0) 32%),radial-gradient(circle at 92% 78%,rgba(255,255,255,.06),rgba(255,255,255,0) 36%)}
+.fit-band .rh,.fit-band h2{color:#fff}
+.fit-band .sec-head{margin-bottom:0}
+.fit-band .sec-head p{color:rgba(255,255,255,.92)}
+.fit-card{position:relative;z-index:2;max-width:1160px;margin:-124px auto 0;padding:34px;background:#fff;border-radius:26px;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start;
+  -webkit-box-shadow:0 40px 90px -30px rgba(10,15,40,.5),0 2px 8px rgba(10,15,40,.08);box-shadow:0 40px 90px -30px rgba(10,15,40,.5),0 2px 8px rgba(10,15,40,.08)}
+.fit-qs{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;padding-right:34px}
+.fq{margin:0 0 20px}
+.fq:last-child{margin-bottom:0}
+.fq-h{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin:0 0 12px;font-size:18px;font-weight:800;line-height:1.3;color:#11161f}
+.fq-h b{-webkit-flex:none;flex:none;display:block;width:30px;height:30px;line-height:30px;margin-right:11px;border-radius:50%;background:#11161f;color:#fff;font-size:13.5px;text-align:center}
+.fq-o{font-size:0}
+.fq-o label{display:inline-block;vertical-align:top;margin:0 8px 8px 0;padding:11px 16px;min-height:46px;border-radius:14px;border:1.5px solid #ccd3e1;background:#fff;color:#11161f;font-size:15.5px;font-weight:600;line-height:1.35;cursor:pointer}
+.fq-o label:hover{border-color:#43822a}
+#fk1:checked~.fit-qs [for=fk1],#fk2:checked~.fit-qs [for=fk2],#fk3:checked~.fit-qs [for=fk3],#fk4:checked~.fit-qs [for=fk4],#fk5:checked~.fit-qs [for=fk5],
+#fd1:checked~.fit-qs [for=fd1],#fd2:checked~.fit-qs [for=fd2],#fd3:checked~.fit-qs [for=fd3],#fd4:checked~.fit-qs [for=fd4],
+#fs1:checked~.fit-qs [for=fs1],#fs2:checked~.fit-qs [for=fs2],#fs3:checked~.fit-qs [for=fs3]{background:#eef6e8;border-color:#43822a;-webkit-box-shadow:inset 0 0 0 1px #43822a;box-shadow:inset 0 0 0 1px #43822a}
+#fk1:focus~.fit-qs [for=fk1],#fk2:focus~.fit-qs [for=fk2],#fk3:focus~.fit-qs [for=fk3],#fk4:focus~.fit-qs [for=fk4],#fk5:focus~.fit-qs [for=fk5],
+#fd1:focus~.fit-qs [for=fd1],#fd2:focus~.fit-qs [for=fd2],#fd3:focus~.fit-qs [for=fd3],#fd4:focus~.fit-qs [for=fd4],
+#fs1:focus~.fit-qs [for=fs1],#fs2:focus~.fit-qs [for=fs2],#fs3:focus~.fit-qs [for=fs3]{outline:3px solid #376d22;outline-offset:2px}
+.fit-res{width:42%;-webkit-flex:none;flex:none;min-height:430px;padding:26px 26px 24px;border-radius:20px;background:#f6f7fb}
+.fr-k{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#5c6672}
+.fr-wait{margin:0;font-family:var(--serif);font-size:22px;line-height:1.3;color:#11161f}
+.fr{display:none}
+#fd1:checked~.fit-res .fr-wait,#fd2:checked~.fit-res .fr-wait,#fd3:checked~.fit-res .fr-wait,#fd4:checked~.fit-res .fr-wait{display:none}
+#fd1:checked~.fit-res .fr-d1,#fd2:checked~.fit-res .fr-d2,#fd3:checked~.fit-res .fr-d3,#fd4:checked~.fit-res .fr-d4,
+#fs1:checked~.fit-res .fr-s1,#fs2:checked~.fit-res .fr-s2,#fs3:checked~.fit-res .fr-s3,
+#fk1:checked~.fit-res .fr-k1,#fk2:checked~.fit-res .fr-k2,#fk3:checked~.fit-res .fr-k3,#fk4:checked~.fit-res .fr-k4,#fk5:checked~.fit-res .fr-k5{display:block}
+.fr h3{margin:0 0 6px;font-size:34px;line-height:1.05}
+.fr-p{margin:0 0 12px;font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.3;color:#11161f}
+.fr .inc{margin:0 0 12px}
+.fr .inc li{padding:7px 0 7px 32px;font-size:15.5px}
+.fr .inc li:before{top:7px}
+.fr .inc li:after{top:13px}
+.fr .facts{margin:0 0 18px}
+.fr .facts dt{width:84px}
+.fr .facts dd{font-size:15px;line-height:1.45}
+.fr .btn{display:block;text-align:center;white-space:normal}
+.fr-n{margin:16px 0 0;padding:14px 0 0;border-top:1px solid #e3e7f0;font-size:15.5px;line-height:1.45;color:#11161f}
+.fr-n a{font-weight:700}
+.fr-x{position:relative;margin:16px 0 0;border-radius:14px;overflow:hidden;color:#fff;text-decoration:none;background:#0f1640}
+.fr-x img{display:block;width:100%;height:150px;-o-object-fit:cover;object-fit:cover;-o-object-position:50% 0;object-position:50% 0}
+.fr-x span{display:block;padding:10px 14px 12px;font-size:16px;font-weight:700;line-height:1.3;background:#0f1640}
+.fr-x small{display:block;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+.fr-x:hover span,.fr-x:focus span{color:#9fd47a}
+@media (max-width:980px){
+  .fit-card{display:block}
+  .fit-qs{padding-right:0}
+  .fit-res{width:auto;min-height:0;margin-top:18px}
+}
+@media (max-width:760px){
+  .fit{padding-bottom:56px}
+  .fit-band{padding:64px 0 120px}
+  .fit-card{margin:-92px 0 0;padding:22px 16px 16px;border-radius:22px}
+  .fq-h{font-size:17px}
+  .fq-o label{margin:0 6px 8px 0;padding:10px 13px;min-height:44px;font-size:15px}
+  .fit-res{padding:20px 16px 18px}
+  .fr h3{font-size:28px}
+  .fr-wait{font-size:19px}
+  /* the hero switch, small, at the top right of the moving sites */
+  label.hs-cap{display:-webkit-inline-box;display:-webkit-inline-flex;display:inline-flex;top:calc(84px + 32vw);bottom:auto;right:12px;font-size:12px;padding:6px 12px;min-height:32px}
+  .hs-sep,.hs-cap>span:last-child{display:none}
+  /* phone order in the hero: eyebrow, promise, price, lede, the button, then the stars and the checks */
+  @supports (display:contents){
+    .hero .hero-rating{-webkit-box-ordinal-group:7;-webkit-order:6;order:6;-webkit-align-self:flex-start;align-self:flex-start}
+    .hero .proof li{-webkit-box-ordinal-group:8;-webkit-order:7;order:7}
+  }
+}
+/* reduced motion on a phone: nothing moves, and the phone switch shows no caption, so it goes */
+@media (prefers-reduced-motion:reduce) and (max-width:760px){label.hs-cap{display:none}}
+
+/* ==========================================================================
+   MOTION (Nov 16 2026, "motion with a job"): only the hero's client sites move (they ARE the product), with a
+   Pause switch; hover and focus feedback on things you can click; page cross-fades. Cut: the hero panel's rise,
+   the pulsing dot, the swoosh drawing itself, every scroll reveal, hover lifts on cards you cannot click.
+   Outside this block nothing moves and nothing starts hidden; prefers-reduced-motion turns all of it off.
    ========================================================================== */
 @media (prefers-reduced-motion:no-preference){
   @view-transition{navigation:auto}
   html{scroll-behavior:smooth}
-  .btn,.wa,.topics a,.chip span,.nav a,.nav-m a,.tel,.tlink,.sec-more,.idx a,.dial label,.grid a,.incl li,.faq .qa,.rev,.ways li,.areas a,.contact a,.foot a{-webkit-transition:background-color .25s,border-color .25s,color .25s,-webkit-box-shadow .35s var(--exp),-webkit-transform .35s var(--exp);transition:background-color .25s,border-color .25s,color .25s,box-shadow .35s var(--exp),transform .35s var(--exp)}
+  .btn,.wa,.topics a,.chip span,.nav a,.nav-m a,.tel,.tlink,.sec-more,.idx a,.dial label,.fq-o label,.grid a,.areas a,.contact a,.foot a{-webkit-transition:background-color .25s,border-color .25s,color .25s,-webkit-box-shadow .35s var(--exp),-webkit-transform .35s var(--exp);transition:background-color .25s,border-color .25s,color .25s,box-shadow .35s var(--exp),transform .35s var(--exp)}
   .btn .ar,.tlink .ar{-webkit-transition:-webkit-transform .3s var(--exp);transition:transform .3s var(--exp)}
   .duo img{-webkit-transition:-webkit-transform 1.1s var(--exp);transition:transform 1.1s var(--exp)}
   .btn:hover,.btn:focus{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
   @media (hover:hover){
     .grid a:hover{-webkit-transform:translateY(-6px);transform:translateY(-6px);-webkit-box-shadow:0 30px 60px -24px rgba(17,22,31,.55);box-shadow:0 30px 60px -24px rgba(17,22,31,.55)}
     .grid a:hover .duo img{-webkit-transform:scale(1.05);transform:scale(1.05)}
-    .incl li:hover,.faq .qa:hover,.rev:hover,.ways li:hover,.dial label:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+    .dial label:hover{-webkit-transform:translateY(-3px);transform:translateY(-3px)}
     .idx a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
   }
-  /* hero: five client sites cross-fade with a slow zoom (pure CSS; negative first delay = no empty frame) */
+  /* hero: five client sites cross-fade with a slow zoom (pure CSS; negative first delay = no empty frame).
+     This is the ONE moving thing on the first screen: it shows the product. The Pause switch stops it. */
   @-webkit-keyframes hslide{0%{opacity:0;z-index:2;-webkit-transform:scale(1)}7%{opacity:1;z-index:2}20%{opacity:1;z-index:1}27%{opacity:1;z-index:1;-webkit-transform:scale(1.11)}27.3%{opacity:0;z-index:0}100%{opacity:0;z-index:0;-webkit-transform:scale(1.11)}}
   @keyframes hslide{0%{opacity:0;z-index:2;transform:scale(1)}7%{opacity:1;z-index:2}20%{opacity:1;z-index:1}27%{opacity:1;z-index:1;transform:scale(1.11)}27.3%{opacity:0;z-index:0}100%{opacity:0;z-index:0;transform:scale(1.11)}}
   .hslides img{-webkit-animation:hslide 21.5s ease-in-out infinite both;animation:hslide 21.5s ease-in-out infinite both;will-change:opacity,transform}
@@ -746,22 +966,8 @@ h3{font-family:var(--serif);font-weight:500}
   .hslides img:nth-child(3){-webkit-animation-delay:7.1s;animation-delay:7.1s}
   .hslides img:nth-child(4){-webkit-animation-delay:11.4s;animation-delay:11.4s}
   .hslides img:nth-child(5){-webkit-animation-delay:15.7s;animation-delay:15.7s}
-  /* the hero panel rises in; the green dot breathes; the swoosh draws itself */
-  @-webkit-keyframes rise{from{opacity:0;-webkit-transform:translateY(26px)}to{opacity:1;-webkit-transform:none}}
-  @keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
-  .hero-panel{-webkit-animation:rise .9s cubic-bezier(.19,1,.22,1) .1s both;animation:rise .9s cubic-bezier(.19,1,.22,1) .1s both}
-  @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(108,179,63,.55)}70%{box-shadow:0 0 0 9px rgba(108,179,63,0)}}
-  .hero .eyebrow .rule{animation:pulse 2.4s ease-in-out infinite}
-  @supports (clip-path:inset(0 0 0 0)){
-    @keyframes draw{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
-    em.sw:after{animation:draw 1.1s cubic-bezier(.19,1,.22,1) .6s both}
-  }
-  /* the live reveal on scroll: rise + fade (CSS scroll timeline; uses `translate` so hover lifts keep working) */
-  @supports (animation-timeline:view()){
-    @keyframes rv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
-    .rh,.sec-head,.dial label,.dial-hint,.panels,.grid li,.idx-head,.idx li,.said,.pull,.said-by,.h24,.ways li,.incl li,.slotbox,.faq .qa,.rev,.call-l,.call-r,.areas,.phead .lede,.prose>*,.foot-cols>div,.wordmark{animation:rv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
-    .dial label:nth-child(3n+2),.grid li:nth-child(3n+2),.incl li:nth-child(3n+2),.ways li:nth-child(2),.rev:nth-child(3n+2),.idx li:nth-child(even),.foot-cols>div:nth-child(2),.call-r{animation-range:entry 6% entry 54%}
-    .dial label:nth-child(3n),.grid li:nth-child(3n),.incl li:nth-child(3n),.ways li:nth-child(3),.rev:nth-child(3n),.foot-cols>div:nth-child(3){animation-range:entry 12% entry 60%}
-    .foot-cols>div:nth-child(4){animation-range:entry 18% entry 66%}
-  }
+  #hsPause:checked~.hslides img{-webkit-animation-play-state:paused;animation-play-state:paused}
+  /* Nov 16 2026: removed the hero panel's rise-in, the pulsing green dot, the swoosh drawing itself and the
+     scroll reveal (@keyframes rv). The hero words and button are readable at once; with `rv` gone, the inner
+     pages' own reveals (order, review, stuck-on-wix, website-transfers) simply show their content too. */
 }

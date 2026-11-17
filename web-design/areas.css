@@ -151,14 +151,29 @@
   .tl a,.towns a,.steps li,.rblock{-webkit-transition:background-color .25s,border-color .25s,color .25s,-webkit-box-shadow .35s var(--exp),-webkit-transform .35s var(--exp);transition:background-color .25s,border-color .25s,color .25s,box-shadow .35s var(--exp),transform .35s var(--exp)}
   .tl .go .ar{-webkit-transition:-webkit-transform .3s var(--exp);transition:transform .3s var(--exp)}
   @media (hover:hover){
-    .tl a:hover,.steps li:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
+    .tl a:hover{-webkit-transform:translateY(-5px);transform:translateY(-5px)}
     .tl a:hover .go .ar{-webkit-transform:translateX(4px);transform:translateX(4px)}
     .towns a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
   }
-  @supports (animation-timeline:view()){
-    @keyframes arv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
-    .tl li,.rblock,.steps li,.two h2,.two .inc,.more{animation:arv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
-    .tl li:nth-child(3n+2),.steps li:nth-child(2){animation-range:entry 6% entry 54%}
-    .tl li:nth-child(3n),.steps li:nth-child(3){animation-range:entry 12% entry 60%}
-  }
+  /* Nov 16 2026 ("motion with a job"): the scroll reveal was cut; content is simply there. */
 }
+
+/* ==========================================================================
+   Nov 16 2026 · FIVE PATTERNS (see the note in /css/site.css): ONE accent (green) and only on clickable things;
+   ink and light grey for dots, numbers and badges; no gradient bars or borders; flat cards (only the main
+   button is lifted). Delete this block and the logo-colour look above comes back.
+   ========================================================================== */
+.phead .crumbs:before{background:#11161f}
+.phead .proof li:last-child{background:#fff;border:1.5px solid #ccd3e1;-webkit-box-shadow:none;box-shadow:none}
+.dark .incl .n,.dark .incl li:nth-child(n) .n,.dark .incl li:first-child .n{background:rgba(255,255,255,.14);color:#fff}
+.two .inc,.steps li,.tl a,.rblock{-webkit-box-shadow:none;box-shadow:none}
+.more a,.tl .go{color:#376d22}
+.steps .n,.steps li:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.idx .hub a{background:#fff;border:2px solid #11161f}
+.idx .hub .n,.idx li.hub:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.idx .hub .nm{color:#11161f}
+.tl a:before,.rblock:before{content:none}
+.tl a:hover,.tl a:focus{border-color:#43822a;-webkit-box-shadow:none;box-shadow:none}
+.tl .n,.rb-l .n,.tl li:nth-child(n) .n,.rblock:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.rblock h2 a:hover,.rblock h2 a:focus{color:#376d22;border-bottom-color:#43822a}
+.towns a:hover,.towns a:focus{border-color:#43822a;color:#376d22}

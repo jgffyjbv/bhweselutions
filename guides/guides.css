@@ -196,10 +196,29 @@
     .gcards a:hover .tr .ar{-webkit-transform:translateX(4px);transform:translateX(4px)}
     .gtopics a:hover{-webkit-transform:translateY(-2px);transform:translateY(-2px)}
   }
-  @supports (animation-timeline:view()){
-    @keyframes grv{from{opacity:0;translate:0 28px}to{opacity:1;translate:0 0}}
-    .gcards li,.gtopics{animation:grv linear both;animation-timeline:view();animation-range:entry 0% entry 48%}
-    .gcards li:nth-child(3n+2){animation-range:entry 6% entry 54%}
-    .gcards li:nth-child(3n){animation-range:entry 12% entry 60%}
-  }
+  /* Nov 16 2026 ("motion with a job"): the scroll reveal was cut; content is simply there. */
 }
+
+/* ==========================================================================
+   Nov 16 2026 · FIVE PATTERNS (see the note in /css/site.css): ONE accent (green) and only on clickable things;
+   ink and light grey for dots, numbers and badges; no gradient bars; flat cards. Delete this block and the
+   logo-colour look above comes back.
+   ========================================================================== */
+.gtopics a{-webkit-box-shadow:none;box-shadow:none}
+.gtopics a:before,.gtopics a:nth-of-type(n):before{background:#11161f}
+.gtopics a:hover,.gtopics a:focus{border-color:#43822a;color:#376d22}
+.gside,.gbody .prose .callout,.gcards a{-webkit-box-shadow:none;box-shadow:none}
+.gside:before,.gbody .prose .callout:before,.gcards a:before{content:none}
+.gk:before,.g-heimish .gk:before,.g-decisions .gk:before{background:#11161f}
+.gbody .prose h2:before,.gbody .prose h2:nth-of-type(n):before{background:#f1f3f7;color:#11161f}
+.gbody .prose a{color:#376d22;-webkit-text-decoration-color:rgba(55,109,34,.4);text-decoration-color:rgba(55,109,34,.4)}
+.gbody .prose a:hover{-webkit-text-decoration-color:#376d22;text-decoration-color:#376d22}
+.gbody .prose code{background:#f1f3f7}
+.gbody .prose ul>li:before{background:#11161f}
+.gbody .prose ol>li:before{background:#f1f3f7;color:#11161f}
+.gbody .prose .callout strong{color:#11161f}
+.gbody .prose th{background:#f1f3f7}
+.grel,.ghub:nth-of-type(odd){background-image:none}
+.gcards a:hover,.gcards a:focus{border-color:#43822a;-webkit-box-shadow:none;box-shadow:none}
+.gcards .n,.gcards li:nth-child(n) .n{background:#f1f3f7;color:#11161f}
+.gcards a:hover .nm,.gcards a:focus .nm{color:#376d22}

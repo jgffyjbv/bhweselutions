@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<link rel="stylesheet" href="/css/site.css?v=20261116p">
 <!-- Google Analytics (property bhwebs.com, his ask Nov 16 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJQ1YQ86ZX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJQ1YQ86ZX');</script>
@@ -86,6 +86,8 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="h1">
+  <!-- motion on/off (pure CSS; the script below only remembers the choice). Only the client sites move on this screen. -->
+  <input class="vh" type="checkbox" id="hsPause" aria-label="Pause the moving client websites">
   <div class="hslides" role="group" aria-label="Five of our live client websites, cross-fading">
     <img src="/images/shots/haven.jpg" srcset="/images/shots/haven-m.jpg 640w, /images/shots/haven.jpg 1000w" sizes="100vw" width="1000" height="625" alt="The Haven website: private lots in Kiryas Joel" decoding="async" fetchpriority="high">
     <img src="/images/shots/fifthc.jpg" srcset="/images/shots/fifthc-m.jpg 640w, /images/shots/fifthc.jpg 1000w" sizes="100vw" width="1000" height="625" alt="The Fifth C website: a fine-jewelry catalog" decoding="async" fetchpriority="low">
@@ -94,16 +96,16 @@
     <img src="/images/shots/abctoys.jpg" srcset="/images/shots/abctoys-m.jpg 640w, /images/shots/abctoys.jpg 1000w" sizes="100vw" width="1000" height="625" alt="ABC Toys website: a toy store with delivery" decoding="async" fetchpriority="low">
   </div>
   <span class="hero-scrim" aria-hidden="true"></span>
-  <span class="hs-cap" aria-hidden="true"><i></i>Live client sites</span>
+  <label class="hs-cap" for="hsPause"><span class="hs-on"><b aria-hidden="true"></b>Pause</span><span class="hs-off"><b aria-hidden="true"></b>Play</span><span class="hs-sep" aria-hidden="true">·</span><span>Live client sites</span></label>
   <div class="wrap">
     <div class="hero-panel">
-      <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>Web design<span class="wide"> studio</span> · Brooklyn, NY · Monsey · Lakewood</span></p>
-      <h1 id="h1">Websites that make your business look <em class="sw">established.</em></h1>
+      <!-- mirror test (Nov 16 2026): who it is for (eyebrow) · what you get (h1 + lede) · one button -->
+      <p class="eyebrow"><span class="rule" aria-hidden="true"></span><span>For local business owners · Brooklyn<span class="wide">, NY</span> · Monsey · Lakewood</span></p>
+      <h1 id="h1">A website that brings your business more <em>customers.</em></h1>
       <div class="hero-row">
-        <p class="lede">Websites, online stores and web apps for businesses in Monsey, Brooklyn, Lakewood and beyond. Most websites go live within days.</p>
+        <p class="lede">It looks established, works on every phone, and most websites go live within days. You see your design before you pay the balance.</p>
         <div class="actions">
           <a class="btn btn-lg" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a>
-          <a class="tlink" href="#work">See 27 live client sites<span class="ar" aria-hidden="true">↓</span></a>
         </div>
       </div>
       <a class="hero-rating" id="heroRating" href="#reviews" hidden><span class="hr-stars" aria-hidden="true">★★★★★</span> <b id="hrAvg">5.0</b> <span class="hr-sep">·</span> <span id="hrN"></span> client reviews <span aria-hidden="true">→</span></a>
@@ -112,7 +114,6 @@
         <li>English &amp; Yiddish</li>
         <li>Works on old iPads &amp; filtered phones</li>
         <li>Everything in your name</li>
-        <li>You see the design before you pay the balance</li>
         <li class="price"><!-- PRICE SLOT: the owner can put "Websites from $X" here --><span class="slot">Fair price in writing before we start</span></li>
       </ul>
     </div>
@@ -126,6 +127,69 @@
     <div class="sec-head"><h2 id="rev-h">What clients <em>say.</em></h2><a class="sec-more" href="/review">Leave a review →</a></div>
     <ol class="revs" id="rgrid"></ol>
     <p class="rdisc" id="rdisc" style="margin:18px 0 0;font-size:12.5px;line-height:1.4;color:#8a8a8a;text-align:center" hidden>Some reviewers were offered a $50 credit for an honest review.</p>
+  </div>
+</section>
+
+<!-- ============ FREE SAMPLE (Nov 16 2026): "what do I need?" in three taps, before any contact details.
+     Pure CSS (radios first, :checked ~ shows the answer), so it works with no script, on old iPads and behind filters.
+     No prices: the site has none yet (PRICE SLOT rule), so the answer is a recommendation + the honest price line. ============ -->
+<section class="fit" id="fit" aria-labelledby="fit-h">
+  <div class="fit-band">
+    <div class="wrap">
+      <div class="rh"><span>Three quick questions</span></div>
+      <div class="sec-head">
+        <h2 id="fit-h">What do you need? <em>Find out in three taps.</em></h2>
+        <p>No email, no phone number. Tap your answers and see what I would build for you, how long it takes, and a live site like yours.</p>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="fit-card">
+      <input class="vh" type="radio" name="fitk" id="fk1" aria-describedby="fq1"><input class="vh" type="radio" name="fitk" id="fk2" aria-describedby="fq1"><input class="vh" type="radio" name="fitk" id="fk3" aria-describedby="fq1"><input class="vh" type="radio" name="fitk" id="fk4" aria-describedby="fq1"><input class="vh" type="radio" name="fitk" id="fk5" aria-describedby="fq1">
+      <input class="vh" type="radio" name="fitd" id="fd1" aria-describedby="fq2"><input class="vh" type="radio" name="fitd" id="fd2" aria-describedby="fq2"><input class="vh" type="radio" name="fitd" id="fd3" aria-describedby="fq2"><input class="vh" type="radio" name="fitd" id="fd4" aria-describedby="fq2">
+      <input class="vh" type="radio" name="fits" id="fs1" aria-describedby="fq3"><input class="vh" type="radio" name="fits" id="fs2" aria-describedby="fq3"><input class="vh" type="radio" name="fits" id="fs3" aria-describedby="fq3">
+
+      <div class="fit-qs">
+        <div class="fq"><p class="fq-h" id="fq1"><b>1</b>What kind of business do you have?</p>
+          <div class="fq-o"><label for="fk1">Food, bakery or grocery</label><label for="fk2">A store with products</label><label for="fk3">A service: printing, rentals, repairs</label><label for="fk4">An office: CPA, lawyer, therapist</label><label for="fk5">A shul, kollel or nonprofit</label></div></div>
+        <div class="fq"><p class="fq-h" id="fq2"><b>2</b>What should the website do for you?</p>
+          <div class="fq-o"><label for="fd1">Make the phone ring</label><label for="fd2">Sell online</label><label for="fd3">Take bookings or orders</label><label for="fd4">Get found on Google</label></div></div>
+        <div class="fq"><p class="fq-h" id="fq3"><b>3</b>Do you have a website now?</p>
+          <div class="fq-o"><label for="fs1">No, this is my first</label><label for="fs2">Yes, on WordPress or Wix</label><label for="fs3">Yes, something else</label></div></div>
+      </div>
+
+      <div class="fit-res" aria-live="polite">
+        <p class="fr-k">Your answer</p>
+        <p class="fr-wait">Tap an answer to question 2 and your recommendation shows here.</p>
+
+        <div class="fr fr-d1"><h3>A website</h3><p class="fr-p">A site that makes your business look established.</p>
+          <ul class="inc"><li>Live within days, for most websites</li><li>A free logo</li><li>An admin you run yourself</li></ul>
+          <dl class="facts"><div><dt>Timeline</dt><dd>Within days, for most websites</dd></div><div><dt>Price</dt><dd>A fair price in writing before we start. You see your design before you pay the balance.</dd></div></dl>
+          <a class="btn" href="/order">Start my website<span class="ar" aria-hidden="true">→</span></a></div>
+        <div class="fr fr-d2"><h3>An online store</h3><p class="fr-p">Fast checkout, and an admin you run yourself.</p>
+          <ul class="inc"><li>Payment account in your name</li><li>Works on old iPads and filtered devices</li><li>English &amp; Yiddish</li></ul>
+          <dl class="facts"><div><dt>Timeline</dt><dd>In writing before we start</dd></div><div><dt>Price</dt><dd>A fair price in writing before we start. You see your design before you pay the balance.</dd></div></dl>
+          <a class="btn" href="/order">Start my store<span class="ar" aria-hidden="true">→</span></a></div>
+        <div class="fr fr-d3"><h3>A web app</h3><p class="fr-p">Booking, ordering and portals built around how you work.</p>
+          <ul class="inc"><li>Booking</li><li>Ordering</li><li>Portals for your customers or your team</li></ul>
+          <dl class="facts"><div><dt>Timeline</dt><dd>In writing before we start</dd></div><div><dt>Price</dt><dd>A fair price in writing before we start. You see your design before you pay the balance.</dd></div></dl>
+          <a class="btn" href="/order">Tell me how you work<span class="ar" aria-hidden="true">→</span></a></div>
+        <div class="fr fr-d4"><h3>SEO &amp; Google Ads</h3><p class="fr-p">Your Google page, reviews and listings, looked after every month.</p>
+          <ul class="inc"><li>Your Google business page, with a post every week</li><li>A reply to every review, and more reviews</li><li>A written report every month</li></ul>
+          <dl class="facts"><div><dt>Rhythm</dt><dd>Every month, three months minimum</dd></div><div><dt>Price</dt><dd>A fair price in writing before we start.</dd></div></dl>
+          <a class="btn" href="/order">Ask about SEO<span class="ar" aria-hidden="true">→</span></a></div>
+
+        <p class="fr fr-n fr-s1"><b>First website?</b> A free logo comes with it.</p>
+        <p class="fr fr-n fr-s2"><b>On WordPress or Wix?</b> I move it too: the same look your customers know, faster pages, domain and admin in your name. <a href="/website-transfers">How a move works</a></p>
+        <p class="fr fr-n fr-s3"><b>Have another site?</b> Put its address in the form, and I will tell you whether to move it or start fresh.</p>
+
+        <a class="fr fr-x fr-k1" href="https://preshburgglutenfree.com" target="_blank" rel="noopener"><img src="/images/shots/preshburg-m.jpg" width="640" height="400" loading="lazy" alt="Preshburg Gluten Free website: an online bakery store"><span><small>A live site like yours</small>Preshburg Gluten Free ↗</span></a>
+        <a class="fr fr-x fr-k2" href="https://abctoysusa.com" target="_blank" rel="noopener"><img src="/images/shots/abctoys-m.jpg" width="640" height="400" loading="lazy" alt="ABC Toys website: a toy store with delivery"><span><small>A live site like yours</small>ABC Toys ↗</span></a>
+        <a class="fr fr-x fr-k3" href="https://www.premierprintusa.com" target="_blank" rel="noopener"><img src="/images/shots/premierprint-m.jpg" width="640" height="400" loading="lazy" alt="Premier Print USA website"><span><small>A live site like yours</small>Premier Print USA ↗</span></a>
+        <a class="fr fr-x fr-k4" href="https://kellnerandco.com" target="_blank" rel="noopener"><img src="/images/work/kellner.jpg" width="700" height="560" loading="lazy" alt="Kellner and Co. website: a CPA firm"><span><small>A live site like yours</small>Kellner &amp; Co ↗</span></a>
+        <a class="fr fr-x fr-k5" href="https://kollelchatzosusa.org" target="_blank" rel="noopener"><img src="/images/shots/kollel-m.jpg" width="640" height="400" loading="lazy" alt="Kollel Chatzos website"><span><small>A live site like yours</small>Kollel Chatzos ↗</span></a>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -519,6 +583,13 @@
       var dl=d.getElementById('rdisc');if(credit&&dl)dl.removeAttribute('hidden');   /* one line under all reviews, never per review (his Nov 16 call) */
     };
     try{x.send();}catch(e){}
+  }
+
+  /* ---- hero motion on/off: the switch is pure CSS; this only remembers the visitor's choice ---- */
+  var mp=d.getElementById('hsPause');
+  if(mp){
+    try{if(window.localStorage&&localStorage.getItem('bhMotion')==='off')mp.checked=true;}catch(e){}
+    mp.addEventListener('change',function(){try{localStorage.setItem('bhMotion',mp.checked?'off':'on');}catch(e){}});
   }
 
   /* ---- contact form -> the hardened Worker endpoint (plain POST still works without script) ---- */

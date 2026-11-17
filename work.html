@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<link rel="stylesheet" href="/css/site.css?v=20261116p">
 <!-- Google Analytics (property bhwebs.com, his ask Nov 16 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJQ1YQ86ZX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJQ1YQ86ZX');</script>
@@ -35,27 +35,23 @@
    Below 980px the first tile of each topic spans the row so no topic ends on a lone half tile. */
 .phead .hero-row{margin-top:26px;-webkit-box-align:center;-webkit-align-items:center;align-items:center}
 .phead .lede{margin:0 40px 0 0}
-.tally{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-flex:none;flex:none;margin:0 0 0 auto;padding:24px 30px 20px 26px;background:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow)}
-.tally:before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background:var(--grad)}
-.tally .big{display:block;-webkit-flex:none;flex:none;font-family:var(--serif);font-weight:500;font-size:88px;line-height:.86;letter-spacing:-.05em;color:#2b4eff}
+.tally{position:relative;overflow:hidden;display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;-webkit-flex:none;flex:none;margin:0 0 0 auto;padding:24px 30px 20px 26px;background:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:none;box-shadow:none}
+.tally:before{content:none}
+.tally .big{display:block;-webkit-flex:none;flex:none;font-family:var(--serif);font-weight:500;font-size:88px;line-height:.86;letter-spacing:-.05em;color:#11161f}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .tally .big{padding:0 .04em .06em;background-image:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .tally .big{padding:0 .04em .06em}
 }
 .tally .unit{display:block;margin:0 0 0 18px;white-space:nowrap;font-size:12px;font-weight:800;line-height:1.6;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
-.tally .unit:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff5c39;margin-right:9px;vertical-align:1px}
+.tally .unit:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#11161f;margin-right:9px;vertical-align:1px}
 .phead .topics{margin:40px 0 0}
-.topics .k{display:inline-block;min-width:24px;height:24px;line-height:24px;margin:0 -7px 0 10px;padding:0 7px;border-radius:999px;background:#2b4eff;color:#fff;font-size:12.5px;font-weight:800;text-align:center;vertical-align:1px}
-.topics li:nth-child(2) .k{background:#7c3aed}
-.topics li:nth-child(3) .k{background:#ff5c39;color:#11161f}
-.topics li:nth-child(4) .k{background:#6cb33f;color:#11161f}
-.topics li:nth-child(5) .k{background:#ffc53d;color:#11161f}
+.topics .k{display:inline-block;min-width:24px;height:24px;line-height:24px;margin:0 -7px 0 10px;padding:0 7px;border-radius:999px;background:#11161f;color:#fff;font-size:12.5px;font-weight:800;text-align:center;vertical-align:1px}
 .topic.sec{padding-top:84px;padding-top:clamp(4rem,6vw,5.5rem)}
-#stores,#professionals{background-color:#f6f7fb;background-image:radial-gradient(ellipse at 100% 0%,rgba(255,92,57,.06),rgba(255,92,57,0) 40%),radial-gradient(ellipse at 0% 100%,rgba(43,78,255,.05),rgba(43,78,255,0) 40%)}
+#stores,#professionals{background-color:#f6f7fb;background-image:none}
 /* the tags: one small pill each (the separator dot stays in the text for screen readers) */
 .topic .cap .tr{padding:0;border:0;background:none;font-size:0;line-height:0}
 .topic .cap .tr span{display:inline-block;margin:0 6px 0 0;padding:4px 11px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.26);font-size:12.5px;font-weight:700;line-height:1.35;white-space:nowrap;color:#fff}
 /* the owner's result: the live green badge on the tile */
-.win{position:absolute;left:14px;top:14px;z-index:3;display:block;max-width:24em;max-width:calc(100% - 28px);margin:0;padding:7px 12px 8px 11px;border-radius:12px;background:#6cb33f;color:#0f1a08;font-size:13px;font-weight:700;line-height:1.3;-webkit-box-shadow:0 8px 20px -8px rgba(0,0,0,.45);box-shadow:0 8px 20px -8px rgba(0,0,0,.45)}
+.win{position:absolute;left:14px;top:14px;z-index:3;display:block;max-width:24em;max-width:calc(100% - 28px);margin:0;padding:7px 12px 8px 11px;border-radius:12px;background:#fff;color:#11161f;font-size:13px;font-weight:700;line-height:1.3;-webkit-box-shadow:0 8px 20px -8px rgba(0,0,0,.45);box-shadow:0 8px 20px -8px rgba(0,0,0,.45)}
 .win b{font-size:11px;font-weight:800;margin-right:7px;vertical-align:1px}
 /* Start band: centred like live (heading, line, white pill + ghost pill, the three ways to reach me) */
 .call .call-grid{display:block;margin-top:30px;text-align:center}

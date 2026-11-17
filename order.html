@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<link rel="stylesheet" href="/css/site.css?v=20261116p">
 <!-- Google Analytics (property bhwebs.com, his ask Nov 16 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJQ1YQ86ZX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJQ1YQ86ZX');</script>
@@ -45,18 +45,14 @@
 /* one question = one step with a coloured number badge (cobalt, coral, sun, green, violet) */
 .step{position:relative;min-width:0;margin:0;border:0;border-top:1px solid var(--line);padding:28px 0 12px 60px}
 .qhead{margin:0 0 18px}
-.qhead .n{position:absolute;left:0;top:24px;width:40px;height:40px;line-height:40px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#2b4eff;color:#fff}
-.step:nth-of-type(2) .n{background:#ff5c39;color:#11161f}
-.step:nth-of-type(3) .n{background:#ffc53d;color:#11161f}
-.step:nth-of-type(4) .n{background:#6cb33f;color:#11161f}
-.step:nth-of-type(5) .n{background:#7c3aed;color:#fff}
+.qhead .n{position:absolute;left:0;top:24px;width:40px;height:40px;line-height:40px;border-radius:12px;text-align:center;font-size:13px;font-weight:800;letter-spacing:.02em;background:#11161f;color:#fff}
 .qhead .n.plus{font-size:21px}
 .qhead p{margin:6px 0 0;font-size:16px;color:var(--ink2)}
 .form label .hint{display:inline;margin:0;font-size:14px}
 /* chips: a round tick box that turns green when picked */
 .chip span{position:relative;padding-left:44px}
 .chip span:before{content:"";position:absolute;left:15px;top:12px;width:19px;height:19px;border-radius:50%;border:1.5px solid var(--line2);background:#fff}
-.chip input:checked+span:before{border-color:#6cb33f;background:#6cb33f url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:11px 11px}
+.chip input:checked+span:before{border-color:#43822a;background:#43822a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:11px 11px}
 /* boxes show by default; once the script runs they open with their chip */
 .reveal{margin:8px 0 10px}
 .js .reveal{display:none}
@@ -64,7 +60,7 @@
 /* files: a plain file picker without script, the drop box with it */
 .dz{display:block;text-align:center;background:#f6f7fb;border:2px dashed var(--line2);border-radius:18px;padding:24px 18px 22px}
 .dz-js{cursor:pointer}
-.dz-js:hover,.dz.drag{border-color:#6cb33f;background:#fff}
+.dz-js:hover,.dz.drag{border-color:#43822a;background:#fff}
 .dz__ic{display:block;width:46px;height:46px;margin:0 auto 10px;padding:12px;border-radius:50%;background:#e9f5df;color:#376d22}
 .dz__t{display:block;font-size:16px;font-weight:600}
 .dz__t b{font-weight:800;color:#376d22}
@@ -72,7 +68,7 @@
 .dz input{display:block;max-width:100%;margin:14px auto 0;font-size:15px}
 .dz-js input{display:none}
 .fileitem{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:center;-webkit-align-items:center;align-items:center;margin-top:8px;padding:3px 3px 3px 12px;background:#f6f7fb;border:1px solid var(--line);border-radius:12px}
-.fic{-webkit-flex:none;flex:none;margin-right:12px;line-height:0;color:#1f3bd6}
+.fic{-webkit-flex:none;flex:none;margin-right:12px;line-height:0;color:#11161f}
 .fmeta{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0}
 .fname{font-size:15.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .fsize{font-size:13px;color:var(--ink2)}
@@ -84,7 +80,7 @@
 .filetotal.over{color:#8c1d18;font-weight:700}
 #submitBtn{display:block;width:100%;text-align:center;margin-top:26px}
 /* thank-you: the live green tick circle above the words */
-.card .csuccess:before{content:"";display:block;width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:#43822a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:32px 32px;-webkit-box-shadow:0 12px 28px -12px rgba(108,179,63,.8);box-shadow:0 12px 28px -12px rgba(108,179,63,.8)}
+.card .csuccess:before{content:"";display:block;width:64px;height:64px;margin:0 auto 20px;border-radius:50%;background:#43822a url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M20 6 9 17l-5-5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:32px 32px;background-color:#11161f;-webkit-box-shadow:none;box-shadow:none}
 .call .card .csuccess h2{font-size:44px;line-height:1;margin:0 0 16px;text-align:center}
 .csuccess p{font-size:17px;max-width:32em;margin-left:auto;margin-right:auto}
 /* the sidebar on the band: white words on darker see-through rows (like the Start band's contact boxes) */
@@ -94,12 +90,10 @@
 .perks,.steps{list-style:none;margin:0;padding:0}
 .perks li,.steps li{margin:0 0 10px;padding:14px 18px 15px;border-radius:16px;background:rgba(15,22,64,.16);border:1px solid rgba(255,255,255,.26);font-size:16px;line-height:1.5}
 .perks li{position:relative;padding-left:52px}
-.perks li:before{content:"";position:absolute;left:17px;top:16px;width:22px;height:22px;border-radius:50%;background:#ffc53d url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%2311161f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:12px 12px}
+.perks li:before{content:"";position:absolute;left:17px;top:16px;width:22px;height:22px;border-radius:50%;background:#eef0f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%2311161f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:12px 12px}
 .perks b{font-weight:800}
 .steps li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start}
-.steps .sk{-webkit-flex:none;flex:none;width:60px;margin:4px 16px 0 0;padding:5px 0 4px;border-radius:999px;background:#ffc53d;color:#11161f;font-size:11px;font-weight:800;line-height:1.2;letter-spacing:.1em;text-transform:uppercase;text-align:center}
-.steps li:nth-child(2) .sk{background:#ff5c39}
-.steps li:nth-child(3) .sk{background:#6cb33f}
+.steps .sk{-webkit-flex:none;flex:none;width:60px;margin:4px 16px 0 0;padding:5px 0 4px;border-radius:999px;background:#f1f3f7;color:#11161f;font-size:11px;font-weight:800;line-height:1.2;letter-spacing:.1em;text-transform:uppercase;text-align:center}
 .steps h4{margin:0;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.01em}
 .steps p{margin:4px 0 0;font-size:15.5px}
 @media (max-width:980px){

@@ -24,7 +24,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261030d">
+<link rel="stylesheet" href="/css/site.css?v=20261116p">
 <!-- Google Analytics (property bhwebs.com, his ask Nov 16 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJQ1YQ86ZX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJQ1YQ86ZX');</script>
@@ -35,12 +35,12 @@
 .phead .hero-row{margin-top:30px}
 .phead .lede{margin-top:0}
 /* 01 what we move: the shared numbered cards; the arrow between the two platforms */
-.incl h3 .to{font-family:var(--sans);font-weight:700;font-size:.8em;color:#2b4eff;margin:0 .12em}
-.incl .c a{color:#1f3bd6;font-weight:700}
+.incl h3 .to{font-family:var(--sans);font-weight:700;font-size:.8em;color:#5c6672;margin:0 .12em}
+.incl .c a{color:#376d22;font-weight:700}
 /* 02 what carries over: one white card (gradient top bar), two columns of green-check rows, on the cool tint */
 /* the cool tint fades in from the white ground (no hard line); the soft logo-colour washes sit in the bottom corners */
-.keeps{background-image:radial-gradient(ellipse at 0% 100%,rgba(108,179,63,.09),rgba(108,179,63,0) 42%),radial-gradient(ellipse at 100% 100%,rgba(124,58,237,.07),rgba(124,58,237,0) 44%),linear-gradient(180deg,rgba(246,247,251,0) 0,#f6f7fb 160px)}
-.carry{list-style:none;max-width:1100px;margin:0 auto;padding:16px 44px 18px;background-color:#fff;background-image:linear-gradient(100deg,#2b4eff,#7c3aed 38%,#ff5c39 72%,#ffc53d);background-size:100% 5px;background-repeat:no-repeat;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:var(--shadow);box-shadow:var(--shadow);
+.keeps{background-image:linear-gradient(180deg,rgba(246,247,251,0) 0,#f6f7fb 160px)}
+.carry{list-style:none;max-width:1100px;margin:0 auto;padding:16px 44px 18px;background-color:#fff;border:1px solid var(--line);border-radius:26px;-webkit-box-shadow:none;box-shadow:none;
   display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:justify;-webkit-justify-content:space-between;justify-content:space-between}
 .carry li{width:46%;width:calc(50% - 24px);display:-webkit-box;display:-webkit-flex;display:flex;-webkit-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-webkit-align-items:center;align-items:center;padding:24px 0 24px;border-bottom:1px solid var(--line)}
 .carry li:nth-last-child(-n+2){border-bottom:0}
@@ -49,15 +49,12 @@
 .carry b{-webkit-box-flex:1;-webkit-flex:1 1 0px;flex:1 1 0px;min-width:0;font-family:var(--serif);font-weight:600;font-size:23px;line-height:1.15;letter-spacing:-.015em}
 .carry .c{width:100%;padding-left:46px;margin-top:6px;font-size:16px;color:var(--ink2)}
 /* 03 process (the dark band): four glass cards, each with the old italic numeral in a logo colour */
-.four .num{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:64px;line-height:.9;letter-spacing:-.03em;color:#ffc53d;margin:0 0 22px}
-.four li:nth-child(2) .num{color:#ff8f70}
-.four li:nth-child(3) .num{color:#9fd47a}
-.four li:nth-child(4) .num{color:#c9b8ff}
+.four .num{display:block;font-family:var(--serif);font-style:italic;font-weight:500;font-size:64px;line-height:.9;letter-spacing:-.03em;color:#fff;margin:0 0 22px}
 /* 04 why static: one centred statement (the promise in the logo gradient), three cards */
 .why-q{font-family:var(--serif);font-weight:400;font-size:40px;font-size:clamp(1.75rem,3.3vw,2.85rem);line-height:1.16;letter-spacing:-.018em;margin:26px auto 56px;max-width:22em;text-align:center}
-.why-q b{font-weight:500;color:#2b4eff}
+.why-q b{font-weight:500;font-style:italic;color:#11161f}
 @supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .why-q b{background-image:linear-gradient(100deg,#2b4eff 0%,#7438e6 52%,#b3301a 100%);background-image:var(--grad-t);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .why-q b{background-image:none;-webkit-text-fill-color:currentColor}
 }
 /* the Start band: centred like the other pages (heading, line, the green pill, then the four ways to reach us) */
 .call .call-grid{display:block;margin-top:30px;text-align:center}
