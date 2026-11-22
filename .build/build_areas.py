@@ -139,7 +139,7 @@ STEPS = ('<ol class="steps"><li><span class="n">01</span><b>Tell us what you nee
 
 def shared_faq(place):
     return [(f"How much does a website cost in {place}?",
-             "You get the price in writing before we start, and you pay the balance only after you have seen your design. Running costs are told up front."),
+             "A website is $350, or $500 for Premium: premium support, better service and higher quality. A full online store is $500 to $1,000; if you sell only 1 or 2 items, it is a website. You pay the balance only after you have seen your design. Every site gets 24/6 support. Ongoing support after launch is charged separately."),
             (f"Do I need to meet you to get a website in {place}?",
              "No. Everything can happen by phone, WhatsApp and email, whichever you prefer. You deal directly with the person building your site.")]
 
@@ -152,7 +152,7 @@ def keep_state(place_html):
     return re.sub(r", ([A-Z]{2})$", r",&nbsp;\1", place_html)
 
 def phead(trail, h1, lead, trust=True):
-    proof = ('\n    <ul class="proof"><li>Free logo</li><li>Free small edits</li><li>See the design before you pay</li></ul>') if trust else ""
+    proof = ('\n    <ul class="proof"><li>Free logo</li><li>24/6 support</li><li>See the design before you pay</li></ul>') if trust else ""
     return f"""<section class="phead" aria-labelledby="h1">
   <div class="wrap">
     <nav class="crumbs" aria-label="Breadcrumb">{trail}</nav>

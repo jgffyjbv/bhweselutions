@@ -25,7 +25,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&amp;family=Hanken+Grotesk:wght@400;500;600;700;800&amp;display=swap">
-<link rel="stylesheet" href="/css/site.css?v=20261116p">
+<link rel="stylesheet" href="/css/site.css?v=20261122a">
 <!-- Google Analytics (property bhwebs.com, his ask Nov 16 2026) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PJQ1YQ86ZX"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PJQ1YQ86ZX');</script>
@@ -92,6 +92,13 @@
 .perks li{position:relative;padding-left:52px}
 .perks li:before{content:"";position:absolute;left:17px;top:16px;width:22px;height:22px;border-radius:50%;background:#eef0f4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.6 6.3 5 8.6 9.5 3.7' fill='none' stroke='%2311161f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") 50% 50% no-repeat;background-size:12px 12px}
 .perks b{font-weight:800}
+/* prices on the band (Nov 22 2026): white words in one see-through box, like the rows below */
+.sbox.prices .plist{margin:0;padding:4px 18px;border-radius:16px;background:rgba(15,22,64,.16);border:1px solid rgba(255,255,255,.26)}
+.sbox.prices .plist li{border-top-color:rgba(255,255,255,.22)}
+.sbox.prices .pn,.sbox.prices .pp,.sbox.prices .pfoot{color:#fff}
+.sbox.prices .pn small{color:rgba(255,255,255,.86)}
+.sbox.prices .pfoot{margin-top:12px;padding-top:0;border-top:0}
+.sbox.prices .pquiet{color:rgba(255,255,255,.8)}
 .steps li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:start;-webkit-align-items:flex-start;align-items:flex-start}
 .steps .sk{-webkit-flex:none;flex:none;width:60px;margin:4px 16px 0 0;padding:5px 0 4px;border-radius:999px;background:#f1f3f7;color:#11161f;font-size:11px;font-weight:800;line-height:1.2;letter-spacing:.1em;text-transform:uppercase;text-align:center}
 .steps h4{margin:0;font-family:var(--serif);font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.01em}
@@ -288,7 +295,18 @@
       </div>
 
       <!-- sidebar -->
-      <aside class="oside" aria-label="What you get and what happens next">
+      <aside class="oside" aria-label="Prices, what you get and what happens next">
+        <!-- PRICES (his ask Nov 22 2026); the last line is quiet on purpose -->
+        <div class="sbox prices">
+          <h3>Prices</h3>
+          <ul class="plist">
+            <li><span class="pn">Website</span><span class="pp">$350</span></li>
+            <li><span class="pn">Premium website<small>Premium support, better service, higher quality.</small></span><span class="pp">$500</span></li>
+            <li><span class="pn">Full online store<small>Selling only 1 or 2 items? That is a website: $350 or $500.</small></span><span class="pp">$500 to $1,000</span></li>
+          </ul>
+          <p class="pfoot">Every site gets 24/6 support.</p>
+          <p class="pquiet">Ongoing support after launch is charged separately.</p>
+        </div>
         <div class="sbox">
           <h3>Included free with every website</h3>
           <ul class="perks">

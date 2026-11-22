@@ -334,7 +334,7 @@ town("kensington-brooklyn", "Kensington", "Kensington, Brooklyn", "brooklyn-ny",
      "family businesses, home services, groceries, tutors",
      ["borough-park-brooklyn", "flatbush-brooklyn"],
      ("I don't have time to manage a website. Who updates it?",
-      "You can update it yourself in a few taps, or just send us the change from your phone. Small edits stay free."))
+      "You can update it yourself in a few taps, or just send us the change from your phone. Every site gets 24/6 support."))
 town("marine-park-brooklyn", "Marine Park", "Marine Park, Brooklyn", "brooklyn-ny",
      "Marine Park and the neighborhoods around it have a strong community and many home-based and family businesses. A website makes your business look established and easy to reach.",
      ["One-page and small business sites",
@@ -343,7 +343,7 @@ town("marine-park-brooklyn", "Marine Park", "Marine Park, Brooklyn", "brooklyn-n
      "home businesses, contractors, home services, tutors",
      ["flatbush-brooklyn", "midwood-brooklyn"],
      ("What does a small business site include?",
-      "Your services, photos, hours, a contact form, your own domain, a free logo and free small edits after launch."))
+      "Your services, photos, hours, a contact form, your own domain, a free logo and 24/6 support."))
 
 # ---------------- Queens ----------------
 town("kew-gardens-hills-queens", "Kew Gardens Hills", "Kew Gardens Hills, Queens", "queens-ny",
@@ -508,7 +508,7 @@ town("howell-nj", "Howell", "Howell, NJ", "new-jersey",
      "home businesses, contractors, tutors, home services",
      ["lakewood-nj", "jackson-nj"],
      ("What does it cost to get started?",
-      "You get the price in writing before we start, and you pay the balance only after you see your design."))
+      "A website is $350, or $500 for Premium. A full online store is $500 to $1,000. You pay the balance only after you see your design."))
 town("passaic-nj", "Passaic", "Passaic, NJ", "new-jersey",
      "Passaic's Orthodox community, around Main Avenue and Passaic Park, has grown into one of New Jersey's busiest, with groceries, restaurants, shops and offices. We build websites that bring in local orders and make updating easy.",
      ["Online ordering with Passaic and Clifton delivery",
@@ -628,7 +628,7 @@ town("cincinnati-oh", "Cincinnati", "Cincinnati, OH", "ohio",
      "home businesses, offices, retail, practices",
      ["columbus-oh"],
      ("What does a website cost?",
-      "You get the price in writing before we start, and you pay the balance only after you see your design."))
+      "A website is $350, or $500 for Premium. A full online store is $500 to $1,000. You pay the balance only after you see your design."))
 
 # ---------------- Further away (added Oct 23 2026): Baltimore, Chicago, South Florida, Los Angeles ----------------
 REGIONS += [

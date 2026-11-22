@@ -21,5 +21,5 @@ Nothing outside the markers is touched. A nav link that carries `aria-current="p
 The generated pages read the same files when they are rebuilt: `.build/build_areas.py` (/web-design/) and
 `.build/build_guides.py` (/guides/); they do not use the markers.
 
-Bump the `?v=` stamp in head-common.html on every change to /css/site.css (now `20261030d`), then sync and rebuild.
+Bump the `?v=` stamp in head-common.html on every change to /css/site.css (now `20261122a`), then sync and rebuild.
 Styles: /css/site.css (tokens, components, bands, motion). Page-only styles go in a small `<style>` on that page.

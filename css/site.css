@@ -971,3 +971,24 @@ label.hs-cap{cursor:pointer;top:100px;bottom:auto;min-height:34px;padding:7px 14
      scroll reveal (@keyframes rv). The hero words and button are readable at once; with `rv` gone, the inner
      pages' own reveals (order, review, stuck-on-wix, website-transfers) simply show their content too. */
 }
+
+/* ==========================================================================
+   PRICES (Nov 22 2026, his ask): website $350 · Premium $500 · full online store $500 to $1,000.
+   The list under "Included" on the homepage (.slotbox.prices) and in the order page sidebar (.sbox.prices).
+   Ink only: the green accent stays on clickable things. .pquiet is quiet on purpose (his words: "not too clearly").
+   ========================================================================== */
+.slotbox.prices{max-width:640px;padding:22px 26px 20px;text-align:left}
+.plist{list-style:none;margin:8px 0 0;padding:0}
+.plist li{display:-webkit-box;display:-webkit-flex;display:flex;-webkit-box-align:baseline;-webkit-align-items:baseline;align-items:baseline;padding:12px 0;border-top:1px solid var(--line)}
+.plist li:first-child{border-top:0}
+.plist .pn{display:block;-webkit-box-flex:1;-webkit-flex:1 1 auto;flex:1 1 auto;min-width:0;padding-right:16px;font-size:17px;font-weight:700;line-height:1.3;color:var(--ink)}
+.plist .pn small{display:block;margin-top:3px;font-size:14.5px;font-weight:400;line-height:1.4;color:var(--ink2)}
+.plist .pp{display:block;-webkit-box-flex:0;-webkit-flex:none;flex:none;font-family:var(--serif);font-size:22px;font-weight:600;line-height:1.2;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+.prices .pfoot{margin:10px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:15.5px;line-height:1.45;color:var(--ink)}
+.prices .pquiet{margin:6px 0 0;font-size:13px;line-height:1.4;color:var(--ink2)}
+.facts .pnote{display:block;margin-top:6px;font-size:14px;line-height:1.4;color:var(--ink2)}
+@media (max-width:430px){
+  .slotbox.prices{padding:18px 16px 16px}
+  .plist .pn{padding-right:10px;font-size:16px}
+  .plist .pp{font-size:19px}
+}
