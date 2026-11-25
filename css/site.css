@@ -1059,3 +1059,17 @@ html.peek-on,html.peek-on body{overflow:hidden}
   .peek .peek-go{padding:10px 14px 11px;font-size:14px}
   .peek .peek-go .ar{display:none}
 }
+
+/* ============================================================================
+   SOFTWARE STRIP (Nov 24 2026, his ask): one thin navy line above the header on the main pages,
+   "Do you want business software?" with a link to goldchoicetech.com (the magazine ad is websites only).
+   A plain block in the page flow: it scrolls away, the header and the hero are untouched. Lives in
+   .build/partials/header.html, before <header class="mast">.
+   ============================================================================ */
+.gct-strip{display:block;position:relative;z-index:41;margin:0;padding:9px 16px 10px;background:#0f1640;background:var(--navy);color:#fff;text-align:center;font-size:14.5px;font-weight:600;line-height:1.35;text-decoration:none}
+.gct-strip b{font-weight:800;color:#9fd47a;color:var(--mint);white-space:nowrap;margin-left:6px;padding-bottom:1px;border-bottom:1.5px solid rgba(159,212,122,.55)}
+.gct-strip .ar{display:inline-block;margin-left:6px}
+.gct-strip:hover b,.gct-strip:focus b{color:#fff;border-bottom-color:#fff}
+@media (max-width:480px){
+  .gct-strip{font-size:13.5px;padding:8px 10px 9px}
+}
