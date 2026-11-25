@@ -153,7 +153,6 @@
     <div class="rvchips" id="rchips" role="group" aria-label="Show reviews by type"></div>
     <ol class="revs" id="rgrid"></ol>
     <p class="rvmore-wrap"><button type="button" class="rvmore" id="rmore" hidden></button></p>
-    <p class="rdisc" id="rdisc" style="margin:18px 0 0;font-size:12.5px;line-height:1.4;color:#8a8a8a;text-align:center" hidden>Some reviewers were offered a $50 credit for an honest review.</p>
   </div>
 </section>
 
@@ -620,9 +619,9 @@
       rows.sort(function(p,q){var hp=HEB.test(p.r.quote||'')?1:0,hq=HEB.test(q.r.quote||'')?1:0;if(hp!==hq)return hp-hq;
         var lp=String(p.r.quote||'').length+String(p.r.after||'').length,lq=String(q.r.quote||'').length+String(q.r.after||'').length;return lp!==lq?lp-lq:p.i-q.i;});
       var counts={all:rows.length};for(var c0=0;c0<TYPES.length;c0++)counts[TYPES[c0][0]]=0;
-      var h='',credit=false;
+      var h='';
       for(var i=0;i<rows.length;i++){
-        var r=rows[i].r;if(r.note)credit=true;var n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
+        var r=rows[i].r;var n=Math.max(0,Math.min(5,parseInt(r.stars,10)||0)),st='';
         for(var j=0;j<n;j++)st+='★';
         var txt=[r.quote,r.after,r.surprise].join(' '),tags=[],labels=[];
         for(var t=0;t<TYPES.length;t++){if(TYPES[t][2].test(txt)){tags.push('t-'+TYPES[t][0]);labels.push(TYPES[t][1]);counts[TYPES[t][0]]++;}}
@@ -659,7 +658,6 @@
       /* the star line in the hero (his Nov 16 2026 ask: reviews more prominent): average of the rated reviews, all reviews counted */
       var hr=d.getElementById('heroRating'),sum=0,rated=0;for(var k=0;k<data.length;k++){var sk=parseInt(data[k].stars,10)||0;if(sk>0){sum+=sk;rated++;}}
       if(hr&&data.length>=3&&rated&&sum/rated>=4.5){d.getElementById('hrAvg').innerHTML=(sum/rated).toFixed(1);d.getElementById('hrN').innerHTML=data.length;hr.removeAttribute('hidden');}
-      var dl=d.getElementById('rdisc');if(credit&&dl)dl.removeAttribute('hidden');   /* one line under all reviews, never per review (his Nov 16 call) */
     };
     try{x.send();}catch(e){}
   }
